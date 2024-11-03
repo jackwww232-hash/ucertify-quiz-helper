@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         quiz helper
-// @namespace    https://github.com/0guanhua0/pmp-quiz-helper
+// @namespace    https://github.com/0guanhua0/ucertify-quiz-helper
 // @version      1.0
 // @description  quiz helper for ucertify Project Management Professional (PMP)
 // @author       guanhua
 // @match        *://www.ucertify.com/*
-// @require      https://raw.githubusercontent.com/0guanhua0/pmp-quiz-helper/main/quiz.js
+// @require      https://raw.githubusercontent.com/0guanhua0/ucertify-quiz-helper/main/db.js
 // ==/UserScript==
 
 (function () {

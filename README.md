@@ -13,7 +13,7 @@ only support choice questions
 
 click the link below
 
-https://raw.githubusercontent.com/0guanhua0/pmp-quiz-helper/refs/heads/main/helper.user.js
+https://raw.githubusercontent.com/0guanhua0/ucertify-quiz-helper/refs/heads/main/helper.user.js
 
 [guide](https://www.tampermonkey.net/faq.php?locale=en#Q102)
 
@@ -28,9 +28,9 @@ if error, retake can refresh the score
 ## support
 please file issues for support
 
-or to modify the database quiz.js, always run the check
+or to modify the database db.js, always run the check
 ```shell
-guanhua@arch ~/pmp-quiz-helper (git)-[main] % npm run format
+guanhua@arch ~/ucertify-quiz-helper (git)-[main] % npm run format
 ```
 
 ## roadmap

@@ -32,8 +32,8 @@ function formatQuiz(quiz) {
   return sortedQuiz;
 }
 
-// Read and format quiz.js file
-const filePath = path.join(__dirname, "quiz.js");
+// Read and format db.js file
+const filePath = path.join(__dirname, "db.js");
 fs.readFile(filePath, "utf8", (err, data) => {
   if (err) {
     console.error("Error reading file:", err);
@@ -65,6 +65,6 @@ fs.readFile(filePath, "utf8", (err, data) => {
       return;
     }
 
-    console.log("quiz.js has been formatted, sorted, trimmed, and truncated.");
+    console.log("db.js has been formatted, sorted, trimmed, and truncated.");
   });
 });
