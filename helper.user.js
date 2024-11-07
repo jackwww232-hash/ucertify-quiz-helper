@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         quiz helper
+// @name         ucertify-quiz-helper
 // @namespace    https://github.com/0guanhua0/ucertify-quiz-helper
-// @version      1.0
-// @description  quiz helper for ucertify Project Management Professional (PMP)
+// @version      1.0.0
+// @description  ucertify quiz helper script to highlight correct answers
 // @author       guanhua
 // @match        *://www.ucertify.com/*
 // @require      https://raw.githubusercontent.com/0guanhua0/ucertify-quiz-helper/main/db.js
@@ -14,7 +14,6 @@
   let alreadyRun = false;
 
   function normalizeText(text) {
-    console.log("Normalizing text:", text);
     return text
       .replace(/’/g, "'")
       .replace(/–/g, "-")
@@ -26,11 +25,9 @@
   function matchKey(question, quiz) {
     for (let key in quiz) {
       if (question.includes(key)) {
-        console.log("Found matching key:", key);
         return key;
       }
     }
-    console.log("No matching key found");
     return null;
   }
 
@@ -52,6 +49,7 @@
 
     let question = questionElement.innerText.trim();
     question = normalizeText(question);
+    console.log(question);
 
     // Find a quiz key that matches part of the question
     const matchingKey = matchKey(question, quiz);
@@ -60,9 +58,16 @@
       return;
     }
 
-    const ans = quiz[matchingKey];
+    // get answer
     const elements = document.querySelectorAll("#item_answer seq");
+    for (let element of elements) {
+      let text = element.innerText.trim();
+      text = normalizeText(text);
+      console.log(text);
+    }
 
+    // highlight correct answer
+    const ans = quiz[matchingKey];
     ans.forEach((value) => {
       for (let element of elements) {
         let text = element.innerText.trim();

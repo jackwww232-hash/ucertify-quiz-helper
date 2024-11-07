@@ -1,8 +1,12 @@
-# quiz helper for ucertify Project Management Professional (PMP)
+# ucertify-quiz-helper
 only support choice questions
 
 ## demo
 ![demo](./pic/demo.png)
+
+## course
+- Advanced Database
+- Project Management Professional (PMP) Based on PMBOK7
 
 ## usage
 1. install [Tampermonkey](https://www.tampermonkey.net/)
@@ -29,7 +33,7 @@ if error, retake can refresh the score
 please file issues for support
 
 or to modify the database db.js, always run the check
-```shell
+```sh
 guanhua@arch ~/ucertify-quiz-helper (git)-[main] % npm run format
 ```
 

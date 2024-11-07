@@ -120,6 +120,8 @@ quiz = {
     ["Validation of scope"],
   "Although an agile team is usually not held to specific deadlines for the overall project,":
     ["Burnup chart", "Kanban board"],
+  "An administrator who is allowed to change student information can update student grades without the instructor's permission.":
+    ["Privilege abuse"],
   "Another way to describe the scope baseline is that it is the current expected work to be":
     ["False"],
   "Any plans, processes, procedures, policies, databases, or fixed tools used by the group to improve performance or use as a compe":
@@ -178,10 +180,14 @@ quiz = {
     ],
   "At what point in a project's life cycle is the level of uncertainty and risk the highest?":
     ["At the beginning"],
+  "At which of the following levels is the actual data stored in a database?": [
+    "Physical",
+  ],
   "Audits would be completed for which of the following TWO purposes?": [
     "To assure that there is compliance with organizational requirements.",
     "To offer productivity improvements on the existing project.",
   ],
+  "BCNF (Boyce-Codd normal form) was proposed as a simpler form of": ["3NF"],
   "Based on the sender-receiver model, who has the primary responsibility when sending the message, to ensure the receiver has rece":
     [
       "The sender by ensuring the message has been encoded and transmitted in a way the receiver can understand",
@@ -211,6 +217,9 @@ quiz = {
     ["False"],
   "Configuration management may be used for controlling product iterations, product specifications, project documents, standards, a":
     ["True"],
+  "Consider the following rule and then identify its name:": [
+    "Pseudotransitive",
+  ],
   "Considering that a specific project team works primarily with a collective and variety of subject matter experts, what might be":
     [
       "The possibility of a single point of failure due to resources having specific skills",
@@ -223,6 +232,7 @@ quiz = {
     ],
   "Decomposition is a term frequently used for breaking down work in a predictive project. It is not always done in the same format":
     ["Organizational chart", "Outline format"],
+  "Deferred update is also known as the": ["NO-UNDO/REDO algorithm"],
   "Developing a project scope statement requires a series of tools. Of the following, which one is least likely to be a tool for th":
     ["Planning poker"],
   "Due to a recent acquisition of another organization, your company has decided to merge":
@@ -234,6 +244,10 @@ quiz = {
     ["Control charts", "Histograms"],
   "Due to the potential impact to multiple project objectives, the project team has decided to take action to eliminate a particula":
     ["Risk avoidance"],
+  "Due to which of the following actions does a checkpoint record in the log also include additional information, and this can facilitate undoing transaction":
+    ["Force-write all main memory buffers that have been modified to disk."],
+  "Due to which of the following can an attacker impersonate the identity of a legitimate user by obtaining his login credentials?":
+    ["Weak authentication"],
   "During a long-term project, many types of artifacts will be generated. Which of the following would be considered project artifa":
     ["Assumptions", "Scope baseline"],
   "During a meeting with stakeholders, two of the stakeholders tell you that they never received the report that you are presenting":
@@ -268,12 +282,19 @@ quiz = {
     [
       "Do what is possible to reduce the impact of the risk by shifting a few team members to locate and secure another supplier.",
     ],
+  "During which of the following stages for creating a database are further specifications provided for storing and accessing the database?":
+    ["Physical design"],
+  "During which of the following steps do the database designers interview prospective database users to understand and document their data necessities?":
+    ["Requirements collection and analysis"],
+  "During which step of the ARIES recovery procedure is the log scanned backward and the operations of transactions that were active at the time of the crash are undone in reverse order?":
+    ["UNDO"],
   "During your HR software implementation project, two project team members are have difficulty working together. They come to you,":
     ["Balanced matrix"],
   "During your assembly line software implementation project, you find that training is not progressing as quickly as the schedule":
     [
       "The quality and schedule are being negatively impacted. To fix the situation, you likely have to hire more experienced trainers at a higher rate and schedule extra training sessions. Quality and schedule return to planned values while cost increases.",
     ],
+  "Each node in a tree, except for a special node called a": ["root"],
   "Earlier on this project, your team lead expressed concerns that a vendor may delay shipment of some vital raw materials for the":
     ["Contingency reserves because this is a known risk"],
   "Early in the project formation, the team begins to seek out stakeholders and specific requirements for their needs. Of the follo":
@@ -304,6 +325,8 @@ quiz = {
     ["Make-or-buy analysis"],
   "For the past many months, the team has worked with little direction from the project manager. The team gets together and determi":
     ["True"],
+  "For which of the following checkpoint actions does the fuzzy checkpointing technique come into use to overcome from the action?":
+    ["Suspend execution of transactions temporarily."],
   "From iteration to iteration, a team will face challenges. The project leader will focus on helping the team members to overcome":
     ["Spike"],
   "From the following table, which stakeholder will be the project manager's highest priority stakeholder to reach out to?":
@@ -322,18 +345,28 @@ quiz = {
   "How would you classify the cost of product recalls?": [
     "External failure cost",
   ],
+  "If a file has just been opened or reset, which of the following file operations returns the first record if a condition is specified with the operation; otherwise it returns":
+    ["Scan"],
+  "If a transaction does not overwrite the dirty reads of higher-level transactions, then this transaction has level":
+    ["0"],
   "If an organization is comfortable with most uncertainty and accepts risk as a normal part of doing business and projects, how yo":
     ["Risk-tolerant"],
   "If senior management doesn't want you to spend time writing a project charter":
     ["Review the benefits of the project charter with them."],
+  "If the validation phase is successful, the transaction updates are applied to the database; otherwise, the updates are discarded and the transaction is":
+    ["Write"],
   "If there are several different decisions to be made and the consequences of each affect the next decision, what would be the bes":
     ["Decision tree"],
+  "In UML terminology, relationship types are called": ["associations"],
+  "In UML terminology, relationship types are called as": ["associations"],
   "In a more predictive environment, the project manager is more likely to outline expectations and direct the team members' and co":
     ["True"],
   "In an attempt to remain customer-focused and increase your overall value to the end consumer":
     [
       "Ensuring compliance on all electronic communication steps within your organization and the client's organization",
     ],
+  "In most relational DBMSs, there is no specific language that performs the role of":
+    ["SDL"],
   "In the past week, you have noticed that the project team changed two tasks from A to B on the project schedule to B to A. This c":
     ["Discretionary", "Internal"],
   "In the sender-receiver model of communication, the person who receives the message is":
@@ -345,6 +378,15 @@ quiz = {
       "Shields the project team from the politics and noise surrounding the project",
       "Takes responsibility and accountability for the project",
     ],
+  "In which of the following categories do the physical design decisions for indexing fall?":
+    [
+      "What attribute or attributes to index on",
+      "Whether to index an attribute",
+      "Whether to set up a clustered index",
+      "Whether to use a hash index over a tree index",
+    ],
+  "In which of the following joins does the search stop as soon as the first match is found and the tuple from outer relation is selected?":
+    ["Semi-join"],
   "In which of the following methods do team members pull the work from a queue?":
     ["On-demand scheduling"],
   "In which of the following situations will a force majeure clause apply? (Choose two.)":
@@ -354,6 +396,8 @@ quiz = {
     ],
   "In which of the following situations would formal written communication not be valid?":
     ["Taking notes during a stakeholder's status meeting"],
+  "In which of the following states does a transaction execute its READ and WRITE operations?":
+    ["Active"],
   "In which stage of the Tuckman Ladder team development model do initial conflicts emerge?":
     ["Storming"],
   "Ineffective conflict management methods on a project team can be catastrophic. Some of the most likely results include":
@@ -382,6 +426,9 @@ quiz = {
     ["Templates for all portions of the process to expedite the work"],
   "Last-minute changes were made recently to the training plan due to additional scope requirements. This is an acceptable choice t":
     ["True"],
+  "Loss of availability occurs when:": [
+    "a user or program cannot access data objects who has legitimate right to those objects.",
+  ],
   "Many issues on your project need to be resolved, and you want to identify a way of prioritizing these issues so that the team ca":
     ["Pareto chart"],
   "Many parties are involved in delivering most projects. When you are dealing with a client":
@@ -391,6 +438,11 @@ quiz = {
   "Many times, in a risk register, the team is looking to categorize risk to respond to the potential upside or downside outcomes m":
     [
       "Noting any regulations that arise due to industry advances in new technology",
+    ],
+  "Mark works as a database administrator in ABC Inc. He wants to add a new record in the employees table with the following data:":
+    [
+      "Insert into employees (Employee_id, Name, Designation) values (101, 'Richard', 'Database developer');",
+      "Insert into employees values (101, 'Richard', 'Database developer');",
     ],
   "Moving from a common workspace to remote work has been more common for several years. There are a number of advantages for both":
     ["Increases the level of communication and trust"],
@@ -502,6 +554,7 @@ quiz = {
     ],
   "Over the past two weeks, several frustrating conditions have caused the team's productivity to slow down. Impediments would be m":
     ["Issue log", "Kanban board"],
+  "PHP variable names start with": ["$"],
   "Penny is compiling a list of costs incurred so far on a project. She must categorize these costs so that she can present the amo":
     ["Travel expenses to the customer's office"],
   "Per PMI, what are the three processes that comprise planning for and acquiring project resources?":
@@ -595,8 +648,11 @@ quiz = {
     ["False"],
   "Stakeholders not only need to be identified but also need to be classified. Of the following":
     ["Newer/established"],
+  "Take immediate action to eliminate the attacker's access to the system and to isolate or contain the problem to prevent further spread":
+    ["Confinement"],
   "Task identification for a construction project is most likely to occur during regular checkup sessions throughout the life of th":
     ["False"],
+  'The "name" attribute of student is a': ["composite attribute"],
   "The Kanban board usually has three columns": ["True"],
   "The WBS dictionary is important to explain many of the work packages that the team has outlined. Which of the following items would certainly be included in a WBS dictionary? (Choose two.)":
     ["Acceptance criteria", "Description of the work"],
@@ -610,6 +666,8 @@ quiz = {
     ["False"],
   "The appropriate governance for your project will likely be unique for each project; therefore, the project team members will be":
     ["False"],
+  "The changes applied to a database by a committed transaction must persist in the database. These changes must not be lost because of any failure.":
+    ["Durability"],
   "The concept of continuous improvement attends to uniform sales and consistent design, and maintains product quality.":
     ["False"],
   "The concept of servant leadership was new to your team because they focused on predictive project management in the past and now":
@@ -635,6 +693,8 @@ quiz = {
     [
       "The individual who asked the project manager to hire the team and perform the work",
     ],
+  "The current source format of a data file and the desired database file structure are specified to a utility, which then automatically reformats the data and stores it in the database.":
+    ["Loading"],
   "The customer has set a strict project deadline of 85 days for completion. As you review the project schedule, you notice that on":
     ["30 days"],
   "The director of the project management office has been tasked with developing project managers, besides meeting delivery of mult":
@@ -702,12 +762,16 @@ quiz = {
     ["False"],
   "The risk management plan has a series of influences that keep the project team on their toes. When the team is making the initia":
     ["Risk events that occur during the initial phase"],
+  "The salary of an employee should not exceed the salary of the employee's supervisor":
+    ["Transition"],
   "The scope baseline should have the following three components: scope statement, cost estimates, and schedule milestones.":
     ["False"],
   "The senior management in your organization has recently heard about Agile as a new way of managing projects":
     [
       "We should use an Agile suitability questionnaire to assess the culture of the organization, the skill sets of employees, and the project itself to determine whether Agile would be the right approach.",
     ],
+  "The skills of a surgical technician are an example of which type of attribute?":
+    ["Multivalued attribute"],
   "The smallest segment of work that may be produced at a given time and that still provides some value is essentially the definiti":
     ["Minimum business increment"],
   "The stakeholder register is first prepared in which of the five process groups?":
@@ -817,6 +881,8 @@ quiz = {
     ],
   "To lead a team that will certainly face conflicts in work product, schedule, budget, resources, and other areas, you will have t":
     ["True"],
+  "To which of the following cost components for query execution does the given statement refer to?":
+    ["Access cost to secondary storage"],
   "Training artifacts include components such as courseware, lab configurations, pre-tests":
     ["True"],
   "Two team members disagree about the purpose of the lessons learned exercise that occurs occasionally during the project. All of":
@@ -830,6 +896,8 @@ quiz = {
   "Video conferencing is a type of which communication method?": [
     "Interactive",
   ],
+  "Web analysis is used to find interesting usage patterns of Web sites. If any flaw in a Web site has been exploited, it can be inferred using Web analysis,":
+    ["Web security"],
   "What approaches are key to effectively address and resolve conflicts?": [
     "Keep communications open and respectful, focus on the issues (not the people), focus on the present and the future (not the past), and search for alternatives together",
   ],
@@ -876,9 +944,21 @@ quiz = {
       "Openly confront the realities of the project situation.",
       "Show respect to them.",
     ],
+  "What are the NOSQL characteristics related to distributed databases and distributed systems?":
+    [
+      "High-performance data access",
+      "Replication models",
+      "Scalability",
+      "Sharding of files",
+    ],
   "What are the broad categories of risk classification? (Choose two.)": [
     "Effect-based risk classification",
     "Source-based risk classification",
+  ],
+  "What are the characteristics of a dynamic programming algorithm?": [
+    "Computes optimal solution and develops its value in a bottom-up fashion",
+    "Develops the structure of an optimal solution",
+    "Recursively defines the value of optimal solution",
   ],
   "What are the four aspects of emotional intelligence?": [
     "Self-awareness, self-management, social awareness, and social skill",
@@ -891,6 +971,10 @@ quiz = {
   ],
   "What are the process groups of project management?": [
     "Initiating, planning, executing, monitoring and controlling, and closing",
+  ],
+  "What are the reasons that Yahoo abandoned Hadoop on Demand?": [
+    "The allocation of a cluster was static.",
+    "The latency involved in acquiring a cluster was high—a cluster would be granted only when enough nodes were available.",
   ],
   "What are the response options for dealing with threats?": [
     "Escalate, Transfer, Accept, Avoid, and Mitigate",
@@ -912,6 +996,14 @@ quiz = {
     [
       "It employs an outside set of eyes to determine where improvements can be made.",
       "The team can determine if the project is following the organization's policies and procedures.",
+    ],
+  "What attribute can be divided into smaller subparts, which represent more basic attributes with independent meanings?":
+    ["Composite"],
+  "What challenges are faced by big data technologies when they are used for analytics applications?":
+    [
+      "Heterogeneity of information",
+      "Inconsistent and incomplete information",
+      "Privacy and confidentiality",
     ],
   "What is a System for Value Delivery?": [
     "A collection of strategic business activities aimed at building, sustaining, and/or advancing an organization",
@@ -952,6 +1044,10 @@ quiz = {
     [
       "Risk appetite describes the general attitude of the organization regarding risk, risk tolerance defines how much impact the organization will accept, and risk threshold defines the impact point where the risk will no longer be accepted.",
     ],
+  "What is the first step of an algorithm for ER-to-relational mapping?": [
+    "Mapping of regular entity types",
+  ],
+  "What is the last phase of the database design process?": ["Physical design"],
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
@@ -964,14 +1060,26 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  "What occurs when the hash field value of a record that is being inserted hashes to an address that already contains a different record?":
+    ["Collision"],
+  "What problems occur due to the redundancy in storing the same data multiple times?":
+    ["Duplication of effort", "Inconsistency", "Wastage of storage space"],
+  "What reduces the contention for CPU and I/O services and simultaneously reduces access delays involved in wide area networks?":
+    ["Data localization"],
   "What term is used to describe the Tuckman Ladder team development model?": [
     "Forming, Storming, Norming, Performing",
   ],
   "What type of dependency is being described in the following situation? You are managing the modernization of a local high school":
     ["Hard logic"],
+  "What type of risk will occur when an attacker floods the server with requests?":
+    ["Denial of service"],
   "What variables can impact the leadership style needed on a given project?": [
     "Team experience level with type of project, maturity level of the project team, organizational governance structures, and location of project team members",
   ],
+  "What will a transaction be called, if the database operations in a transaction do not update the database but only retrieve data?":
+    ["Read-only"],
+  "What will be the next step after importing the JDBC class library when writing a Java application program with database access through JDBC function calls?":
+    ["Load the JDBC driver."],
   "When a member of an organization decides to delay deciding on an urgent issue":
     ["True"],
   "When calculating the cost performance index of the project at any point during the life of the project, which formula would you":
@@ -990,6 +1098,8 @@ quiz = {
     ["Network diagram"],
   "When developing the work breakdown structure (WBS), a collection of team members put in a lot of thought and effort. Of the foll":
     ["Hierarchical", "Logical"],
+  "When high level or low level DML commands are embedded in a general-purpose programming language, this language is called:":
+    ["host language."],
   "When looking to improve social skills, you would pay attention to building your bonds with your network.":
     ["True"],
   "When looking to motivate a team, you want to enable their": [
@@ -1065,26 +1175,76 @@ quiz = {
     [
       "Avoiding overwhelming stakeholders with too much communication and limiting outreach to a minimum",
     ],
+  "Which PEAR DB library module must be loaded to use the database functions in a PHP program?":
+    ["DB.php"],
+  "Which RAID level is used for storing logs of transactions?": ["1"],
+  "Which RAID level uses a single parity disk relying on the disk controller to figure out which disk has failed?":
+    ["3"],
+  "Which abstraction concept is needed to distinguish among database objects and classes, and to identify database objects?":
+    ["Identification"],
   "Which action item by the project manager may not help a new team member to be as productive as soon as possible?":
     ["Assign them a challenging work assignment as their first task."],
   "Which approaches for conflict management as described in the Thomas-Kilmann model are most common for conflicts within a high-pe":
     ["Collaborating", "Compromising", "Confronting/Problem-Solving"],
+  "Which aspect of object specifies how the object is constructed by using the type constructors?":
+    ["Structure"],
+  "Which aspect of object specifies whether an object is a persistent object or transient object?":
+    ["Lifetime"],
+  "Which autonomy implies that component DBS has the ability to decide whether and how much to share its functionality and resources with other":
+    ["Association"],
+  "Which component of the YARN architecture performs the given functions?": [
+    "ResourceManager",
+  ],
+  "Which constraint specifies whether the existence of an entity depends on it being related to another entity via the relationship type?":
+    ["Participation"],
+  "Which database state satisfies the structure and constraints specified in a schema?":
+    ["Valid state"],
   "Which delivery cadence option indicates there will be multiple deliveries of the product on a fixed schedule?":
     ["Periodic"],
   "Which development approach should be used if the project is determined to be a high-risk project?":
     ["It depends on the nature of the risks involved."],
   "Which element is not normally part of a project's resource management plan?":
     ["A listing of the resource requirements for the project"],
+  "Which injection attack attempts to add additional SQL statements to the existing SQL statement by exploiting a computer bug, which is caused by":
+    ["Code injection"],
+  "Which intention lock indicates that one or more exclusive locks will be requested on some descendant nodes?":
+    ["IX"],
   "Which is the best way to meet stakeholders' expectations?": [
     "Keep stakeholders regularly informed throughout the project.",
   ],
+  "Which is the process of classifying a class of objects into more specialized subclasses?":
+    ["Specialization"],
   "Which list best describes an agile development approach?": [
     "Collaboration, expects change, deliver working product frequently, self-organizing teams",
   ],
+  "Which model is also known as the CODASYL DBTG model?": ["Network model"],
+  "Which model represents data as record types and also represents a limited type of 1:N relationship, called a set type?":
+    ["Network model"],
+  "Which normal form is based on the concepts of multivalued dependencies?": [
+    "4NF",
+  ],
+  "Which of the following DBMS (database management system) processes stores data on some storage medium that is controlled by the DBMS?":
+    ["Constructing"],
+  "Which of the following Java technologies exists on the Web server machine and manages interactions with the client?":
+    ["Java Servlet"],
+  "Which of the following Java technologies for database Web programming are Java objects that can reside on the Web server machine and manage interactions with the client?":
+    ["Java servlets"],
   "Which of the following TWO definitions refer to paperwork and tools used in the project":
     ["Artifacts", "Project documents"],
   "Which of the following agile ceremonies and predictive processes are closely related?":
     ["Iteration Review and Validate Scope"],
+  "Which of the following algorithms was the first algorithm to use the downward closure and antimontonicity properties?":
+    ["Apriori"],
+  "Which of the following applications analyzes large amount of data to search for the occurrences of specific patterns or relationships?":
+    ["Data mining"],
+  "Which of the following applications of data mining includes analysis of creditworthiness of clients and evaluation of fraud detection?":
+    ["Finance"],
+  "Which of the following approaches does not suffer from the impedance mismatch problem, as the programming language data types are the same as the database data types?":
+    ["Database programming language"],
+  "Which of the following approaches does not suffer from the impedance mismatch problem. as the programming language data types are the same as the database data types?":
+    ["Database programming language"],
+  "Which of the following approaches is mostly preferred, as it reduces the number of tables?":
+    ["Foreign key"],
   "Which of the following are advantages of focusing on the minimum business increment? (Choose two.)":
     [
       "Enabling the project team to deliver more quickly",
@@ -1110,6 +1270,8 @@ quiz = {
   "Which of the following are components of the scope baseline?": [
     "WBS dictionary, WBS, scope statement",
   ],
+  "Which of the following are control measures that provide security of data in databases?":
+    ["Access control", "Data encryption", "Flow control", "Inference control"],
   "Which of the following are enhancers of communication? (Choose two.)": [
     "Active listening",
     "Timely",
@@ -1123,6 +1285,10 @@ quiz = {
     "Activity cost estimate",
     "Contingency reserves",
     "Work package cost estimate",
+  ],
+  "Which of the following are models of spatial information?": [
+    "Field",
+    "Object",
   ],
   "Which of the following are not among the 5 Cs of written communication? (Choose two.)":
     [
@@ -1157,12 +1323,70 @@ quiz = {
     "Knowledge",
     "Reinforcement",
   ],
+  "Which of the following are steps of ER-to-relational mapping algorithm?": [
+    "Mapping of N-ary relationship types",
+    "Mapping of binary 1:1 relationship types",
+    "Mapping of regular entity types",
+    "Mapping of weak entity types",
+  ],
   "Which of the following are the correct levels of stakeholder engagement from the assessment matrix? (Choose two.)":
     ["Neutral", "Unaware"],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
+  "Which of the following associations is represented as a line connecting the participating classes, and may optionally have a name?":
+    ["Binary"],
+  "Which of the following attributes is considered as a derived attribute?": [
+    "Age",
+  ],
+  "Which of the following buffer replacement strategies works best for certain type of database transactions, such as when a block that is used most recently is not needed until all the remaining blocks in the relation are processed?":
+    ["MRU"],
+  "Which of the following built-in entries provides the part of the URL address that comes after a backslash at the end of the URL?":
+    ["$_SERVER['PATH_INFO']"],
+  "Which of the following built-in functions updates attribute sets, the value of the attribute to a new value?":
+    ["Mutator"],
+  "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
+    ["Abstract"],
+  "Which of the following clauses assigns a variable to range over each of the individual elements in a sequence?":
+    ["FOR"],
+  "Which of the following clauses identifies the conditions for selecting the tuples from the relations?":
+    ["WHERE"],
+  "Which of the following clauses lists the attributes to be retrieved?": [
+    "SELECT",
+  ],
   "Which of the following columns would be least useful to the project team on a stakeholder register?":
     ["The work packages for which the stakeholder would take responsibility"],
+  "Which of the following commands specifies a new relation by giving it a name and specifying its attributes and initial constraints?":
+    ["CREATE TABLE"],
+  "Which of the following comparison operators does SQL use to compare an attribute value to NULL?":
+    ["IS", "IS NOT"],
+  "Which of the following components is a sequence of SQL statements, but it could also be a database transaction or an external program that will be automatically":
+    ["Action"],
+  "Which of the following concepts prevents ARIES from repeating the completed undo operations if a failure occurs during recovery, which causes a restart of the recovery process?":
+    ["Logging during undo"],
+  "Which of the following conditions must be satisfied for a database to be called as distributed?":
+    [
+      "Connection of database nodes over a computer network",
+      "Logical interrelation of the connected databases",
+    ],
+  "Which of the following constraints are possible constraints on a specialization?":
+    ["Disjoint, total", "Overlapping, partial", "Overlapping, total"],
+  "Which of the following constraints can be directly expressed in the schemas of the data model?":
+    ["Domain", "Entity integrity", "Key"],
+  "Which of the following constraints is expressed directly in the schemas of the data model?":
+    ["Explicit"],
+  "Which of the following constraints is specified between two relations and is used to maintain the consistency among tuples in the two relations?":
+    ["Referential integrity"],
+  "Which of the following constraints is violated by the delete operation?": [
+    "Referential integrity",
+  ],
+  "Which of the following constraints specifies that every entity in a superclass must be a member of a subclass in the specialization?":
+    ["Total specialization"],
+  "Which of the following constraints states that no primary key value can be NULL?":
+    ["Entity integrity"],
+  "Which of the following control measures is handled by creating user accounts and passwords to control the login process by the DBMS?":
+    ["Access control"],
+  "Which of the following data models is meant for computer specialists, not for end users?":
+    ["Physical"],
   "Which of the following descriptions would be considered examples of a hybrid development approach? (Choose two.)":
     [
       "Requirements, Design 1, Develop 1, Test 1, Deploy 1, Design 2, Develop 2, Test 2, Deploy 2",
@@ -1171,8 +1395,46 @@ quiz = {
   "Which of the following does not represent the SMART criteria?": [
     "Analytical",
   ],
+  "Which of the following entries is the Web site name (URL) of the client user computer?":
+    ["$_SERVER['REMOTE_HOST']"],
+  "Which of the following file allocation techniques allocates file blocks to consecutive disk blocks?":
+    ["Contiguous"],
+  "Which of the following files keeps the records ordered by the value of a particular field?":
+    ["Sorted"],
+  "Which of the following functional dependencies occurs only in a relation that contains three or more attributes and an attribute is indirectly dependent on":
+    ["Transitive"],
+  "Which of the following functions does SQL allow to be blocked from public use, and an EXECUTE privilege is needed to have access to these functions?":
+    ["Constructor", "Mutator", "Observer"],
+  "Which of the following functions of database management system causes some data to be read and some data to be written into a database?":
+    ["Transaction"],
+  "Which of the following functions returns the number of tuples or values as specified in a query?":
+    ["COUNT"],
+  "Which of the following indexes requires that the ordering field of the data file has a distinct value for each record as well as records are of fixed length with":
+    ["Primary"],
+  "Which of the following information are required for query retrieval?": [
+    "Attributes on which any selection conditions are specified",
+    "Attributes whose values will be retrieved by a query",
+    "Files that will be accessed by a query",
+  ],
+  "Which of the following insertion and deletion rules apply to specialization as a consequence of constraints?":
+    [
+      "Deleting an entity from a superclass implies that it is automatically deleted from all the subclasses to which it belongs.",
+      "Inserting an entity in a superclass implies that the entity is mandatorily inserted in all predicate-defined subclasses for which the entity satisfies the defining predicate.",
+      "Inserting an entity in a superclass of a total specialization implies that the entity is mandatorily inserted in at least one of the subclasses of the specialization.",
+    ],
+  "Which of the following interpretations are true of NULLs?": [
+    "The attribute does not apply to the tuple.",
+    "The attribute value for the tuple is unknown.",
+    "The value is known but absent; that is, it has not been recorded yet.",
+  ],
   "Which of the following is NOT an objective of the risk monitoring process?":
     ["Implement the agreed-upon risk response plans."],
+  "Which of the following is a specific recovery scheme used in many of IBM's relational database products?":
+    ["ARIES algorithm"],
+  "Which of the following is an abstraction concept for building composite objects from their component objects?":
+    ["Aggregation"],
+  "Which of the following is an approach that eliminates the generation of a large number of candidate itemsets?":
+    ["Frequent-pattern-growth algorithm"],
   "Which of the following is an out-of-control situation?": [
     "You see one data point above the upper control limit.",
   ],
@@ -1195,6 +1457,8 @@ quiz = {
   "Which of the following is not included in the transition plan?": [
     "Procedures for customer acceptance",
   ],
+  "Which of the following is the abstraction process whereby classes and objects are made uniquely recognizable by means of some identifier?":
+    ["Identification"],
   "Which of the following is the least likely collaboration tool to use in an Agile environment?":
     ["Status reports"],
   "Which of the following is the least likely reason that work is provided in a time-box format for the majority of agile projects?":
@@ -1207,11 +1471,49 @@ quiz = {
       "Nonconformance to an internal process is not covered by the contract specifically.",
       "The project manager negotiates the settlement between supplier and the buying company.",
     ],
+  "Which of the following joins is the default type of join in a joined table, where a tuple is included in the result only if a matching tuple exists in the other relation?":
+    ["Inner"],
+  "Which of the following joins is the default type of join in a joined table, where a tuple s included in the result only if a matching tuple exists in the other relation?":
+    ["Inner"],
+  "Which of the following languages is a platform-independent and programming language-independent protocol for messaging and remote procedure calls?":
+    ["SOAP"],
+  "Which of the following languages specifies the internal schema?": ["SDL"],
+  "Which of the following locks is too restrictive for database concurrency control purposes?":
+    ["Binary"],
+  "Which of the following locks is used to lock the entire database?": [
+    "Global",
+  ],
+  "Which of the following methods are used for collision resolution?": [
+    "Chaining",
+    "Multiple hashing",
+    "Open addressing",
+  ],
+  "Which of the following methods ends the iteration after all tuples that can be generated have been generated?":
+    ["Close()"],
   "Which of the following metrics shows that the project is on budget and on schedule?":
     ["CPI is 1 and SPI is 1."],
+  "Which of the following multiset operations do not eliminate duplicates?": [
+    "EXCEPT ALL",
+    "INTERSECT ALL",
+    "UNION ALL",
+  ],
+  "Which of the following normal forms is violated when a relation has undesirable multivalued dependencies and hence can be used to identify and":
+    ["4NF"],
+  "Which of the following notations indicates a specialization/generalization with the disjoint constraint?":
+    ["Blank triangle"],
   "Which of the following occurs latest in the closing phase?": [
     "The project file is officially closed.",
   ],
+  "Which of the following operations combines the result of two SELECT statements and returns only those results which belong to the first set of result?":
+    ["SET DIFFERENCE"],
+  "Which of the following operations combines the results of two or more SELECT statements without including duplicates?":
+    ["UNION"],
+  "Which of the following operations is used to build three-dimensional models, where the topography of a geographical location can be represented with an x, y, z data model?":
+    ["Digital terrain analysis"],
+  "Which of the following operations produces all combinations of tuples from R1 and R2 that satisfy the join condition?":
+    ["THETA JOIN"],
+  "Which of the following operations takes the results of two queries and returns only those rows that appear in both result sets without eliminating duplicates?":
+    ["INTERSECT ALL"],
   "Which of the following options are considered interpersonal and team skills? (Choose two.)":
     ["Motivation", "Transparency"],
   "Which of the following options are not considered interpersonal and team skills? (Choose two.)":
@@ -1226,12 +1528,37 @@ quiz = {
       "Define, iteration 1, iteration 2, iteration 3, iteration N, deployment, close",
       "Planning, requirements, development, testing, deployment, close",
     ],
+  "Which of the following options works for any constraints on the specialization, i.e., disjoint or overlapping, total or partial?":
+    ["Option 1"],
+  "Which of the following properties is enforced by the concurrency control subsystem of the DBMS?":
+    ["Isolation"],
   "Which of the following quality concepts were promoted by Crosby and Juran, respectively?":
     ["Zero defects, fitness for use"],
   "Which of the following quality experts derived the concept of many small changes for improvements?":
     ["Kaizen"],
+  "Which of the following queries supports regular expressions and pattern matching-based searching in text?":
+    ["Wildcard"],
+  "Which of the following queries will result in the below output?": [
+    "SELECT * FROM Customers WHERE Satisfaction_Rate >= 92;",
+  ],
+  "Which of the following records keeps track of the information about tuples or parameters?":
+    ["Description"],
+  "Which of the following rules must be enforced when the shared/exclusive locking scheme is used?":
+    [
+      "A transaction must issue the operation read_lock(X) or write_lock(X) before any read_item(X) operation is performed in the transaction.",
+      "A transaction must issue the operation write_lock(X) before any write_item(X) operation is performed in the transaction.",
+    ],
+  "Which of the following rules states that a set of attributes always determines itself or any of its subsets?":
+    ["Reflexive"],
   "Which of the following scheduling tools would you use on an agile project? (Choose two.)":
     ["Iterative schedule with a backlog", "On-demand scheduling"],
+  "Which of the following schema levels describes the structure of the whole database for a community of users?":
+    ["Conceptual schema"],
+  "Which of the following schemas is the global schema or view, which is the result of integrating all the shareable export schemas?":
+    ["Federated"],
+  "Which of the following specifies referential integrity?": [
+    "FOREIGN KEY clause",
+  ],
   "Which of the following stakeholders is the highest priority for the project manager?":
     ["Definitive stakeholders"],
   "Which of the following statements are true about the risk management plan? (Choose two.)":
@@ -1239,6 +1566,25 @@ quiz = {
       "It documents how risks will be managed and controlled for the project.",
       "It often contains sections describing the risk strategy, the risk categories to be used, and the definitions for risk probability and impact to be used.",
     ],
+  "Which of the following statements are true of DKNF (domain-key normal form)?":
+    [
+      "It takes into account all possible types of dependencies and constraints.",
+      "Its practical utility is limited.",
+    ],
+  "Which of the following statements are true of functional dependencies?": [
+    "Each functional dependency is displayed as a horizontal line.",
+    "It is a constraint between two sets of attributes from the database.",
+    "It is a property of the semantics or meaning of the attributes.",
+  ],
+  "Which of the following statements are true of the Hbase data model?": [
+    "Only provides low-level CRUD operations",
+    "Uses the Apache Zookeeper open source system for services",
+  ],
+  "Which of the following statements are true of the Neo4j data model?": [
+    "It can be configured on a cluster of distributed system nodes.",
+    "It has a graph visualization interface.",
+    "It has a high-level query language called Cypher.",
+  ],
   "Which of the following statements best describes the influence of stakeholders over the life of a predictive project?":
     [
       "Stakeholder influence is the highest at the beginning and tends to decrease throughout the project.",
@@ -1253,6 +1599,16 @@ quiz = {
     [
       "A project life cycle cannot include multiple development approaches and delivery cadences.",
     ],
+  "Which of the following strategies updates a view as soon as the base tables are changed?":
+    ["Immediate update"],
+  "Which of the following strategies updates a view when needed by a view query?":
+    ["Lazy update"],
+  "Which of the following symbols before a tag specifies that the tag can appear as a descendant of the previous tag at any level?":
+    ["//"],
+  "Which of the following symbols denotes the SELECT operator?": ["sigma"],
+  "Which of the following symbols represents the PROJECT operation?": ["pi"],
+  "Which of the following techniques to make accessing data more efficient on HDDs deals with the incompatibility of speeds between a CPU and the":
+    ["Buffering of data"],
   "Which of the following terms are for the specific ceremony where members meet for 15 minutes each day to discuss action and issu":
     ["Daily Scrum", "Daily standup"],
   "Which of the following terms measures the cost efficiency you have achieved so far?":
@@ -1267,6 +1623,26 @@ quiz = {
     ["Expert judgment", "Meetings", "Questionnaires and surveys"],
   "Which of the following tools would you utilize to look for potential vendors to discuss the project and receive proposals from?":
     ["Advertising"],
+  "Which of the following transparencies is also known as distribution or network transparency?":
+    ["Data organization"],
+  "Which of the following types are used to declare handle variables?": [
+    "SQLHDBC",
+    "SQLHENV",
+    "SQLHSTMT",
+  ],
+  "Which of the following types of actions are used to control discretionary database authorization?":
+    ["Privilege granting", "Privilege revocation"],
+  "Which of the following types of commands does the NameNode send to the DataNode?":
+    [
+      "Remove a block replica.",
+      "Replicate a block to another node.",
+      "Reregister the node or shut down the node.",
+    ],
+  "Which of the following updates recomputes a view only upon demand?": [
+    "Lazy",
+  ],
+  "Which of the following violations will occur when a transaction may read a set of rows from a table, based on some condition specified in the SQL WHERE-clause?":
+    ["Phantom"],
   "Which of the following would be an example of an administrative change to the contract?":
     ["The phone number for the contact person has changed."],
   "Which of the following would be an indirect cost on your project?": [
@@ -1300,6 +1676,8 @@ quiz = {
   "Which of these is an example of a user story?": [
     "As a call center analyst, I want to input customers' first and last names and postal codes so that I can pull up their accounts quickly.",
   ],
+  "Which operation is used for inserting new data or new versions of existing data items?":
+    ["Put"],
   "Which option best describes the factors that need to be considered when determining the development approach for a project?":
     ["All pertinent deliverable, project, and organizational variables"],
   "Which option best describes the typical relationship between project deliverables, delivery cadence, development approach, and p":
@@ -1314,12 +1692,32 @@ quiz = {
     [
       "Requirements certainty, ease of change, safety and regulatory requirements",
     ],
+  "Which partitioning corresponds to distributing the tuples across disks based on some partitioning method?":
+    ["Horizontal"],
+  "Which phase of concurrency control checks whether any of the transaction's updates violate serializability?":
+    ["Validation"],
+  "Which provisions are used by the Capacity Scheduler to give each tenant guarantees about cluster capacity?":
+    [
+      "Access control lists that determine who can submit, view, and modify the Jobs in a queue.",
+      "Excess capacity is evenly distributed among active Queues.",
+    ],
   "Which risk analysis tool is used to determine which risks have the greatest impact on the project's critical path?":
     ["Monte Carlo simulation"],
   "Which risk management processes use the risk register and the risk report?":
     [
       "They are used by all the risk management processes throughout the project.",
     ],
+  "Which search applies to any file, but all the other methods depend on having the appropriate access path on the attribute used in the selection condition?":
+    ["Linear"],
+  "Which search is suitable for retrievals where an attribute must match an enumerated set of values?":
+    ["Bitmap index"],
+  "Which spatial operator provides a more specific description of the object's geometry and measures some global properties of single objects?":
+    ["Metric"],
+  "Which stage of a distributed database query is performed locally?": [
+    "Local query optimization",
+  ],
+  "Which statement in the SQL standard can be used to invoke a stored procedure—either from an interactive interface or from embedded SQL or SQLJ?":
+    ["CALL"],
   "Which statements reflect a servant leadership mindset? (Choose all that apply.)":
     [
       "Emphasizes a coaching approach to managing people",
@@ -1328,16 +1726,45 @@ quiz = {
       "Seeks growth and improvement in all team members",
       "Takes the perspective of others and maintains the best interest of others",
     ],
+  "Which statistical model provides a framework in which term weighting, ranking of retrieved documents, and determining the relevance of feedback are":
+    ["Vector space"],
+  "Which step of an algorithm for ER-to-relational mapping involves the following approaches:":
+    ["Mapping of binary 1:1 relationship types"],
+  "Which step of the ER-to-relational mapping algorithm has the foreign key approach and the cross-reference or relationship relation approach?":
+    ["Mapping of binary 1:N relationship types"],
   "Which tools can be used by a project manager to assess the fit for any potential candidate for a project role? (Choose all that":
     ["Ability tests", "Attitudinal surveys", "Structured interviews"],
+  "Which two-phase locking protocol is a deadlock-free protocol?": [
+    "Conservative",
+  ],
+  "Which type of XML document is formatted as XML document in order to exchange it over the Web?":
+    ["Data-centric"],
+  "Which type of constructor creates a collection of key-value pairs, where the value of a key can be used to retrieve the corresponding value?":
+    ["Dictionary"],
+  "Which type of end user tries to learn most of the DBMS facilities to achieve their complex requirements?":
+    ["Sophisticated"],
+  "Which type of index facilitates querying on multiple keys and is used for relations that contain a large number of rows?":
+    ["Bitmap"],
+  "Which type of literal corresponds to the values of basic data types and is predefined?":
+    ["Atomic"],
+  "Which type of ordered single-level index is specified on nonordering fields as additional access structures to improve performance of queries and":
+    ["Secondary"],
   "While you are working on a long-term construction project, certain paths and activities are not crucial to start at the earliest":
     ["True"],
   "Who are considered some of the stakeholders on a project?": [
     "Project manager, customers, end users, operations",
   ],
+  "Who communicates with all prospective database users to understand their requirements and to create a design that meets those requirements?":
+    ["Database designer"],
+  "Who design and implement software packages that facilitate database modeling and design, database system design, and improved performance?":
+    ["Tool developers"],
+  "Who is responsible for identifying data to be stored in the database and for choosing appropriate structures to represent and store the data?":
+    ["Database designer"],
   "Who is responsible for integrating the activities of a project?": [
     "The project manager",
   ],
+  "Who is responsible for security breaches and poor system response time problems?":
+    ["Database administrator"],
   "Who is responsible for tailoring project processes and procedures?": [
     "The project manager and the team",
   ],
@@ -1641,4 +2068,6 @@ quiz = {
       "The project team",
       "Vendors and suppliers",
     ],
+  "which of the following notations indicates a specialization/generalization with the disjoint constraint?":
+    ["Blank triangle"],
 };

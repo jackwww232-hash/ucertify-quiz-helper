@@ -14,12 +14,12 @@ function normalizeText(text) {
 function formatQuiz(quiz) {
   const sortedQuiz = {};
 
-  // Sort keys alphabetically, trim, and truncate them
-  const sortedKeys = Object.keys(quiz).map(normalizeText).sort();
+  // uniq, sort keys alphabetically
+  const sortedKeys = [...new Set(Object.keys(quiz).map(normalizeText))].sort();
 
   // Process each key-value pair
   sortedKeys.forEach((key) => {
-    // Sort, trim, and truncate the array of values
+    // trim, sort
     let values = quiz[key]
       .map((item) => item.trim())
       .map(normalizeText)
@@ -65,6 +65,6 @@ fs.readFile(filePath, "utf8", (err, data) => {
       return;
     }
 
-    console.log("db.js has been formatted, sorted, trimmed, and truncated.");
+    console.log("db.js has been formatted, sorted, trimmed.");
   });
 });
