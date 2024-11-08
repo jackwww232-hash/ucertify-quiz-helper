@@ -2,7 +2,7 @@ name: bug
 description: bug report
 title: "[bug]: "
 labels: ["bug", "triage"]
-projects: ["0guanhua0/pmp-quiz-helper"]
+projects: ["0guanhua0/ucertify-quiz-helper"]
 assignees:
   - 0guanhua0
 body:
@@ -11,9 +11,9 @@ body:
     attributes:
       label: details
       description: |
-        Describe the bug and upload screenshots.
+        show browser console and upload screenshot
 
-        Attach the full HTML DOM to help debug.
+        if possible attach full HTML DOM
     validations:
       required: true
 
