@@ -26,8 +26,14 @@ https://raw.githubusercontent.com/0guanhua0/ucertify-quiz-helper/refs/heads/main
 ![console](./pic/console.png)
 
 ## retake
-if error, retake can refresh the score
+retake can refresh score
+
+### after quiz
 ![retake](./pic/retake.png)
+
+### from course
+![retake](./pic/retake-0.png)
+![retake](./pic/retake-1.png)
 
 ## support
 please file issues for support
