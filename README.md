@@ -17,7 +17,7 @@ only support choice questions
 
 click the link below
 
-https://raw.githubusercontent.com/0guanhua0/ucertify-quiz-helper/refs/heads/main/helper.user.js
+https://gitlab.com/0guanhua0/ucertify-quiz-helper/-/raw/main/helper.user.js?ref_type=heads
 
 [guide](https://www.tampermonkey.net/faq.php?locale=en#Q102)
 
