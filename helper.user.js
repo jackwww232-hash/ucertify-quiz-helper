@@ -4,7 +4,7 @@
 // @version      1.0.0
 // @description  ucertify quiz helper script to highlight correct answers
 // @author       guanhua
-// @match        *://www.ucertify.com/*
+// @include      *ucertify*
 // @require      https://gitlab.com/0guanhua0/ucertify-quiz-helper/-/raw/main/db.js?ref_type=heads
 // ==/UserScript==
 
