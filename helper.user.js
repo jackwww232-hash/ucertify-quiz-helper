@@ -53,10 +53,6 @@
 
     // Find a quiz key that matches part of the question
     const matchingKey = matchKey(question, quiz);
-    if (!matchingKey) {
-      console.log("No matching question in quiz");
-      return;
-    }
 
     // get answer
     const elements = document.querySelectorAll("#item_answer seq");
@@ -64,6 +60,11 @@
       let text = element.innerText.trim();
       text = normalizeText(text);
       console.log(text);
+    }
+
+    if (!matchingKey) {
+      console.log("No matching question in quiz");
+      return;
     }
 
     // highlight correct answer
