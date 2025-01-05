@@ -3,9 +3,9 @@ const path = require("path");
 
 function normalizeText(text) {
   return text
-    .trim()
-    .replace(/’/g, "'")
+    .replace(/ /g, " ")
     .replace(/–/g, "-")
+    .replace(/’/g, "'")
     .replace(/“/g, '"')
     .replace(/”/g, '"');
 }

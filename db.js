@@ -16,10 +16,16 @@ quiz = {
     ["False"],
   "A daily standup is held in the main conference room with the project leader, team, and owner on a daily basis, but is kept to on":
     ["False"],
+  "A data scientist's main objective is to organize and analyze large amounts of data, to solve complex problems, often using software specifically designed for the task.":
+    ["True"],
+  "A data set is imbalanced when the distribution of different classes in the input variables are significantly dissimilar.":
+    ["False"],
   "A junior project manager and a key stakeholder are in disagreement. The junior PM delivered the WBS to the stakeholder, who is v":
     [
       "Explain to the key stakeholder that the junior PM is correct not to include activities.",
     ],
+  "A model with low variance is the one that captures both noise and generalized patterns in the data and therefore produces an overfit model.":
+    ["False"],
   "A new director joins your organization, and you know that this director's division will be highly impacted by your project. What":
     ["Update the stakeholder register."],
   "A new stakeholder has been identified on your project, and you are trying to determine the best approach and strategy to involve":
@@ -31,6 +37,8 @@ quiz = {
     ],
   "A planning package is typically different from a work package in that it includes work content but not detailed scheduled or cos":
     ["True"],
+  "A polygraph is a non-intrusive deception-detection technique commonly used to assess the level of truthfulness in the textual content.":
+    ["False"],
   "A potential customer is interested in purchasing a significant number of batches of your flagship product, which will require yo":
     ["A letter of intent is not a legal document."],
   "A project artifact allows for someone to determine the history of a project and allows future project managers to learn from the":
@@ -70,10 +78,18 @@ quiz = {
     ["Definitive stakeholder"],
   "A stakeholder is requesting project status daily but has no decision-making responsibilities on the project. How would you class":
     ["Keep informed"],
+  "A stream in a stream analytics is defined as a discrete and aggregated level of data elements.":
+    ["False"],
   "A team member hears the term Validate Scope and is confused as to its purpose. Which of the following is not a response you woul":
     [
       "The purpose of Validate Scope is to allow the team to test the deliverable to ensure it meets all requirements.",
     ],
+  "A typical example of interval scale measurement is the temperature on the Celsius scale.":
+    ["True"],
+  "A(n) _____________ is a collection of neurons that takes inputs from the previous layer and converts those inputs into outputs for further processing.":
+    ["hidden layer"],
+  "AI (artificial intelligence) has the capability to find hidden patterns in a variety of data sources to identify problems and provide potential solutions.":
+    ["True"],
   "Actual cost is the measurement of work completed based on the plan value.": [
     "False",
   ],
@@ -120,12 +136,20 @@ quiz = {
     ["Validation of scope"],
   "Although an agile team is usually not held to specific deadlines for the overall project,":
     ["Burnup chart", "Kanban board"],
+  "Among the variety of factors, the key driver for big data analytics is the business needs at any level, including strategic, tactical, or operational.":
+    ["True"],
   "An administrator who is allowed to change student information can update student grades without the instructor's permission.":
     ["Privilege abuse"],
+  "Analytics and analysis are essentially the same thing; they both focus on the granular level representation of complex problems through decomposition of the whole into its lower-level parts.":
+    ["False"],
+  "Analytics is the art and science of discovering insight to support accurate and timely decision making.":
+    ["True"],
   "Another way to describe the scope baseline is that it is the current expected work to be":
     ["False"],
   "Any plans, processes, procedures, policies, databases, or fixed tools used by the group to improve performance or use as a compe":
     ["False"],
+  "Apriori and FP-Growth algorithms are part of the association type data mining tasks.":
+    ["True"],
   "As a new project manager, you will be leading a team from the beginning for the first time. To make sure that things go well, yo":
     ["User requirements"],
   "As a project manager, you spend much of your time focusing on the communication aspect of the project. Of the following, which i":
@@ -166,6 +190,10 @@ quiz = {
   "As you are performing data analysis of your stakeholders": [
     "Schedule a meeting with them and clearly outline the goals of the project as per the project charter and discuss the items in the benefits management plan.",
   ],
+  "Association and clustering type patterns are often classified as the result of:":
+    ["unsupervised learning procedures."],
+  "Association patterns can include capturing the sequence of events and things.":
+    ["True"],
   "Assuring that you are working within a high-performance team is part of the project manager's role.":
     ["Directing the team's daily activities through clear instructions"],
   "At the beginning of a project, the sponsor/owner and project manager frequently get together with the team to identify stakehold":
@@ -187,7 +215,13 @@ quiz = {
     "To assure that there is compliance with organizational requirements.",
     "To offer productivity improvements on the existing project.",
   ],
+  "Automatic summarization is a program that is used to assign documents into a predefined set of categories.":
+    ["False"],
   "BCNF (Boyce-Codd normal form) was proposed as a simpler form of": ["3NF"],
+  "Bagging type ensembles can be used in both regression and classification type prediction problems.":
+    ["True"],
+  "Balancing skewed data means oversampling the more represented class records and undersampling the less represented class records.":
+    ["False"],
   "Based on the sender-receiver model, who has the primary responsibility when sending the message, to ensure the receiver has rece":
     [
       "The sender by ensuring the message has been encoded and transmitted in a way the receiver can understand",
@@ -196,8 +230,24 @@ quiz = {
     ["A scrum of scrums was not set up"],
   "Because your stakeholders are requesting additional features that they would like to add that":
     ["You are controlling the scope of the project."],
+  "Bias is often defined as the difference between a model's prediction output and the actual values for a given prediction problem.":
+    ["True"],
+  "Big data comes from a variety of sources within an organization, including marketing and sales transaction, inventory records, financial transaction, and human resources and accounting records.":
+    ["False"],
+  "Business analytics and data science have the same purpose: to convert data into actionable insight through an algorithm-based discovery process.":
+    ["True"],
+  "Business analytics is the process of developing computer code and novel IT frameworks.":
+    ["False"],
+  "Business intelligence is a broad concept that also includes business analytics within its simple taxonomy.":
+    ["False"],
   "By considering the uncertainty level of both the requirements and the technical solution for the project, the project manager re":
     ["Adaptive approach"],
+  "CRM aims to create one-on-one relationships with customers by developing an intimate understanding of their needs and wants.":
+    ["True"],
+  "Clustering is a supervised learning process in which objects are assigned to pre-determined number of artificial groups called clusters.":
+    ["False"],
+  "Cognitive computing has the capability to simulate human thought processes to assist humans in finding solutions to complex problems.":
+    ["True"],
   "Collaboration with all stakeholders should be a primary focus of the project manager and team.":
     [
       "Keeping the agreement alive by engaging stakeholders who support the cause and removing those who do not",
@@ -217,6 +267,8 @@ quiz = {
     ["False"],
   "Configuration management may be used for controlling product iterations, product specifications, project documents, standards, a":
     ["True"],
+  "Connection weights are the key elements of an artificial neural network (ANN). They produce the final value through the summation and transfer function.":
+    ["False"],
   "Consider the following rule and then identify its name:": [
     "Pseudotransitive",
   ],
@@ -226,13 +278,42 @@ quiz = {
     ],
   "Continuous improvement tools include the lessons learned, retrospectives, and experimentation (or trying new things).":
     ["True"],
+  "Correlation is meant to represent the linear relationships between two nominal input variables.":
+    ["False"],
+  "Creating a good prediction model requires finding an ___________ between the errors related to bias and variance.":
+    ["optimal balance"],
+  "Cubes in OLAP are defined as a multidimensional representation of the data stored in and retrieved from data warehouses.":
+    ["True"],
+  "Data mining can be used to predict the result of sporting events to identify means to decrease odds of winning against specific opponent.":
+    ["False"],
+  "Data mining is an essential part of what type of analytics in analytics taxonomy?":
+    ["Predictive"],
+  "Data mining is primarily concerned with mining (that is, digging out data) from a variety of disparate data sources.":
+    ["False"],
+  "Data mining leverages capabilities of statistics, artificial intelligence, machine learning, management science, information systems, and databases in a systematic and synergistic way.":
+    ["True"],
   "David is managing a high-visibility project, but there is much confusion between stakeholders on the progress and status of the":
     [
       "David should have understood the information needs of the stakeholders and should have sent them only the relevant information they need.",
     ],
+  "Decision trees are part of the regression type prediction methods.": [
+    "False",
+  ],
   "Decomposition is a term frequently used for breaking down work in a predictive project. It is not always done in the same format":
     ["Organizational chart", "Outline format"],
+  "Deep learning analytics is a term that refers to the computing−branded technology platforms, such as IBM Watson, that specialize in processing and analyzing large, unstructured data sets.":
+    ["False"],
+  "Deep learning is an extension of neural networks that deal with more complicated tasks with a higher level of sophistication by employing many layers of connected neurons.":
+    ["True"],
+  "DeepQA is a massively parallel, web mining focused, probabilistic computational algorithm developed by the SAS Institute.":
+    ["False"],
   "Deferred update is also known as the": ["NO-UNDO/REDO algorithm"],
+  "Define, Explore, Measure, and Assess are the steps involved in the Six Sigma process.":
+    ["False"],
+  "Delta (or an error) is defined as the difference between the network weights in two consecutive iterations.":
+    ["False"],
+  "Descriptive analytics is also called business intelligence that is the entry level in analytics taxonomy.":
+    ["True"],
   "Developing a project scope statement requires a series of tools. Of the following, which one is least likely to be a tool for th":
     ["Planning poker"],
   "Due to a recent acquisition of another organization, your company has decided to merge":
@@ -278,6 +359,8 @@ quiz = {
     ["A mentor looking to pass along tacit knowledge to the team member"],
   "During the life of the project, an issue arose, but the team found a way to reduce the impact, implemented it, and documented it":
     ["Preventive action"],
+  "During the model building step in the CRISP-DM process, the data mining methods and algorithms are applied to the current data set.":
+    ["True"],
   "During the progress of making a new service protocol, the team has become aware of an outside supplier, for current work, which":
     [
       "Do what is possible to reduce the impact of the risk by shifting a few team members to locate and secure another supplier.",
@@ -288,12 +371,20 @@ quiz = {
     ["Requirements collection and analysis"],
   "During which step of the ARIES recovery procedure is the log scanned backward and the operations of transactions that were active at the time of the crash are undone in reverse order?":
     ["UNDO"],
+  "During which step of the SEMMA process does the analyst create, select, and transform the variables on which to focus the model construction process?":
+    ["Modify"],
+  "During which step of the SEMMA process the analyst searches for unanticipated trends and anomalies to gain a better understanding of the data set?":
+    ["Explore"],
+  "During which step of the Six Sigma process are the identified data sources consolidated and transformed into a format that is amenable to machine processing?":
+    ["Measure"],
   "During your HR software implementation project, two project team members are have difficulty working together. They come to you,":
     ["Balanced matrix"],
   "During your assembly line software implementation project, you find that training is not progressing as quickly as the schedule":
     [
       "The quality and schedule are being negatively impacted. To fix the situation, you likely have to hire more experienced trainers at a higher rate and schedule extra training sessions. Quality and schedule return to planned values while cost increases.",
     ],
+  "ERP stands for enterprise resource planning and is used for the integration of company-wide data.":
+    ["True"],
   "Each node in a tree, except for a special node called a": ["root"],
   "Earlier on this project, your team lead expressed concerns that a vendor may delay shipment of some vital raw materials for the":
     ["Contingency reserves because this is a known risk"],
@@ -313,12 +404,15 @@ quiz = {
     ["Time and materials"],
   "Every meeting is a chance to transfer information. It may come from individuals or be provided to the participants of the meetin":
     ["Allows maximum efficiency when there is a free-flowing approach"],
+  "F1 metric is simply the harmonic mean of precision and recall.": ["True"],
   "Feedback is a regular process during communication. If it is in person, the feedback is immediate. Which of the following statem":
     [
       "The typical feedback should come in formal survey format to avoid confusion.",
     ],
   "Feedback should always be formulated to provide positive comments to keep a pleasant environment.":
     ["False"],
+  "Firms have used analytics to enhance which of the following business activities?":
+    ["All of these"],
   "For the first time, you have been asked to select a supplier, but before doing so are interested in noting the source selection":
     ["Team location"],
   "For the last week, the team has been assessing what it would take to design the product inside the group but also has received b":
@@ -335,16 +429,47 @@ quiz = {
     ["Caves and commons"],
   "Governance of a project needs to be kept as private as possible to avoid information escaping the organization.":
     ["False"],
+  "Grid computing increases efficiency, lowers total cost, and enhances production by processing computational jobs in a shared, centrally managed ordinary pool of computing resources.":
+    ["True"],
+  "HDFS (Hadoop Distributed File System) was invented before Google developed MapReduce. Hence, the early versions of MapReduce relied on HDFS.":
+    ["False"],
+  "Hadoop is a batch-oriented computing framework, which implies it does not support real-time data processing and analysis.":
+    ["True"],
+  "Hadoop is a replacement for a data warehouse which stores and processes large amounts of structured data.":
+    ["False"],
+  "Hadoop is an open-source framework for processing, storing, and analyzing massive amounts of distributed, wide variety of data.":
+    ["True"],
+  "Hadoop is not just about the volume but also processing of diversity of data types.":
+    ["True"],
+  "Handling the missing values in the data is typically performed in the data consolidation phase.":
+    ["False"],
+  "Homoscedasticity states that the response variables must have the same variance in their error, regardless of the explanatory variables' values.":
+    ["True"],
+  "How and what the model concludes on certain predictions is obtained by the interpretability characteristic of the prediction method.":
+    ["True"],
   "How does a project manager role differ from a Scrum master and product owner on hybrid agile projects?":
     [
       "The project manager is focused on the overall project performance. The Scrum master is focused on guiding the core team through the Scrum process. The product owner is focused on the product being delivered.",
     ],
+  "How many sequential steps exist in the CRISP-DM methodology?": ["Six"],
   "How would you best classify the cost of raw materials on a project?": [
     "Direct",
   ],
   "How would you classify the cost of product recalls?": [
     "External failure cost",
   ],
+  "Human-computer interaction is a critical component of cognitive systems that allows users to interact with cognitive machines and define their needs.":
+    ["True"],
+  "Identifying the most pressing problem and defining the goals and objectives can be done in the Define step of the Six Sigma process.":
+    ["True"],
+  "If I am distributing funds to different financial products to maximize return, I am essentially doing descriptive analytics.":
+    ["False"],
+  "If Jack is interested in identifying the optimal quantity of purchase orders in order to minimize the overall cost, which of the following types of analytics should he use?":
+    ["Prescriptive"],
+  "If a classification problem is not binary, you cannot use a confusion matrix to tabulate prediction outcomes.":
+    ["False"],
+  "If a data scientist is analyzing historical data to identify problems and root causes, he/she is essentially conducting descriptive analytics.":
+    ["True"],
   "If a file has just been opened or reset, which of the following file operations returns the first record if a condition is specified with the operation; otherwise it returns":
     ["Scan"],
   "If a transaction does not overwrite the dirty reads of higher-level transactions, then this transaction has level":
@@ -357,20 +482,107 @@ quiz = {
     ["Write"],
   "If there are several different decisions to be made and the consequences of each affect the next decision, what would be the bes":
     ["Decision tree"],
+  "In Bayes' theorem, the posterior probability is defined as:": [
+    "Posterior = (Likelihood*Prior) / Evidence",
+  ],
   "In UML terminology, relationship types are called": ["associations"],
   "In UML terminology, relationship types are called as": ["associations"],
   "In a more predictive environment, the project manager is more likely to outline expectations and direct the team members' and co":
     ["True"],
+  "In a typical neural network, the goal of the testing process is to adjust the network weights and biases such that the network output for each set of inputs is adequately close to its corresponding target value.":
+    ["False"],
   "In an attempt to remain customer-focused and increase your overall value to the end consumer":
     [
       "Ensuring compliance on all electronic communication steps within your organization and the client's organization",
     ],
+  "In artificial neural networks, neurons are processing units, also called processing elements, that perform predefined mathematical operations on the numeric values from the input variables or the other neuron outputs to create and push out their own outputs.":
+    ["True"],
+  "In banking and finance, data mining is often used to manage microeconomics movements and overall cash flow outcomes.":
+    ["False"],
+  "In big data analytics initiative, to create a fact-based decision-making culture, the senior management needs to:":
+    ["be a vocal supporter."],
+  "In brokerages and securities trading, data mining is used to:": [
+    "identify and prevent fraudulent activities.",
+  ],
+  "In data mining, clustering is classified further into:": [
+    "segmentation and outlier analysis.",
+  ],
+  "In data mining, the prediction models are further sub-classified into __________, __________, and __________.":
+    ["classification", "regression", "time-series forecasting"],
+  "In ensemble modeling, bagging uses the bootstrap sampling of cases to create a collection of decision trees.":
+    ["True"],
+  "In ensemble modeling, boosting builds several independent simple trees for the resultant prediction model.":
+    ["False"],
+  "In explainable AI, the LIME and SHAP methods are considered as global interpreters.":
+    ["False"],
+  "In linear regression, hypothesis testing reveals the existence of relationships between explanatory variables.":
+    ["False"],
+  "In linear regression, the independence of errors assumption is also known as homoscedasticity.":
+    ["False"],
+  "In linear regression, the relationship between the variables can be represented as a:":
+    ["additive function or equation."],
+  "In marketing applications, text mining can be used to assess and help predict a customer's propensity to attrite.":
+    ["True"],
   "In most relational DBMSs, there is no specific language that performs the role of":
     ["SDL"],
+  "In prediction analytics, variance refers to the error, and bias refers to the consistency in the predictive accuracy of models applied to other data sets.":
+    ["False"],
+  "In prediction, linear regression uses a mathematical equation to identify additive mathematical relationships between explanatory variables and the response variable.":
+    ["True"],
+  "In representation learning, the emphasis is on automatically discovering the features to be used for analytics purposes.":
+    ["True"],
+  "In retailing, data mining is most commonly used to:": [
+    "predict future sales.",
+  ],
+  "In text mining, associations refer to direct relationships between terms or sets of concepts.":
+    ["True"],
+  "In the CRISP-DM process, it is not important or necessary to follow the sequential order of each step. That is, the steps can be executed in an arbitrary sequence.":
+    ["False"],
+  "In the SEMMA process, the accuracy and usefulness of the models are evaluated in the Assess step.":
+    ["True"],
+  "In the SEMMA process, visualization and description of the data are carried out in the Modify step.":
+    ["False"],
+  "In the SVM model, normalization's main benefit is to avoid having attributes in greater numeric ranges and dominate those in smaller numeric ranges.":
+    ["True"],
+  "In the context of text mining, lemmatization is a process of syntactically reducing words to their stem/root form.":
+    ["False"],
+  "In the context of text mining, structured data is for humans to process, while unstructured data is for computers to process and understand.":
+    ["False"],
+  "In the context of text mining, the large and structured set of texts that are commonly stored and processed electronically and prepared for the purpose of conducting knowledge discovery is referred to as _________.":
+    ["corpus"],
+  "In the context of text mining, which of the following is a part of NLP that studies the internal structure of words (that is, the patterns of word formation within a language or across languages)?":
+    ["Morphology"],
+  "In the context of the text mining process, both structured and unstructured data are extracted from the data sources and converted into context-specific knowledge.":
+    ["True"],
+  "In the first task of the text mining process, the data is structured and preprocessed to achieve hidden patterns and knowledge nuggets.":
+    ["False"],
+  "In the knowledge extraction method of the text mining process, ____________ refers to the natural groping, analysis, and navigation of large text collections, such as web pages.":
+    ["clustering"],
+  "In the model building task, both the CRISP-DM and SEMMA methodologies build and test various models.":
+    ["True"],
+  "In the normality of error assumption of linear regression, the response variables' values are expected to be randomly distributed.":
+    ["False"],
   "In the past week, you have noticed that the project team changed two tasks from A to B on the project schedule to B to A. This c":
     ["Discretionary", "Internal"],
+  "In the project finalization task, both the CRISP-DM and SEMMA methodologies prescribe deploying the results.":
+    ["False"],
+  "In the retail industry, association rule mining is frequently called market-based analysis.":
+    ["True"],
   "In the sender-receiver model of communication, the person who receives the message is":
     ["Decode"],
+  "In the term-by-document matrix, the columns represent the terms and the rows represent the documents, and the cells represent the variances.":
+    ["False"],
+  "In the testing and evaluation step of the CRISP-DM methodology, monitoring and maintenance of the models are important.":
+    ["False"],
+  "In the text mining process, which of the following is not a method category used for knowledge extraction?":
+    ["Regression"],
+  "In time-series forecasting, an estimator's mean squared error measures the average absolute error between the estimated and the actual values.":
+    ["False"],
+  "In typical data stream mining applications, the purpose is to predict the class or value of new instances in the data stream, given some knowledge about the class membership or values of previous instances in the data stream.":
+    ["True"],
+  "In what decade did disjointed information systems begin to be integrated?": [
+    "1980s",
+  ],
   "In what ways does an effective project manager demonstrate leadership? (Select all that apply.)":
     [
       "Exhibits a calm, confident aura when others are showing signs of issue or project stress",
@@ -385,6 +597,8 @@ quiz = {
       "Whether to set up a clustered index",
       "Whether to use a hash index over a tree index",
     ],
+  "In which of the following categories of knowledge extraction method is the task of text categorization achieved?":
+    ["Classification"],
   "In which of the following joins does the search stop as soon as the first match is found and the tuple from outer relation is selected?":
     ["Semi-join"],
   "In which of the following methods do team members pull the work from a queue?":
@@ -400,12 +614,18 @@ quiz = {
     ["Active"],
   "In which stage of the Tuckman Ladder team development model do initial conflicts emerge?":
     ["Storming"],
+  "In which step of the Six Sigma process is the assessment of the project outcomes carried out?":
+    ["Control"],
   "Ineffective conflict management methods on a project team can be catastrophic. Some of the most likely results include":
     [
       "Animosity among team members",
       "Destructive behaviors",
       "Reduced productivity",
     ],
+  "Information fusion type model ensembles utilize meta-modeling called super learners.":
+    ["False"],
+  "Information warfare often refers to identify and stop malicious attacks on critical information infrastructures in literarily any and every organizations and business domains.":
+    ["True"],
   "It is Monday morning, and you were invited to a 9:00 a.m. kickoff meeting for the newest":
     [
       "Completing the list of required external contractors required for completing the project",
@@ -422,13 +642,23 @@ quiz = {
   "Iterative scheduling with the team allows for all of the following": [
     "Determination of an exact delivery date based on the number of points completed and remaining",
   ],
+  "Jim, the marketing manager in the company, is interested in the sales numbers in the south region by each product type for the last six months. What type of analytics would you use to help him?":
+    ["Descriptive"],
   "Knowledge transfer occurs between team members both intentionally and unintentionally. The organization will benefit least from":
     ["Templates for all portions of the process to expedite the work"],
   "Last-minute changes were made recently to the training plan due to additional scope requirements. This is an acceptable choice t":
     ["True"],
+  "Linear regression aims to capture the functional relationships between one or more numeric input variables and a categorical output variable.":
+    ["False"],
+  "Logistic regression is like linear regression where both of them are used to predict a numeric target variable.":
+    ["False"],
   "Loss of availability occurs when:": [
     "a user or program cannot access data objects who has legitimate right to those objects.",
   ],
+  "Major commercial business intelligence products and services were established in the early 1970s.":
+    ["False"],
+  "Manufacturers use data mining to classify anomalies and commonalities in the production system to improve the manufacturing system.":
+    ["True"],
   "Many issues on your project need to be resolved, and you want to identify a way of prioritizing these issues so that the team ca":
     ["Pareto chart"],
   "Many parties are involved in delivering most projects. When you are dealing with a client":
@@ -439,13 +669,25 @@ quiz = {
     [
       "Noting any regulations that arise due to industry advances in new technology",
     ],
+  "MapReduce is a contemporary programming language designed to be used by computer programmers.":
+    ["False"],
   "Mark works as a database administrator in ABC Inc. He wants to add a new record in the employees table with the following data:":
     [
       "Insert into employees (Employee_id, Name, Designation) values (101, 'Richard', 'Database developer');",
       "Insert into employees values (101, 'Richard', 'Database developer');",
     ],
+  "Model ensembles are known to be more robust against outliers and noise in the data compared to individual models.":
+    ["True"],
+  "Model ensembles are much easier and faster to develop than individual models.":
+    ["False"],
   "Moving from a common workspace to remote work has been more common for several years. There are a number of advantages for both":
     ["Increases the level of communication and trust"],
+  "Multicollinearity can be triggered by having two or more perfectly correlated explanatory variables present in the model.":
+    ["True"],
+  "Multilayer perceptron type deep networks are also known as feedforward networks because the flow of information that goes through them is always forwarding, and no feedback connections are allowed.":
+    ["True"],
+  "Novel is a key term in the definition of data mining, which means that the patterns are known by the user within the context of the system being analyzed.":
+    ["False"],
   "Of the following elements of a lessons learned exercise in a preplanned home renovation project, in a town you will likely not w":
     ["City building code lessons learned"],
   "Of the following examples, which will most likely benefit from a predictive set of project management tools?":
@@ -528,10 +770,14 @@ quiz = {
     ["Work performance expectations"],
   "One of the characteristics of an agile project is that the team is continuously trying to find ways of improving efficiency. Whi":
     ["Sprint retrospective"],
+  "One of the key differences between business analytics and data science is their primary focus either on business problems or on mathematical algorithms.":
+    ["True"],
   "One of the machines your team uses to test deliverables has broken down and needs to be fixed. This action would be best referre":
     ["Corrective action"],
   "One of the most popular methods to determine time and cost components of the quality question in projects is the earned value me":
     ["True"],
+  "One of the most pronounced reasons for the increasing popularity of data mining is due to the fact that there are less suppliers than corresponding demand in the business marketplace.":
+    ["False"],
   "One of the skills that a project manager must include in their toolbox is helping to identify and fill in the gaps for a team's":
     ["True"],
   "One of the tools used in more lean projects is that of a value stream map. Of the":
@@ -544,6 +790,8 @@ quiz = {
     [
       "Detailing the specific metrics that will be required to pass for the project",
     ],
+  "Organizations apply analytics to business problems to identify problems, foresee future trends, and make the best possible decisions.":
+    ["True"],
   "Organizations that stay stagnant end up losing their market leadership capabilities. This situation is unfortunate but can be im":
     [
       "Encouraging the team to stay the course and keep to the established practices for uniformity",
@@ -554,6 +802,8 @@ quiz = {
     ],
   "Over the past two weeks, several frustrating conditions have caused the team's productivity to slow down. Impediments would be m":
     ["Issue log", "Kanban board"],
+  "Overfitting is the notion of making the model too specific to the training data to capture not only the signal but also the noise in the data set.":
+    ["True"],
   "PHP variable names start with": ["$"],
   "Penny is compiling a list of costs incurred so far on a project. She must categorize these costs so that she can present the amo":
     ["Travel expenses to the customer's office"],
@@ -565,6 +815,8 @@ quiz = {
     ["True"],
   "Phases within a project may be sequential, overlapping, or a series of sequential and then overlapping, or overlapping and then":
     ["True"],
+  "Prediction modeling is often classified under the unsupervised machine learning methods.":
+    ["False"],
   "Predictive teams frequently have a deadline for the overall project deliverable and don't have a lot of flexibility. For this re":
     ["Gantt chart", "Network diagram"],
   "Project managers frequently have to make decisions that are based on incomplete information or best guesses. This means using si":
@@ -616,11 +868,17 @@ quiz = {
     ],
   "Risks are broken into two main categories: positive risks that are called opportunities and negative risks that are called threa":
     ["True"],
+  "SCM and ERP are the first two beneficiaries of the NLP and WordNet.": [
+    "False",
+  ],
   "Scope management requires a number of skills and tools for a practiced user. Of the following, which tools or techniques would b":
     [
       "Demonstrating expert judgment with decisions",
       "Seeking alternatives to the project approach and execution",
     ],
+  "Segmentation and outlier analysis are part of classification modeling.": [
+    "False",
+  ],
   "Senior management has decided to increase the scope of your project. Which of the following would you need to consult to determi":
     ["Scope management plan"],
   "Senior management is asking about the purpose of a work breakdown structure. Of the following, what do you not tell them?":
@@ -631,6 +889,10 @@ quiz = {
     [
       "Agile works best in a constantly changing business environment where small teams determine the work that will be accomplished",
     ],
+  "Sensitivity analysis based on input value perturbation is often used in trained feed-forward neural network modeling, where all of the input variables are numeric and standardized.":
+    ["True"],
+  "Sensitivity analysis based on the leave-one-out methodology can be applied to any predictive analytics method because of its model agnostic implementation methodology.":
+    ["True"],
   "Several knowledge transfer techniques can be used to help organizations retain information and experience between staff. What ar":
     ["Facilitating special interest groups", "Work shadowing"],
   "Several people are helping to plan an 80th birthday party for a family member":
@@ -640,6 +902,8 @@ quiz = {
     ],
   "Since 2020, your team has changed its primary methods of communication. Instead of physical location meetings, many teams have b":
     ["Photocopier"],
+  "Singular value decomposition help reduce the overall structure of the term-document matrix to a lower dimensional space for further pattern/knowledge discovery.":
+    ["True"],
   "Some of the advantages of using time boxes and cycles in project coordination efforts include creating urgency, measuring progre":
     ["True"],
   "Some of the greatest forms of stress that a team will face are not due to creativity and timeframe, but more likely created by v":
@@ -648,12 +912,27 @@ quiz = {
     ["False"],
   "Stakeholders not only need to be identified but also need to be classified. Of the following":
     ["Newer/established"],
+  "Structured data is usually organized into records with simple data values that include __________, __________, and __________ variables.":
+    ["categorical", "continuous", "ordinal"],
   "Take immediate action to eliminate the attacker's access to the system and to isolate or contain the problem to prevent further spread":
     ["Confinement"],
   "Task identification for a construction project is most likely to occur during regular checkup sessions throughout the life of th":
     ["False"],
+  "Text-to-speech is a text processing function that can read textual content and detects and corrects syntactic and semantic errors.":
+    ["False"],
   'The "name" attribute of student is a': ["composite attribute"],
+  "The CRISP-DM methodology was proposed by Fayyad et al., in the year 1996.": [
+    "False",
+  ],
   "The Kanban board usually has three columns": ["True"],
+  "The Modify step in Six Sigma involves the process of assessing the mapping between organizational data repositories and the business problem.":
+    ["False"],
+  "The Naive Bayes method requires output variables to have numeric values.": [
+    "False",
+  ],
+  "The Six Sigma process promotes an error-free/perfect business execution.": [
+    "True",
+  ],
   "The WBS dictionary is important to explain many of the work packages that the team has outlined. Which of the following items would certainly be included in a WBS dictionary? (Choose two.)":
     ["Acceptance criteria", "Description of the work"],
   "The agile team and product owner are in a meeting discussing a feature, but there is much confusion between team members about t":
@@ -662,9 +941,16 @@ quiz = {
     [
       "Endlessly focusing on making sure the work is completed per the team's planned schedule.",
     ],
+  "The application examples of MapReduce include:": [
+    "indexing, graph analysis, text analysis, and machine learning.",
+  ],
   "The approach of management by objectives is a tool participants use to measure each outcome by set checkpoints with the customer":
     ["False"],
   "The appropriate governance for your project will likely be unique for each project; therefore, the project team members will be":
+    ["False"],
+  "The area under the ROC curve is a graphical assessment technique for binary classification problems, in which sensitivity is plotted on the y-axis and the specificity is plotted on the x-axis.":
+    ["False"],
+  "The bootstrapping methodology is similar to the leave-one-out methodology, where it can be used to calculate accuracy by leaving out one sample at each iteration of the estimation process.":
     ["False"],
   "The changes applied to a database by a committed transaction must persist in the database. These changes must not be lost because of any failure.":
     ["Durability"],
@@ -695,8 +981,13 @@ quiz = {
     ],
   "The current source format of a data file and the desired database file structure are specified to a utility, which then automatically reformats the data and stores it in the database.":
     ["Loading"],
+  "The customer credit ratings like bad, fair, and excellent are considered as what type of data?":
+    ["Ordinal"],
   "The customer has set a strict project deadline of 85 days for completion. As you review the project schedule, you notice that on":
     ["30 days"],
+  "The data elements in a stream is often called __________.": ["tuples"],
+  "The data sources that are combined in a centralized data repository for supporting managerial decisions is known as a data warehouse.":
+    ["True"],
   "The director of the project management office has been tasked with developing project managers, besides meeting delivery of mult":
     [
       "The person most likely to hold to the process outlined in the past to assure continuity",
@@ -707,14 +998,34 @@ quiz = {
     "Decreasing risk of confusion",
     "Setting performance standards",
   ],
+  "The important part of the KDD process is the feedback loop that allows the process flow to redirect backward, from any step to any other previous steps, for rework and readjustments.":
+    ["True"],
+  "The main aim of NLP is to move away from word counting to a real understanding and processing of natural human language.":
+    ["True"],
+  "The main benefit of Hadoop is that it allows enterprises to process and analyze large volumes of structured and semi-structured data on specialized hardware.":
+    ["False"],
+  "The main characteristic of deep learning solutions is that they use AI (artificial intelligence) to understand and organize data, predict the intent of a search query, improve the relevancy of results, and automatically tune the relevancy of results over time.":
+    ["False"],
+  "The main characteristic of the convolutional networks is having at least one layer involving a convolution weight function instead of general matrix multiplication.":
+    ["True"],
   "The managers of a few teams are debating which is better to provide incentives for future efforts on their projects. They are lo":
     ["Providing for something economic such as money or a gift"],
   "The minimum viable product is the smallest segment of work that may be produced at a given time and still provides some value.":
     ["False"],
+  "The most important driver behind business analytics popularity is the need for business managers to make experience and intuition driven business decisions.":
+    ["False"],
+  "The most popular approach in a neural network is __________, which allows all neurons to link the output in one layer to the next layer's input.":
+    ["feedforward multilayer perceptron"],
   "The most statistical of the consensus reaching tools would be dot voting over fist of five or polling.":
     ["True"],
+  "The multi split methodology partitions data into exactly two mutually exclusive subsets called training set and test set.":
+    ["False"],
+  "The neural networks in which feedback connections are allowed are called ____________.":
+    ["recurrent neural networks"],
   "The official leader of this team behaves differently than those you have known before. This leader is focused on helping team me":
     ["Addressing the team from a task-focused perspective"],
+  "The optimization of performance in a neural network is usually done by an algorithm called __________.":
+    ["stochastic gradient descent"],
   "The organization for which you have started working is very large. It has been working":
     [
       "Confirming the initial plan and making sure to execute on it according to the outline",
@@ -723,6 +1034,8 @@ quiz = {
     ["Benchmarking"],
   "The organization has established some fairly standardized criteria for selecting vendors":
     ["Credit history from 10 years ago"],
+  "The original terminology of data mining commonly refers to discovering known patterns in large and structured data sets.":
+    ["False"],
   "The planned value for your project is $2,000 per week": [
     "You are behind schedule.",
   ],
@@ -756,8 +1069,17 @@ quiz = {
     ["Naming the project manager"],
   "The purpose of a bidder conference is most likely to include all of the following except:":
     ["The buyer provides an expected price they wish to pay."],
+  "The purpose of artificial intelligence is to augment human capability.": [
+    "False",
+  ],
+  "The purpose of data preparation (commonly called data preprocessing) is to eliminate the possibility of GIGO errors.":
+    ["True"],
   "The quality assurance team is reviewing documentation to ensure your team has followed procedures and to identify any abnormal v":
     ["Audit"],
+  "The ratio of accurately classified instances (positives and negatives) divided by the total number of instances is defined as the overall accuracy metric.":
+    ["True"],
+  "The ratio of correctly classified positives divided by the total positive count is defined as a precision metric.":
+    ["False"],
   "The retrospective ceremony is most likely developed as a tool to show the customer, client, or owner what the current progress l":
     ["False"],
   "The risk management plan has a series of influences that keep the project team on their toes. When the team is making the initia":
@@ -829,6 +1151,12 @@ quiz = {
     ["Retrospective of iteration"],
   "The team you participate on is a lot of fun. Group members make decisions together based on input from everyone. There is a mino":
     ["Unanimity"],
+  "The term long short-term memory network refers to a network that is used to remember what happened in the past for a long enough time that it can be leveraged in accomplishing the task when needed.":
+    ["True"],
+  "The term velocity in big data analytics refers to how fast digitized data is created and processed.":
+    ["True"],
+  "The term veracity in big data analytics refers to the processing of different types and formats of data, structured and unstructured.":
+    ["False"],
   "The topic of organizational theory is focused on how people, teams, and organizations behave.":
     ["True"],
   "The types of contracts that would be most likely agile are not the same as traditional projects. Of the contract types noted her":
@@ -875,6 +1203,10 @@ quiz = {
     [
       "Note all details of the specific product features that this client requested.",
     ],
+  "Time series is a sequence of data points of interest measured and represented at consecutive and regular time intervals.":
+    ["True"],
+  "To deploy a developed SVM model, the model coefficients can be extracted and integrated directly into the decision support system.":
+    ["True"],
   "To keep the team properly motivated, it is beneficial to provide rewards and recognition on a regular basis. Of the following, w":
     [
       "An individual receives positive comments in front of the entire department.",
@@ -883,12 +1215,18 @@ quiz = {
     ["True"],
   "To which of the following cost components for query execution does the given statement refer to?":
     ["Access cost to secondary storage"],
+  'Today, analytics can be defined simply as "the discovery of information/knowledge/insight in data."':
+    ["True"],
+  "Tokenizing refers to the process of breaking sentences into blocks of text that performs a specific linguistic function.":
+    ["True"],
   "Training artifacts include components such as courseware, lab configurations, pre-tests":
     ["True"],
   "Two team members disagree about the purpose of the lessons learned exercise that occurs occasionally during the project. All of":
     ["It will be highly beneficial for the short term as a learning tool."],
   "Two team members from different parts of the world are having a conversation, but both are misinterpreting gestures and phrases":
     ["Noise"],
+  "Underfitting is mainly characterized on the bias-variance trade-off continuum as low-bias/low-variance outcome.":
+    ["False"],
   "Use of a Gantt chart is primarily to show the work packages, sequencing, relationships, and resources in a visual format for fas":
     ["True"],
   "Value delivery is about making sure that the customer or client receives benefit and the efforts of the team focus only on work":
@@ -960,6 +1298,12 @@ quiz = {
     "Develops the structure of an optimal solution",
     "Recursively defines the value of optimal solution",
   ],
+  "What are the critical key terms used in defining data mining?": [
+    "Nontrivial",
+    "Novel",
+    "Potentially useful",
+    "Process",
+  ],
   "What are the four aspects of emotional intelligence?": [
     "Self-awareness, self-management, social awareness, and social skill",
   ],
@@ -968,6 +1312,21 @@ quiz = {
   ],
   "What are the key skills a project manager needs to be successful?": [
     "Leadership, technical project management, business acumen",
+  ],
+  "What are the main roadblocks to the adoption of analytics?": [
+    "All of these",
+  ],
+  "What are the most common reasons why data mining has gained overwhelming attention in the business world?":
+    ["All of these"],
+  "What are the other names commonly used for data mining?": [
+    "Information extraction",
+    "Information harvesting",
+    "Knowledge discovery in databases",
+    "Pattern analysis",
+  ],
+  "What are the other names for heterogeneous model ensembles?": [
+    "Information fusion",
+    "Stacking",
   ],
   "What are the process groups of project management?": [
     "Initiating, planning, executing, monitoring and controlling, and closing",
@@ -1005,6 +1364,7 @@ quiz = {
       "Inconsistent and incomplete information",
       "Privacy and confidentiality",
     ],
+  "What does the categorical data contain?": ["Nominal data"],
   "What is a System for Value Delivery?": [
     "A collection of strategic business activities aimed at building, sustaining, and/or advancing an organization",
   ],
@@ -1048,8 +1408,19 @@ quiz = {
     "Mapping of regular entity types",
   ],
   "What is the last phase of the database design process?": ["Physical design"],
+  "What is the main drawback of NoSQL functions in database processing?": [
+    "They have traded ACID compliance for performance and scalability.",
+  ],
+  "What is the main source for all accuracy estimation metrics in classification problems?":
+    ["Contingency table"],
+  "What is the name of the first and the earliest data mining process?": [
+    "KDD methodology",
+  ],
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
+  ],
+  "What is the primary difference between statistics and data mining?": [
+    "Statistics starts with a well-defined proposition and hypothesis, whereas data mining starts with a loosely defined discovery statement.",
   ],
   "What is the primary value of planning resource management for a project?": [
     "To establish the approach and the management effort level needed for managing project resources based on type and complexity of the project",
@@ -1060,6 +1431,12 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  "What kinds of patterns can data mining discover?": [
+    "Association",
+    "Classification",
+    "Clustering",
+    "Forecasting",
+  ],
   "What occurs when the hash field value of a record that is being inserted hashes to an address that already contains a different record?":
     ["Collision"],
   "What problems occur due to the redundancy in storing the same data multiple times?":
@@ -1069,6 +1446,10 @@ quiz = {
   "What term is used to describe the Tuckman Ladder team development model?": [
     "Forming, Storming, Norming, Performing",
   ],
+  "What type of analytics seeks to determine what is likely to happen in the future?":
+    ["Predictive"],
+  "What type of analytics seeks to identify the courses of action to achieve the best performance possible?":
+    ["Prescriptive"],
   "What type of dependency is being described in the following situation? You are managing the modernization of a local high school":
     ["Hard logic"],
   "What type of risk will occur when an attacker floods the server with requests?":
@@ -1076,6 +1457,8 @@ quiz = {
   "What variables can impact the leadership style needed on a given project?": [
     "Team experience level with type of project, maturity level of the project team, organizational governance structures, and location of project team members",
   ],
+  "What was analytics called in the 1970s in a longitudinal view of the evolution of analytics?":
+    ["Decision support systems"],
   "What will a transaction be called, if the database operations in a transaction do not update the database but only retrieve data?":
     ["Read-only"],
   "What will be the next step after importing the JDBC class library when writing a Java application program with database access through JDBC function calls?":
@@ -1086,6 +1469,8 @@ quiz = {
     ["Earned value divided by the actual cost"],
   "When calculating the schedule variance of a project that is around 60 percent complete, which formula would you use?":
     ["Earned value minus the planned value"],
+  "When compared with all other methodologies, CRISP-DM is the most popular data mining process that is being used in data analytics.":
+    ["True"],
   "When completing lessons learned, most teams attempt to be as complete as possible.":
     ["Product-specific lessons learned"],
   "When dealing with others on a team, you wish to encourage change. As a change catalyst, you would anticipate change, advocate fo":
@@ -1192,11 +1577,19 @@ quiz = {
     ["Lifetime"],
   "Which autonomy implies that component DBS has the ability to decide whether and how much to share its functionality and resources with other":
     ["Association"],
+  "Which classification approach use(s) historical samples to identify commonalities in order to assign a new sample to the most similar category?":
+    ["Case-based reasoning"],
+  "Which classification method use(s) conditional probabilities to build classification models?":
+    ["Bayesian classifiers"],
+  "Which clustering method is based on the basic idea that nearby objects are more related to each other than are those that are farther away from each other?":
+    ["Hierarchical"],
   "Which component of the YARN architecture performs the given functions?": [
     "ResourceManager",
   ],
   "Which constraint specifies whether the existence of an entity depends on it being related to another entity via the relationship type?":
     ["Participation"],
+  "Which cross-validation methodology achieves random sampling of a fixed number of instances from the original data with replacement to construct the training data set?":
+    ["Bootstrapping"],
   "Which database state satisfies the structure and constraints specified in a schema?":
     ["Valid state"],
   "Which delivery cadence option indicates there will be multiple deliveries of the product on a fixed schedule?":
@@ -1217,6 +1610,8 @@ quiz = {
   "Which list best describes an agile development approach?": [
     "Collaboration, expects change, deliver working product frequently, self-organizing teams",
   ],
+  "Which method takes into account the partial membership of class labels to predefined categories while building models for classification problems?":
+    ["Rough sets"],
   "Which model is also known as the CODASYL DBTG model?": ["Network model"],
   "Which model represents data as record types and also represents a limited type of 1:N relationship, called a set type?":
     ["Network model"],
@@ -1235,10 +1630,18 @@ quiz = {
     ["Iteration Review and Validate Scope"],
   "Which of the following algorithms was the first algorithm to use the downward closure and antimontonicity properties?":
     ["Apriori"],
+  "Which of the following application areas make use of association rule mining?":
+    ["All of these"],
   "Which of the following applications analyzes large amount of data to search for the occurrences of specific patterns or relationships?":
     ["Data mining"],
   "Which of the following applications of data mining includes analysis of creditworthiness of clients and evaluation of fraud detection?":
     ["Finance"],
+  "Which of the following applications utilize the capabilities of text mining?":
+    [
+      "Biomedical applications",
+      "Marketing applications",
+      "Security applications",
+    ],
   "Which of the following approaches does not suffer from the impedance mismatch problem, as the programming language data types are the same as the database data types?":
     ["Database programming language"],
   "Which of the following approaches does not suffer from the impedance mismatch problem. as the programming language data types are the same as the database data types?":
@@ -1270,6 +1673,8 @@ quiz = {
   "Which of the following are components of the scope baseline?": [
     "WBS dictionary, WBS, scope statement",
   ],
+  "Which of the following are considered as the common use cases for cognitive computing?":
+    ["All of these"],
   "Which of the following are control measures that provide security of data in databases?":
     ["Access control", "Data encryption", "Flow control", "Inference control"],
   "Which of the following are enhancers of communication? (Choose two.)": [
@@ -1329,10 +1734,24 @@ quiz = {
     "Mapping of regular entity types",
     "Mapping of weak entity types",
   ],
+  "Which of the following are the benefits of model ensembles?": [
+    "All of these",
+  ],
+  "Which of the following are the best options available to manage the TDM matrix size?":
+    [
+      "Labor-intensive process, eliminate terms, and singular value decomposition",
+    ],
+  "Which of the following are the common challenges that are associated with the implementation of NLP?":
+    ["All of these"],
   "Which of the following are the correct levels of stakeholder engagement from the assessment matrix? (Choose two.)":
     ["Neutral", "Unaware"],
+  "Which of the following are the most commonly used normalization methods?": [
+    "Log, binary, and inverse document frequencies",
+  ],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
+  "Which of the following are used to describe the relationship between a response variable on one or more explanatory variables?":
+    ["All of these"],
   "Which of the following associations is represented as a line connecting the participating classes, and may optionally have a name?":
     ["Binary"],
   "Which of the following attributes is considered as a derived attribute?": [
@@ -1346,6 +1765,8 @@ quiz = {
     ["Mutator"],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
     ["Abstract"],
+  "Which of the following classification methods use(s) the analogy of natural evolution to build directed-search-based mechanisms to classify data samples?":
+    ["Genetic algorithms"],
   "Which of the following clauses assigns a variable to range over each of the individual elements in a sequence?":
     ["FOR"],
   "Which of the following clauses identifies the conditions for selecting the tuples from the relations?":
@@ -1355,6 +1776,8 @@ quiz = {
   ],
   "Which of the following columns would be least useful to the project team on a stakeholder register?":
     ["The work packages for which the stakeholder would take responsibility"],
+  "Which of the following combines architectures, databases, analytical tools, applications, and methodologies?":
+    ["BI"],
   "Which of the following commands specifies a new relation by giving it a name and specifying its attributes and initial constraints?":
     ["CREATE TABLE"],
   "Which of the following comparison operators does SQL use to compare an attribute value to NULL?":
@@ -1387,20 +1810,29 @@ quiz = {
     ["Access control"],
   "Which of the following data models is meant for computer specialists, not for end users?":
     ["Physical"],
+  "Which of the following define(s) data?": [
+    "Facts, measurements, and statistics",
+  ],
   "Which of the following descriptions would be considered examples of a hybrid development approach? (Choose two.)":
     [
       "Requirements, Design 1, Develop 1, Test 1, Deploy 1, Design 2, Develop 2, Test 2, Deploy 2",
       "Requirements, Sprint 1, Sprint 2, Sprint N, User Acceptance Testing, Deploy",
     ],
+  "Which of the following developments is not contributing to facilitating the growth of decision support and analytics?":
+    ["Locally concentrated workforces"],
   "Which of the following does not represent the SMART criteria?": [
     "Analytical",
   ],
   "Which of the following entries is the Web site name (URL) of the client user computer?":
     ["$_SERVER['REMOTE_HOST']"],
+  "Which of the following factors refers to a model's ability to make reasonably accurate predictions, given noisy data or data with missing and erroneous values?":
+    ["Robustness"],
   "Which of the following file allocation techniques allocates file blocks to consecutive disk blocks?":
     ["Contiguous"],
   "Which of the following files keeps the records ordered by the value of a particular field?":
     ["Sorted"],
+  "Which of the following from the bullseye diagram interprets the predictions that are inconsistent but represent a reasonably well-performing prediction model?":
+    ["Low bias, high variance"],
   "Which of the following functional dependencies occurs only in a relation that contains three or more attributes and an attribute is indirectly dependent on":
     ["Transitive"],
   "Which of the following functions does SQL allow to be blocked from public use, and an EXECUTE privilege is needed to have access to these functions?":
@@ -1431,6 +1863,8 @@ quiz = {
     ["Implement the agreed-upon risk response plans."],
   "Which of the following is a specific recovery scheme used in many of IBM's relational database products?":
     ["ARIES algorithm"],
+  "Which of the following is a type of linear least squares method for estimating the unknown parameters in a linear regression model?":
+    ["OLS"],
   "Which of the following is an abstraction concept for building composite objects from their component objects?":
     ["Aggregation"],
   "Which of the following is an approach that eliminates the generation of a large number of candidate itemsets?":
@@ -1438,15 +1872,40 @@ quiz = {
   "Which of the following is an out-of-control situation?": [
     "You see one data point above the upper control limit.",
   ],
+  "Which of the following is defined as the ratio of correctly classified negatives divided by the total negative count?":
+    ["Specificity"],
   "Which of the following is least likely to use cost estimates throughout the project life cycle?":
     ["Terms and conditions"],
+  "Which of the following is not a classification method?": [
+    "Linear regression",
+  ],
   "Which of the following is not a reason for taking performance measurements on a project?":
     ["Performing an impact analysis of changes"],
+  "Which of the following is not a supervised machine learning algorithm?": [
+    "Clustering",
+  ],
   "Which of the following is not a tailoring process step?": [
     "Following the ADKAR Model",
   ],
+  "Which of the following is not among the V's used to define Big Data?": [
+    "Variance",
+  ],
+  "Which of the following is not among the main assumptions in linear regression?":
+    ["Simplicity"],
+  "Which of the following is not among the most important driver behind business analytics and data science popularity?":
+    ["Domain specific knowledge"],
+  "Which of the following is not among the popular tasks performed by NLP?": [
+    "Speech act",
+  ],
+  "Which of the following is not among the steps involved in sentiment analysis?":
+    ["Latent Dirichlet allocation"],
   "Which of the following is not an advantage of centralized contracting?": [
     "Project dedicated procurement resources",
+  ],
+  "Which of the following is not commonly used as an enabler of descriptive analytics?":
+    ["Data mining"],
+  "Which of the following is not considered as a key component of Hadoop?": [
+    "SQL",
   ],
   "Which of the following is not documented in the project charter?": [
     "Team ground rules",
@@ -1463,6 +1922,21 @@ quiz = {
     ["Status reports"],
   "Which of the following is the least likely reason that work is provided in a time-box format for the majority of agile projects?":
     ["To ensure specific dates are met on a regular basis"],
+  "Which of the following is the most commonly used clustering technique?": [
+    "k-means",
+  ],
+  "Which of the following is the most relevant methodology that is used to implement data science and business analytics projects?":
+    ["CRISP-DM"],
+  "Which of the following is the special case where the class is predicted to be the class of the closest training sample?":
+    ["k-nearest neighbor algorithm"],
+  "Which of the following is the system that automatically translates images of handwritten documents into machine-editable textual document?":
+    ["Optical character recognition"],
+  "Which of the following is the technique that is used to detect the direction of opinions about specific products and/or services using large textual data sources?":
+    ["Sentiment analysis"],
+  "Which of the following is the well-known standardized process for data analytics developed by the SAS Institute?":
+    ["SEMMA"],
+  "Which of the following is typically a simplified abstraction of the human brain and its complex biological networks of neurons?":
+    ["Artificial neural network"],
   "Which of the following is work performance information?": [
     '"We are 10 percent over budget."',
   ],
@@ -1530,8 +2004,13 @@ quiz = {
     ],
   "Which of the following options works for any constraints on the specialization, i.e., disjoint or overlapping, total or partial?":
     ["Option 1"],
+  "Which of the following phases is the final phase of data preprocessing?": [
+    "Data reduction",
+  ],
   "Which of the following properties is enforced by the concurrency control subsystem of the DBMS?":
     ["Isolation"],
+  "Which of the following provides an explanation for an individual data point of the joint distribution of independent variables?":
+    ["Local interpretability"],
   "Which of the following quality concepts were promoted by Crosby and Juran, respectively?":
     ["Zero defects, fitness for use"],
   "Which of the following quality experts derived the concept of many small changes for improvements?":
@@ -1541,8 +2020,13 @@ quiz = {
   "Which of the following queries will result in the below output?": [
     "SELECT * FROM Customers WHERE Satisfaction_Rate >= 92;",
   ],
+  "Which of the following questions can be answered by prescriptive analytics?":
+    ["How can the best be realized?"],
   "Which of the following records keeps track of the information about tuples or parameters?":
     ["Description"],
+  "Which of the following relates to a pattern-recognition methodology for machine learning?":
+    ["Neural computing"],
+  "Which of the following represent unstructured data?": ["All of these"],
   "Which of the following rules must be enforced when the shared/exclusive locking scheme is used?":
     [
       "A transaction must issue the operation read_lock(X) or write_lock(X) before any read_item(X) operation is performed in the transaction.",
@@ -1556,6 +2040,8 @@ quiz = {
     ["Conceptual schema"],
   "Which of the following schemas is the global schema or view, which is the result of integrating all the shareable export schemas?":
     ["Federated"],
+  "Which of the following sequences of tasks represents the text mining process?":
+    ["Establish the corpus, preprocess the data, and extract the knowledge."],
   "Which of the following specifies referential integrity?": [
     "FOREIGN KEY clause",
   ],
@@ -1599,20 +2085,40 @@ quiz = {
     [
       "A project life cycle cannot include multiple development approaches and delivery cadences.",
     ],
+  "Which of the following statements is true about clustering?": [
+    "Assigns customers to different segments",
+  ],
+  "Which of the following steps of the CRISP-DM process identifies the goals, purpose, and requirements of the customers?":
+    ["Business understanding"],
+  "Which of the following steps of the CRISP-DM process identifies the relevant data from different sources?":
+    ["Data understanding"],
+  "Which of the following steps of the CRISP-DM process is commonly called the data preprocessing step that produces the data identified in the data understanding step for analysis?":
+    ["Data preparation"],
   "Which of the following strategies updates a view as soon as the base tables are changed?":
     ["Immediate update"],
   "Which of the following strategies updates a view when needed by a view query?":
     ["Lazy update"],
+  "Which of the following substeps are involved in the Sample step of the SEMMA process?":
+    ["Training, validation, and test"],
   "Which of the following symbols before a tag specifies that the tag can appear as a descendant of the previous tag at any level?":
     ["//"],
   "Which of the following symbols denotes the SELECT operator?": ["sigma"],
   "Which of the following symbols represents the PROJECT operation?": ["pi"],
+  "Which of the following techniques are used to solve the imbalanced data problems?":
+    [
+      "Data sampling methods, cost-sensitive methods, algorithmic methods, and ensemble methods",
+    ],
   "Which of the following techniques to make accessing data more efficient on HDDs deals with the incompatibility of speeds between a CPU and the":
     ["Buffering of data"],
+  "Which of the following technologies is not part of artificial intelligence?":
+    ["Fast Fourier transformation"],
   "Which of the following terms are for the specific ceremony where members meet for 15 minutes each day to discuss action and issu":
     ["Daily Scrum", "Daily standup"],
   "Which of the following terms measures the cost efficiency you have achieved so far?":
     ["CPI"],
+  "Which of the following terms refers to knowledge discovery?": [
+    "Data analytics",
+  ],
   "Which of the following tools can be used for requirements elicitation? (Choose two.)":
     ["Interviewing", "Observation"],
   "Which of the following tools do you use to gauge stakeholder satisfaction?":
@@ -1676,6 +2182,8 @@ quiz = {
   "Which of these is an example of a user story?": [
     "As a call center analyst, I want to input customers' first and last names and postal codes so that I can pull up their accounts quickly.",
   ],
+  "Which of these is the process of extracting novel patterns and knowledge structures from continuous, rapid data records?":
+    ["Data stream mining"],
   "Which operation is used for inserting new data or new versions of existing data items?":
     ["Put"],
   "Which option best describes the factors that need to be considered when determining the development approach for a project?":
@@ -1728,6 +2236,8 @@ quiz = {
     ],
   "Which statistical model provides a framework in which term weighting, ranking of retrieved documents, and determining the relevance of feedback are":
     ["Vector space"],
+  "Which step in the CRISP-DM (Cross-Industry Standard Process for Data Mining) process consumes the most amount of time to complete?":
+    ["Data preparation"],
   "Which step of an algorithm for ER-to-relational mapping involves the following approaches:":
     ["Mapping of binary 1:1 relationship types"],
   "Which step of the ER-to-relational mapping algorithm has the foreign key approach and the cross-reference or relationship relation approach?":
@@ -1776,6 +2286,9 @@ quiz = {
     [
       "The development approach and subsequent project life cycle must support the effective delivery of business and stakeholder value from the beginning to the end of the project.",
     ],
+  "Why is cognitive search different from traditional search?": [
+    "Because it can handle a variety of data types",
+  ],
   "Why is critical thinking an important attribute for all project team members? (Select all that apply.)":
     [
       "Decreases the impact of bias, unstated assumptions, and emotional appeals",
@@ -2057,6 +2570,13 @@ quiz = {
     ["The subcontractor is within their right not to respond to you."],
   "Your vendor requests a change to the contract. They were waiting for important data and details on requirements from one of your":
     ["Extend the deadline due to a constructive change."],
+  "_______ is the occurrence of high intercorrelations among two or more independent variables in a multiple regression model.":
+    ["Multicollinearity"],
+  "_________ is/are often used to characterize the relationships between individual terms and individual documents.":
+    ["Indices"],
+  "k-NN is a prediction method used not only for classification but also for regression-type prediction problems.":
+    ["True"],
+  "k-means algorithm is a part of prediction data mining method.": ["False"],
   "of the following, who would be considered a stakeholder on project? (Choose all that apply.)":
     [
       "End users of your product",

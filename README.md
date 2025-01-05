@@ -6,6 +6,7 @@ only support choice questions
 
 ## course
 - Advanced Database
+- Predictive analytics: Data Mining, Machine Learning, and Data Science for Practitioners
 - Project Management Professional (PMP) Based on PMBOK7
 
 ## usage
@@ -53,12 +54,21 @@ ai can help development, but it can introduce bugs. these kind of bugs are hard 
 ai can provide general suggestions, but final decision should base on the project context.
 
 for text app, it's hard to deal with special characters. for example
+```
+ 
+```
+
+i can't see shit. but it's [U+00A0](https://www.compart.com/en/unicode/U+00A0)
+
+https://en.wikipedia.org/wiki/Whitespace_character#Unicode
+
+i use a simple func. bang my head into the wall to collect the info. should use lib
 ```javascript
 function normalizeText(text) {
-  console.log("Normalizing text:", text);
   return text
-    .replace(/’/g, "'")
+    .replace(/ /g, " ")
     .replace(/–/g, "-")
+    .replace(/’/g, "'")
     .replace(/“/g, '"')
     .replace(/”/g, '"');
 }
@@ -66,6 +76,6 @@ function normalizeText(text) {
 
 possible solution:
 - hash. but it's exact match, so any change will break
-- ai. this add flexibility, but add extra cost
+- ai. flexible, but cost money
 
 it's stupid to code database because it's easy to mess up and hard to debug. always run the full check before and after the change. i use .js as database just to make it easy for tampermonkey to pull the dependency.

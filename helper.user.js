@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         ucertify-quiz-helper
 // @namespace    https://gitlab.com/0guanhua0/ucertify-quiz-helper
-// @version      1.0.0
+// @version      1.1.0
 // @description  ucertify quiz helper script to highlight correct answers
-// @author       guanhua
+// @author       0guanhua0@gmail.com
 // @include      *ucertify*
 // @require      https://gitlab.com/0guanhua0/ucertify-quiz-helper/-/raw/main/db.js?ref_type=heads
 // ==/UserScript==
@@ -15,8 +15,9 @@
 
   function normalizeText(text) {
     return text
-      .replace(/’/g, "'")
+      .replace(/ /g, " ")
       .replace(/–/g, "-")
+      .replace(/’/g, "'")
       .replace(/“/g, '"')
       .replace(/”/g, '"');
   }
@@ -63,7 +64,14 @@
     }
 
     if (!matchingKey) {
-      console.log("No matching question in quiz");
+      console.log("no match in db");
+      console.log(
+        "issue: https://gitlab.com/0guanhua0/ucertify-quiz-helper/-/issues",
+      );
+      console.log(
+        "issue: https://github.com/0guanhua0/ucertify-quiz-helper/issues",
+      );
+      console.log("email: 0guanhua0@gmail.com");
       return;
     }
 
