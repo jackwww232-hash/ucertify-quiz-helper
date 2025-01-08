@@ -26,6 +26,13 @@ https://gitlab.com/0guanhua0/ucertify-quiz-helper/-/raw/main/helper.user.js?ref_
 
 ![console](./pic/console.png)
 
+### chrome
+please turn on developer mode
+
+type [chrome://extensions/](chrome://extensions/) in the address
+
+![chrome](./pic/chrome.png)
+
 ## retake
 retake can refresh score
 
