@@ -1,4 +1,5 @@
 quiz = {
+  "A CONSTRAINT is assigned to which of the following?": ["TABLE"],
   "A Pareto chart is used for ranking causes of problems from greatest to smallest with a cumulative curve above it but does not de":
     ["True"],
   "A colleague advised you that, as a new project manager, you will be expected to provide leadership support to your team. Which o":
@@ -80,6 +81,7 @@ quiz = {
     ["Keep informed"],
   "A stream in a stream analytics is defined as a discrete and aggregated level of data elements.":
     ["False"],
+  "A table is which of the following?": ["A schema object"],
   "A team member hears the term Validate Scope and is confused as to its purpose. Which of the following is not a response you woul":
     [
       "The purpose of Validate Scope is to allow the team to test the deliverable to ensure it meets all requirements.",
@@ -301,7 +303,7 @@ quiz = {
   ],
   "Decomposition is a term frequently used for breaking down work in a predictive project. It is not always done in the same format":
     ["Organizational chart", "Outline format"],
-  "Deep learning analytics is a term that refers to the computing−branded technology platforms, such as IBM Watson, that specialize in processing and analyzing large, unstructured data sets.":
+  "Deep learning analytics is a term that refers to the computing-branded technology platforms, such as IBM Watson, that specialize in processing and analyzing large, unstructured data sets.":
     ["False"],
   "Deep learning is an extension of neural networks that deal with more complicated tasks with a higher level of sophistication by employing many layers of connected neurons.":
     ["True"],
@@ -482,6 +484,8 @@ quiz = {
     ["Write"],
   "If there are several different decisions to be made and the consequences of each affect the next decision, what would be the bes":
     ["Decision tree"],
+  "If you focus on trying to achieve the minimum passing grade requirement for the exam, you can study more efficiently.":
+    ["False"],
   "In Bayes' theorem, the posterior probability is defined as:": [
     "Posterior = (Likelihood*Prior) / Evidence",
   ],
@@ -856,6 +860,14 @@ quiz = {
   "Repeating the message is an example of?": ["Feedback"],
   "Resource assignments should occur based on team members assigned to the project, roles and responsibilities, a team directory, o":
     ["True"],
+  "Review the following SQL statement:\n\n\nCREATE TABLE personnel\n( personnel_ID    NUMBER(6),\n   division_ID     NUMBER(6),\n   CONSTRAINT personnel_ID_PK PRIMARY KEY (personnel_ID),\n   CONSTRAINT division_ID_PK PRIMARY KEY (division_ID));\n\nAssume there is no table already called PERSONNEL in the database. What will be the result of an attempt to execute the preceding SQL statement?":
+    [
+      "The statement will fail because you cannot create two primary key constraints on the table.",
+    ],
+  "Review the following SQL statement:\n\n\nCREATE TABLE shipping_Order\n( order_ID    NUMBER,   \norder_Year  CHAR(2),   \ncustomer_ID NUMBER, \nCONSTRAINT shipping_Order_pk PRIMARY KEY (order_ID, order_Year));\n\nAssume there is no table already called SHIPPING_ORDER in the database. What will be the result of an attempt to execute the preceding SQL statement?":
+    [
+      "The statement will succeed: the table will be created, and the primary key will also be created.",
+    ],
   "Risk A has a probability of 50 percent and an impact score of 9. Risk B has a probability of 60 percent and an impact score of 8":
     ["Risk C"],
   "Risk is the negative effect of a situation to the project outcomes.": [
@@ -921,8 +933,13 @@ quiz = {
   "Text-to-speech is a text processing function that can read textual content and detects and corrects syntactic and semantic errors.":
     ["False"],
   'The "name" attribute of student is a': ["composite attribute"],
+  "The 1Z0-071 exam (which is the subject of this book) has been officially validated by Oracle Corporation against which of the following versions of the Oracle database? (Choose all that apply.)":
+    ["11g", "12c"],
   "The CRISP-DM methodology was proposed by Fayyad et al., in the year 1996.": [
     "False",
+  ],
+  "The DESC command can be used to do which of the following?": [
+    "Show a table's columns and the data types of those columns",
   ],
   "The Kanban board usually has three columns": ["True"],
   "The Modify step in Six Sigma involves the process of assessing the mapping between organizational data repositories and the business problem.":
@@ -950,6 +967,13 @@ quiz = {
     ["False"],
   "The area under the ROC curve is a graphical assessment technique for binary classification problems, in which sensitivity is plotted on the y-axis and the specificity is plotted on the x-axis.":
     ["False"],
+  "The best exam guide you could possibly get for preparing to take and pass the 1Z0-071 certification exam, SQL Associate, is which of the following? (Choose all that apply.)":
+    [
+      "Don't make me tell you again.",
+      "The book you are holding right now.",
+      "This book.",
+      "This here book.",
+    ],
   "The bootstrapping methodology is similar to the leave-one-out methodology, where it can be used to calculate accuracy by leaving out one sample at each iteration of the estimation process.":
     ["False"],
   "The changes applied to a database by a committed transaction must persist in the database. These changes must not be lost because of any failure.":
@@ -988,12 +1012,19 @@ quiz = {
   "The data elements in a stream is often called __________.": ["tuples"],
   "The data sources that are combined in a centralized data repository for supporting managerial decisions is known as a data warehouse.":
     ["True"],
+  "The difference between dropping a column from a table with DROP and setting a column to be UNUSED is:":
+    [
+      "The UNUSED column and its data are retained within the table's storage allocation and counts against the total limit on the number of columns the table is allowed to have.",
+    ],
   "The director of the project management office has been tasked with developing project managers, besides meeting delivery of mult":
     [
       "The person most likely to hold to the process outlined in the past to assure continuity",
     ],
+  "The exam is timed.": ["True"],
   "The final project report contains all of the following information except which one?":
     ["A summary and official authorization for the project to begin"],
+  "The following SQL statements create a table with a column named A, then add a row to that table, then query the table:\n\n\nCREATE TABLE NUMBER_TEST (A NUMBER(5,3));\nINSERT INTO NUMBER_TEST (A) VALUES (3.1415);\nSELECT A FROM NUMBER_TEST;\n\nWhat is the displayed output of the SELECT statement?":
+    ["3.142"],
   "The ground rules established by the team benefit the group by": [
     "Decreasing risk of confusion",
     "Setting performance standards",
@@ -1074,6 +1105,10 @@ quiz = {
   ],
   "The purpose of data preparation (commonly called data preprocessing) is to eliminate the possibility of GIGO errors.":
     ["True"],
+  "The purpose of the CREATE DIRECTORY statement is to create a named object in the database:":
+    [
+      "That points to a directory you choose somewhere within the Oracle server's file system",
+    ],
   "The quality assurance team is reviewing documentation to ensure your team has followed procedures and to identify any abnormal v":
     ["Audit"],
   "The ratio of accurately classified instances (positives and negatives) divided by the total number of instances is defined as the overall accuracy metric.":
@@ -1163,7 +1198,10 @@ quiz = {
     ["Firm fixed price", "Fixed fee plus incentive"],
   "The types of resources most likely included in specific resource calendars would include all of the following except:":
     ["Email software"],
-  "The upper control limit is set to 400, and the lower control limit is set to −300. The upper specification limit is set to 280, and the lower specification limit is set to −280. You have a data point that is at 375. Which of the following is true?":
+  "The unique identifier of a row in a database table is a(n):": [
+    "Primary key",
+  ],
+  "The upper control limit is set to 400, and the lower control limit is set to -300. The upper specification limit is set to 280, and the lower specification limit is set to -280. You have a data point that is at 375. Which of the following is true?":
     [
       "The process is within statistical control, but the customer's requirements are not being met.",
     ],
@@ -1358,6 +1396,16 @@ quiz = {
     ],
   "What attribute can be divided into smaller subparts, which represent more basic attributes with independent meanings?":
     ["Composite"],
+  "What can DDL be used for? (Choose three.)": [
+    "Add columns to a database table",
+    "Add comments to a database table",
+    "Add privileges for a user to a database table",
+  ],
+  "What can a SELECT statement be used to query? (Choose the best answer.)": [
+    "One or more tables",
+  ],
+  "What can you use to submit SQL statements for execution? (Choose all that apply.)":
+    ["Java", "PHP", "SQL Developer", "SQL*Plus"],
   "What challenges are faced by big data technologies when they are used for analytics applications?":
     [
       "Heterogeneity of information",
@@ -1379,6 +1427,9 @@ quiz = {
     ["$150,000-$350,000"],
   "What is meant by delivery cadence?": [
     "The timing and frequency of project deliverables.",
+  ],
+  "What is one of the purposes of DDL? (Choose the best answer.)": [
+    "Issue privileges to users",
   ],
   "What is project management per PMI?": [
     "The application of knowledge, skills, tools, and techniques to project activities to meet project requirements",
@@ -1520,6 +1571,8 @@ quiz = {
     ["Risk avoidance and risk mitigation"],
   "When the team is working with a client who prefers to avoid risk, they need to measure":
     ["Risk appetite", "Risk threshold"],
+  "When transforming an ERD into a relational database, you often use an entity to build a database's:":
+    ["Table"],
   "When using a RACI chart, which of the following would a nonsponsor executive most likely be labeled during the period when work":
     ["Inform"],
   "When working with the software development team, the organization has determined that the best way to improve productivity is th":
@@ -1624,6 +1677,10 @@ quiz = {
     ["Java Servlet"],
   "Which of the following Java technologies for database Web programming are Java objects that can reside on the Web server machine and manage interactions with the client?":
     ["Java servlets"],
+  "Which of the following SQL statements creates a table that will reject attempts to INSERT a row with NULL values entered into the POSITION_ID column?":
+    [
+      "CREATE TABLE POSITIONS\n(POSITION_ID NUMBER(3),\nCONSTRAINT POSITION_CON PRIMARY KEY (POSITION_ID));",
+    ],
   "Which of the following TWO definitions refer to paperwork and tools used in the project":
     ["Artifacts", "Project documents"],
   "Which of the following agile ceremonies and predictive processes are closely related?":
@@ -1711,6 +1768,10 @@ quiz = {
     "Requirements",
     "Tasks",
   ],
+  "Which of the following are schema objects? (Choose all that apply.)": [
+    "INDEX",
+    "SEQUENCE",
+  ],
   "Which of the following are some of the 10 knowledge areas of project management?":
     ["Integration management, cost management, stakeholder management"],
   "Which of the following are some of the Twelve Project Management Principles per PMI?":
@@ -1752,6 +1813,11 @@ quiz = {
     ["Lagging indicators", "Leading indicators"],
   "Which of the following are used to describe the relationship between a response variable on one or more explanatory variables?":
     ["All of these"],
+  "Which of the following are valid CREATE TABLE statements? (Choose three.)": [
+    'CREATE TABLE "Boat Inventory"\n(ID NUMBER,\nNAME VARCHAR2(30));',
+    "CREATE TABLE CUSTOMER_HISTORY\n(ID NUMBER,\nNAME VARCHAR2(30));",
+    "CREATE TABLE workSchedule\n(ID NUMBER,\nNAME VARCHAR2(30));",
+  ],
   "Which of the following associations is represented as a line connecting the participating classes, and may optionally have a name?":
     ["Binary"],
   "Which of the following attributes is considered as a derived attribute?": [
@@ -1763,6 +1829,8 @@ quiz = {
     ["$_SERVER['PATH_INFO']"],
   "Which of the following built-in functions updates attribute sets, the value of the attribute to a new value?":
     ["Mutator"],
+  "Which of the following can be used to remove data from a table? (Choose two.)":
+    ["DELETE", "UPDATE"],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
     ["Abstract"],
   "Which of the following classification methods use(s) the analogy of natural evolution to build directed-search-based mechanisms to classify data samples?":
@@ -1876,6 +1944,9 @@ quiz = {
     ["Specificity"],
   "Which of the following is least likely to use cost estimates throughout the project life cycle?":
     ["Terms and conditions"],
+  "Which of the following is not a capability of the SELECT statement?": [
+    "It can remove data from a table.",
+  ],
   "Which of the following is not a classification method?": [
     "Linear regression",
   ],
@@ -1935,6 +2006,12 @@ quiz = {
     ["Sentiment analysis"],
   "Which of the following is the well-known standardized process for data analytics developed by the SAS Institute?":
     ["SEMMA"],
+  "Which of the following is true about ROLES?": [
+    "Roles are in the same namespace as USERS.",
+  ],
+  "Which of the following is true of SQL?": [
+    "It is the most commonly used language for interacting with a database.",
+  ],
   "Which of the following is typically a simplified abstraction of the human brain and its complex biological networks of neurons?":
     ["Artificial neural network"],
   "Which of the following is work performance information?": [
@@ -1997,6 +2074,8 @@ quiz = {
       "The development approach selection and the project life cycle determination are key aspects of project planning.",
       "The development approach(es) selected will determine when and how frequently additional detail planning will occur.",
     ],
+  "Which of the following options can be used with the reserved word CREATE to form the beginning of a complete SQL statement? (Choose three.)":
+    ["SEQUENCE", "TABLE", "VIEW"],
   "Which of the following options describe a project life cycle? (Choose two.)":
     [
       "Define, iteration 1, iteration 2, iteration 3, iteration N, deployment, close",
@@ -2129,6 +2208,8 @@ quiz = {
     ["Expert judgment", "Meetings", "Questionnaires and surveys"],
   "Which of the following tools would you utilize to look for potential vendors to discuss the project and receive proposals from?":
     ["Advertising"],
+  "Which of the following topics are not included in the SQL Fundamentals I exam but are addressed on the SQL Associate exam? (Choose all that apply.)":
+    ["External tables", "FLASHBACK", "MERGE"],
   "Which of the following transparencies is also known as distribution or network transparency?":
     ["Data organization"],
   "Which of the following types are used to declare handle variables?": [
@@ -2184,6 +2265,7 @@ quiz = {
   ],
   "Which of these is the process of extracting novel patterns and knowledge structures from continuous, rapid data records?":
     ["Data stream mining"],
+  "Which one of the following is a DML statement?": ["UPDATE"],
   "Which operation is used for inserting new data or new versions of existing data items?":
     ["Put"],
   "Which option best describes the factors that need to be considered when determining the development approach for a project?":
@@ -2346,7 +2428,7 @@ quiz = {
     ["Informal verbal"],
   "You are hosting a project kickoff meeting for a high-visibility project that has a fixed deadline. Discussions include high-level":
     [
-      "Advise senior management that the best you can do at this stage is a rough order of magnitude (ROM) range of −25% to +75%.",
+      "Advise senior management that the best you can do at this stage is a rough order of magnitude (ROM) range of -25% to +75%.",
     ],
   "You are in a meeting with several potential sellers for an agile project. Most likely, which meeting is this?":
     ["Bidder's conference"],
@@ -2360,6 +2442,8 @@ quiz = {
     ["Sprint retrospective"],
   "You are in the process of administrative closure and have collected project records, ensured vendor contracts are closed, and pr":
     ["Archive project documents"],
+  "You are logged in to user FINANCE. It is currently the only schema in the entire database. The following exist in the database:\n\nA VIEW named VENDORS\nA CONSTRAINT named VENDORS\nAn INDEX named CUSTOMER#ADDRESS\nYou attempt to execute the following SQL statement:\n\n\nCREATE TABLE CUSTOMER#ADDRESS\n(ID  NUMBER,\n   NAME VARCHAR2(30));\n\nWhich one of the following is true?":
+    ["The SQL statement will execute, and the TABLE will be created."],
   "You are looking at a control chart and notice that a few data points are falling on the mean, some data points are grouped toget":
     [
       "The data points that are grouped together are precise, but the data points on the mean are accurate.",
@@ -2437,6 +2521,10 @@ quiz = {
     ["Hybrid lifecycle"],
   "You are working with your team to resolve a perplexing issue and need to get to the primary cause. Which tool will you most like":
     ["Ishikawa diagram"],
+  "You attempt to execute the following SQL statement:\n\n\nCREATE TABLE VENDORS \n(VENDOR_ID   NUMBER,\nVENDOR_NAME VARCHAR2,\nCATEGORY    CHAR);\n\nWhich one of the following is true?":
+    [
+      "The execution fails because there is no precision indicated for VARCHAR2.",
+    ],
   "You frequently will experience situations where others are facing greater turmoil than you are. If you wish to be empathetic tow":
     [
       "Carefully observing those around you and listening for situations you have been through",
@@ -2446,6 +2534,8 @@ quiz = {
     ["Refer to the contract with the vendor."],
   "You have a new employee who has no experience with projects. This person has never dealt with quality either. When discussing le":
     ["De jure regulations"],
+  "You have a single database, with only one schema. The following four objects exist in the database:\n\nA TABLE named PRODUCT_CATALOG\nA TABLE named ADS\nA USER named PRODUCT_CATALOG\nA VIEW named CONFERENCE_SCHEDULE\nHow many of the four objects are owned by the schema?":
+    ["3"],
   "You have an expected activity duration of 26 days, optimistic value of 18 days, and pessimistic value of 67 days":
     ["31.5 days"],
   "You have been dealing with a client who requests changes frequently, despite there being a detailed initial plan in place with s":

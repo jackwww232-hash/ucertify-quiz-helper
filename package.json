@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "format": "node formatdb.js && npx prettier --write '**/*.js'"
+    "format": "node formatdb.js && npx prettier --write **/*.js"
   },
   "dependencies": {
     "prettier": "^3.3.3"
