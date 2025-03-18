@@ -196,6 +196,21 @@ quiz = {
     ["unsupervised learning procedures."],
   "Association patterns can include capturing the sequence of events and things.":
     ["True"],
+  "Assume a schema with only two tables: one named PRODUCTS and one named ENGINEERING. Review the following SQL statements:\n\n\nSELECT PRODUCT_ID FROM PRODUCTS;\nDROP TABLE SHIP_STAFF;\nINSERT INTO ENGINEERING (PROJECT_ID, MGR) VALUES (27,21);\nCOMMIT;\nINSERT INTO ENGINEERING (PROJECT_ID, MGR) VALUES (400,17);\nROLLBACK;\n\nIn this series of SQL statements, which line represents the first commit event?":
+    ["Line 2"],
+  "Assume a table LAMPS that has no constraints. Which of the following is true about the UPDATE statement and the LAMPS table? (Choose all that apply.)":
+    [
+      "For existing rows in LAMPS, UPDATE can add values to any column with a NULL value.",
+      "For existing rows in LAMPS, UPDATE can remove values from any column by changing its value to NULL.",
+    ],
+  "Assume all table name and column name references in the SQL statement that follows are valid. That being said, what is wrong with the syntax of the following SQL statement?\n\n\nSELECT SHIP_ID\nFROM SHIPS\nWHERE ((2*LIFEBOATS)+57) - CAPACITY IN (LIFEBOATS*20, LIFEBOATS+LENGTH);":
+    ["There is nothing wrong with the syntax."],
+  "Assume you have a table ITEMS that includes a column STATUS. Which of the following statements is syntactically correct? (Choose all that apply.)":
+    [
+      "SELECT * FROM ITEMS FETCH NEXT 20 PERCENT ROWS ONLY;",
+      "SELECT * FROM ITEMS FETCH NEXT 20 ROWS WITH TIES;",
+      "SELECT * FROM ITEMS ORDER BY STATUS FETCH NEXT 20 ROWS WITH TIES;",
+    ],
   "Assuring that you are working within a high-performance team is part of the project manager's role.":
     ["Directing the team's daily activities through clear instructions"],
   "At the beginning of a project, the sponsor/owner and project manager frequently get together with the team to identify stakehold":
@@ -271,9 +286,19 @@ quiz = {
     ["True"],
   "Connection weights are the key elements of an artificial neural network (ANN). They produce the final value through the summation and transfer function.":
     ["False"],
+  "Consider the following data in a table called PARTS:\n\n\nPNO  PART_TITLE       STATUS \n---  ---------------- -------   \n1  PROCESSOR V1.0   VALID   \n2  ENCASEMENT X770  PENDING   \n3  BOARD CPU XER A7 PENDING\n\nWhich of the following SQL statements will remove the word VALID from row 1, resulting in one row with a status of NULL and two rows with a status of PENDING?":
+    ["None of these"],
   "Consider the following rule and then identify its name:": [
     "Pseudotransitive",
   ],
+  "Consider the following set of SQL statements:\n\n\nCREATE TABLE INSTRUCTORS  \n(INSTRUCTOR_ID  NUMBER,   \nNAME           VARCHAR2(20),   \nCONSTRAINT     ID_PK   PRIMARY KEY (INSTRUCTOR_ID),   \nCONSTRAINT     NAME_UN UNIQUE (NAME));\n\nINSERT INTO INSTRUCTORS (INSTRUCTOR_ID, NAME)     \n   VALUES (1, 'Howard Jackson');\nINSERT INTO INSTRUCTORS (INSTRUCTOR_ID, NAME)   \n   VALUES (2, 'Trish Mars');\n\nThe table will create successfully. What will be the result of the two INSERT statements?":
+    ["Both will execute successfully."],
+  "Consider the following set of SQL statements:\n\n\nCREATE TABLE MAILING_LIST(FIRST_NAME VARCHAR2(20), LAST_NAME VARCHAR2(30));\nINSERT INTO MAILING_LIST VALUES('Smith', 'Mary');\n\nWhat will be the result of the INSERT statement?":
+    ["It will execute and create a new row in the table."],
+  "Consider the following statement:\n\n\nSELECT * FROM ITEMS ORDER BY LIST_DATE \nOFFSET   -5 ROWS FETCH FIRST 4 ROWS ONLY;\n\nAssume you have a table ITEMS with a column LIST_DATE. What is the result of an attempt to execute the statement?":
+    ["It will sort the rows by LIST_DATE and return only the first four rows."],
+  'Consider the following text:\n\n\nDEFINE vRoomNumber \nPROMPT "Enter a room number: " \nSELECT ROOM_NUMBER, STYLE, WINDOW \nFROM   SHIP_CABINS \nWHERE  ROOM_NUMBER = &RNBR;\n\nWhat will happen when this script is executed?':
+    ["The end user will be prompted to enter a number."],
   "Considering that a specific project team works primarily with a collective and variety of subject matter experts, what might be":
     [
       "The possibility of a single point of failure due to resources having specific skills",
@@ -484,6 +509,10 @@ quiz = {
     ["Write"],
   "If there are several different decisions to be made and the consequences of each affect the next decision, what would be the bes":
     ["Decision tree"],
+  "If you are using an ORDER BY to sort values in descending order, in which order will they appear?":
+    [
+      "If the data type is character, the value 'Michael' will appear first before the value 'Jackson'.",
+    ],
   "If you focus on trying to achieve the minimum passing grade requirement for the exam, you can study more efficiently.":
     ["False"],
   "In Bayes' theorem, the posterior probability is defined as:": [
@@ -860,6 +889,8 @@ quiz = {
   "Repeating the message is an example of?": ["Feedback"],
   "Resource assignments should occur based on team members assigned to the project, roles and responsibilities, a team directory, o":
     ["True"],
+  "Review the SQL statements that follow, and assume that there is no table called ADDRESSES already present in the database:\n\n\nCREATE TABLE ADDRESSES (ID NUMBER, ZONE NUMBER, ZIP_CODE VARCHAR2(5)); \nINSERT INTO ADDRESSES (ID, ZONE, ZIP_CODE) VALUES (1, 1, '94065'); \nSAVEPOINT ZONE_CHANGE_01; \nUPDATE ADDRESSES SET ZONE = 2 WHERE ZIP_CODE = 94065; \nROLLBACK;\n\nWhat will be the result of the execution of the SQL statements shown here?":
+    ["The ADDRESSES table will have no rows."],
   "Review the following SQL statement:\n\n\nCREATE TABLE personnel\n( personnel_ID    NUMBER(6),\n   division_ID     NUMBER(6),\n   CONSTRAINT personnel_ID_PK PRIMARY KEY (personnel_ID),\n   CONSTRAINT division_ID_PK PRIMARY KEY (division_ID));\n\nAssume there is no table already called PERSONNEL in the database. What will be the result of an attempt to execute the preceding SQL statement?":
     [
       "The statement will fail because you cannot create two primary key constraints on the table.",
@@ -867,6 +898,34 @@ quiz = {
   "Review the following SQL statement:\n\n\nCREATE TABLE shipping_Order\n( order_ID    NUMBER,   \norder_Year  CHAR(2),   \ncustomer_ID NUMBER, \nCONSTRAINT shipping_Order_pk PRIMARY KEY (order_ID, order_Year));\n\nAssume there is no table already called SHIPPING_ORDER in the database. What will be the result of an attempt to execute the preceding SQL statement?":
     [
       "The statement will succeed: the table will be created, and the primary key will also be created.",
+    ],
+  "Review the following SQL statement:\n\n\nTRUNCATE personnel;\n\nWhich of the following is true of the previous statement?":
+    ["The statement will fail."],
+  "Review the following SQL statements:\n\n\nCREATE TABLE AB_INVOICES (INVOICE_ID NUMBER, VENDOR_ID NUMBER); \nALTER TABLE AB_INVOICES ADD PRIMARY KEY (INVOICE_ID); \nINSERT INTO AB_INVOICES VALUES (1,1); \nDELETE AB_INVOICES WHERE INVOICE_ID = 2;\n\nWhich of the following best describes the results of attempting to execute the DELETE statement?":
+    [
+      "The DELETE statement will execute, but no rows in the table will be removed.",
+    ],
+  "Review the following SQL statements:\n\n\nCREATE TABLE BOUNCERS  \n(NIGHTCLUB_CODE NUMBER,   \nSTRENGTH_INDEX NUMBER); \nINSERT INTO BOUNCERS VALUES (1, NULL); \nUPDATE BOUNCERS    \n   SET STRENGTH_INDEX = 10;\n\nWhat is the end result of the SQL statements listed here?":
+    ["The BOUNCERS table will contain one row."],
+  "Review the following SQL statements:\n\n\nCREATE TABLE INSTRUCTORS   \n(INSTRUCTOR_ID NUMBER,    \n   EXEMPT   VARCHAR2(5),    \n   VACATION NUMBER,    \n   PAY_RATE NUMBER); \nINSERT INTO INSTRUCTORS VALUES (1, 'YES', NULL, 25); \nINSERT INTO INSTRUCTORS VALUES (2, NULL,  NULL, NULL); \nUPDATE INSTRUCTORS    \n   SET EXEMPT    = 'YES',    \n   SET VACATION  = 15 \nWHERE  PAY_RATE < 50;\n\nWhat can be said of the statements listed here?":
+    ["At least one of the statements will not execute."],
+  "Review the following data listing for a table SHIPS:\n\n\nSHIP_ID  SHIP_NAME      CAPACITY  LENGTH  LIFEBOATS \n-------  -------------  --------  ------  ---------       \n      1  Codd Crystal       2052     855         80       \n      2  Codd Elegance      2974     952         95\n\nIn the SHIPS table, SHIP_NAME has a data type of VARCHAR2(20). All other columns are NUMBER. Now consider the following query (note that line numbers have been added for readability):\n\n\nSELECT SHIP_ID \nFROM   SHIPS \nWHERE  CAPACITY BETWEEN 2052 AND 3000 \nAND  LENGTH IN ('100','855') \nAND  SHIP_NAME LIKE 'Codd_%';\n\nHow many rows will the SELECT statement return?":
+    ["1"],
+  "Review the following data listing for a table VENDORS:\n\n\nVENDOR_ID  CATEGORY \n---------  ---------------         \n        1  Supplier         \n        2  Teaming Partner\n\nNow review the following SQL statement:\n\n\nSELECT VENDOR_ID \nFROM   VENDORS \nWHERE  CATEGORY IN ('Supplier','Subcontractor','%Partner');\n\nHow many rows will the SELECT statement return?":
+    ["1"],
+  "Review the following data listing for a table called SHIP_CABINS:\n\n\nROOM_NUMBER  STYLE      WINDOW \n-----------  ---------  ---------         \n        102  Suite      Ocean         \n        103             Ocean         \n        104\n\nThe blank values are NULL. Now review the following SQL statement (line numbers are added for readability):\n\n\nSELECT ROOM_NUMBER\nFROM   SHIP_CABINS \nWHERE  (STYLE = NULL) OR (WINDOW = NULL);\n\nHow many rows will the SQL statement retrieve?":
+    ["0"],
+  "Review the following data listing for the SHIPS table:\n\n\nSHIP_ID  SHIP_NAME      CAPACITY  LENGTH  LIFEBOATS \n-------  -------------  --------  ------  ---------      \n      1  Codd Crystal       2052     855         80       \n      2  Codd Elegance      2974     952         95\n\nNow review the following SQL statement (line numbers are added for readability):\n\n\nSELECT SHIP_ID FROM   SHIPS\nWHERE  SHIP_NAME IN ('Codd Elegance','Codd Victorious') \n   OR  (LIFEBOATS >= 80 \n   OR   LIFEBOATS <= 100)\nAND  CAPACITY / LIFEBOATS > 25;\n\nWhich of the following statements is true about this SELECT statement?":
+    ["The syntax is correct."],
+  "Review the following statement:\n\n\nCREATE TABLE STUDENT_LIST  \n(STUDENT_ID  NUMBER,  \nNAME        VARCHAR2(30),   \nPHONE       VARCHAR2(30)); \nINSERT INTO STUDENT_LIST    \nVALUES (1, 'Joe Wookie', 5551212);\n\nThe table will create successfully. What will result from the INSERT statement?":
+    ["The INSERT will execute—the table will contain one row of data."],
+  "Review this SELECT statement:\n\n\nSELECT   PRODUCT_ID, PRODUCT_NAME, UNIT_PRICE, SHIPPING \nFROM     PRODUCTS \nWHERE    (UNIT_PRICE + SHIPPING) * TAX_RATE > 5 \nORDER BY LIKE PRODUCT_NAME;\n\nAssume all table and column references exist in the database. What can be said of this SELECT statement?":
+    [
+      "The statement will fail to execute because the ORDER BY clause includes the word LIKE.",
+    ],
+  "Review this SELECT statement:\n\n\nSELECT   SHIP_NAME \nFROM     SHIPS \nORDER BY SHIP_ID, CAPACITY DESC;\n\nAssume that all table and column references exist within the database. What can be said of this SELECT statement?":
+    [
+      "The rows will sort in order by SHIP_ID in ascending order and then by CAPACITY in descending order.",
     ],
   "Risk A has a probability of 50 percent and an impact score of 9. Risk B has a probability of 60 percent and an impact score of 8":
     ["Risk C"],
@@ -926,6 +985,9 @@ quiz = {
     ["Newer/established"],
   "Structured data is usually organized into records with simple data values that include __________, __________, and __________ variables.":
     ["categorical", "continuous", "ordinal"],
+  "TRUNCATE TABLE:": [
+    "Is a valid set of keywords to be used within a DDL statement",
+  ],
   "Take immediate action to eliminate the attacker's access to the system and to isolate or contain the problem to prevent further spread":
     ["Confinement"],
   "Task identification for a construction project is most likely to occur during regular checkup sessions throughout the life of th":
@@ -935,6 +997,9 @@ quiz = {
   'The "name" attribute of student is a': ["composite attribute"],
   "The 1Z0-071 exam (which is the subject of this book) has been officially validated by Oracle Corporation against which of the following versions of the Oracle database? (Choose all that apply.)":
     ["11g", "12c"],
+  "The CASCADE keyword, when used with TRUNCATE:": [
+    "Is required if the table has any dependent child tables",
+  ],
   "The CRISP-DM methodology was proposed by Fayyad et al., in the year 1996.": [
     "False",
   ],
@@ -1251,6 +1316,9 @@ quiz = {
     ],
   "To lead a team that will certainly face conflicts in work product, schedule, budget, resources, and other areas, you will have t":
     ["True"],
+  "To list all the currently defined variables, use:": ["DEFINE"],
+  "To permanently delete a substitution variable named THE_NAME so that it can no longer be used, use:":
+    ["UNDEFINE THE_NAME"],
   "To which of the following cost components for query execution does the given statement refer to?":
     ["Access cost to secondary storage"],
   'Today, analytics can be defined simply as "the discovery of information/knowledge/insight in data."':
@@ -1651,6 +1719,10 @@ quiz = {
     ["It depends on the nature of the risks involved."],
   "Which element is not normally part of a project's resource management plan?":
     ["A listing of the resource requirements for the project"],
+  "Which if the following is true of the ORDER BY clause? (Choose two.)": [
+    "It can sort rows based on data that isn't displayed as part of the SELECT statement.",
+    "It is optional.",
+  ],
   "Which injection attack attempts to add additional SQL statements to the existing SQL statement by exploiting a computer bug, which is caused by":
     ["Code injection"],
   "Which intention lock indicates that one or more exclusive locks will be requested on some descendant nodes?":
@@ -2106,6 +2178,10 @@ quiz = {
   "Which of the following relates to a pattern-recognition methodology for machine learning?":
     ["Neural computing"],
   "Which of the following represent unstructured data?": ["All of these"],
+  "Which of the following reserved words is not required in order to form a syntactically correct UPDATE statement?":
+    ["WHERE"],
+  "Which of the following reserved words is/are optional in a complete DELETE statement? (Choose all that apply)":
+    ["FROM", "WHERE"],
   "Which of the following rules must be enforced when the shared/exclusive locking scheme is used?":
     [
       "A transaction must issue the operation read_lock(X) or write_lock(X) before any read_item(X) operation is performed in the transaction.",
@@ -2525,6 +2601,7 @@ quiz = {
     [
       "The execution fails because there is no precision indicated for VARCHAR2.",
     ],
+  "You can use a substitution variable to replace:": ["Both"],
   "You frequently will experience situations where others are facing greater turmoil than you are. If you wish to be empathetic tow":
     [
       "Carefully observing those around you and listening for situations you have been through",
