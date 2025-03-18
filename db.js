@@ -889,7 +889,7 @@ quiz = {
   "Repeating the message is an example of?": ["Feedback"],
   "Resource assignments should occur based on team members assigned to the project, roles and responsibilities, a team directory, o":
     ["True"],
-  "Review the SQL statements that follow, and assume that there is no table called ADDRESSES already present in the database:\n\n\nCopy \nCREATE TABLE ADDRESSES (ID NUMBER, ZONE NUMBER, ZIP_CODE VARCHAR2(5)); \nINSERT INTO ADDRESSES (ID, ZONE, ZIP_CODE) VALUES (1, 1, '94065'); \nSAVEPOINT ZONE_CHANGE_01; \nUPDATE ADDRESSES SET ZONE = 2 WHERE ZIP_CODE = 94065; \nROLLBACK;\n\nWhat will be the result of the execution of the SQL statements shown here?":
+  "Review the SQL statements that follow, and assume that there is no table called ADDRESSES already present in the database:\n\n\nCREATE TABLE ADDRESSES (ID NUMBER, ZONE NUMBER, ZIP_CODE VARCHAR2(5)); \nINSERT INTO ADDRESSES (ID, ZONE, ZIP_CODE) VALUES (1, 1, '94065'); \nSAVEPOINT ZONE_CHANGE_01; \nUPDATE ADDRESSES SET ZONE = 2 WHERE ZIP_CODE = 94065; \nROLLBACK;\n\nWhat will be the result of the execution of the SQL statements shown here?":
     ["The ADDRESSES table will have no rows."],
   "Review the following SQL statement:\n\n\nCREATE TABLE personnel\n( personnel_ID    NUMBER(6),\n   division_ID     NUMBER(6),\n   CONSTRAINT personnel_ID_PK PRIMARY KEY (personnel_ID),\n   CONSTRAINT division_ID_PK PRIMARY KEY (division_ID));\n\nAssume there is no table already called PERSONNEL in the database. What will be the result of an attempt to execute the preceding SQL statement?":
     [
@@ -919,7 +919,7 @@ quiz = {
     ["The syntax is correct."],
   "Review the following statement:\n\n\nCREATE TABLE STUDENT_LIST  \n(STUDENT_ID  NUMBER,  \nNAME        VARCHAR2(30),   \nPHONE       VARCHAR2(30)); \nINSERT INTO STUDENT_LIST    \nVALUES (1, 'Joe Wookie', 5551212);\n\nThe table will create successfully. What will result from the INSERT statement?":
     ["The INSERT will execute—the table will contain one row of data."],
-  "Review this SELECT statement:\n\n\nCopy \nSELECT   PRODUCT_ID, PRODUCT_NAME, UNIT_PRICE, SHIPPING \nFROM     PRODUCTS \nWHERE    (UNIT_PRICE + SHIPPING) * TAX_RATE > 5 \nORDER BY LIKE PRODUCT_NAME;\n\nAssume all table and column references exist in the database. What can be said of this SELECT statement?":
+  "Review this SELECT statement:\n\n\nSELECT   PRODUCT_ID, PRODUCT_NAME, UNIT_PRICE, SHIPPING \nFROM     PRODUCTS \nWHERE    (UNIT_PRICE + SHIPPING) * TAX_RATE > 5 \nORDER BY LIKE PRODUCT_NAME;\n\nAssume all table and column references exist in the database. What can be said of this SELECT statement?":
     [
       "The statement will fail to execute because the ORDER BY clause includes the word LIKE.",
     ],
