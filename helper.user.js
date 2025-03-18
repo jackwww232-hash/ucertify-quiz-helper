@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         ucertify-quiz-helper
-// @namespace    https://gitlab.com/0guanhua0/ucertify-quiz-helper
+// @namespace    https://github.com/0guanhua0/ucertify-quiz-helper
 // @version      1.1.0
 // @description  ucertify quiz helper script to highlight correct answers
 // @author       0guanhua0@gmail.com
 // @include      *ucertify*
-// @require      https://gitlab.com/0guanhua0/ucertify-quiz-helper/-/raw/main/db.js?ref_type=heads
+// @require      https://raw.githubusercontent.com/0guanhua0/ucertify-quiz-helper/refs/heads/main/db.js
 // ==/UserScript==
 
 (function () {
