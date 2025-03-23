@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ucertify-quiz-helper
 // @namespace    https://github.com/0guanhua0/ucertify-quiz-helper
-// @version      1.1.0
+// @version      1.1.1
 // @description  ucertify quiz helper script to highlight correct answers
 // @author       0guanhua0@gmail.com
 // @include      *ucertify*
