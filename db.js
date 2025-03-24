@@ -142,6 +142,9 @@ quiz = {
     ["True"],
   "An administrator who is allowed to change student information can update student grades without the instructor's permission.":
     ["Privilege abuse"],
+  "Analytic functions are processed:": [
+    "As the last set of operations before processing the ORDER BY clause",
+  ],
   "Analytics and analysis are essentially the same thing; they both focus on the granular level representation of complex problems through decomposition of the whole into its lower-level parts.":
     ["False"],
   "Analytics is the art and science of discovering insight to support accurate and timely decision making.":
@@ -251,6 +254,11 @@ quiz = {
     ["True"],
   "Big data comes from a variety of sources within an organization, including marketing and sales transaction, inventory records, financial transaction, and human resources and accounting records.":
     ["False"],
+  "Built-in SQL functions: (Choose three.)": [
+    "Are available for use from the UPDATE statement.",
+    "Are available for use within a SELECT statement's WHERE clause, as well as the SELECT statement's expression list.",
+    "Can be invoked from a DELETE statement's WHERE clause.",
+  ],
   "Business analytics and data science have the same purpose: to convert data into actionable insight through an algorithm-based discovery process.":
     ["True"],
   "Business analytics is the process of developing computer code and novel IT frameworks.":
@@ -286,6 +294,8 @@ quiz = {
     ["True"],
   "Connection weights are the key elements of an artificial neural network (ANN). They produce the final value through the summation and transfer function.":
     ["False"],
+  "Consider the following SQL statement:\n\n\nSELECT SOUNDEX('Donald') FROM DUAL;\n\nWhich of the following is most likely to be the output of this SELECT statement? (Choose the best answer.)":
+    ["D543"],
   "Consider the following data in a table called PARTS:\n\n\nPNO  PART_TITLE       STATUS \n---  ---------------- -------   \n1  PROCESSOR V1.0   VALID   \n2  ENCASEMENT X770  PENDING   \n3  BOARD CPU XER A7 PENDING\n\nWhich of the following SQL statements will remove the word VALID from row 1, resulting in one row with a status of NULL and two rows with a status of PENDING?":
     ["None of these"],
   "Consider the following rule and then identify its name:": [
@@ -299,6 +309,8 @@ quiz = {
     ["It will sort the rows by LIST_DATE and return only the first four rows."],
   'Consider the following text:\n\n\nDEFINE vRoomNumber \nPROMPT "Enter a room number: " \nSELECT ROOM_NUMBER, STYLE, WINDOW \nFROM   SHIP_CABINS \nWHERE  ROOM_NUMBER = &RNBR;\n\nWhat will happen when this script is executed?':
     ["The end user will be prompted to enter a number."],
+  "Consider the following:\n\n\nSELECT MOD(5,3), REMAINDER(5,3) FROM DUAL;\n\nWhich of the following will be the result?":
+    ["2, -1"],
   "Considering that a specific project team works primarily with a collective and variety of subject matter experts, what might be":
     [
       "The possibility of a single point of failure due to resources having specific skills",
@@ -927,6 +939,14 @@ quiz = {
     [
       "The rows will sort in order by SHIP_ID in ascending order and then by CAPACITY in descending order.",
     ],
+  "Review this SQL statement:\n\n\nSELECT LASTNAME FROM CUSTOMERS WHERE LASTNAME = SOUNDEX('Franklin');\n\nWhat is a possible result for the query?":
+    ["None of these"],
+  "Review this SQL statement:\n\n\nSELECT MONTHS_BETWEEN(LAST_DAY('15-JAN-12')+1,'01-APR-12')FROM DUAL;\n\nWhat will result from this query?":
+    ["-2"],
+  "Review this SQL statement:\n\n\nSELECT SUBSTR('2009',1,2) || LTRIM('1124','1') FROM DUAL;\n\nWhat will be the result of the SQL statement?":
+    ["2024"],
+  "Review this SQL statement:\n\n\nSELECT TRUNC(ROUND(ABS(-1.7),2)) FROM DUAL;\n\nWhat will be the result of the SQL statement?":
+    ["1"],
   "Risk A has a probability of 50 percent and an impact score of 9. Risk B has a probability of 60 percent and an impact score of 8":
     ["Risk C"],
   "Risk is the negative effect of a situation to the project outcomes.": [
@@ -1007,10 +1027,19 @@ quiz = {
     "Show a table's columns and the data types of those columns",
   ],
   "The Kanban board usually has three columns": ["True"],
+  "The LEAD function returns data from:": [
+    "The row specified by the LEAD function's offset",
+  ],
   "The Modify step in Six Sigma involves the process of assessing the mapping between organizational data repositories and the business problem.":
     ["False"],
   "The Naive Bayes method requires output variables to have numeric values.": [
     "False",
+  ],
+  "The ORDER BY in an OVER clause:": [
+    "Operates independently of the ORDER BY in the SELECT statement",
+  ],
+  "The PERCENTILE_CONT function:": [
+    "Can be used with PARTITION BY to specify groups of data",
   ],
   "The Six Sigma process promotes an error-free/perfect business execution.": [
     "True",
@@ -1132,6 +1161,11 @@ quiz = {
     ["Credit history from 10 years ago"],
   "The original terminology of data mining commonly refers to discovering known patterns in large and structured data sets.":
     ["False"],
+  "The output of a function may be used: (Choose three.)": [
+    "As a column of output in a SELECT statement.",
+    "As an input parameter value to an outer function.",
+    "As an input value within the VALUES list of an INSERT statement.",
+  ],
   "The planned value for your project is $2,000 per week": [
     "You are behind schedule.",
   ],
@@ -2084,6 +2118,12 @@ quiz = {
   "Which of the following is true of SQL?": [
     "It is the most commonly used language for interacting with a database.",
   ],
+  "Which of the following is true of character functions?": [
+    "They are generally used to process text data.",
+  ],
+  "Which of the following is true of functions?": [
+    "They always return a value.",
+  ],
   "Which of the following is typically a simplified abstraction of the human brain and its complex biological networks of neurons?":
     ["Artificial neural network"],
   "Which of the following is work performance information?": [
@@ -2572,6 +2612,8 @@ quiz = {
     ["Work performance data"],
   "You are reviewing an artifact that documents the formulae to use to calculate the budget, the acceptable budget tolerance range,":
     ["Cost management plan"],
+  "You are tasked to create a SELECT statement to subtract five months from the hired date of each employee in the EMPLOYEES table. Which function will you use?":
+    ["None of these"],
   "You are the PM on a project developing a new model of smart doorbells. The doorbell will record short video clips of activity an":
     ["The customer is validating scope."],
   "You are the manager on a project to build a new wing for the local hospital. The ribbon-cutting ceremony is set, and many high-p":
