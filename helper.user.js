@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ucertify-quiz-helper
 // @namespace    https://github.com/0guanhua0/ucertify-quiz-helper
-// @version      1.1.2
+// @version      1.1.3
 // @description  ucertify quiz helper script to highlight correct answers
 // @author       0guanhua0@gmail.com
 // @include      *ucertify*
@@ -85,7 +85,6 @@
         if (text === value) {
           element.style.backgroundColor = "#00ff00";
           console.log("Highlight answer:", value);
-          break;
         }
       }
     });

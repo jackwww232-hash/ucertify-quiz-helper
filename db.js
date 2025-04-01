@@ -142,6 +142,10 @@ quiz = {
     ["True"],
   "An administrator who is allowed to change student information can update student grades without the instructor's permission.":
     ["Privilege abuse"],
+  "An aggregate function can be called from within: (Choose two.)": [
+    "The ORDER BY clause of a SELECT statement",
+    "The select list of a SELECT statement",
+  ],
   "Analytic functions are processed:": [
     "As the last set of operations before processing the ORDER BY clause",
   ],
@@ -298,6 +302,10 @@ quiz = {
     ["D543"],
   "Consider the following data in a table called PARTS:\n\n\nPNO  PART_TITLE       STATUS \n---  ---------------- -------   \n1  PROCESSOR V1.0   VALID   \n2  ENCASEMENT X770  PENDING   \n3  BOARD CPU XER A7 PENDING\n\nWhich of the following SQL statements will remove the word VALID from row 1, resulting in one row with a status of NULL and two rows with a status of PENDING?":
     ["None of these"],
+  "Consider the following query, its output, and a subsequent query:\n\n\nSQL> SELECT * FROM LINE_ITEMS; \nLINE_ITEM  PRICE \n---------  -----       \n      100   4.12       \n      210          \n      184   7.07 \n\nSQL> SELECT NVL(PRICE,10) FROM LINE_ITEMS;\n\n\nWhat is true of the final query shown previously?":
+    [
+      "It will return three rows, but it will not change the price for line items 100 and 184.",
+    ],
   "Consider the following rule and then identify its name:": [
     "Pseudotransitive",
   ],
@@ -305,8 +313,12 @@ quiz = {
     ["Both will execute successfully."],
   "Consider the following set of SQL statements:\n\n\nCREATE TABLE MAILING_LIST(FIRST_NAME VARCHAR2(20), LAST_NAME VARCHAR2(30));\nINSERT INTO MAILING_LIST VALUES('Smith', 'Mary');\n\nWhat will be the result of the INSERT statement?":
     ["It will execute and create a new row in the table."],
+  "Consider the following statement:\n\n\nSELECT  NVL(SHIP_NAME,'None'), \n      CASE CAPACITY WHERE 234 THEN 'OK' \n                    WHERE 999 THEN 'OK' \n      END \nFROM  SHIPS;\n\nWhich of the following statements is true of the previous SELECT statement?":
+    ["The statement will fail because of syntax errors on lines 2 and 3."],
   "Consider the following statement:\n\n\nSELECT * FROM ITEMS ORDER BY LIST_DATE \nOFFSET   -5 ROWS FETCH FIRST 4 ROWS ONLY;\n\nAssume you have a table ITEMS with a column LIST_DATE. What is the result of an attempt to execute the statement?":
     ["It will sort the rows by LIST_DATE and return only the first four rows."],
+  "Consider the following table listing from the table ALARM_HISTORY:\n\n\nTRACKING_DATE  INCIDENTS \n-------------  ---------   \n17-OCT-2018         12   \n18-OCT-2018          3   \n19-OCT-2018              \n20-OCT-2018             \n21-OCT-2018          4\n\nYou are tasked to calculate the average number of alarm incidents per day in ALARM_HISTORY. You know the following query is syntactically correct:\n\n\nSELECT AVG(INCIDENTS) FROM ALARM_HISTORY;\n\nHowever, you are aware that the value for INCIDENTS might be NULL, and you want the AVG returned to be calculated across every day in ALARM_HISTORY, not just the non-NULL days. Which of the following queries will achieve this goal?":
+    ["SELECT AVG(NVL(INCIDENTS,0)) FROM ALARM_HISTORY;"],
   'Consider the following text:\n\n\nDEFINE vRoomNumber \nPROMPT "Enter a room number: " \nSELECT ROOM_NUMBER, STYLE, WINDOW \nFROM   SHIP_CABINS \nWHERE  ROOM_NUMBER = &RNBR;\n\nWhat will happen when this script is executed?':
     ["The end user will be prompted to enter a number."],
   "Consider the following:\n\n\nSELECT MOD(5,3), REMAINDER(5,3) FROM DUAL;\n\nWhich of the following will be the result?":
@@ -317,6 +329,13 @@ quiz = {
     ],
   "Continuous improvement tools include the lessons learned, retrospectives, and experimentation (or trying new things).":
     ["True"],
+  "Conversion functions cannot be used to:": [
+    "Convert columns to new data types",
+    "Create user-defined data types",
+  ],
+  "Conversion functions:": [
+    "Change a value's data type in an equation to tell SQL to treat the value as that specified data type.",
+  ],
   "Correlation is meant to represent the linear relationships between two nominal input variables.":
     ["False"],
   "Creating a good prediction model requires finding an ___________ between the errors related to bias and variance.":
@@ -443,6 +462,8 @@ quiz = {
     ["Time and materials"],
   "Every meeting is a chance to transfer information. It may come from individuals or be provided to the participants of the meetin":
     ["Allows maximum efficiency when there is a free-flowing approach"],
+  "Examine the following data listing of a table called PERMITS:\n\n\nPERMIT_ID   FILED_DATE   VENDOR_ID \n---------   ----------   --------- \n1           05-DEC-09    101 \n2           12-DEC-09    310903 \n3           14-DEC-09    101\n\nWhich one of the following aggregate functions could be used to determine how many permits have been filed by VENDOR_ID 101?":
+    ["COUNT"],
   "F1 metric is simply the harmonic mean of precision and recall.": ["True"],
   "Feedback is a regular process during communication. If it is in person, the feedback is immediate. Which of the following statem":
     [
@@ -527,6 +548,8 @@ quiz = {
     ],
   "If you focus on trying to achieve the minimum passing grade requirement for the exam, you can study more efficiently.":
     ["False"],
+  "If you want to display a numeric value with dollar signs and commas, which of the following is the best approach to take?":
+    ["The TO_CHAR function with a format model"],
   "In Bayes' theorem, the posterior probability is defined as:": [
     "Posterior = (Likelihood*Prior) / Evidence",
   ],
@@ -929,6 +952,32 @@ quiz = {
     ["0"],
   "Review the following data listing for the SHIPS table:\n\n\nSHIP_ID  SHIP_NAME      CAPACITY  LENGTH  LIFEBOATS \n-------  -------------  --------  ------  ---------      \n      1  Codd Crystal       2052     855         80       \n      2  Codd Elegance      2974     952         95\n\nNow review the following SQL statement (line numbers are added for readability):\n\n\nSELECT SHIP_ID FROM   SHIPS\nWHERE  SHIP_NAME IN ('Codd Elegance','Codd Victorious') \n   OR  (LIFEBOATS >= 80 \n   OR   LIFEBOATS <= 100)\nAND  CAPACITY / LIFEBOATS > 25;\n\nWhich of the following statements is true about this SELECT statement?":
     ["The syntax is correct."],
+  "Review the following data listing from a table SCORES:\n\n\nSCORE_ID  TEST_SCORE \n--------  ---------- \n1          95 \n2 \n3          85\n\nNow consider the following query:\n\n\nSELECT  TO_CHAR(AVG(TEST_SCORE),'999,999.99') FROM SCORES;\n\nWhat will be the result of this query?":
+    ["90.00."],
+  "Review the following illustration:\n\n\nFigure A\n\nNow review this SQL statement:\n\n\nSELECT CRUISE_ORDER_ID, COUNT(ORDER_DATE) \nFROM   CRUISE_ORDERS;\n\nWhat can be said of this statement?":
+    [
+      "It will fail to execute because it mixes scalar and aggregate data in the select list.",
+    ],
+  "Review the following illustration:\n\n\nFigure A\n\nWhich of the following SQL statements will execute correctly?":
+    ["SELECT RANK(100000) WITHIN GROUP (ORDER BY PROJECT_COST) FROM PROJECTS;"],
+  "Review the following illustration:\n\n\nFigure A\n\nYour assignment: create a SELECT statement that queries the PROJECTS table to show the average project cost for each PURPOSE. You know there are only two values for PURPOSE in the table: 'Upgrade' and 'Maintenance'. You want to restrict rows where DAYS is greater than 3. Which of the following SELECT statements will perform this task?":
+    [
+      "SELECT PURPOSE, AVG(PROJECT_COST)\nFROM PROJECTS\nWHERE DAYS > 3\nGROUP BY PURPOSE;",
+    ],
+  "Review the following illustration:\n\n\nFigure A\n\nYour task is to define a SELECT statement that groups rows according to their value for PURPOSE and, for each purpose, adds up the values stored in DAYS. Which one of the following queries will perform this task?":
+    ["SELECT SUM(DAYS), PURPOSE\nFROM PROJECTS\nGROUP BY PURPOSE;"],
+  "Review the following illustration:\n\n\nFigure A\n\nand review the SQL statement that follows:\n\n\nSELECT   SHIP_ID, MAX(DAYS)\nFROM     PROJECTS \nGROUP BY SHIP_ID \nHAVING   AVG(PROJECT_COST) < 500000;\n\nWhich of the following statements is true for this SQL statement?":
+    [
+      "It will include only those groups of rows for a given SHIP_ID with an average value of PROJECT_COST less than 500000.",
+    ],
+  "Review the following illustration:\n\n\nFigure A\n\nand then look at the SQL code that follows:\n\n\nSELECT   COUNT(COUNT(PROJECT_COST)) \nFROM     PROJECTS \nGROUP BY PURPOSE;\n\nWhat will happen if you try to execute this query on the PROJECTS table?":
+    ["It will succeed and display one row."],
+  "Review the following illustration:\n\n\nFigure A\n\nand then look at the SQL code that follows:\n\n\nSELECT   TO_CHAR(ORDER_DATE,'Q') \"Quarter\", COUNT(*) \nFROM     CRUISE_ORDERS \nWHERE    TO_CHAR(ORDER_DATE,'YYYY') = '2009'\nGROUP BY TO_CHAR(ORDER_DATE,'Q');\n\nRecall that the 'Q' format model is for quarter, so TO_CHAR using a DATE data type with the 'Q' format mask is translating the date into the quarter in which it falls—1, 2, 3, or 4. Given that, which of the following statements is true of the SQL statement?":
+    [
+      "It will execute and show the number of orders in the CRUISE_ORDERS table for each quarter in the year 2009.",
+    ],
+  "Review the following illustration:\n\n\nFigure A\n\nand then review the following SQL statement:\n\n\nSELECT AVG(CRUISE_ORDER_ID), MIN(ORDER_DATE) \nFROM   CRUISE_ORDERS;\n\nWhat will result from an attempt to execute this SQL statement on the CRUISE_ORDERS table?":
+    ["It will execute and perform as intended."],
   "Review the following statement:\n\n\nCREATE TABLE STUDENT_LIST  \n(STUDENT_ID  NUMBER,  \nNAME        VARCHAR2(30),   \nPHONE       VARCHAR2(30)); \nINSERT INTO STUDENT_LIST    \nVALUES (1, 'Joe Wookie', 5551212);\n\nThe table will create successfully. What will result from the INSERT statement?":
     ["The INSERT will execute—the table will contain one row of data."],
   "Review this SELECT statement:\n\n\nSELECT   PRODUCT_ID, PRODUCT_NAME, UNIT_PRICE, SHIPPING \nFROM     PRODUCTS \nWHERE    (UNIT_PRICE + SHIPPING) * TAX_RATE > 5 \nORDER BY LIKE PRODUCT_NAME;\n\nAssume all table and column references exist in the database. What can be said of this SELECT statement?":
@@ -1023,6 +1072,7 @@ quiz = {
   "The CRISP-DM methodology was proposed by Fayyad et al., in the year 1996.": [
     "False",
   ],
+  "The DECODE expression always ends with:": ["Neither of these"],
   "The DESC command can be used to do which of the following?": [
     "Show a table's columns and the data types of those columns",
   ],
@@ -1197,6 +1247,7 @@ quiz = {
     ["Burnup chart", "Task board"],
   "The project you are working on has had modifications to the plan from the start and even how the project is run. Project governa":
     ["Naming the project manager"],
+  "The purpose of NULLIF is to:": ["None of these"],
   "The purpose of a bidder conference is most likely to include all of the following except:":
     ["The buyer provides an expected price they wish to pay."],
   "The purpose of artificial intelligence is to augment human capability.": [
@@ -1753,6 +1804,7 @@ quiz = {
     ["It depends on the nature of the risks involved."],
   "Which element is not normally part of a project's resource management plan?":
     ["A listing of the resource requirements for the project"],
+  "Which format mask returns the local currency symbol?": ["L"],
   "Which if the following is true of the ORDER BY clause? (Choose two.)": [
     "It can sort rows based on data that isn't displayed as part of the SELECT statement.",
     "It is optional.",
@@ -1787,8 +1839,14 @@ quiz = {
     [
       "CREATE TABLE POSITIONS\n(POSITION_ID NUMBER(3),\nCONSTRAINT POSITION_CON PRIMARY KEY (POSITION_ID));",
     ],
+  "Which of the following SQL statements will display the current time, in hours, minutes, and seconds, as determined by the operating system on which the database server resides?":
+    ["SELECT TO_CHAR(SYSDATE, 'HH:MI:SS') FROM DUAL;"],
   "Which of the following TWO definitions refer to paperwork and tools used in the project":
     ["Artifacts", "Project documents"],
+  "Which of the following aggregate functions can be used on character data? (Choose two.)":
+    ["COUNT", "MIN"],
+  "Which of the following aggregate functions ignores NULL values in its calculations? (Choose all that apply.)":
+    ["AVG", "MAX", "MEDIAN", "SUM"],
   "Which of the following agile ceremonies and predictive processes are closely related?":
     ["Iteration Review and Validate Scope"],
   "Which of the following algorithms was the first algorithm to use the downward closure and antimontonicity properties?":
@@ -1935,6 +1993,9 @@ quiz = {
     ["$_SERVER['PATH_INFO']"],
   "Which of the following built-in functions updates attribute sets, the value of the attribute to a new value?":
     ["Mutator"],
+  "Which of the following can be said of the CASE statement?": [
+    "It uses the keyword THEN.",
+  ],
   "Which of the following can be used to remove data from a table? (Choose two.)":
     ["DELETE", "UPDATE"],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
@@ -2115,6 +2176,10 @@ quiz = {
   "Which of the following is true about ROLES?": [
     "Roles are in the same namespace as USERS.",
   ],
+  "Which of the following is true about aggregate functions? (Choose two.)": [
+    "Are also called group functions.",
+    "Return one value for each group of rows specified in a SELECT statement.",
+  ],
   "Which of the following is true of SQL?": [
     "It is the most commonly used language for interacting with a database.",
   ],
@@ -2266,6 +2331,10 @@ quiz = {
     "It has a graph visualization interface.",
     "It has a high-level query language called Cypher.",
   ],
+  "Which of the following statements are true? (Choose two.)": [
+    "The presence of an explicit data type conversion documents your intent in the code.",
+    "You can use a data type conversion function to format numeric data to display with dollar signs and commas.",
+  ],
   "Which of the following statements best describes the influence of stakeholders over the life of a predictive project?":
     [
       "Stakeholder influence is the highest at the beginning and tends to decrease throughout the project.",
@@ -2280,6 +2349,10 @@ quiz = {
     [
       "A project life cycle cannot include multiple development approaches and delivery cadences.",
     ],
+  "Which of the following statements is true about HAVING? (Choose two.)": [
+    "It can be used only in the SELECT statement.",
+    "It must occur after the WHERE clause.",
+  ],
   "Which of the following statements is true about clustering?": [
     "Assigns customers to different segments",
   ],
@@ -2407,6 +2480,8 @@ quiz = {
       "Access control lists that determine who can submit, view, and modify the Jobs in a queue.",
       "Excess capacity is evenly distributed among active Queues.",
     ],
+  "Which query returns an expression of the data type INTERVAL YEAR TO MONTHS representing an interval of 1 year and 3 months?":
+    ["SELECT TO_YMINTERVAL('01-03') FROM DUAL;"],
   "Which risk analysis tool is used to determine which risks have the greatest impact on the project's critical path?":
     ["Monte Carlo simulation"],
   "Which risk management processes use the risk register and the risk report?":
@@ -2614,6 +2689,8 @@ quiz = {
     ["Cost management plan"],
   "You are tasked to create a SELECT statement to subtract five months from the hired date of each employee in the EMPLOYEES table. Which function will you use?":
     ["None of these"],
+  "You are tasked to create a report that displays the hours and minutes of the current date in a report. Which of the following will satisfy this requirement?":
+    ["TO_CHAR(SYSDATE, 'HH:MI')"],
   "You are the PM on a project developing a new model of smart doorbells. The doorbell will record short video clips of activity an":
     ["The customer is validating scope."],
   "You are the manager on a project to build a new wing for the local hospital. The ribbon-cutting ceremony is set, and many high-p":
@@ -2699,6 +2776,8 @@ quiz = {
     ],
   "You need to clear a parking lot covered in snow and decide one person should start clearing the snow before the other person sta":
     ["Start to start"],
+  "You need to determine the day of the week for a particular date in the future. Which function will reveal this information?":
+    ["TO_CHAR"],
   "You need to develop a new website for a large customer that is in the business of selling many types of household products. You":
     ["Analogous estimating"],
   "You need to purchase 500 windows of equal size for a hotel construction project. What type of bid document should you submit to":
