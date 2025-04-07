@@ -9,6 +9,7 @@ quiz = {
     ],
   "A control account is typically used to identify actual cost to the budget and can be used":
     ["True"],
+  "A correlated subquery:": ["Cannot be executed as a standalone query"],
   "A coworker who used to work with initial planning for long-term and complex interactions":
     [
       "Meeting initial requests is the most important, so avoid changes where possible.",
@@ -67,6 +68,10 @@ quiz = {
     ["True"],
   "A scrum team is currently too large, causing inefficiencies with completing tasks, and this":
     ["Create two or more smaller teams and organize scrum of scrum meetings."],
+  "A self-join is: (Choose two.)": [
+    "A SELECT statement that joins a table to itself by connecting a column in the table to a different column in the same table",
+    "A SELECT statement that specifies one table twice in the FROM clause",
+  ],
   "A senior decision maker on your project has recently left your organization and is no longer impacted by the project, nor will t":
     [
       "Update the stakeholder register identifying this person as a non-stakeholder.",
@@ -81,6 +86,10 @@ quiz = {
     ["Keep informed"],
   "A stream in a stream analytics is defined as a discrete and aggregated level of data elements.":
     ["False"],
+  "A table alias: (Choose two.)": [
+    "Can be used to clear up ambiguity in the query.",
+    "Exists only for the SQL statement that declared it.",
+  ],
   "A table is which of the following?": ["A schema object"],
   "A team member hears the term Validate Scope and is confused as to its purpose. Which of the following is not a response you woul":
     [
@@ -146,6 +155,9 @@ quiz = {
     "The ORDER BY clause of a SELECT statement",
     "The select list of a SELECT statement",
   ],
+  "An inline view is a form of a subquery.": ["True"],
+  "An inner join queries from two tables (looking at values in columns and optionally using expressions that reference columns) and compares the resulting values in one set of rows with the resulting values in another set of rows, looking for:":
+    ["Values that match"],
   "Analytic functions are processed:": [
     "As the last set of operations before processing the ORDER BY clause",
   ],
@@ -153,6 +165,7 @@ quiz = {
     ["False"],
   "Analytics is the art and science of discovering insight to support accurate and timely decision making.":
     ["True"],
+  "Another name for an EXISTS query is:": ["Semijoin"],
   "Another way to describe the scope baseline is that it is the current expected work to be":
     ["False"],
   "Any plans, processes, procedures, policies, databases, or fixed tools used by the group to improve performance or use as a compe":
@@ -453,6 +466,7 @@ quiz = {
     ],
   "Earned value is measured by the amount of cost incurred throughout the life of the project.":
     ["False"],
+  "Equijoins look for:": ["Exact data matches"],
   "Evaluating a project based on team development is difficult because people change, and the team members may change. However, tea":
     [
       "Measuring trust and respect within the team dynamic",
@@ -512,6 +526,7 @@ quiz = {
       "The project manager is focused on the overall project performance. The Scrum master is focused on guiding the core team through the Scrum process. The product owner is focused on the product being delivered.",
     ],
   "How many sequential steps exist in the CRISP-DM methodology?": ["Six"],
+  "How many tables can be joined in a query?": ["One, two, three, or more"],
   "How would you best classify the cost of raw materials on a project?": [
     "Direct",
   ],
@@ -924,6 +939,14 @@ quiz = {
   "Repeating the message is an example of?": ["Feedback"],
   "Resource assignments should occur based on team members assigned to the project, roles and responsibilities, a team directory, o":
     ["True"],
+  "Review the INVOICES and VENDORS tables.\n\n\nFigure A\n\nNext review the following SQL statement:\n\n\nSELECT VENDOR_ID, INVOICE_DATE, TOTAL_PRICE\nFROM   VENDORS JOIN INVOICES\nUSING (VENDOR_ID);\n\nWhich of the following statements is true for the SQL statement?":
+    ["It will execute successfully."],
+  "Review the PORTS and SHIPS tables:\n\n\nFigure A\n\nNext, review the following SQL code:\n\n\nSELECT P.COUNTRY, P.CAPACITY \nFROM   PORTS P \nWHERE  P.PORT_ID > (SELECT S.HOME_PORT_ID \n                    FROM SHIPS S WHERE S.LENGTH > 900);\n\nYou know that there are five rows in the SHIPS table with a length greater than 900. What will result from an attempt to execute this SQL statement?":
+    [
+      "An execution error will result because the subquery will return more than one row and the parent query is expecting only one row from the subquery.",
+    ],
+  "Review the POSITIONS, EMPLOYEES, and PAY_HISTORY tables.\n\n\nFigure A\n\nReview the following SQL statement:\n\n\nSELECT LAST_NAME, POSITION, SALARY \nFROM   POSITIONS P JOIN EMPLOYEES   E  ON P.POSITION_ID = E.POSITION_ID                    \n                   JOIN PAY_HISTORY PH ON E.EMPLOYEE_ID = PH.EMPLOYEE_ID;\n\nWhich of the following is true for the SQL statement? (Choose two.)":
+    ["It connects three tables.", "It will execute successfully."],
   "Review the SQL statements that follow, and assume that there is no table called ADDRESSES already present in the database:\n\n\nCREATE TABLE ADDRESSES (ID NUMBER, ZONE NUMBER, ZIP_CODE VARCHAR2(5)); \nINSERT INTO ADDRESSES (ID, ZONE, ZIP_CODE) VALUES (1, 1, '94065'); \nSAVEPOINT ZONE_CHANGE_01; \nUPDATE ADDRESSES SET ZONE = 2 WHERE ZIP_CODE = 94065; \nROLLBACK;\n\nWhat will be the result of the execution of the SQL statements shown here?":
     ["The ADDRESSES table will have no rows."],
   "Review the following SQL statement:\n\n\nCREATE TABLE personnel\n( personnel_ID    NUMBER(6),\n   division_ID     NUMBER(6),\n   CONSTRAINT personnel_ID_PK PRIMARY KEY (personnel_ID),\n   CONSTRAINT division_ID_PK PRIMARY KEY (division_ID));\n\nAssume there is no table already called PERSONNEL in the database. What will be the result of an attempt to execute the preceding SQL statement?":
@@ -954,12 +977,34 @@ quiz = {
     ["The syntax is correct."],
   "Review the following data listing from a table SCORES:\n\n\nSCORE_ID  TEST_SCORE \n--------  ---------- \n1          95 \n2 \n3          85\n\nNow consider the following query:\n\n\nSELECT  TO_CHAR(AVG(TEST_SCORE),'999,999.99') FROM SCORES;\n\nWhat will be the result of this query?":
     ["90.00."],
+  "Review the following illustration and SQL code:\n\n\nFigure A\n\n\nUPDATE PORTS P \nSET    CAPACITY = CAPACITY + 1 \nWHERE  EXISTS (SELECT * \n               FROM SHIPS \n               WHERE HOME_PORT_ID = P.PORT_ID);\n\nThe PORTS table has 15 rows. The SHIPS table has 20 rows. Each row in PORTS has a unique value for PORT_ID. Each PORT_ID value is represented in the HOME_PORT_ID column of at least one row of the SHIPS table. What can be said of this UPDATE statement?":
+    [
+      "The value for CAPACITY will increase once for each of the 15 rows in the PORTS table.",
+    ],
+  "Review the following illustration and the SQL code:\n\n\nFigure A\n\n\nDELETE FROM PORTS P \nWHERE  PORT_ID NOT EXISTS (SELECT HOME_PORT_ID \n                           FROM   SHIPS \n                           WHERE  HOME_PORT_ID = P.PORT_ID);\n\nThe code is attempting to delete any row in the PORTS table that is not a home port for any ship in the SHIPS table, as indicated by the HOME_PORT_ID column. In other words, only keep the PORTS rows that are currently the HOME_PORT_ID value for a ship in the SHIPS table; get rid of all other PORT rows. That's the intent of the SQL statement. What will result from an attempt to execute the preceding SQL statement?":
+    ["It will fail because of a syntax error on line 2."],
   "Review the following illustration:\n\n\nFigure A\n\nNow review this SQL statement:\n\n\nSELECT CRUISE_ORDER_ID, COUNT(ORDER_DATE) \nFROM   CRUISE_ORDERS;\n\nWhat can be said of this statement?":
     [
       "It will fail to execute because it mixes scalar and aggregate data in the select list.",
     ],
   "Review the following illustration:\n\n\nFigure A\n\nWhich of the following SQL statements will execute correctly?":
     ["SELECT RANK(100000) WITHIN GROUP (ORDER BY PROJECT_COST) FROM PROJECTS;"],
+  "Review the following illustration:\n\n\nFigure A\n\nWhich of the following is a syntactically correct outer join query? (Choose two.)":
+    [
+      "SELECT VENDOR_NAME, INVOICE_DATE\nFROM VENDORS LEFT JOIN INVOICES\nON VENDORS.VENDOR_ID = INVOICES.VENDOR_ID;",
+      "SELECT VENDOR_NAME, INVOICE_DATE\nFROM VENDORS RIGHT OUTER JOIN INVOICES\nON VENDORS.VENDOR_ID = INVOICES.VENDOR_ID;",
+    ],
+  "Review the following illustration:\n\n\nFigure A\n\nWhich of the following is a valid self-join statement? (Choose all that apply.)":
+    [
+      "SELECT P1.POSITION_ID, P1.MIN_SALARY, P1.MAX_SALARY\nFROM POSITIONS P1 INNER JOIN POSITIONS P2\nON P1.REPORTS_TO = P2.POSITION_ID;",
+      "SELECT P1.POSITION_ID, P1.MIN_SALARY, P1.MAX_SALARY\nFROM POSITIONS P1 JOIN POSITIONS P2\nON P1.REPORTS_TO = P2.POSITION_ID;",
+      "SELECT P1.POSITION_ID, P1.MIN_SALARY, P1.MAX_SALARY\nFROM POSITIONS P1 RIGHT OUTER JOIN POSITIONS P2\nON P1.REPORTS_TO = P2.POSITION_ID;",
+    ],
+  "Review the following illustration:\n\n\nFigure A\n\nWhich of the following statements, when executed, will result in an error?":
+    [
+      "SELECT WITH SHIPPER_INFO AS\n(SELECT SHIP_ID FROM SHIPS)\nSELECT PORT_ID, SHIPPER_INFO.SHIP_ID\nFROM PORTS, SHIPPER_INFO;",
+      "WITH (SELECT SHIP_ID FROM SHIPS)\nSELECT PORT_ID\nFROM PORTS;",
+    ],
   "Review the following illustration:\n\n\nFigure A\n\nYour assignment: create a SELECT statement that queries the PROJECTS table to show the average project cost for each PURPOSE. You know there are only two values for PURPOSE in the table: 'Upgrade' and 'Maintenance'. You want to restrict rows where DAYS is greater than 3. Which of the following SELECT statements will perform this task?":
     [
       "SELECT PURPOSE, AVG(PROJECT_COST)\nFROM PROJECTS\nWHERE DAYS > 3\nGROUP BY PURPOSE;",
@@ -976,10 +1021,18 @@ quiz = {
     [
       "It will execute and show the number of orders in the CRUISE_ORDERS table for each quarter in the year 2009.",
     ],
+  "Review the following illustration:\n\n\nFigure A\n\nand then review the following SQL statement:\n\n\nSELECT A.EMPLOYEE_ID, B.POSITION\nFROM   PAY_HISTORY A JOIN POSITIONS B \nON   A.SALARY < B.MAX_SALARY AND A.SALARY > B.MIN_SALARY;\n\nWhich of the following statements accurately describe the SQL statement? (Choose two.)":
+    ["It is a non-equijoin.", "It is an inner join."],
   "Review the following illustration:\n\n\nFigure A\n\nand then review the following SQL statement:\n\n\nSELECT AVG(CRUISE_ORDER_ID), MIN(ORDER_DATE) \nFROM   CRUISE_ORDERS;\n\nWhat will result from an attempt to execute this SQL statement on the CRUISE_ORDERS table?":
     ["It will execute and perform as intended."],
+  "Review the following illustration:\n\n\nFigure A\n\nand then review the following SQL statement:\n\n\nSELECT VENDOR_ID, INVOICE_DATE, TOTAL_PRICE\nFROM   VENDORS JOIN INVOICES\nUSING (VENDOR_ID);\n\nWhat kind of join is this? (Choose two.)":
+    ["Equijoin", "INNER"],
   "Review the following statement:\n\n\nCREATE TABLE STUDENT_LIST  \n(STUDENT_ID  NUMBER,  \nNAME        VARCHAR2(30),   \nPHONE       VARCHAR2(30)); \nINSERT INTO STUDENT_LIST    \nVALUES (1, 'Joe Wookie', 5551212);\n\nThe table will create successfully. What will result from the INSERT statement?":
     ["The INSERT will execute—the table will contain one row of data."],
+  "Review the given PORTS and SHIPS tables and the SQL code:\n\n\nFigure A\n\n\nSELECT PORT_NAME \nFROM   PORTS P \nWHERE  PORT_ID IN (SELECT HOME_PORT_ID, SHIP_NAME \n                   FROM   SHIPS \n                   WHERE  SHIP_ID IN (1,2,3));\n\nWhich of the following is true of this statement?":
+    ["The statement will fail with a syntax error because of line 3."],
+  "Review the given PORTS and SHIPS tables:\n\n\nFigure A\n\nYour team is tasked with the job of creating a list of the ships with the least capacity in each port. In other words, each ship has a home port. For each port that is a home port to ships, which of each port's ships has the least capacity? Your team produces the following query in answer to this task:\n\n\nSELECT S1.SHIP_NAME, (SELECT PORT_NAME \n                      FROM   PORTS\n                      WHERE  PORT_ID = S1.HOME_PORT_ID) HOME_PORT \nFROM   SHIPS S1 \nWHERE  S1.CAPACITY = (SELECT MIN(CAPACITY) \n                      FROM   SHIPS S2 \n                      WHERE  S2.HOME_PORT_ID = S1.HOME_PORT_ID);\n\nWhich of the following statements is true about this SQL statement?":
+    ["The statement will execute successfully as intended."],
   "Review this SELECT statement:\n\n\nSELECT   PRODUCT_ID, PRODUCT_NAME, UNIT_PRICE, SHIPPING \nFROM     PRODUCTS \nWHERE    (UNIT_PRICE + SHIPPING) * TAX_RATE > 5 \nORDER BY LIKE PRODUCT_NAME;\n\nAssume all table and column references exist in the database. What can be said of this SELECT statement?":
     [
       "The statement will fail to execute because the ORDER BY clause includes the word LIKE.",
@@ -988,6 +1041,8 @@ quiz = {
     [
       "The rows will sort in order by SHIP_ID in ascending order and then by CAPACITY in descending order.",
     ],
+  "Review this SQL statement:\n\n\nSELECT   V.VENDOR_ID, INV.INVOICE_DATE \nFROM     VENDORS V INNER JOIN INVOICES INV \nON       V.VENDOR_ID = INV.VENDOR_ID;\n\nWhich one of the following keywords in this statement is optional?":
+    ["INNER"],
   "Review this SQL statement:\n\n\nSELECT LASTNAME FROM CUSTOMERS WHERE LASTNAME = SOUNDEX('Franklin');\n\nWhat is a possible result for the query?":
     ["None of these"],
   "Review this SQL statement:\n\n\nSELECT MONTHS_BETWEEN(LAST_DAY('15-JAN-12')+1,'01-APR-12')FROM DUAL;\n\nWhat will result from this query?":
@@ -996,6 +1051,11 @@ quiz = {
     ["2024"],
   "Review this SQL statement:\n\n\nSELECT TRUNC(ROUND(ABS(-1.7),2)) FROM DUAL;\n\nWhat will be the result of the SQL statement?":
     ["1"],
+  "Review this WORK_HISTORY table:\n\n\nFigure A\n\nYour task is to create a query that will list—for each ship—all of the EMPLOYEE_ID values for all the employees who have the shortest work history for their ship. In other words, if there are two ships, you want to list all the employees assigned to the first ship who have the shortest work history, all the employees assigned to the second ship who have the shortest work history, and so on. Which of the following queries will accomplish this task? (Choose two.)":
+    [
+      "SELECT EMPLOYEE_ID FROM WORK_HISTORY W1\nWHERE ABS(START_DATE - END_DATE) <= ALL\n(SELECT ABS(START_DATE - END_DATE)\nFROM WORK_HISTORY\nWHERE SHIP_ID = W1.SHIP_ID);",
+      "SELECT EMPLOYEE_ID FROM WORK_HISTORY W1\nWHERE ABS(START_DATE - END_DATE) =\n(SELECT MIN(ABS(START_DATE - END_DATE))\nFROM WORK_HISTORY\nWHERE SHIP_ID = W1.SHIP_ID);",
+    ],
   "Risk A has a probability of 50 percent and an impact score of 9. Risk B has a probability of 60 percent and an impact score of 8":
     ["Risk C"],
   "Risk is the negative effect of a situation to the project outcomes.": [
@@ -1096,6 +1156,11 @@ quiz = {
   ],
   "The WBS dictionary is important to explain many of the work packages that the team has outlined. Which of the following items would certainly be included in a WBS dictionary? (Choose two.)":
     ["Acceptance criteria", "Description of the work"],
+  "The WITH clause can be used to name a subquery. Which of the following is also true? (Choose two.)":
+    [
+      "The name of the subquery can be joined to other tables in the SELECT statement following the WITH clause.",
+      "The name of the subquery can be used in the SELECT statement following the WITH clause.",
+    ],
   "The agile team and product owner are in a meeting discussing a feature, but there is much confusion between team members about t":
     ["Implement an adequate configuration management system."],
   "The agile team leader you have recently been assigned works differently than anyone you've worked with before. This leader expla":
@@ -1156,6 +1221,9 @@ quiz = {
   "The data elements in a stream is often called __________.": ["tuples"],
   "The data sources that are combined in a centralized data repository for supporting managerial decisions is known as a data warehouse.":
     ["True"],
+  "The difference between an INNER and an OUTER join is:": [
+    "The INNER join displays rows that match in all joined tables; the OUTER join shows data that doesn't necessarily match.",
+  ],
   "The difference between dropping a column from a table with DROP and setting a column to be UNUSED is:":
     [
       "The UNUSED column and its data are retained within the table's storage allocation and counts against the total limit on the number of columns the table is allowed to have.",
@@ -1689,6 +1757,9 @@ quiz = {
     ["Hierarchical", "Logical"],
   "When high level or low level DML commands are embedded in a general-purpose programming language, this language is called:":
     ["host language."],
+  "When is a query considered a multirow subquery? (Choose the best answer.)": [
+    "If it returns multiple rows at the time of execution",
+  ],
   "When looking to improve social skills, you would pay attention to building your bonds with your network.":
     ["True"],
   "When looking to motivate a team, you want to enable their": [
@@ -1993,6 +2064,18 @@ quiz = {
     ["$_SERVER['PATH_INFO']"],
   "Which of the following built-in functions updates attribute sets, the value of the attribute to a new value?":
     ["Mutator"],
+  "Which of the following can a correlated subquery be used in? (Choose three.)":
+    [
+      "The SET clause of an UPDATE statement",
+      "The WHERE clause of a DELETE statement",
+      "The WHERE clause of an UPDATE statement",
+    ],
+  "Which of the following can a subquery be used in? (Choose all that apply.)":
+    [
+      "A WHERE clause in a SELECT statement",
+      "An INSERT statement's SELECT",
+      "An inline view",
+    ],
   "Which of the following can be said of the CASE statement?": [
     "It uses the keyword THEN.",
   ],
@@ -2015,6 +2098,8 @@ quiz = {
     ["BI"],
   "Which of the following commands specifies a new relation by giving it a name and specifying its attributes and initial constraints?":
     ["CREATE TABLE"],
+  "Which of the following comparison operators can be used with a multiple-row subquery? (Choose two.)":
+    [">= ALL", "IN"],
   "Which of the following comparison operators does SQL use to compare an attribute value to NULL?":
     ["IS", "IS NOT"],
   "Which of the following components is a sequence of SQL statements, but it could also be a database transaction or an external program that will be automatically":
@@ -2066,6 +2151,9 @@ quiz = {
     ["Contiguous"],
   "Which of the following files keeps the records ordered by the value of a particular field?":
     ["Sorted"],
+  "Which of the following forms of subquery never returns more than one row?": [
+    "Scalar",
+  ],
   "Which of the following from the bullseye diagram interprets the predictions that are inconsistent but represent a reasonably well-performing prediction model?":
     ["Low bias, high variance"],
   "Which of the following functional dependencies occurs only in a relation that contains three or more attributes and an attribute is indirectly dependent on":
@@ -2098,6 +2186,9 @@ quiz = {
     ["Implement the agreed-upon risk response plans."],
   "Which of the following is a specific recovery scheme used in many of IBM's relational database products?":
     ["ARIES algorithm"],
+  "Which of the following is a true statement?": [
+    "A SELECT statement with a GROUP BY may use a subquery to return a value to the outermost WHERE clause.",
+  ],
   "Which of the following is a type of linear least squares method for estimating the unknown parameters in a linear regression model?":
     ["OLS"],
   "Which of the following is an abstraction concept for building composite objects from their component objects?":
@@ -2154,6 +2245,7 @@ quiz = {
   "Which of the following is not included in the transition plan?": [
     "Procedures for customer acceptance",
   ],
+  "Which of the following is referred to as a semijoin?": [],
   "Which of the following is the abstraction process whereby classes and objects are made uniquely recognizable by means of some identifier?":
     ["Identification"],
   "Which of the following is the least likely collaboration tool to use in an Agile environment?":
@@ -2263,6 +2355,13 @@ quiz = {
   "Which of the following phases is the final phase of data preprocessing?": [
     "Data reduction",
   ],
+  "Which of the following problems can be solved with a subquery? (Choose the two best answers.)":
+    [
+      "A correlated subquery can also be a single-row subquery.",
+      "A single-row subquery can also be a multiple-column subquery.",
+      "You are tasked with creating a view.",
+      "You are tasked with determining which divisions in a corporation earned sales last year that were less than the average sales for all divisions in the prior year.",
+    ],
   "Which of the following properties is enforced by the concurrency control subsystem of the DBMS?":
     ["Isolation"],
   "Which of the following provides an explanation for an individual data point of the joint distribution of independent variables?":
@@ -2332,6 +2431,8 @@ quiz = {
     "It has a high-level query language called Cypher.",
   ],
   "Which of the following statements are true? (Choose two.)": [
+    "A correlated subquery can also be a single-row subquery.",
+    "A single-row subquery can also be a multiple-column subquery.",
     "The presence of an explicit data type conversion documents your intent in the code.",
     "You can use a data type conversion function to format numeric data to display with dollar signs and commas.",
   ],
@@ -2371,6 +2472,8 @@ quiz = {
   "Which of the following symbols before a tag specifies that the tag can appear as a descendant of the previous tag at any level?":
     ["//"],
   "Which of the following symbols denotes the SELECT operator?": ["sigma"],
+  "Which of the following symbols is most likely to be used in a SELECT statement using a non-equijoin?":
+    ["<="],
   "Which of the following symbols represents the PROJECT operation?": ["pi"],
   "Which of the following techniques are used to solve the imbalanced data problems?":
     [
@@ -2515,6 +2618,8 @@ quiz = {
     ["Mapping of binary 1:1 relationship types"],
   "Which step of the ER-to-relational mapping algorithm has the foreign key approach and the cross-reference or relationship relation approach?":
     ["Mapping of binary 1:N relationship types"],
+  "Which subquery includes references to the parent query and thus cannot execute as a standalone query? (Choose the best answer.)":
+    ["A correlated subquery"],
   "Which tools can be used by a project manager to assess the fit for any potential candidate for a project role? (Choose all that":
     ["Ability tests", "Attitudinal surveys", "Structured interviews"],
   "Which two-phase locking protocol is a deadlock-free protocol?": [
@@ -2770,6 +2875,8 @@ quiz = {
     ["Cost management plan"],
   "You have the following metrics on your project so far: PV = $63,000; EV = $61,000; AC = 62,000.":
     ["You are over budget and behind schedule."],
+  "You have two tables. One table is called CUSTOMERS. Another is called PURCHASES, and it records a list of customer transactions. Your goal is to create a SELECT statement that will show all customers by last name in alphabetical order, along with any purchases they may have made in the past two weeks, as recorded in the PURCHASES table. It's possible that many customers have made no purchases in the past two weeks, but you still want them included in the output. Both tables contain a column called CUSTOMER_ID. Which of the following will be true of the SELECT statement you'll need to create? (Choose two.)":
+    ["It will be an equijoin.", "It will be an outer join."],
   "You managed a project to remodel a customer's house. After only a month, the customer calls you complaining that the internal do":
     [
       "External failure cost because the product has been delivered to the customer",
