@@ -2,6 +2,7 @@ quiz = {
   "A CONSTRAINT is assigned to which of the following?": ["TABLE"],
   "A Pareto chart is used for ranking causes of problems from greatest to smallest with a cumulative curve above it but does not de":
     ["True"],
+  "A SEQUENCE is": ["None of these."],
   "A colleague advised you that, as a new project manager, you will be expected to provide leadership support to your team. Which o":
     [
       "Encourage the team to support project value delivery.",
@@ -126,6 +127,7 @@ quiz = {
     [
       "Progressive elaboration allows for details to be added during the retrospective.",
     ],
+  "All database data is stored in:": ["TABLES"],
   "All of the following are common characteristics of Scrum agile development approaches except which one?":
     [
       "Each sprint results in a working product that can be delivered to production.",
@@ -158,6 +160,9 @@ quiz = {
   "An inline view is a form of a subquery.": ["True"],
   "An inner join queries from two tables (looking at values in columns and optionally using expressions that reference columns) and compares the resulting values in one set of rows with the resulting values in another set of rows, looking for:":
     ["Values that match"],
+  "An invisible index is an index on one or more columns in a table:": [
+    "And is updated for any DELETE statements performed on the table",
+  ],
   "Analytic functions are processed:": [
     "As the last set of operations before processing the ORDER BY clause",
   ],
@@ -286,6 +291,9 @@ quiz = {
     ["Adaptive approach"],
   "CRM aims to create one-on-one relationships with customers by developing an intimate understanding of their needs and wants.":
     ["True"],
+  "Choose the best answer from the choices below. An index:": [
+    "May improve the performance of an UPDATE statement that uses a WHERE clause, if the WHERE clause performs an equality comparison on an indexed column in a table",
+  ],
   "Clustering is a supervised learning process in which objects are assigned to pre-determined number of artificial groups called clusters.":
     ["False"],
   "Cognitive computing has the capability to simulate human thought processes to assist humans in finding solutions to complex problems.":
@@ -949,6 +957,12 @@ quiz = {
     ["It connects three tables.", "It will execute successfully."],
   "Review the SQL statements that follow, and assume that there is no table called ADDRESSES already present in the database:\n\n\nCREATE TABLE ADDRESSES (ID NUMBER, ZONE NUMBER, ZIP_CODE VARCHAR2(5)); \nINSERT INTO ADDRESSES (ID, ZONE, ZIP_CODE) VALUES (1, 1, '94065'); \nSAVEPOINT ZONE_CHANGE_01; \nUPDATE ADDRESSES SET ZONE = 2 WHERE ZIP_CODE = 94065; \nROLLBACK;\n\nWhat will be the result of the execution of the SQL statements shown here?":
     ["The ADDRESSES table will have no rows."],
+  "Review the following SQL code:\n\n\nCREATE TABLE PO_BOXES (PO_BOX_ID NUMBER(3), PO_BOX_NUMBER VARCHAR2(10))\n             ENABLE ROW MOVEMENT;\nINSERT INTO PO_BOXES VALUES (1, 'A100');\nINSERT INTO PO_BOXES VALUES (2, 'B100');\nCOMMIT;\nDROP TABLE PO_BOXES;\nCOMMIT;\nPURGE TABLE PO_BOXES;\nCOMMIT;\n\nWhat statement will recover the PO_BOXES table after these statements are executed?":
+    ["None of these—the table cannot be recovered."],
+  "Review the following SQL code:\n\n\nDROP   TABLE PO_BOXES;\nCREATE TABLE PO_BOXES (PO_BOX_ID NUMBER(3), PO_BOX_NUMBER VARCHAR2(10))\n               ENABLE ROW MOVEMENT;\nINSERT INTO PO_BOXES VALUES (1, 'A100');\nINSERT INTO PO_BOXES VALUES (2, 'B100');\nCOMMIT;\nEXECUTE DBMS_LOCK.SLEEP(30);\nDELETE FROM PO_BOXES;\nCOMMIT;\nEXECUTE DBMS_LOCK.SLEEP(30);\n\nWhich of the following statements could be added as line 11 and recover the deleted rows from the PO_BOXES table?":
+    [
+      "FLASHBACK TABLE PO_BOXES TO TIMESTAMP SYSTIMESTAMP—INTERVAL '0 00:00:45' DAY TO SECOND;",
+    ],
   "Review the following SQL statement:\n\n\nCREATE TABLE personnel\n( personnel_ID    NUMBER(6),\n   division_ID     NUMBER(6),\n   CONSTRAINT personnel_ID_PK PRIMARY KEY (personnel_ID),\n   CONSTRAINT division_ID_PK PRIMARY KEY (division_ID));\n\nAssume there is no table already called PERSONNEL in the database. What will be the result of an attempt to execute the preceding SQL statement?":
     [
       "The statement will fail because you cannot create two primary key constraints on the table.",
@@ -983,6 +997,14 @@ quiz = {
     ],
   "Review the following illustration and the SQL code:\n\n\nFigure A\n\n\nDELETE FROM PORTS P \nWHERE  PORT_ID NOT EXISTS (SELECT HOME_PORT_ID \n                           FROM   SHIPS \n                           WHERE  HOME_PORT_ID = P.PORT_ID);\n\nThe code is attempting to delete any row in the PORTS table that is not a home port for any ship in the SHIPS table, as indicated by the HOME_PORT_ID column. In other words, only keep the PORTS rows that are currently the HOME_PORT_ID value for a ship in the SHIPS table; get rid of all other PORT rows. That's the intent of the SQL statement. What will result from an attempt to execute the preceding SQL statement?":
     ["It will fail because of a syntax error on line 2."],
+  "Review the following illustration:\n\n\nFigure A\n\nNow review the following SQL code:\n\n\nCREATE OR REPLACE VIEW MAJOR_PROJECTS AS\nSELECT PROJECT_ID, SHIP_ID, PROJECT_NAME, PROJECT_COST\nFROM   PROJECTS\nWHERE  PROJECT_COST > 10000;\n\nINSERT INTO MAJOR_PROJECTS\n(PROJECT_ID, SHIP_ID, PROJECT_NAME, PROJECT_COST)\nVALUES\n((SELECT MAX(PROJECT_ID)+1 FROM PROJECTS),\n(SELECT MAX(SHIP_ID) FROM SHIPS),\n'Small Project',\n500);\n\nWhat will result from an attempt to execute these two SQL statements?":
+    ["The CREATE and INSERT statements will successfully execute."],
+  "Review the following illustration:\n\n\nFigure A\n\nNow review the following SQL code:\n\n\nCREATE OR REPLACE VIEW PROJECTS_ROLLUP AS\n       SELECT SHIP_NAME, CAPACITY,\n              COUNT(PROJECT_ID) NUM_PROJECTS, ROUND(SUM(DAYS)) TOTAL_DAYS\n       FROM   SHIPS A JOIN PROJECTS B\n       ON     A.SHIP_ID = B.SHIP_ID\n       GROUP BY SHIP_NAME, CAPACITY;\n\nWhat can be said of this code?":
+    [
+      "After the view is created, a valid SELECT statement will work on the PROJECTS_ROLLUP view, but an INSERT will not.",
+    ],
+  "Review the following illustration:\n\n\nFigure A\n\nNow review the following SQL code:\n\n\nCREATE OR REPLACE VIEW SHIP_CAP_PROJ AS\nSELECT   SHIP_ID,\n         TO_CHAR(CAPACITY,'999,999'),\n         PROJECT_COST\nFROM     SHIPS JOIN PROJECTS\nUSING    (SHIP_ID)\nWHERE    (PROJECT_COST * 2) < 100000;\n\nWhat will result from an attempt to execute this SQL code?":
+    ["The statement will fail because of an error in line 3."],
   "Review the following illustration:\n\n\nFigure A\n\nNow review this SQL statement:\n\n\nSELECT CRUISE_ORDER_ID, COUNT(ORDER_DATE) \nFROM   CRUISE_ORDERS;\n\nWhat can be said of this statement?":
     [
       "It will fail to execute because it mixes scalar and aggregate data in the select list.",
@@ -1027,6 +1049,35 @@ quiz = {
     ["It will execute and perform as intended."],
   "Review the following illustration:\n\n\nFigure A\n\nand then review the following SQL statement:\n\n\nSELECT VENDOR_ID, INVOICE_DATE, TOTAL_PRICE\nFROM   VENDORS JOIN INVOICES\nUSING (VENDOR_ID);\n\nWhat kind of join is this? (Choose two.)":
     ["Equijoin", "INNER"],
+  "Review the following illustrations, as well as the ONLINE_SUBSCRIBERS table in Figure 11-3.\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT   A.SUB_DATE, COUNT(*)\n  FROM     ONLINE_SUBSCRIBERS A JOIN\n                (SELECT LAST_ORDER, PRODUCT FROM STORE_INVENTORY\n                 UNION\n                 SELECT ADDED, ITEM_NAME FROM FURNISHINGS) B\n  ON       A.SUB_DATE = B.LAST_ORDER\n  GROUP BY A.SUB_DATE;\n\nWhich of the following are true about this SQL statement? (Choose two.)":
+    [
+      "The B.LAST_ORDER reference at the end of line 6 refers to data included in the ADDED column referred to in line 5.",
+      "The statement is syntactically correct and will execute successfully.",
+    ],
+  "Review the following illustrations, as well as the ONLINE_SUBSCRIBERS table in Figure 11-3.\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT   A.SUB_DATE, COUNT(*)\nFROM     ONLINE_SUBSCRIBERS A JOIN\n             (SELECT LAST_ORDER, PRODUCT FROM STORE_INVENTORY\n              UNION\n              SELECT ADDED, ITEM_NAME FROM FURNISHINGS) B\nON       A.SUB_DATE = B.LAST_ORDER\nGROUP BY A.SUB_DATE;\n\nWhere can you add an ORDER BY to this code? (Choose two.)":
+    ["After line 7", "At the end of line 5 before the parenthesis"],
+  'Review the following illustrations, as well as the ONLINE_SUBSCRIBERS table in Figure 11-3.\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT  (SELECT LAST_ORDER FROM STORE_INVENTORY\n  UNION\n           SELECT ADDED "Date Added" FROM FURNISHINGS)\n  FROM     ONLINE_SUBSCRIBERS\n  ORDER BY 1;\n\nWhat will happen when this SQL statement is executed?':
+    ["It will fail with an execution error on line 1."],
+  "Review the following illustrations, as well as the ONLINE_SUBSCRIBERS table in Figure 11-3.\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT  (SELECT PRODUCT FROM STORE_INVENTORY\n           INTERSECT\n           SELECT ITEM_NAME FROM FURNISHINGS)\n  FROM     ONLINE_SUBSCRIBERS;\n\nWhat will happen when this SQL statement is executed?":
+    [
+      "It will execute and repeat the value 'Towel' for each row of the ONLINE_SUBSCRIBERS table.",
+    ],
+  "Review the following illustrations, as well as the ONLINE_SUBSCRIBERS table in Figure 11-3.\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT COUNT(*)\n  FROM   ONLINE_SUBSCRIBERS\n  WHERE  SUB_DATE IN\n            (SELECT LAST_ORDER FROM STORE_INVENTORY\n             UNION\n             SELECT ADDED      FROM FURNISHINGS);\n\nWhat will happen when this SQL statement is executed?":
+    ["It will execute successfully."],
+  "Review the following illustrations:\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\n(  SELECT PRODUCT FROM STORE_INVENTORY\n     UNION ALL\n     SELECT ITEM_NAME FROM FURNISHINGS\n  )\n  INTERSECT\n  (  SELECT ITEM_NAME FROM FURNISHINGS WHERE ITEM_NAME = 'Towel'\n     UNION ALL\n     SELECT ITEM_NAME FROM FURNISHINGS WHERE ITEM_NAME = 'Towel'\n  );\n\nHow many rows will result from this code?":
+    ["1"],
+  "Review the following illustrations:\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT   TO_CHAR(A.LAST_ORDER,'RRRR-MM-DD')\n  FROM     STORE_INVENTORY A\n  ORDER BY 1\n  UNION\n  SELECT   ADDED\n  FROM FURNISHINGS;\n\nWhat will result from an attempt to execute this SQL statement?":
+    [
+      "It will fail with a syntax error on line 3 because you cannot use an ORDER BY in this context.",
+    ],
+  "Review the following illustrations:\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT '--' \"Order Date\", SECTION\n  FROM   FURNISHINGS\n  WHERE  CAT# NOT IN (1,2)\n  UNION ALL\n  SELECT TO_CHAR(LAST_ORDER,'Month') \"Last Order\", AISLE\n  FROM   STORE_INVENTORY;\n\nWhich of the following are valid ORDER BY clauses for this query? (Choose two.)":
+    ["ORDER BY 1", "ORDER BY SECTION"],
+  "Review the following illustrations:\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT '--', SECTION\n  FROM   FURNISHINGS\n  WHERE  CAT# NOT IN (1,2)\n  UNION ALL\n  SELECT TO_CHAR(LAST_ORDER,'Month'), AISLE\n  FROM   STORE_INVENTORY;\n\nHow many rows will result from this query?":
+    ["4"],
+  "Review the following illustrations:\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT NUM, PRODUCT FROM STORE_INVENTORY\n  INTERSECT\n  SELECT CAT#, ITEM_NAME   FROM FURNISHINGS;\n\nHow many rows will result from this query?":
+    ["0"],
+  "Review the following series of SQL statements:\n\n\nCREATE TABLE SUPPLIES_01\n(  SUPPLY_ID NUMBER(7),\n   SUPPLIER  VARCHAR2(30),\n   ACCT_NO   VARCHAR2(50));\nCREATE INDEX IX_SU_01 ON SUPPLIES_01(ACCT_NO);\nDROP TABLE SUPPLIES_01;\nCREATE TABLE SUPPLIES_02\n(  SUPPLY_ID NUMBER(7),\n   SUPPLIER  VARCHAR2(30),\n   ACCT_NO   VARCHAR2(50));\nCREATE INDEX IX_SU_02 ON SUPPLIES_02(ACCT_NO,SUPPLIER);\n\nAssuming there are no objects already in existence named SUPPLIES_01 or SUPPLIES_02 prior to the execution of the preceding statements, what database objects will result from these statements?":
+    ["A table called SUPPLIES_02 and an index called IX_SU_02"],
   "Review the following statement:\n\n\nCREATE TABLE STUDENT_LIST  \n(STUDENT_ID  NUMBER,  \nNAME        VARCHAR2(30),   \nPHONE       VARCHAR2(30)); \nINSERT INTO STUDENT_LIST    \nVALUES (1, 'Joe Wookie', 5551212);\n\nThe table will create successfully. What will result from the INSERT statement?":
     ["The INSERT will execute—the table will contain one row of data."],
   "Review the given PORTS and SHIPS tables and the SQL code:\n\n\nFigure A\n\n\nSELECT PORT_NAME \nFROM   PORTS P \nWHERE  PORT_ID IN (SELECT HOME_PORT_ID, SHIP_NAME \n                   FROM   SHIPS \n                   WHERE  SHIP_ID IN (1,2,3));\n\nWhich of the following is true of this statement?":
@@ -1055,6 +1106,12 @@ quiz = {
     [
       "SELECT EMPLOYEE_ID FROM WORK_HISTORY W1\nWHERE ABS(START_DATE - END_DATE) <= ALL\n(SELECT ABS(START_DATE - END_DATE)\nFROM WORK_HISTORY\nWHERE SHIP_ID = W1.SHIP_ID);",
       "SELECT EMPLOYEE_ID FROM WORK_HISTORY W1\nWHERE ABS(START_DATE - END_DATE) =\n(SELECT MIN(ABS(START_DATE - END_DATE))\nFROM WORK_HISTORY\nWHERE SHIP_ID = W1.SHIP_ID);",
+    ],
+  "Review this code:\n\n\nDROP   TABLE SHIPS CASCADE CONSTRAINTS;\nDROP   SEQUENCE PROJ_ID_SEQ#;\nCREATE TABLE SHIPS (SHIP_ID NUMBER PRIMARY KEY,\n                    LENGTH NUMBER);\nCREATE SEQUENCE PROJ_ID_SEQ# START WITH 1 INCREMENT BY 4;\nINSERT INTO SHIPS (SHIP_ID, LENGTH) VALUES (PROJ_ID_SEQ#.NEXTVAL, 'NOT A NUMBER');\nINSERT INTO SHIPS (SHIP_ID, LENGTH) VALUES (PROJ_ID_SEQ#.NEXTVAL, 750);\nCOMMIT;\n\nNote that the first INSERT statement is attempting to enter a string literal of 'NOT A NUMBER' into a column declared with a numeric data type. Given that, what will be the result of these SQL statements?":
+    ["One row added to the SHIPS table, with a SHIP_ID value of 5."],
+  "Review this code:\n\n\nDROP SEQUENCE PROJ_ID_SEQ#;\nCREATE SEQUENCE PROJ_ID_SEQ# START WITH 1 INCREMENT BY 2;\nSELECT PROJ_ID_SEQ#.CURRVAL FROM DUAL;\n\nWhat will result from these SQL statements?":
+    [
+      "The SELECT statement will fail because you cannot reference the CURRVAL pseudocolumn of a sequence until after you have referenced NEXTVAL for the sequence in a session.",
     ],
   "Risk A has a probability of 50 percent and an impact score of 9. Risk B has a probability of 60 percent and an impact score of 8":
     ["Risk C"],
@@ -1145,6 +1202,9 @@ quiz = {
   "The Naive Bayes method requires output variables to have numeric values.": [
     "False",
   ],
+  "The ORDER BY clause can be included in a SELECT with set operators if:": [
+    "It follows the final SELECT statement.",
+  ],
   "The ORDER BY in an OVER clause:": [
     "Operates independently of the ORDER BY in the SELECT statement",
   ],
@@ -1221,6 +1281,8 @@ quiz = {
   "The data elements in a stream is often called __________.": ["tuples"],
   "The data sources that are combined in a centralized data repository for supporting managerial decisions is known as a data warehouse.":
     ["True"],
+  "The database object that stores lookup information to speed up querying in tables is:":
+    ["INDEX"],
   "The difference between an INNER and an OUTER join is:": [
     "The INNER join displays rows that match in all joined tables; the OUTER join shows data that doesn't necessarily match.",
   ],
@@ -1345,6 +1407,9 @@ quiz = {
     [
       "We should use an Agile suitability questionnaire to assess the culture of the organization, the skill sets of employees, and the project itself to determine whether Agile would be the right approach.",
     ],
+  "The set operators do not include which one of the following keywords?": [
+    "SET",
+  ],
   "The skills of a surgical technician are an example of which type of attribute?":
     ["Multivalued attribute"],
   "The smallest segment of work that may be produced at a given time and that still provides some value is essentially the definiti":
@@ -1741,6 +1806,8 @@ quiz = {
     ["Earned value divided by the actual cost"],
   "When calculating the schedule variance of a project that is around 60 percent complete, which formula would you use?":
     ["Earned value minus the planned value"],
+  "When combining two SELECT statements, which of the following set operators will produce a different result, depending on which SELECT statement precedes or follows the operator?":
+    ["MINUS"],
   "When compared with all other methodologies, CRISP-DM is the most popular data mining process that is being used in data analytics.":
     ["True"],
   "When completing lessons learned, most teams attempt to be as complete as possible.":
@@ -1906,6 +1973,8 @@ quiz = {
     ["Java Servlet"],
   "Which of the following Java technologies for database Web programming are Java objects that can reside on the Web server machine and manage interactions with the client?":
     ["Java servlets"],
+  "Which of the following SQL statements can always be executed on any VIEW object?":
+    ["SELECT"],
   "Which of the following SQL statements creates a table that will reject attempts to INSERT a row with NULL values entered into the POSITION_ID column?":
     [
       "CREATE TABLE POSITIONS\n(POSITION_ID NUMBER(3),\nCONSTRAINT POSITION_CON PRIMARY KEY (POSITION_ID));",
@@ -2295,6 +2364,8 @@ quiz = {
     ["Inner"],
   "Which of the following joins is the default type of join in a joined table, where a tuple s included in the result only if a matching tuple exists in the other relation?":
     ["Inner"],
+  "Which of the following keywords cannot be used with the CREATE SEQUENCE statement?":
+    ["JOIN"],
   "Which of the following languages is a platform-independent and programming language-independent protocol for messaging and remote procedure calls?":
     ["SOAP"],
   "Which of the following languages specifies the internal schema?": ["SDL"],
@@ -2406,6 +2477,8 @@ quiz = {
   ],
   "Which of the following stakeholders is the highest priority for the project manager?":
     ["Definitive stakeholders"],
+  "Which of the following statements about set operators is true? Choose the best answer.":
+    ["You can connect two SELECT statements with one set operator."],
   "Which of the following statements are true about the risk management plan? (Choose two.)":
     [
       "It documents how risks will be managed and controlled for the project.",
@@ -2796,6 +2869,8 @@ quiz = {
     ["None of these"],
   "You are tasked to create a report that displays the hours and minutes of the current date in a report. Which of the following will satisfy this requirement?":
     ["TO_CHAR(SYSDATE, 'HH:MI')"],
+  "You are tasked with cleaning up a database application. There are two tables in the database: ORDERS contains completed ORDERS, and ORDER_RETURNS contains duplicate information for all ORDERS that were later returned. Your goal is to find out whether any rows in ORDER_RETURNS exist that were never in the ORDERS table to begin with. Which of the following set operators should you use?":
+    ["MINUS"],
   "You are the PM on a project developing a new model of smart doorbells. The doorbell will record short video clips of activity an":
     ["The customer is validating scope."],
   "You are the manager on a project to build a new wing for the local hospital. The ribbon-cutting ceremony is set, and many high-p":
