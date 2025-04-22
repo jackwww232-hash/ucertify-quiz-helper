@@ -29,6 +29,7 @@ quiz = {
     ],
   "A model with low variance is the one that captures both noise and generalized patterns in the data and therefore produces an overfit model.":
     ["False"],
+  "A multitable INSERT statement:": ["Can use conditional logic"],
   "A new director joins your organization, and you know that this director's division will be highly impacted by your project. What":
     ["Update the stakeholder register."],
   "A new stakeholder has been identified on your project, and you are trying to determine the best approach and strategy to involve":
@@ -65,6 +66,9 @@ quiz = {
       "Add additional resources to the project for additional cost.",
       "Reduce the scope somewhat to keep to the scheduled timeframe.",
     ],
+  "A role:": [
+    "Can be created by a user only if that user has the CREATE ROLE system privilege",
+  ],
   "A scatter diagram is most frequently used to demonstrate the relationship between two or more variables and to see the relative":
     ["True"],
   "A scrum team is currently too large, causing inefficiencies with completing tasks, and this":
@@ -221,6 +225,8 @@ quiz = {
     ["unsupervised learning procedures."],
   "Association patterns can include capturing the sequence of events and things.":
     ["True"],
+  "Assume a database with three valid users: NEIL, BUZZ, and MICHAEL. Assume all users have the appropriate privileges they require to perform the tasks shown here. Assume NEIL owns a table called PROVISIONS. Examine the following code (assume all password references are valid):\n\n\nCONNECT NEIL/neilPassword\nGRANT SELECT ON PROVISIONS TO BUZZ, MICHAEL;\n\nCONNECT BUZZ/buzzPassword\nCREATE VIEW PROVISIONS AS SELECT * FROM NEIL.PROVISIONS;\nGRANT SELECT ON PROVISIONS TO MICHAEL;\nCREATE PUBLIC SYNONYM PROVISIONS FOR BUZZ.PROVISIONS;\n\nCONNECT MICHAEL/michaelPassword\nCREATE SYNONYM PROVISIONS FOR NEIL.PROVISIONS;\nSELECT * FROM PROVISIONS;\n\nWhat object is identified in line 11 by the name PROVISIONS?":
+    ["The synonym created in line 10"],
   "Assume a schema with only two tables: one named PRODUCTS and one named ENGINEERING. Review the following SQL statements:\n\n\nSELECT PRODUCT_ID FROM PRODUCTS;\nDROP TABLE SHIP_STAFF;\nINSERT INTO ENGINEERING (PROJECT_ID, MGR) VALUES (27,21);\nCOMMIT;\nINSERT INTO ENGINEERING (PROJECT_ID, MGR) VALUES (400,17);\nROLLBACK;\n\nIn this series of SQL statements, which line represents the first commit event?":
     ["Line 2"],
   "Assume a table LAMPS that has no constraints. Which of the following is true about the UPDATE statement and the LAMPS table? (Choose all that apply.)":
@@ -236,6 +242,8 @@ quiz = {
       "SELECT * FROM ITEMS FETCH NEXT 20 ROWS WITH TIES;",
       "SELECT * FROM ITEMS ORDER BY STATUS FETCH NEXT 20 ROWS WITH TIES;",
     ],
+  "Assume you issue the following command:\n\n\ndelete from payroll where payroll_date>sysdate-1;\n\nWhat command would reverse the results of this delete?":
+    ["rollback;"],
   "Assuring that you are working within a high-performance team is part of the project manager's role.":
     ["Directing the team's daily activities through clear instructions"],
   "At the beginning of a project, the sponsor/owner and project manager frequently get together with the team to identify stakehold":
@@ -344,6 +352,11 @@ quiz = {
     ["The end user will be prompted to enter a number."],
   "Consider the following:\n\n\nSELECT MOD(5,3), REMAINDER(5,3) FROM DUAL;\n\nWhich of the following will be the result?":
     ["2, -1"],
+  "Consider this exhibit:\n\n\nselect b.ename, b.sal, a.dname\nfrom scott.dept a, scott.emp b\nwhere a.deptno=b.deptno (+)\norder by 1,2;\n\nWhich of the following statements is true concerning the SQL statement in the exhibit? (Choose two.)":
+    [
+      "If a department is not assigned to an employee, it will appear in the output.",
+      "If an employee is not assigned to a department, they will not appear in the output.",
+    ],
   "Considering that a specific project team works primarily with a collective and variety of subject matter experts, what might be":
     [
       "The possibility of a single point of failure due to resources having specific skills",
@@ -484,8 +497,26 @@ quiz = {
     ["Time and materials"],
   "Every meeting is a chance to transfer information. It may come from individuals or be provided to the participants of the meetin":
     ["Allows maximum efficiency when there is a free-flowing approach"],
+  "Examine the data in the CLASS table below:\n\nClass\tteacher_number\tstudent_count\n1\t1\t20\n2\t2\t20\n3\t3\t30\n4\t4\t15\n5\t1\t30\n6\t2\t35\n7\t3\t22\n8\t4\t14\n9\t1\t30\n10\t1\t22\n11\t2\t30\n\nWhich SQL statement would increase the number of students for class number 3?":
+    ["update class \nset student_count=student_count+1\nwhere class=3;"],
+  "Examine the data in the CLASS table below:\n\nClass\tteacher_number\tstudent_count\n1\t1\t20\n2\t2\t20\n3\t3\t30\n4\t4\t15\n5\t1\t30\n6\t2\t35\n7\t3\t22\n8\t4\t14\n9\t1\t30\n10\t1\t22\n11\t2\t30\n\nWhich of the following delete statements will remove all of the classes with teachers less than teacher number 4?":
+    ["delete from class where teacher_number < 4;"],
+  "Examine the data in the SALES table below:\n\nSale_number\tstore_number\tsales_date\temployee_number\titem_number\tquantity_sold\n1\t1\t01/02/2017\t1234\t102\t1\n1\t1\t01/02/2017\t1234\t115\t2\n2\t1\t01/02/2017\t1500\t122\t1\n2\t1\t01/02/2017\t1500\t101\t3\n3\t2\t01/02/2017\t176\t22\t2\n4\t2\t01/03/2017\t199\t43\t4\n5\t1\t01/03/2017\t1234\t108\t6\n5\t1\t01/03/2017\t1234\t102\t2\n6\t4\t01/03/2017\t1500\t300\t1\n1\t1\t01/02/2017\t1235\t114\t1\n1\t1\t01/02/2017\t1235\t118\t1\n\nWhich query will sort the results first by store_number, sale_number, and sales_date, and then return the first six sorted rows?":
+    [
+      "select *\nfrom\n(select *\nfrom sales\norder by store_number, sale_number, sales_date\n)\nWhere rownum < 7;",
+    ],
+  "Examine the data in the SALES table below:\n\nSale_number\tstore_number\tsales_date\temployee_number\titem_number\tquantity_sold\n1\t1\t01/02/2017\t1234\t102\t1\n1\t2\t01/02/2017\t1234\t115\t2\n2\t3\t01/02/2017\t1500\t122\t1\n2\t4\t01/02/2017\t1500\t115\t3\n3\t5\t01/02/2017\t176\t22\t2\n4\t1\t01/03/2017\t199\t43\t4\n5\t2\t01/03/2017\t1234\t43\t6\n5\t3\t01/03/2017\t1234\t102\t2\n6\t4\t01/03/2017\t1500\t300\t1\n\nWhich of the following SQL statements will return the store number and sales date for records in the sales table with a sales_date of 1/2/2017 and for store 1 and store 2? The sales_date should be returned in the form of date and time in the 24 hour format.":
+    [
+      "Select store_number, to_char(sales_date, 'mm/dd/yyyy hh24:mi:ss') sales_date from sales where sales_date=to_date('01/02/2017','mm/dd/yyyy') and store_number in (1,2);",
+    ],
+  "Examine the data in the USER_BIRTHDATE table below:\n\nUser_last_name\tuser_first_name\tuser_birthdate\nSmith\tJohn\t09/30/1960\nMasters\tElane\t07/15/1970\nFredricks\tGeorge\t08/16/1977\nHouston\tSam\t01/30/1992\nFlur\tCandance\t02/28/1989\n\nWhich option will return all the rows and columns of the table, renaming the user_birthdate column to birthdate?":
+    [
+      "select user_last_name, user_first_name, user_birthdate birthdate from user_birthdate;",
+    ],
   "Examine the following data listing of a table called PERMITS:\n\n\nPERMIT_ID   FILED_DATE   VENDOR_ID \n---------   ----------   --------- \n1           05-DEC-09    101 \n2           12-DEC-09    310903 \n3           14-DEC-09    101\n\nWhich one of the following aggregate functions could be used to determine how many permits have been filed by VENDOR_ID 101?":
     ["COUNT"],
+  "Examine the following two claims about the DBA_TAB_PRIVS data dictionary view:\n\nLists system privileges granted to a current user\nDescribes all object grants in the database\nWhich of these claims is true?":
+    ["Only 2"],
   "F1 metric is simply the harmonic mean of precision and recall.": ["True"],
   "Feedback is a regular process during communication. If it is in person, the feedback is immediate. Which of the following statem":
     [
@@ -557,6 +588,8 @@ quiz = {
     ["Scan"],
   "If a transaction does not overwrite the dirty reads of higher-level transactions, then this transaction has level":
     ["0"],
+  "If an ALTER TABLE ... DROP COLUMN statement is executed against an underlying table upon which a view is based, the status of that view in the data dictionary changes to:":
+    ["INVALID"],
   "If an organization is comfortable with most uncertainty and accepts risk as a normal part of doing business and projects, how yo":
     ["Risk-tolerant"],
   "If senior management doesn't want you to spend time writing a project charter":
@@ -681,6 +714,9 @@ quiz = {
       "Shields the project team from the politics and noise surrounding the project",
       "Takes responsibility and accountability for the project",
     ],
+  "In which of the following SQL statements might you find a subquery?": [
+    "All of these",
+  ],
   "In which of the following categories do the physical design decisions for indexing fall?":
     [
       "What attribute or attributes to index on",
@@ -779,6 +815,8 @@ quiz = {
     ["True"],
   "Novel is a key term in the definition of data mining, which means that the patterns are known by the user within the context of the system being analyzed.":
     ["False"],
+  "Now you have changed the purpose of the PIER column in the MARINA table and want to remove the comment you just created in the previous question. Which of the following statements will remove the comment?":
+    ["COMMENT ON COLUMN MARINA.PIER IS '';"],
   "Of the following elements of a lessons learned exercise in a preplanned home renovation project, in a town you will likely not w":
     ["City building code lessons learned"],
   "Of the following examples, which will most likely benefit from a predictive set of project management tools?":
@@ -877,6 +915,8 @@ quiz = {
     ["You would address this at the sprint retrospective"],
   "One of your team members has not been very responsive in emails and work requests recently, and has not been timely in resolving":
     ["Informal verbal"],
+  "One place to get a master list of all the views that form the data dictionary is:":
+    ["DICTIONARY"],
   "One staff member on the project has outlined some concerns about meeting the quality management plan. Of the following, the proj":
     [
       "Detailing the specific metrics that will be required to pass for the project",
@@ -957,6 +997,8 @@ quiz = {
     ["It connects three tables.", "It will execute successfully."],
   "Review the SQL statements that follow, and assume that there is no table called ADDRESSES already present in the database:\n\n\nCREATE TABLE ADDRESSES (ID NUMBER, ZONE NUMBER, ZIP_CODE VARCHAR2(5)); \nINSERT INTO ADDRESSES (ID, ZONE, ZIP_CODE) VALUES (1, 1, '94065'); \nSAVEPOINT ZONE_CHANGE_01; \nUPDATE ADDRESSES SET ZONE = 2 WHERE ZIP_CODE = 94065; \nROLLBACK;\n\nWhat will be the result of the execution of the SQL statements shown here?":
     ["The ADDRESSES table will have no rows."],
+  "Review the exhibit for a description of the sales table.\n\n\nCreate table sales (sales_id number, sales_clerk number, sales_amount number);\n\nWhich if the following is a valid insert statement into the sales table?":
+    ["insert into sales values (6,8,10);"],
   "Review the following SQL code:\n\n\nCREATE TABLE PO_BOXES (PO_BOX_ID NUMBER(3), PO_BOX_NUMBER VARCHAR2(10))\n             ENABLE ROW MOVEMENT;\nINSERT INTO PO_BOXES VALUES (1, 'A100');\nINSERT INTO PO_BOXES VALUES (2, 'B100');\nCOMMIT;\nDROP TABLE PO_BOXES;\nCOMMIT;\nPURGE TABLE PO_BOXES;\nCOMMIT;\n\nWhat statement will recover the PO_BOXES table after these statements are executed?":
     ["None of these—the table cannot be recovered."],
   "Review the following SQL code:\n\n\nDROP   TABLE PO_BOXES;\nCREATE TABLE PO_BOXES (PO_BOX_ID NUMBER(3), PO_BOX_NUMBER VARCHAR2(10))\n               ENABLE ROW MOVEMENT;\nINSERT INTO PO_BOXES VALUES (1, 'A100');\nINSERT INTO PO_BOXES VALUES (2, 'B100');\nCOMMIT;\nEXECUTE DBMS_LOCK.SLEEP(30);\nDELETE FROM PO_BOXES;\nCOMMIT;\nEXECUTE DBMS_LOCK.SLEEP(30);\n\nWhich of the following statements could be added as line 11 and recover the deleted rows from the PO_BOXES table?":
@@ -971,6 +1013,10 @@ quiz = {
     [
       "The statement will succeed: the table will be created, and the primary key will also be created.",
     ],
+  "Review the following SQL statement:\n\n\nINSERT ALL\n WHEN (SUBSTR(PART_NAME,1,4) = 'MED-') THEN\n    INTO STORE_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SPARE_ID, 'Back', PART_NAME, SYSDATE)\n    INTO SHIP_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SPARE_ID, 'Back', PART_NAME, SYSDATE)\n WHEN (SUBSTR(PART_NAME,1,4) = 'ARR-') THEN\n    INTO PORT_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SPARE_ID, 'Back', PART_NAME, SYSDATE)\nSELECT SPARE_ID, PART_NO, PART_NAME\nFROM   SPARES;\n\nIf one of the INTO clauses executed on a table and resulted in a constraint violation on that table, what would result?":
+    [
+      "The row would not be inserted, the INSERT statement would stop, and all rows affected by the INSERT statement would be rolled back, as if the INSERT statement had never been executed.",
+    ],
   "Review the following SQL statement:\n\n\nTRUNCATE personnel;\n\nWhich of the following is true of the previous statement?":
     ["The statement will fail."],
   "Review the following SQL statements:\n\n\nCREATE TABLE AB_INVOICES (INVOICE_ID NUMBER, VENDOR_ID NUMBER); \nALTER TABLE AB_INVOICES ADD PRIMARY KEY (INVOICE_ID); \nINSERT INTO AB_INVOICES VALUES (1,1); \nDELETE AB_INVOICES WHERE INVOICE_ID = 2;\n\nWhich of the following best describes the results of attempting to execute the DELETE statement?":
@@ -981,6 +1027,8 @@ quiz = {
     ["The BOUNCERS table will contain one row."],
   "Review the following SQL statements:\n\n\nCREATE TABLE INSTRUCTORS   \n(INSTRUCTOR_ID NUMBER,    \n   EXEMPT   VARCHAR2(5),    \n   VACATION NUMBER,    \n   PAY_RATE NUMBER); \nINSERT INTO INSTRUCTORS VALUES (1, 'YES', NULL, 25); \nINSERT INTO INSTRUCTORS VALUES (2, NULL,  NULL, NULL); \nUPDATE INSTRUCTORS    \n   SET EXEMPT    = 'YES',    \n   SET VACATION  = 15 \nWHERE  PAY_RATE < 50;\n\nWhat can be said of the statements listed here?":
     ["At least one of the statements will not execute."],
+  "Review the following SQL syntax:\n\n\nMERGE INTO SHIP_INVENTORY A\nUSING PORT_INVENTORY B\nON (A.NUM = B.NUM)\nWHEN NOT MATCHED THEN INSERT\n   (A.NUM, A.AISLE, A.PRODUCT, A.LAST_ORDER)\n   VALUES\n   (B.NUM, B.AISLE, B.PRODUCT, B.LAST_ORDER)\nWHERE TO_CHAR(A.LAST_ORDER,'RRRR') = '2019';\n\nWhich of the following two alternatives for line 3 are syntactically correct?\n\n\nOPTION 1:  ON (A.NUM = B.NUM AND A.AISLE = B.AISLE)\nOPTION 2:  ON (A.LAST_ORDER < B.LAST_ORDER)":
+    ["Both option 1 and option 2"],
   "Review the following data listing for a table SHIPS:\n\n\nSHIP_ID  SHIP_NAME      CAPACITY  LENGTH  LIFEBOATS \n-------  -------------  --------  ------  ---------       \n      1  Codd Crystal       2052     855         80       \n      2  Codd Elegance      2974     952         95\n\nIn the SHIPS table, SHIP_NAME has a data type of VARCHAR2(20). All other columns are NUMBER. Now consider the following query (note that line numbers have been added for readability):\n\n\nSELECT SHIP_ID \nFROM   SHIPS \nWHERE  CAPACITY BETWEEN 2052 AND 3000 \nAND  LENGTH IN ('100','855') \nAND  SHIP_NAME LIKE 'Codd_%';\n\nHow many rows will the SELECT statement return?":
     ["1"],
   "Review the following data listing for a table VENDORS:\n\n\nVENDOR_ID  CATEGORY \n---------  ---------------         \n        1  Supplier         \n        2  Teaming Partner\n\nNow review the following SQL statement:\n\n\nSELECT VENDOR_ID \nFROM   VENDORS \nWHERE  CATEGORY IN ('Supplier','Subcontractor','%Partner');\n\nHow many rows will the SELECT statement return?":
@@ -991,6 +1039,62 @@ quiz = {
     ["The syntax is correct."],
   "Review the following data listing from a table SCORES:\n\n\nSCORE_ID  TEST_SCORE \n--------  ---------- \n1          95 \n2 \n3          85\n\nNow consider the following query:\n\n\nSELECT  TO_CHAR(AVG(TEST_SCORE),'999,999.99') FROM SCORES;\n\nWhat will be the result of this query?":
     ["90.00."],
+  "Review the following diagrams of the SPARES table:\n\n\nFigure A\n\nAlso examine the diagrams of the tables PORT_INVENTORY, STORE_INVENTORY, and SHIP_INVENTORY, shown here.\n\n\nFigure B\n\nNow consider the following SQL statement:\n\n\nINSERT ALL\n WHEN (SUBSTR(PART_NAME,1,4) = 'MED-') THEN\n    INTO STORE_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SPARE_ID, 'Back', PART_NAME, SYSDATE)\n    INTO SHIP_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SPARE_ID, 'Back', PART_NAME, SYSDATE)\n WHEN (SUBSTR(PART_NAME,1,4) = 'ARR-') THEN\n    INTO PORT_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SPARE_ID, 'Back', PART_NAME, SYSDATE)\nSELECT SPARE_ID, PART_NO, PART_NAME\nFROM   SPARES;\n\nRegarding this SQL statement, which of the following statements is true?":
+    [
+      "The statement will add a row returned from the SPARES table to the SHIP_INVENTORY table only if the WHEN condition on line 2 evaluates to true.",
+    ],
+  "Review the following diagrams:\n\n\nFigure A\n\n\nDescribe\nListen\nFigure B\n\nYou want to merge rows from the PORT_INVENTORY table into the SHIP_INVENTORY table. You start with the following SQL statement:\n\n\nMERGE INTO SHIP_INVENTORY A\nUSING PORT_INVENTORY B\nON (A.NUM = B.NUM)\nWHEN NOT MATCHED THEN INSERT\n   (A.NUM, A.AISLE, A.PRODUCT, A.LAST_ORDER)\n   VALUES\n   (B.NUM, B.AISLE, B.PRODUCT, B.LAST_ORDER)\nWHERE TO_CHAR(A.LAST_ORDER,'RRRR') = '2019';\n\nWhat will this SQL statement do?":
+    [
+      "It will fail with a syntax error because you cannot reference the target table (SHIP_INVENTORY) in the WHERE clause in line 8.",
+    ],
+  "Review the following diagrams:\n\n\nFigure A\n\n\nFigure B\n\nNext, consider the following SQL statement:\n\n\nINSERT FIRST\n WHEN (SUBSTR(PART_NAME,5,3) = 'OPS') THEN\n   INTO STORE_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SEQ_NUM.NEXTVAL, 'Back', PART_NAME, SYSDATE)\n WHEN (SUBSTR(PART_NAME,1,4) = 'PAN-') THEN\n    INTO SHIP_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SEQ_SHIP_NUM.NEXTVAL, 'Back', PART_NAME, SYSDATE)\n ELSE\n    INTO PORT_INVENTORY (NUM, AISLE, PRODUCT, LAST_ORDER)\n    VALUES (SEQ_PORT_NUM.NEXTVAL, 'Back', PART_NAME, SYSDATE)\n SELECT SPARE_ID, PART_NO, PART_NAME\n FROM   SPARES\n WHERE  LENGTH(PART_NO) > 2;\n\nWhich one of the following answers correctly identifies data that, if present in the SPARES table, will be inserted by this conditional INSERT statement into the table—or tables—identified by the answer?":
+    ["PART_NO = 170; PART_NAME = 'TRA-OPS,' in STORE_INVENTORY"],
+  "Review the following diagrams:\n\n\nFigure A\n\n\nFigure B\n\nNext, examine the following statement:\n\n\nINSERT\n WHEN (PART_NO < 500) THEN\n   INTO STORE_INVENTORY (NUM, PRODUCT)\n    VALUES (SPARE_ID, PART_NAME)\n   INTO PORT_INVENTORY (NUM, PRODUCT)\n    VALUES (SPARE_ID, PART_NAME)\n WHEN (PART_NO >= 500) THEN\n    INTO SHIP_INVENTORY (NUM, PRODUCT)\n    VALUES (SPARE_ID, PART_NAME)\n SELECT SPARE_ID, PART_NO, PART_NAME\n FROM   SPARES;\n\nWhich of the following statements is true for this SQL statement?":
+    [
+      "Regardless of whether the first WHEN condition is true, the second WHEN condition will be evaluated.",
+    ],
+  "Review the following diagrams:\n\n\nFigure A\n\n\nFigure B\n\nYou want to merge rows from the PORT_INVENTORY table into the SHIP_INVENTORY table. You start with the following SQL statement:\n\n\nMERGE INTO SHIP_INVENTORY A\nUSING PORT_INVENTORY B\nON (A.NUM = B.NUM)\nWHEN NOT MATCHED THEN INSERT\n   (A.NUM, A.AISLE, A.PRODUCT, A.LAST_ORDER)\n   VALUES\n   (B.NUM, B.AISLE, B.PRODUCT, B.LAST_ORDER)\nWHERE TO_CHAR(A.LAST_ORDER,'RRRR') = '2019';\n\nWhat will this SQL statement do?":
+    [
+      "It will fail with a syntax error because you cannot reference the target table (SHIP_INVENTORY) in the WHERE clause in line 8.",
+    ],
+  "Review the following exhibit:\n\n\nFigure A\n\nWhat kind of join would be required if you want a list of all employees and the department they worked in, including employees that were not assigned to a department?":
+    ["outer join"],
+  "Review the following exhibit:\n\n\nFigure A\n\nWhich of the following SQL statements will create the following output:\n\n\nSTORE_DESCRIPTION EMP_LAST_NAME  EMP_FIRST_NAME DEPT_DESC\n  ------------------ --------------- --------------- -----------------\n  Oklahoma City   Freeman     Robert     MGT\n  Oklahoma City   Freeman     Carrie     Asst. Mgr\n  Oklahoma City   Freeman     Amy       Floor Supervisor\n  Oklahoma City   Freeman     Abbie      Sales Assoc":
+    [
+      "select c.store_description, a.emp_last_name, a.emp_first_name, b.dept_desc\nfrom employees a, stores c, dept b\nwhere a.stores_store_num=c.store_num\nand a.dept_dept_num=b.dept_num;",
+    ],
+  "Review the following exhibit:\n\n\nSQL> desc scott.emp\nName                                      Null?    Type\n----------------------------------------- -------- -------------\nEMPLOYEE_ID                                        NUMBER\nEMPLOYEE_NAME                                      VARCHAR2(61)\nDEPARTMENT_NAME                                    VARCHAR2(30)\nHIRE_DATE                                          VARCHAR2(10)\nCOMMISSION                                         NUMBER\nHIREDATE                                  NOT NULL DATE \n\nWhich of the following SQL statements will be successful?":
+    [
+      "insert into emp (employee_id, employee_name, hiredate) values (1,'Freeman', sysdate);",
+    ],
+  "Review the following exhibit:\n\n\nSQL> desc scott.emp\nName Null? Type\n----------------------------------------- -------- -----------------\nEMPNO NOT NULL NUMBER(4)\nENAME VARCHAR2(10)\nJOB VARCHAR2(9)\nMGR NUMBER(4)\nHIREDATE DATE\nSAL NUMBER(7,2)\nCOMM NUMBER(7,2)\nDEPTNO NUMBER(2)\n\nSQL> desc scott.dept\nName Null? Type\n----------------------------------------- -------- --------------\nDEPTNO NOT NULL NUMBER(2)\nDNAME VARCHAR2(14)\nLOC VARCHAR2(13)\n\nAssume that there is a row in DEPT that does not have an associated record in EMP. Which of the following it true related to such a query?":
+    [
+      "You will be able to see the department rows that don't have matching emp rows through the use of an outer join.",
+    ],
+  "Review the following exhibit:\n\n\nSQL> select * from test;\n\n        ID\n----------\n         1\n         2\n         3\n         4\n         5\n         6\n\n6 rows selected. \n\nWhich of the following SQL queries will successfully return 3 records from the test table, starting at the second record and return the result set in the correct order?":
+    ["Select * from test order by id offset 1 rows fetch next 3 rows only;"],
+  "Review the following exhibit:\n\n\nSQL> select sysdate from dual;\n\nSYSDATE\n---------\n13-NOV-17\n\n\nSQL> desc scott.emp\n Name                                      Null?    Type\n ----------------------------------------- -------- -------------\n EMPNO                                     NOT NULL NUMBER(4)\n ENAME                                              VARCHAR2(10)\n JOB                                                VARCHAR2(9)\n MGR                                                NUMBER(4)\n HIREDATE                                           DATE\n SAL                                                NUMBER(7,2)\n COMM                                               NUMBER(7,2)\n DEPTNO                                             NUMBER(2)\n\nand review the following SQL:\n\n\nSQL> insert into scott.emp (empno, hiredate) \nvalues (100,'20-JAN-2017');\n\nWhich of the following statements is true about this SQL?":
+    [
+      "It might be successful if the database date format mask matched that of the date being inserted because of an implicit conversion.",
+    ],
+  "Review the following exhibit:\n\n\nselect 'true' from dual \nwhere exists (select null from dual);\n\nWhich of the following statements is true?":
+    ["The query will return the value true."],
+  "Review the following exhibit:\n\nTable Name: USER_PAGE_COUNTS\nuser_id\tAction_Date\tpage_count\n1\t12/01/2016\t5\n2\t12/01/2016\t50\n3\t12/01/2016\t100\n4\t12/01/2016\t70\n1\t12/02/2016\t12\n2\t12/02/2016\t34\n3\t12/02/2016\t65\n2\t12/03/2016\t26\n4\t12/03/2016\t43\n3\t12/04/2016\t65\n2\t12/04/2016\t26\n4\t12/04/2016\t43\n1\t12/05/2016\t175\n\nWhich SQL statement will provide the maximum page count for each user in the user_page_counts table?":
+    [
+      "select user_id, max(page_count) max_page_count\nfrom user_page_counts\ngroup by user_id;",
+    ],
+  "Review the following exhibit:\n\nTable Name: USER_PAGE_COUNTS\nuser_id\tAction_Date\tpage_count\n1\t12/01/2016\t5\n2\t12/01/2016\t50\n3\t12/01/2016\t100\n4\t12/01/2016\t70\n1\t12/02/2016\t12\n2\t12/02/2016\t34\n3\t12/02/2016\t65\n2\t12/03/2016\t26\n4\t12/03/2016\t43\n3\t12/04/2016\t65\n2\t12/04/2016\t26\n4\t12/04/2016\t43\n1\t12/05/2016\t175\n\nWhich of the following SQL statements will produce a report for all users and page counts who had over 100 page_counts on 12/05/2016?":
+    [
+      "select user_id, sum(page_count) page_counts\nfrom user_page_counts\nwhere action_date=to_date('12/05/2016','mm/dd/yyyy')\ngroup by user_id\nhaving sum(page_count) > 100;",
+    ],
+  "Review the following exhibit:\n\nTable: teachers\nClass\tteacher_name\tstudent_count\n1\tFranks\t20\n2\tSimMs\t20\n3\tAddAms\t30\n4\tfrEEmaN\t15\n5\tYouNG\t30\n\nWhich of the following queries will correctly return the row for all teachers who's name starts with an f, regardless of case?":
+    ["Select teacher_name from teachers where upper(teacher_name) like 'F%';"],
+  "Review the following exhibit:\ncreate index ix_emp on scott.emp(job) invisible tablespace index;\nWhich of the following statements is true regarding the create index statement above?":
+    [
+      "The DDL will successfully create an invisible index, which will be ignored by the optimizer by default.",
+    ],
+  "Review the following figure:\n\n\nFigure A\nData in Employees table\nEmp_num\temp_last_name\temp_first_name\tstores_store_num\tdept_dept_num\temp_supervisor\n1\tFreeman\tRobert\t1\t1\tNULL\n2\tFreeman\tCarrie\t1\t2\tNULL\n3\tFreeman\tAmy\t2\t3\tNULL\n4\tFreeman\tAbbie\t2\t4\tNULL\nData in Stores\nStore_num\tStore_description\n1\tOklahoma City\n2\tTulsa\n3\tDallas\nWhich of the following SQL statements will fail?":
+    ["delete from stores where store_num=2;"],
   "Review the following illustration and SQL code:\n\n\nFigure A\n\n\nUPDATE PORTS P \nSET    CAPACITY = CAPACITY + 1 \nWHERE  EXISTS (SELECT * \n               FROM SHIPS \n               WHERE HOME_PORT_ID = P.PORT_ID);\n\nThe PORTS table has 15 rows. The SHIPS table has 20 rows. Each row in PORTS has a unique value for PORT_ID. Each PORT_ID value is represented in the HOME_PORT_ID column of at least one row of the SHIPS table. What can be said of this UPDATE statement?":
     [
       "The value for CAPACITY will increase once for each of the 15 rows in the PORTS table.",
@@ -1076,14 +1180,28 @@ quiz = {
     ["4"],
   "Review the following illustrations:\n\n\nFigure A\nFigure B\n\nNext, review the following SQL code:\n\n\nSELECT NUM, PRODUCT FROM STORE_INVENTORY\n  INTERSECT\n  SELECT CAT#, ITEM_NAME   FROM FURNISHINGS;\n\nHow many rows will result from this query?":
     ["0"],
+  "Review the following output:\n\n\nSQL> select * from scott.emp\n\n     EMPNO ENAME      JOB              MGR HIREDATE          SAL       COMM     DEPTNO\n---------- ---------- --------- ---------- ---------- ---------- ---------- ----------\n       100                                 01/20/2017\n      7369 SMITH      CLERK           7902 12/17/1980        800                    20\n      7499 ALLEN      SALESMAN        7698 02/20/1981       1600        300         30\n      7521 WARD       SALESMAN        7698 02/22/1981       1250        500         30\n      7566 JONES      MANAGER         7839 04/02/1981       2975                    20\n      7654 MARTIN     SALESMAN        7698 09/28/1981       1250       1400         30\n      7698 BLAKE      MANAGER         7839 05/01/1981       2850                    30\n      7782 CLARK      MANAGER         7839 06/09/1981       2450                    10\n      7788 SCOTT      ANALYST         7566 04/19/1987       3000                    20\n      7839 KING       PRESIDENT            11/17/1981       5000                    10\n      7844 TURNER     SALESMAN        7698 09/08/1981       1500          0         30\n      7876 ADAMS      CLERK           7788 05/23/1987       1100                    20\n      7900 JAMES      CLERK           7698 12/03/1981        950                    30\n      7902 FORD       ANALYST         7566 12/03/1981       3000                    20\n      7934 MILLER     CLERK           7782 01/23/1982       1300                    10 \n\nWhich SQL statement below will return the average salary for each job in the job column, and order it with the highest average salary at the top of the ouptut?":
+    [
+      "select job, avg(sal) salary from scott.emp group by job order by 2 desc;",
+    ],
+  "Review the following query:\n\n\nselect a.lname, a.dept_id \nfrom scott.emp a \nwhere a.salary > (select avg(z.sal) \n                  from employees z \n                  where z.dept_id=a.dept_id);\n\nWhat kind of query is represented in the SQL statement above?":
+    ["Correlated"],
   "Review the following series of SQL statements:\n\n\nCREATE TABLE SUPPLIES_01\n(  SUPPLY_ID NUMBER(7),\n   SUPPLIER  VARCHAR2(30),\n   ACCT_NO   VARCHAR2(50));\nCREATE INDEX IX_SU_01 ON SUPPLIES_01(ACCT_NO);\nDROP TABLE SUPPLIES_01;\nCREATE TABLE SUPPLIES_02\n(  SUPPLY_ID NUMBER(7),\n   SUPPLIER  VARCHAR2(30),\n   ACCT_NO   VARCHAR2(50));\nCREATE INDEX IX_SU_02 ON SUPPLIES_02(ACCT_NO,SUPPLIER);\n\nAssuming there are no objects already in existence named SUPPLIES_01 or SUPPLIES_02 prior to the execution of the preceding statements, what database objects will result from these statements?":
     ["A table called SUPPLIES_02 and an index called IX_SU_02"],
   "Review the following statement:\n\n\nCREATE TABLE STUDENT_LIST  \n(STUDENT_ID  NUMBER,  \nNAME        VARCHAR2(30),   \nPHONE       VARCHAR2(30)); \nINSERT INTO STUDENT_LIST    \nVALUES (1, 'Joe Wookie', 5551212);\n\nThe table will create successfully. What will result from the INSERT statement?":
     ["The INSERT will execute—the table will contain one row of data."],
+  "Review the following tables:\n\n\nSQL> desc scott.emp\n Name                                      Null?    Type\n ----------------------------------------- -------- -----------------\n EMPNO                                     NOT NULL NUMBER(4)\n ENAME                                              VARCHAR2(10)\n JOB                                                VARCHAR2(9)\n MGR                                                NUMBER(4)\n HIREDATE                                           DATE\n SAL                                                NUMBER(7,2)\n COMM                                               NUMBER(7,2)\n DEPTNO                                             NUMBER(2)\n\nSQL> desc scott.dept\n Name                                      Null?    Type\n ----------------------------------------- -------- --------------\n DEPTNO                                    NOT NULL NUMBER(2)\n DNAME                                              VARCHAR2(14)\n LOC                                                VARCHAR2(13)\n\nWhich of the following SQL statements will return the department name (contained in the DEPT.DNAME column) and the average salary (contained in the EMP.SAL column) for that department?":
+    [
+      "select a.dname, avg(b.sal) from scott.dept a, scott.emp b where a.deptno=b.deptno group by a.dname;",
+    ],
   "Review the given PORTS and SHIPS tables and the SQL code:\n\n\nFigure A\n\n\nSELECT PORT_NAME \nFROM   PORTS P \nWHERE  PORT_ID IN (SELECT HOME_PORT_ID, SHIP_NAME \n                   FROM   SHIPS \n                   WHERE  SHIP_ID IN (1,2,3));\n\nWhich of the following is true of this statement?":
     ["The statement will fail with a syntax error because of line 3."],
   "Review the given PORTS and SHIPS tables:\n\n\nFigure A\n\nYour team is tasked with the job of creating a list of the ships with the least capacity in each port. In other words, each ship has a home port. For each port that is a home port to ships, which of each port's ships has the least capacity? Your team produces the following query in answer to this task:\n\n\nSELECT S1.SHIP_NAME, (SELECT PORT_NAME \n                      FROM   PORTS\n                      WHERE  PORT_ID = S1.HOME_PORT_ID) HOME_PORT \nFROM   SHIPS S1 \nWHERE  S1.CAPACITY = (SELECT MIN(CAPACITY) \n                      FROM   SHIPS S2 \n                      WHERE  S2.HOME_PORT_ID = S1.HOME_PORT_ID);\n\nWhich of the following statements is true about this SQL statement?":
     ["The statement will execute successfully as intended."],
+  "Review the structure/data contained in two tables. The first table is called people and the second table is called people_history. The structure of both tables is the same as seen here:\n\npeople_num\tnumber\tprimary_key\nRecord_add_date\tDate\tNot null\nPeople_history_date\tDate\n\nWhich of the following queries will return all rows from both tables where the people_history_date is in the year 2017?":
+    [
+      "select * from people where to_char(people_history_date, 'yyyy')='2017'\nunion\nselect * from people_history where to_char(people_history_date, 'yyyy')='2017';",
+    ],
   "Review this SELECT statement:\n\n\nSELECT   PRODUCT_ID, PRODUCT_NAME, UNIT_PRICE, SHIPPING \nFROM     PRODUCTS \nWHERE    (UNIT_PRICE + SHIPPING) * TAX_RATE > 5 \nORDER BY LIKE PRODUCT_NAME;\n\nAssume all table and column references exist in the database. What can be said of this SELECT statement?":
     [
       "The statement will fail to execute because the ORDER BY clause includes the word LIKE.",
@@ -1197,6 +1315,8 @@ quiz = {
   "The LEAD function returns data from:": [
     "The row specified by the LEAD function's offset",
   ],
+  "The MERGE statement includes a USING clause. Which of the following statements is not true of the USING clause?":
+    ["The USING clause is optional."],
   "The Modify step in Six Sigma involves the process of assessing the mapping between organizational data repositories and the business problem.":
     ["False"],
   "The Naive Bayes method requires output variables to have numeric values.": [
@@ -1214,6 +1334,8 @@ quiz = {
   "The Six Sigma process promotes an error-free/perfect business execution.": [
     "True",
   ],
+  "The USER_CONSTRAINTS view in the data dictionary lists FOREIGN KEY constraints in the CONSTRAINT_TYPE column with which of the following single-letter abbreviations?":
+    ["R"],
   "The WBS dictionary is important to explain many of the work packages that the team has outlined. Which of the following items would certainly be included in a WBS dictionary? (Choose two.)":
     ["Acceptance criteria", "Description of the work"],
   "The WITH clause can be used to name a subquery. Which of the following is also true? (Choose two.)":
@@ -1278,6 +1400,7 @@ quiz = {
     ["Ordinal"],
   "The customer has set a strict project deadline of 85 days for completion. As you review the project schedule, you notice that on":
     ["30 days"],
+  "The data dictionary is owned by:": ["SYS"],
   "The data elements in a stream is often called __________.": ["tuples"],
   "The data sources that are combined in a centralized data repository for supporting managerial decisions is known as a data warehouse.":
     ["True"],
@@ -1471,6 +1594,7 @@ quiz = {
     ["Unanimity"],
   "The term long short-term memory network refers to a network that is used to remember what happened in the past for a long enough time that it can be leveraged in accomplishing the task when needed.":
     ["True"],
+  "The term metadata means:": ["Data about data"],
   "The term velocity in big data analytics refers to how fast digitized data is created and processed.":
     ["True"],
   "The term veracity in big data analytics refers to the processing of different types and formats of data, structured and unstructured.":
@@ -1553,6 +1677,10 @@ quiz = {
     ["False"],
   "Use of a Gantt chart is primarily to show the work packages, sequencing, relationships, and resources in a visual format for fas":
     ["True"],
+  "User HARDING owns a table TEAPOT. User HARDING then executes the following SQL statements to give access to the table to user ALBERT:\n\n\nCREATE PUBLIC SYNONYM TEAPOT FOR HARDING.TEAPOT;\nCREATE ROLE DOME;\nGRANT DOME TO ALBERT;\nGRANT SELECT ON TEAPOT TO DOME;\n\nWhich of the following statements can user ALBERT now execute on the TEAPOT table?":
+    ["SELECT * FROM HARDING.TEAPOT;"],
+  "User account MUSKIE owns a table called CBAY. Which of the following statements can be executed by MUSKIE and enable user ONEILL to execute UPDATE statements on the CBAY table? (Choose two.)":
+    ["GRANT ALL ON CBAY TO ONEILL;", "GRANT INSERT, UPDATE ON CBAY TO ONEILL;"],
   "Value delivery is about making sure that the customer or client receives benefit and the efforts of the team focus only on work":
     ["False"],
   "Video conferencing is a type of which communication method?": [
@@ -1560,6 +1688,8 @@ quiz = {
   ],
   "Web analysis is used to find interesting usage patterns of Web sites. If any flaw in a Web site has been exploited, it can be inferred using Web analysis,":
     ["Web security"],
+  "What SQL statement will both remove all data from a table as well as reset the high water mark of that table?":
+    ["truncate"],
   "What approaches are key to effectively address and resolve conflicts?": [
     "Keep communications open and respectful, focus on the issues (not the people), focus on the present and the future (not the past), and search for alternatives together",
   ],
@@ -1689,6 +1819,15 @@ quiz = {
   ],
   "What can a SELECT statement be used to query? (Choose the best answer.)": [
     "One or more tables",
+  ],
+  "What can an INSERT statement do? (Choose two.)": [
+    "Add data into more than one column in a table",
+    "Add rows into more than one table",
+  ],
+  "What can be granted to a role? (Choose all that apply.)": [
+    "Object privileges",
+    "Roles",
+    "System privileges",
   ],
   "What can you use to submit SQL statements for execution? (Choose all that apply.)":
     ["Java", "PHP", "SQL Developer", "SQL*Plus"],
@@ -1827,6 +1966,8 @@ quiz = {
   "When is a query considered a multirow subquery? (Choose the best answer.)": [
     "If it returns multiple rows at the time of execution",
   ],
+  "When issuing a SQL statement, if you wish to sort the rows in a specific order which of the following clauses would you use?":
+    ["Order by"],
   "When looking to improve social skills, you would pay attention to building your bonds with your network.":
     ["True"],
   "When looking to motivate a team, you want to enable their": [
@@ -1872,6 +2013,8 @@ quiz = {
     [
       "Emphasize the initial project plan and avoid deviations from such plans.",
     ],
+  "When writing a SQL statement, which clause can be used to create a temporary result set?":
+    ["with"],
   "When you are closing a project, when does the closing process begin?": [
     "When the planned work is completed",
   ],
@@ -1898,6 +2041,8 @@ quiz = {
     [
       "The topic brought to the group is new in nature, even if not complicated.",
     ],
+  "When you're looking for a particular bit of data and you're not sure where in the data dictionary it might be, a good starting point is: (Choose the best answer.)":
+    ["SELECT * FROM DICTIONARY;"],
   "When you're starting with a new team, it is best to help the group find a foundation through a lot of non-work-related efforts a":
     ["Formal", "Informal"],
   "When you're working with your project stakeholders, there will clearly be situations in which varying styles of involvement will":
@@ -1913,6 +2058,8 @@ quiz = {
     ["Identification"],
   "Which action item by the project manager may not help a new team member to be as productive as soon as possible?":
     ["Assign them a challenging work assignment as their first task."],
+  "Which among the following is considered an acceptable query with V$DATAFILE?":
+    ["A query that displays rows from the table with no joins"],
   "Which approaches for conflict management as described in the Thomas-Kilmann model are most common for conflicts within a high-pe":
     ["Collaborating", "Compromising", "Confronting/Problem-Solving"],
   "Which aspect of object specifies how the object is constructed by using the type constructors?":
@@ -1925,6 +2072,8 @@ quiz = {
     ["Case-based reasoning"],
   "Which classification method use(s) conditional probabilities to build classification models?":
     ["Bayesian classifiers"],
+  "Which clause is used at the end of a SQL statement to aggregate data across multiple records and then group the results?":
+    ["group by clause"],
   "Which clustering method is based on the basic idea that nearby objects are more related to each other than are those that are farther away from each other?":
     ["Hierarchical"],
   "Which component of the YARN architecture performs the given functions?": [
@@ -1934,6 +2083,8 @@ quiz = {
     ["Participation"],
   "Which cross-validation methodology achieves random sampling of a fixed number of instances from the original data with replacement to construct the training data set?":
     ["Bootstrapping"],
+  "Which data dictionary view would you query if you wanted to find the column that are contained in a database view?":
+    ["DBA_TAB_COLS"],
   "Which database state satisfies the structure and constraints specified in a schema?":
     ["Valid state"],
   "Which delivery cadence option indicates there will be multiple deliveries of the product on a fixed schedule?":
@@ -1943,6 +2094,10 @@ quiz = {
   "Which element is not normally part of a project's resource management plan?":
     ["A listing of the resource requirements for the project"],
   "Which format mask returns the local currency symbol?": ["L"],
+  "Which if the following is a type of subquery (choose all that apply):": [
+    "Nested subquery",
+    "Scalar subquery",
+  ],
   "Which if the following is true of the ORDER BY clause? (Choose two.)": [
     "It can sort rows based on data that isn't displayed as part of the SELECT statement.",
     "It is optional.",
@@ -1969,6 +2124,8 @@ quiz = {
   ],
   "Which of the following DBMS (database management system) processes stores data on some storage medium that is controlled by the DBMS?":
     ["Constructing"],
+  "Which of the following DML operations are available when using a merge command (choose all that apply)?":
+    ["Delete", "Insert", "Update"],
   "Which of the following Java technologies exists on the Web server machine and manages interactions with the client?":
     ["Java Servlet"],
   "Which of the following Java technologies for database Web programming are Java objects that can reside on the Web server machine and manage interactions with the client?":
@@ -1979,10 +2136,33 @@ quiz = {
     [
       "CREATE TABLE POSITIONS\n(POSITION_ID NUMBER(3),\nCONSTRAINT POSITION_CON PRIMARY KEY (POSITION_ID));",
     ],
+  "Which of the following SQL statements will authorize the user account JESSE to create tables in each and every user account in the database?":
+    ["GRANT CREATE ANY TABLE TO JESSE;"],
+  "Which of the following SQL statements will correctly create a sequence?": [
+    "Create sequence my_sequence start with 1 increment by -1;",
+  ],
+  "Which of the following SQL statements will correctly drop a column called id_2 in a table called id_table?":
+    ["Alter table id_table drop column id_2;"],
+  "Which of the following SQL statements will create a view on a table called employee, where the hire_date column is invisible?":
+    [
+      "create view vw_employee (empid, hd invisible) \nas select employee_id, hire_date from scott.employee;",
+    ],
+  "Which of the following SQL statements will display all records in the EMP table as they looked at noon on 11/3/2017?":
+    [
+      "select * from scott.emp as of timestamp to_timestamp('11/03/2017 12:00:00','mm/dd/yyyy hh24:mi:ss');",
+    ],
   "Which of the following SQL statements will display the current time, in hours, minutes, and seconds, as determined by the operating system on which the database server resides?":
     ["SELECT TO_CHAR(SYSDATE, 'HH:MI:SS') FROM DUAL;"],
+  "Which of the following SQL statements will request input from the user?": [
+    "select *from emp where empno=&1;",
+  ],
+  "Which of the following SQL statements will successfully create a table?": [
+    "Create table employees\n( emp_num         number primary key,\n Emp_last_name    varchar2(30), \n Emp_first_name   varchar2(30), \n Stores_store_num number,\n Dept_dept_num    number,\n Emp_supervisor   number)\nTablespace user_data;",
+  ],
   "Which of the following TWO definitions refer to paperwork and tools used in the project":
     ["Artifacts", "Project documents"],
+  "Which of the following actions will not cause the contents of the data dictionary to be changed in some way?":
+    ["None of these"],
   "Which of the following aggregate functions can be used on character data? (Choose two.)":
     ["COUNT", "MIN"],
   "Which of the following aggregate functions ignores NULL values in its calculations? (Choose all that apply.)":
@@ -2115,6 +2295,11 @@ quiz = {
   ],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
+  "Which of the following are types of subqueries? (select all that apply)": [
+    "Correlated",
+    "Multiple row",
+    "Single row",
+  ],
   "Which of the following are used to describe the relationship between a response variable on one or more explanatory variables?":
     ["All of these"],
   "Which of the following are valid CREATE TABLE statements? (Choose three.)": [
@@ -2122,6 +2307,8 @@ quiz = {
     "CREATE TABLE CUSTOMER_HISTORY\n(ID NUMBER,\nNAME VARCHAR2(30));",
     "CREATE TABLE workSchedule\n(ID NUMBER,\nNAME VARCHAR2(30));",
   ],
+  "Which of the following are valid types of constraints that can be defined when creating a table? (select all that apply)":
+    ["Primary key", "Unique"],
   "Which of the following associations is represented as a line connecting the participating classes, and may optionally have a name?":
     ["Binary"],
   "Which of the following attributes is considered as a derived attribute?": [
@@ -2161,6 +2348,8 @@ quiz = {
   "Which of the following clauses lists the attributes to be retrieved?": [
     "SELECT",
   ],
+  "Which of the following clauses or functions can limit the rows returned by a query? (Choose two.)":
+    ["Fetch next rows", "rownum"],
   "Which of the following columns would be least useful to the project team on a stakeholder register?":
     ["The work packages for which the stakeholder would take responsibility"],
   "Which of the following combines architectures, databases, analytical tools, applications, and methodologies?":
@@ -2197,6 +2386,10 @@ quiz = {
     ["Entity integrity"],
   "Which of the following control measures is handled by creating user accounts and passwords to control the login process by the DBMS?":
     ["Access control"],
+  "Which of the following data dictionary views contains information about grants on tables that have been made by other users to your user account, as well as grants on tables that have been made by your user account to other user accounts?":
+    ["USER_TAB_PRIVS"],
+  "Which of the following data dictionary views does not have an OWNER column?":
+    ["USER_TABLES"],
   "Which of the following data models is meant for computer specialists, not for end users?":
     ["Physical"],
   "Which of the following define(s) data?": [
@@ -2225,14 +2418,24 @@ quiz = {
   ],
   "Which of the following from the bullseye diagram interprets the predictions that are inconsistent but represent a reasonably well-performing prediction model?":
     ["Low bias, high variance"],
+  "Which of the following function will return a date when passed a character argument?":
+    ["to_date"],
   "Which of the following functional dependencies occurs only in a relation that contains three or more attributes and an attribute is indirectly dependent on":
     ["Transitive"],
+  "Which of the following functions are not conversion functions?": ["Substr"],
+  "Which of the following functions can take a character data type as an argument (choose all that apply)":
+    ["To_char", "To_date", "To_number", "Upper"],
   "Which of the following functions does SQL allow to be blocked from public use, and an EXECUTE privilege is needed to have access to these functions?":
     ["Constructor", "Mutator", "Observer"],
+  "Which of the following functions might be used along with a group by clause? (Select all that apply)":
+    ["avg", "count", "sum"],
   "Which of the following functions of database management system causes some data to be read and some data to be written into a database?":
     ["Transaction"],
+  "Which of the following functions returns a number value?": ["INSTR"],
   "Which of the following functions returns the number of tuples or values as specified in a query?":
     ["COUNT"],
+  "Which of the following functions will take a character string as an argument and then return that character string in a modified form?":
+    ["All of these"],
   "Which of the following indexes requires that the ordering field of the data file has a distinct value for each record as well as records are of fixed length with":
     ["Primary"],
   "Which of the following information are required for query retrieval?": [
@@ -2260,6 +2463,9 @@ quiz = {
   ],
   "Which of the following is a type of linear least squares method for estimating the unknown parameters in a linear regression model?":
     ["OLS"],
+  "Which of the following is a valid create table command?": [
+    "Create table my_table(table_number number);",
+  ],
   "Which of the following is an abstraction concept for building composite objects from their component objects?":
     ["Aggregation"],
   "Which of the following is an approach that eliminates the generation of a large number of candidate itemsets?":
@@ -2285,6 +2491,10 @@ quiz = {
   "Which of the following is not a tailoring process step?": [
     "Following the ADKAR Model",
   ],
+  "Which of the following is not a type of function available in Oracle Database?":
+    ["Regression functions"],
+  "Which of the following is not a valid column datatypes that can be used when creating a table?":
+    ["LOB"],
   "Which of the following is not among the V's used to define Big Data?": [
     "Variance",
   ],
@@ -2297,9 +2507,14 @@ quiz = {
   ],
   "Which of the following is not among the steps involved in sentiment analysis?":
     ["Latent Dirichlet allocation"],
+  "Which of the following is not an Oracle schema object type?": [
+    "Transactions",
+  ],
   "Which of the following is not an advantage of centralized contracting?": [
     "Project dedicated procurement resources",
   ],
+  "Which of the following is not an analytic function? (choose all that apply)":
+    ["All of these are analytic functions."],
   "Which of the following is not commonly used as an enabler of descriptive analytics?":
     ["Data mining"],
   "Which of the following is not considered as a key component of Hadoop?": [
@@ -2315,6 +2530,9 @@ quiz = {
     "Procedures for customer acceptance",
   ],
   "Which of the following is referred to as a semijoin?": [],
+  "Which of the following is representative of an analytic function?": [
+    "avg(sales_amount)\nover (partition by sales_date order by sales_date) average_sale_by_date",
+  ],
   "Which of the following is the abstraction process whereby classes and objects are made uniquely recognizable by means of some identifier?":
     ["Identification"],
   "Which of the following is the least likely collaboration tool to use in an Agile environment?":
@@ -2328,6 +2546,10 @@ quiz = {
     ["CRISP-DM"],
   "Which of the following is the special case where the class is predicted to be the class of the closest training sample?":
     ["k-nearest neighbor algorithm"],
+  "Which of the following is the system privilege that empowers the grantee to create an index in his or her own user account but not in the accounts of others?":
+    ["CREATE TABLE"],
+  "Which of the following is the system privilege that is required as a minimum to allow a user account to log in to the database?":
+    ["CREATE SESSION"],
   "Which of the following is the system that automatically translates images of handwritten documents into machine-editable textual document?":
     ["Optical character recognition"],
   "Which of the following is the technique that is used to detect the direction of opinions about specific products and/or services using large textual data sources?":
@@ -2337,6 +2559,11 @@ quiz = {
   "Which of the following is true about ROLES?": [
     "Roles are in the same namespace as USERS.",
   ],
+  "Which of the following is true about a truncate statement (choose all that are correct):":
+    [
+      "A truncate statement includes an implicit commit.",
+      "A truncate statement is considered a DDL statement.",
+    ],
   "Which of the following is true about aggregate functions? (Choose two.)": [
     "Are also called group functions.",
     "Return one value for each group of rows specified in a SELECT statement.",
@@ -2350,8 +2577,15 @@ quiz = {
   "Which of the following is true of functions?": [
     "They always return a value.",
   ],
+  "Which of the following is true with respect to using the flashback database command?":
+    [
+      "The database must be in ARCHIVELOG mode to use the flashback database command.",
+      "Use the alter database flashback on command to enable flashback database mode.",
+    ],
   "Which of the following is typically a simplified abstraction of the human brain and its complex biological networks of neurons?":
     ["Artificial neural network"],
+  "Which of the following is used to include or exclude rows from a query that involves a grouping function?":
+    ["having"],
   "Which of the following is work performance information?": [
     '"We are 10 percent over budget."',
   ],
@@ -2405,6 +2639,7 @@ quiz = {
     ["THETA JOIN"],
   "Which of the following operations takes the results of two queries and returns only those rows that appear in both result sets without eliminating duplicates?":
     ["INTERSECT ALL"],
+  "Which of the following operators is indicitive of an equijoin?": ["="],
   "Which of the following options are considered interpersonal and team skills? (Choose two.)":
     ["Motivation", "Transparency"],
   "Which of the following options are not considered interpersonal and team skills? (Choose two.)":
@@ -2420,6 +2655,11 @@ quiz = {
     [
       "Define, iteration 1, iteration 2, iteration 3, iteration N, deployment, close",
       "Planning, requirements, development, testing, deployment, close",
+    ],
+  "Which of the following options does not describe the purpose of a set operation?\nEach correct answer represents a complete solution. Choose all that apply.":
+    [
+      "Long data types are supported by all set operations",
+      "Set operators can only include result sets with number and varchar2 datatypes.",
     ],
   "Which of the following options works for any constraints on the specialization, i.e., disjoint or overlapping, total or partial?":
     ["Option 1"],
@@ -2452,6 +2692,7 @@ quiz = {
     ["Description"],
   "Which of the following relates to a pattern-recognition methodology for machine learning?":
     ["Neural computing"],
+  "Which of the following represent DDL commands?": ["Create table"],
   "Which of the following represent unstructured data?": ["All of these"],
   "Which of the following reserved words is not required in order to form a syntactically correct UPDATE statement?":
     ["WHERE"],
@@ -2489,6 +2730,12 @@ quiz = {
       "It takes into account all possible types of dependencies and constraints.",
       "Its practical utility is limited.",
     ],
+  "Which of the following statements are true of a correlated subquery?\nEach correct answer represents a complete solution. Choose all that apply.":
+    [
+      "It can exist in SELECT, UPDATE, and DELETE statements.",
+      "It might be a single-row, multiple-row, or multiple-column subquery.",
+      "It specifies columns that belong to tables that are also referenced by the parent query.",
+    ],
   "Which of the following statements are true of functional dependencies?": [
     "Each functional dependency is displayed as a horizontal line.",
     "It is a constraint between two sets of attributes from the database.",
@@ -2503,6 +2750,11 @@ quiz = {
     "It has a graph visualization interface.",
     "It has a high-level query language called Cypher.",
   ],
+  "Which of the following statements are true with regards to a multitable insert? (Choose two.)":
+    [
+      "A multitable insert statement can conditionally insert data into multiple tables.",
+      "A multitable insert statement can replace and perform better than PL/SQL routines.",
+    ],
   "Which of the following statements are true? (Choose two.)": [
     "A correlated subquery can also be a single-row subquery.",
     "A single-row subquery can also be a multiple-column subquery.",
@@ -2515,6 +2767,17 @@ quiz = {
     ],
   "Which of the following statements best describes the relationship between project life cycle phases and project management proce":
     ["Project management processes can repeat within a project life cycle."],
+  "Which of the following statements completes a transaction?": ["commit"],
+  "Which of the following statements defines the possible use cases of a subquery? Select all that apply.":
+    [
+      "A subquery is used to define a set of rows that should be inserted into a table.",
+      "A subquery is used to define conditions in a where clause to be applied to the results returned by a select statement.",
+    ],
+  "Which of the following statements is a DML statement? (select all that apply)":
+    ["delete from emp where em_id=5;", "insert into emp values (1,'Freeman');"],
+  "Which of the following statements is false?": [
+    "It is possible to merge into two or more tables.",
+  ],
   "Which of the following statements is not true regarding incremental and iterative development approaches?":
     [
       "Iterative approaches involve developing and deploying the final solution in pieces.",
@@ -2523,13 +2786,31 @@ quiz = {
     [
       "A project life cycle cannot include multiple development approaches and delivery cadences.",
     ],
+  "Which of the following statements is true about DDL statements in Oracle (choose all that apply)":
+    [
+      "DDL statements can not be rolled back.",
+      "The create table statement is one type of DDL statement.",
+    ],
   "Which of the following statements is true about HAVING? (Choose two.)": [
     "It can be used only in the SELECT statement.",
     "It must occur after the WHERE clause.",
   ],
+  "Which of the following statements is true about a self join? (choose all that apply)":
+    [
+      "A self join does not always require a where clause.",
+      "Is a join where the rows of the same table are combined with each other.",
+      "With a self join the same table will appear at least twice in the from clause.",
+    ],
   "Which of the following statements is true about clustering?": [
     "Assigns customers to different segments",
   ],
+  "Which of the following statements is true?": [
+    "scalar subquery is used to return one value, which can be used in lieu of a literal value.",
+  ],
+  "Which of the following statements will create an index that the Oracle optimizer will ignore, by default, when parsing a SQL statement?":
+    ["create index ix_emp on employee(hiredate) tablespace users invisible;"],
+  "Which of the following statements will grant the role OMBUDSMAN to user JOSHUA in such a way that JOSHUA may grant the role to another user?":
+    ["GRANT OMBUDSMAN TO JOSHUA WITH ADMIN OPTION;"],
   "Which of the following steps of the CRISP-DM process identifies the goals, purpose, and requirements of the customers?":
     ["Business understanding"],
   "Which of the following steps of the CRISP-DM process identifies the relevant data from different sources?":
@@ -2590,11 +2871,20 @@ quiz = {
       "Replicate a block to another node.",
       "Reregister the node or shut down the node.",
     ],
+  "Which of the following update statements will result in an error?": [
+    "Update employees\nSet date=01/01/2017;",
+  ],
   "Which of the following updates recomputes a view only upon demand?": [
     "Lazy",
   ],
   "Which of the following violations will occur when a transaction may read a set of rows from a table, based on some condition specified in the SQL WHERE-clause?":
     ["Phantom"],
+  "Which of the following will correctly format the output of the data column HIRE_DATE column to look like the following in the output: 01/01/2017 14:00:00?":
+    ["select to_char(hire_date, 'mm/dd/yyyy hh24:mi:ss') from emp;"],
+  "Which of the following will insert rows in the employee table into the employee_history table with a term_date less than or equal to today's date minus 365 days?":
+    [
+      "Insert into employee_history select * from employee where term_date <=sysdate-365;",
+    ],
   "Which of the following would be an example of an administrative change to the contract?":
     ["The phone number for the contact person has changed."],
   "Which of the following would be an indirect cost on your project?": [
@@ -2617,6 +2907,10 @@ quiz = {
   ],
   "Which of the following would least likely result in an organizational change management project?":
     ["Systems upgrade"],
+  "Which of the following would not be a case for the use of a group (or aggregate) function?":
+    [
+      "Finding all the first names of persons who's last name ended in SMITH and who lived on the west coast.",
+    ],
   "Which of the following would not be considered an enterprise environmental factor (EEF)?":
     ["Your company's policies"],
   "Which of the following would not be considered when determining the development approach to be used?":
@@ -2675,6 +2969,11 @@ quiz = {
   ],
   "Which statement in the SQL standard can be used to invoke a stored procedure—either from an interactive interface or from embedded SQL or SQLJ?":
     ["CALL"],
+  "Which statement is used to sort the rows returned by a SQL statement?": [
+    "order by",
+  ],
+  "Which statement would limit the rowset of a sql statement to no more than 5 rows?":
+    ["where rownum < 6"],
   "Which statements reflect a servant leadership mindset? (Choose all that apply.)":
     [
       "Emphasizes a coaching approach to managing people",
@@ -2813,6 +3112,10 @@ quiz = {
     ["Archive project documents"],
   "You are logged in to user FINANCE. It is currently the only schema in the entire database. The following exist in the database:\n\nA VIEW named VENDORS\nA CONSTRAINT named VENDORS\nAn INDEX named CUSTOMER#ADDRESS\nYou attempt to execute the following SQL statement:\n\n\nCREATE TABLE CUSTOMER#ADDRESS\n(ID  NUMBER,\n   NAME VARCHAR2(30));\n\nWhich one of the following is true?":
     ["The SQL statement will execute, and the TABLE will be created."],
+  "You are logged in to user account FRED and have been tasked with granting privileges to the user account ETHEL. You execute the following SQL statements:\n\n\nGRANT CREATE ANY TABLE TO ETHEL WITH ADMIN OPTION;\nREVOKE CREATE ANY TABLE FROM ETHEL;\n\nAssuming both statements execute successfully, what is the result?":
+    [
+      "ETHEL does not have the system privilege CREATE ANY TABLE or the right to grant the CREATE ANY TABLE system privilege to any other user.",
+    ],
   "You are looking at a control chart and notice that a few data points are falling on the mean, some data points are grouped toget":
     [
       "The data points that are grouped together are precise, but the data points on the mean are accurate.",
@@ -2869,8 +3172,19 @@ quiz = {
     ["None of these"],
   "You are tasked to create a report that displays the hours and minutes of the current date in a report. Which of the following will satisfy this requirement?":
     ["TO_CHAR(SYSDATE, 'HH:MI')"],
+  "You are tasked to work with a view. The view's underlying table has been altered. What information can the data dictionary provide at this point? (Choose all correct answers.)":
+    [
+      "The current state of the table",
+      "The names of columns in the underlying table",
+      "The query that was used to create the view",
+      "The status of the view so that you can determine whether the view requires recompilation",
+    ],
   "You are tasked with cleaning up a database application. There are two tables in the database: ORDERS contains completed ORDERS, and ORDER_RETURNS contains duplicate information for all ORDERS that were later returned. Your goal is to find out whether any rows in ORDER_RETURNS exist that were never in the ORDERS table to begin with. Which of the following set operators should you use?":
     ["MINUS"],
+  "You are tasked with querying the data dictionary view that lists only those sequences to which you currently have privileges but don't necessarily own. To do this, you log in to your own user account and query the data dictionary view called:":
+    ["ALL_SEQUENCES"],
+  "You are tasked with the job of adding a comment to the data dictionary to accompany the column PIER in the table MARINA. Which of the following will execute successfully?":
+    ["COMMENT ON COLUMN MARINA.PIER IS 'Number of piers';"],
   "You are the PM on a project developing a new model of smart doorbells. The doorbell will record short video clips of activity an":
     ["The customer is validating scope."],
   "You are the manager on a project to build a new wing for the local hospital. The ribbon-cutting ceremony is set, and many high-p":
@@ -2900,6 +3214,8 @@ quiz = {
     [
       "The execution fails because there is no precision indicated for VARCHAR2.",
     ],
+  "You can add your own comments to the data dictionary with the COMMENT statement using which of the following? (Choose two.)":
+    ["COLUMN", "TABLE"],
   "You can use a substitution variable to replace:": ["Both"],
   "You frequently will experience situations where others are facing greater turmoil than you are. If you wish to be empathetic tow":
     [
@@ -2908,10 +3224,20 @@ quiz = {
     ],
   "You have a dispute with one of your vendors regarding the work they completed and the work that was agreed to. What should you d":
     ["Refer to the contract with the vendor."],
+  "You have a need to insert data from one table, into two different tables. Which is the most efficient way to perform this operation?":
+    [
+      "Use the Oracle insert all SQL command to insert the data into both tables as the same time.",
+    ],
   "You have a new employee who has no experience with projects. This person has never dealt with quality either. When discussing le":
     ["De jure regulations"],
+  "You have a new set of data to load from a staging table into a master table. Some of the new data contains new records to be added to the master table, some of the data contains records to be updated in the master table and there are also records to be removed from the master table.\n\nWhich of the following ways of is the most efficient way of updating the master table from the staging table?":
+    [
+      "You should load the new data into a staging table and then use the merge SQL command to load it into the master table.",
+    ],
   "You have a single database, with only one schema. The following four objects exist in the database:\n\nA TABLE named PRODUCT_CATALOG\nA TABLE named ADS\nA USER named PRODUCT_CATALOG\nA VIEW named CONFERENCE_SCHEDULE\nHow many of the four objects are owned by the schema?":
     ["3"],
+  "You have a table FURNISHINGS and are told to grant DELETE privileges on the table to user HEARST. Examine the following SQL statements:\n\n\nGRANT DELETE ON FURNISHINGS TO HEARST;\nCREATE ROLE MGR;\nGRANT DELETE ON FURNISHINGS TO MGR;\nGRANT MGR TO HEARST;\n\nNow you are told to change the privileges given to HEARST so that HEARST can no longer execute DELETE statements on the FURNISHINGS table. Which of the following will accomplish the goal? (Choose the best answer.)":
+    ["REVOKE DELETE ON FURNISHINGS FROM HEARST, MGR;"],
   "You have an expected activity duration of 26 days, optimistic value of 18 days, and pessimistic value of 67 days":
     ["31.5 days"],
   "You have been dealing with a client who requests changes frequently, despite there being a detailed initial plan in place with s":
@@ -2946,6 +3272,8 @@ quiz = {
     ["Cost"],
   "You have hired a vendor to perform certain activities on your project. Which of the following is not true regarding early termin":
     ["Your vendor can terminate the contract for convenience."],
+  "You have just created a user called bsmith. Which command would you execute to grant a privilege that will allow the bsmith account to connect to the database?":
+    ["Grant create session to bsmith;"],
   "You have rolled onto a project where the customer has not been very happy with the progress. The scope of the project has not be":
     ["Cost management plan"],
   "You have the following metrics on your project so far: PV = $63,000; EV = $61,000; AC = 62,000.":
@@ -2962,12 +3290,16 @@ quiz = {
     ["TO_CHAR"],
   "You need to develop a new website for a large customer that is in the business of selling many types of household products. You":
     ["Analogous estimating"],
+  "You need to get information about columns in a table you do not own, nor do you have privileges to it. Which view can you query to get this information?":
+    ["DBA_TAB_COLUMNS"],
   "You need to purchase 500 windows of equal size for a hotel construction project. What type of bid document should you submit to":
     ["RFQ"],
   "You notice that one of the machines on the production line is working inefficiently and has produced several defects. Some of th":
     ["Corrective action"],
   "You notice that two team members are having a really hard time implementing their user stories. As you investigate further, you":
     ["Break down the large user stories into smaller user stories."],
+  "You run the following query from the SQL prompt:\n\n\nSQL> select sysdate from dual;\n\nand get the following results:\n\n\nSYSDATE\n---------\n13-NOV-17 \n\nYou want the output to look like the following:\n\n\nSYSDATE\n-------------------\n11/13/2017 13:09:10 \n\nWhich of the following SQL statements will create the output you desire?":
+    ["select to_char(sysdate, 'mm/dd/yyyy hh24:mi:ss') \"SYSDATE\" from dual;"],
   "You were assigned as the project manager for the ISHU project and well into the":
     [
       "Document the issue into the log following the template format established during planning.",
@@ -3036,6 +3368,12 @@ quiz = {
     ["Ask Cathy to repeat the instructions back to you."],
   "Your team works in a hybrid environment and recognizes that sometimes the original":
     ["Use of the team charter for task completion"],
+  "Your user account owns a table BACK_ORDERS, and you want to grant privileges on the table to a user account named CARUSO, which already has the system privileges CREATE SESSION and UNLIMITED TABLESPACE. Examine the following SQL statement:\n\n\nGRANT SELECT ON BACK_ORDERS TO CARUSO;\n\nOnce this statement has been executed, which of the following statements will be true for user CARUSO?":
+    [
+      "CARUSO will have SELECT privileges on BACK_ORDERS but not the ability to give other users SELECT privileges on BACK_ORDERS.",
+    ],
+  "Your user account owns an updatable view, BACKLOG, which is based on the table PROJECTS. You are tasked to give SELECT and UPDATE capabilities to another user account named MARINO. Currently, MARINO has no privileges on either the table or the view. You want for MARINO to have the ability to grant SELECT on the view to other users as well. Examine the following SQL code:\n\n\nGRANT SELECT ON BACKLOG TO MARINO WITH GRANT OPTION;\nGRANT UPDATE ON BACKLOG TO MARINO;\n\nWhich of the following statements is true?":
+    ["The statements will execute successfully and perform as intended."],
   "Your vendor hired one of their subcontractors, who has severely underperformed. You have reached out to the subcontractors sever":
     ["The subcontractor is within their right not to respond to you."],
   "Your vendor requests a change to the contract. They were waiting for important data and details on requirements from one of your":
