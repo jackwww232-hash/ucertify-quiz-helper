@@ -1,4 +1,6 @@
 quiz = {
+  "Your project has a tight deadline and planning needs to start immediately": 
+    ["Explain the urgency of the situation to the sponsor and escalate to senior management for resolution."], // 正確答案是 A
   "A CONSTRAINT is assigned to which of the following?": ["TABLE"],
   "A Pareto chart is used for ranking causes of problems from greatest to smallest with a cumulative curve above it but does not de":
     ["True"],
