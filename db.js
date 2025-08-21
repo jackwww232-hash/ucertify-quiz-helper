@@ -1,6 +1,4 @@
 quiz = {
-  "Your project has a tight deadline and planning needs to start immediately": 
-    ["Explain the urgency of the situation to the sponsor and escalate to senior management for resolution."], // 正確答案是 A
   "A CONSTRAINT is assigned to which of the following?": ["TABLE"],
   "A Pareto chart is used for ranking causes of problems from greatest to smallest with a cumulative curve above it but does not de":
     ["True"],
@@ -3336,7 +3334,7 @@ quiz = {
     ],
   "Your project has a tight deadline, and planning needs to start immediately; otherwise, there may be risks of delays. The sponsor":
     [
-      "Explain the urgency of the situation to the sponsor but do not start work until you have a signed project charter.",
+      "Explain the urgency of the situation to the sponsor and escalate to senior management for resolution.",
     ],
   "Your project is currently over budget and behind schedule, and you are looking at the stakeholder engagement assessment matrix.":
     ["The C and D are in different columns."],
