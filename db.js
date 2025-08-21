@@ -3334,7 +3334,7 @@ quiz = {
     ],
   "Your project has a tight deadline, and planning needs to start immediately; otherwise, there may be risks of delays. The sponsor":
     [
-      "Explain the urgency of the situation to the sponsor and escalate to senior management for resolution.",
+      "Explain the urgency of the situation to the sponsor but do not start work until you have a signed project charter.",
     ],
   "Your project is currently over budget and behind schedule, and you are looking at the stakeholder engagement assessment matrix.":
     ["The C and D are in different columns."],
