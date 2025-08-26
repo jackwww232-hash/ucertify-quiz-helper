@@ -17,6 +17,10 @@
 
 for free tier, gemini-2.5-flash 10 requests per minute
 
+- check browser console
+
+![console](./pic/console.png)
+
 ### chrome
 turn on developer mode
 

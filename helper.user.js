@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ucertify-quiz-helper
-// @version      2.0.0
+// @version      2.0.1
 // @description  ucertify-quiz-helper
 // @author       0guanhua0@gmail.com
 // @include      *ucertify*
@@ -132,7 +132,7 @@
       const dbAnswers = quiz[matchingKey];
       highlightAnswers(dbAnswers, optionElements);
     } else {
-      console.log("No match in DB, asking Gemini AI...");
+      console.log("No match in DB, ask gemini-2.5-flash...");
       const aiAnswers = await askGemini(currentQuestion, options);
 
       if (aiAnswers.length > 0) {
