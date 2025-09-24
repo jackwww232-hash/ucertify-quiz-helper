@@ -3398,4 +3398,80 @@ quiz = {
     ],
   "which of the following notations indicates a specialization/generalization with the disjoint constraint?":
     ["Blank triangle"],
+  "Which of the following is equivalent to this code?\n\n\nStart of code block\nUnaryOperator<Integer> u = x -> x * x;\n\nEnd of code block": [
+    "Function<Integer, Integer> f = x -> x*x;"
+  ],
+  "Which of the following are valid lambda expressions?": [
+    "(x,y) -> new RuntimeException()",
+    "(final Camel c) -> {}"
+  ],
+  "What is the result of the following class?\n\n\nStart of code block\nimport java.util.function.*;\n\npublic class Panda {\n   int age;\n   public static void main(String[] args) {\n      Panda p1 = new Panda();\n      p1.age = 1;\n      check(p1, p -> p.age < 5);\n   }\n  private static void check(Panda panda,\n     Predicate<Panda> pred) {\n     String result =\n        pred.test(panda) ? \"match\" : \"not match\";\n     System.out.print(result);\n} }\n\nEnd of code block": [
+    "match"
+  ],
+  "Which lambda can replace the MySecret class to return the same value?\n\n\nStart of code block\ninterface Secret {\n   String magic(double d);\n}\n\nclass MySecret implements Secret {\n   public String magic(double d) {\n      return \"Poof\";\n   } }\n\nEnd of code block": [
+    "(e) -> \"Poof\"",
+    "(e) -> { String f = \"\"; return \"Poof\"; }"
+  ],
+  "Which of the following can be inserted without causing a compilation error?\n\n\nStart of code block\npublic void remove(List<Character> chars) {\n   char end = 'z';\n   Predicate<Character> predicate = c -> {\n      char start = 'a'; return start <= c && c <= end; };\n\n   // INSERT LINE HERE\n}\n\nEnd of code block": [
+    "char start = 'a';",
+    "char c = 'x';",
+    "chars = null;"
+  ],
+  "Which of the following lambda expressions can be passed to a function of Predicate<String> type?": [
+    "s -> s.isEmpty()",
+    "(String s) -> s.isEmpty()"
+  ],
+  "Which of these can fill in the blank and have the code run without error?\n\n\nStart of code block\nSet<?> set = Set.of(\"lion\", \"tiger\", \"bear\");\nvar s = Set.copyOf(set);\nConsumer<Object> consumer =  ____________________;\ns.forEach(consumer);\n\nEnd of code block": [
+    "<No answer captured>"
+  ],
+  "Which of the following are valid functional interfaces?\n\n\nStart of code block\npublic interface Transport {\n   public int go();\n   public boolean equals(Object o);\n}\n\npublic abstract class Car {\n   public abstract Object swim(double speed, int duration);\n}\n\npublic interface Locomotive extends Train {\n   public int getSpeed();\n}\n\npublic interface Train extends Transport {}\n\nabstract interface Spaceship extends Transport {\n   default int blastOff();\n}\n\npublic interface Boat {\n   int hashCode();\n   int hashCode(String input);\n}\n\nEnd of code block": [
+    "Transport",
+    "Train",
+    "Boat"
+  ],
+  "Which of the following functional interfaces contain an abstract method that returns a primitive value?": [
+    "DoubleSupplier",
+    "BooleanSupplier",
+    "IntSupplier"
+  ],
+  "Which lambda expression, when entered into the blank line in the following code, causes the program to print hahaha?\n\n\nStart of code block\nimport java.util.function.Predicate;\npublic class Hyena {\n   private int age = 1;\n   public static void main(String[] args) {\n      var p = new Hyena();\n      double height = 10;\n      int age = 1;\n      testLaugh(p,  _________________________);\n      age = 2;\n   }\n   static void testLaugh(Hyena panda, Predicate<Hyena> joke) {\n      var r = joke.test(panda) ? \"hahaha\" : \"silence\";\n      System.out.print(r);\n   }\n}\n\nEnd of code block": [
+    "h -> h.age < 5",
+    "var -> p.age <= 10"
+  ],
+  "Which of these statements is true about the following code?\n\n\nStart of code block\npublic void method() {\n   x((var x) -> {}, (var x, var y) -> false);\n}\npublic void x(Consumer<String> x, BinaryOperator<Boolean> y) {}\n\nEnd of code block": [
+    "The code compiles, and the x in each lambda refers to a different type."
+  ],
+  "Which lambdas can replace the new Sloth() call in the main() method and produce the same output at runtime?\n\n\nStart of code block\nimport java.util.List;\ninterface Yawn {\n   String yawn(double d, List<Integer> time);\n}\nclass Sloth implements Yawn {\n   public String yawn(double zzz, List<Integer> time) {\n      return \"Sleep: \" + zzz;\n   } }\npublic class Vet {\n   public static String takeNap(Yawn y) {\n      return y.yawn(10, null);\n   }\n   public static void main(String… unused) {\n      System.out.print(takeNap(new Sloth()));\n   } }\n\nEnd of code block": [
+    "<No answer captured>"
+  ],
+  "Which statements are true?": [
+    "The Consumer interface is good for printing out an existing value.",
+    "The Predicate interface has a method named test()."
+  ],
+  "How many times is true printed out by this code?\n\n\nStart of code block\nimport java.util.function.Predicate;\npublic class Fantasy {\n   public static void scary(String animal) {\n      var dino = s -> \"dino\".equals(animal);\n      var dragon = s -> \"dragon\".equals(animal);\n      var combined = dino.or(dragon);\n      System.out.println(combined.test(animal));\n   }\n   public static void main(String[] args) {\n      scary(\"dino\");\n      scary(\"dragon\");\n      scary(\"unicorn\");\n   }\n}\n\nEnd of code block": [
+    "<No answer captured>"
+  ],
+  "Which statements about functional interfaces are true?": [
+    "A functional interface can contain default and private methods.",
+    "Abstract methods with signatures that are contained in public methods of java.lang.Object do not count toward the abstract method count for a functional interface."
+  ],
+  "Which functional interfaces complete the following code? For line 2, assume m and n are instances of functional interfaces that exist and have the same type as y.\n\n\nStart of code block\n_________ x = String::new;\n_________ y = m.andThen(n);\n_________ z = a -> a + a;\n\nEnd of code block": [
+    "Supplier<String>",
+    "UnaryOperator<String>"
+  ],
+  "Which is true of the following code?\n\n\nStart of code block\nint length = 3;\n\nfor (int i = 0; i<3; i++) {\n   if (i%2 == 0) {\n      Supplier<Integer> supplier = () -> length; // A\n      System.out.println(supplier.get());        // B\n   } else {\n      int j = i;\n      Supplier<Integer> supplier = () -> j;      // C\n      System.out.println(supplier.get());        // D\n   }\n}\n\nEnd of code block": [
+    "The code compiles successfully."
+  ],
+  "What is the result of the following code?\n\n\nStart of code block\ninterface Climb {\n   boolean isTooHigh(int height, int limit);\n}\n\npublic class Climber {\n   public static void main(String[] args) {\n      check((h, m) -> h.append(m).isEmpty(), 5);\n   }\n   private static void check(Climb climb, int height) {\n     if (climb.isTooHigh(height, 10))\n        System.out.println(\"too high\");\n     else\n        System.out.println(\"ok\");\n  }\n}\n\nEnd of code block": [
+    "Compiler error on line 7"
+  ],
+  "What is the result of running the following class?\n\n\nStart of code block\nimport java.util.function.*;\n\npublic class Panda {\n   int age;\n   public static void main(String[] args) {\n      Panda p1 = new Panda();\n      p1.age = 1;\n      check(p1, p -> {p.age < 5});\n   }\n  private static void check(Panda panda,\n     Predicate<Panda> pred) {\n     String result = pred.test(panda)\n        ? \"match\" : \"not match\";\n     System.out.print(result);\n} }\n\nEnd of code block": [
+    "Compiler error on line 8"
+  ],
+  "Which of the following can be inserted without causing a compilation error?\n\n\nStart of code block\npublic void remove(List<Character> chars) {\n   char end = 'z';\n\n   // INSERT LINE HERE\n\n   Predicate<Character> predicate =  c -> {\n      char start = 'a'; return start <= c && c <= end; };\n}\n\nEnd of code block": [
+    "<No answer captured>"
+  ],
+  "What does the following code output?\n\n\nStart of code block\nFunction<Integer, Integer> s = a -> a + 4;\nFunction<Integer, Integer> t = a -> a * 3;\nFunction<Integer, Integer> c = s.compose(t);\nSystem.out.print(c.apply(1));\n\nEnd of code block": [
+    "7"
+  ]
 };
