@@ -3472,7 +3472,7 @@ quiz = {
   ],
   "What does the following code output?\n\n\nStart of code block\nFunction<Integer, Integer> s = a -> a + 4;\nFunction<Integer, Integer> t = a -> a * 3;\nFunction<Integer, Integer> c = s.compose(t);\nSystem.out.print(c.apply(1));\n\nEnd of code block": [
     "7"
-  ]
+  ],
   "Given the following program, what can be inserted into the blank line that would allow it to print Swim! at runtime?\n\n\nCopy \nStart of code block\ninterface Swim {\n   default void perform() { System.out.print(\"Swim!\"); }\n}\ninterface Dance {\n   default void perform() { System.out.print(\"Dance!\"); }\n}\npublic class Penguin implements Swim, Dance {\n   public void perform() { System.out.print(\"Smile!\"); }\n   private void doShow() {\n     __________________________;\n   }\n   public static void main(String[] eggs) {\n      new Penguin().doShow();\n   }\n}\n\nEnd of code block": [
     "Swim.super.perform()"
   ],
