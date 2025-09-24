@@ -3473,4 +3473,116 @@ quiz = {
   "What does the following code output?\n\n\nStart of code block\nFunction<Integer, Integer> s = a -> a + 4;\nFunction<Integer, Integer> t = a -> a * 3;\nFunction<Integer, Integer> c = s.compose(t);\nSystem.out.print(c.apply(1));\n\nEnd of code block": [
     "7"
   ]
+  "Given the following program, what can be inserted into the blank line that would allow it to print Swim! at runtime?\n\n\nCopy \nStart of code block\ninterface Swim {\n   default void perform() { System.out.print(\"Swim!\"); }\n}\ninterface Dance {\n   default void perform() { System.out.print(\"Dance!\"); }\n}\npublic class Penguin implements Swim, Dance {\n   public void perform() { System.out.print(\"Smile!\"); }\n   private void doShow() {\n     __________________________;\n   }\n   public static void main(String[] eggs) {\n      new Penguin().doShow();\n   }\n}\n\nEnd of code block": [
+    "Swim.super.perform()"
+  ],
+  "Which statements about the following program are correct?\n\n\nStart of code block\ninterface HasExoskeleton {\n   double size = 2.0f;\n   abstract int getNumberOfSections();\n}\nabstract class Insect implements HasExoskeleton {\n   abstract int getNumberOfLegs();\n}\npublic class Beetle extends Insect {\n   int getNumberOfLegs() { return 6; }\n  int getNumberOfSections(int count) { return 1; }\n}\n\nEnd of code block": [
+    "The code will not compile because of line 8."
+  ],
+  "Which of the following are valid record declarations?\n\n\nStart of code block\npublic record Iguana(int age) {\n   private static final int age = 10; }\n\npublic final record Gecko() {}\n\npublic abstract record Chameleon()  {\n   private static String name; }\n\npublic record BeardedDragon(boolean fun) {\n   @Override public boolean fun() { return false; } }\n\npublic record Newt(long size) {\n   @Override public boolean equals(Object obj) { return false; }\n   public void setSize(long size) {\n      this.size = size;\n   } }\n\nEnd of code block": [
+    "Gecko",
+    "BeardedDragon"
+  ],
+  "Which statements about the following program are correct?\n\n\nStart of code block\npublic abstract interface Herbivore {\n   int amount = 10;\n   public void eatGrass();\n   public abstract int chew() { return 13; }\n}\n\nabstract class IsAPlant extends Herbivore {\n   Object eatGrass(int season) { return null; }\n}\n\nEnd of code block": [
+    "The code will not compile because of line 7.",
+    "The code will not compile because of line 4."
+  ],
+  "What is printed by the following program?\n\n\nStart of code block\npublic class Deer {\n   enum Food {APPLES, BERRIES, GRASS}\n   protected class Diet {\n      private Food getFavorite() {\n         return Food.BERRIES;\n      }\n  }\n   public static void main(String[] seasons) {\n      System.out.print(switch(new Diet().getFavorite()) {\n         case APPLES -> \"a\";\n         case BERRIES -> \"b\";\n         default -> \"c\";\n      });\n   } }\n\nEnd of code block": [
+    "The main() method does not compile."
+  ],
+  "What does the following program print?\n\n\nStart of code block\npublic class Zebra {\n   private int x = 24;\n   public int hunt() {\n      String message = \"x is \";\n      abstract class Stripes {\n         private int x = 0;\n         public void print() {\n            System.out.print(message + Zebra.this.x);\n         }\n     }\n     var s = new Stripes() {};\n     s.print();\n     return x;\n  }\n  public static void main(String[] args) {\n     new Zebra().hunt();\n  } }\n\nEnd of code block": [
+    "x is 24"
+  ],
+  "Which of the following are printed by the Bear program?\n\n\nStart of code block\npublic class Bear {\n   enum FOOD {\n      BERRIES, INSECTS {\n         public boolean isHealthy() { return true; }},\n      FISH, ROOTS, COOKIES, HONEY;\n      public abstract boolean isHealthy();\n   }\n   public static void main(String[] args) {\n      System.out.print(FOOD.INSECTS);\n      System.out.print(FOOD.INSECTS.ordinal());\n      System.out.print(FOOD.INSECTS.isHealthy());\n      System.out.print(FOOD.COOKIES.isHealthy());\n   }\n}\n\nEnd of code block": [
+    "The code does not compile."
+  ],
+  "Which of the following classes and interfaces do not compile?\n\n\nStart of code block\npublic abstract class Camel { void travel(); }\n\npublic interface EatsGrass { private abstract int chew(); }\n\npublic abstract class Elephant {\n   abstract private class SleepsAlot {\n      abstract int sleep();\n   } }\n\npublic class Eagle { abstract soar(); }\n\npublic interface Spider { default void crawl() {} }\n\nEnd of code block": [
+    "Eagle",
+    "EatsGrass",
+    "Camel"
+  ],
+  "How many lines of the following program contain a compilation error?\n\n\nStart of code block\nclass Primate {\n   protected int age = 2;\n   { age = 1; }\n   public Primate() {\n      this().age = 3;\n   }\n}\npublic class Orangutan {\n   protected int age = 4;\n  { age = 5; }\n  public Orangutan() {\n     this().age = 6;\n  }\n  public static void main(String[] bananas) {\n     final Primate x = (Primate)new Orangutan();\n     System.out.println(x.age);\n  }\n}\n\nEnd of code block": [
+    "3"
+  ],
+  "What is the result of the following program?\n\n\nStart of code block\npublic class Weather {\n   enum Seasons {\n      WINTER, SPRING, SUMMER, FALL\n   }\n\n   public static void main(String[] args) {\n      Seasons v = null;\n      switch (v) {\n         case Seasons.SPRING -> System.out.print(\"s\");\n         case Seasons.WINTER -> System.out.print(\"w\");\n         case Seasons.SUMMER -> System.out.print(\"m\");\n         default -> System.out.println(\"missing data\"); }\n   }\n}\n\nEnd of code block": [
+    "More than one line of code does not compile."
+  ],
+  "What is the result of the following program?\n\n\nStart of code block\npublic class Favorites {\n   enum Flavors {\n      VANILLA, CHOCOLATE, STRAWBERRY\n      static final Flavors DEFAULT = STRAWBERRY;\n  }\n   public static void main(String[] args) {\n      for(final var e : Flavors.values())\n         System.out.print(e.ordinal()+\" \");\n  }\n}\n\nEnd of code block": [
+    "Exactly one line of code does not compile."
+  ],
+  "What is the result of the following code?\n\n\nStart of code block\npublic class Movie {\n   private int butter = 5;\n   private Movie() {}\n   protected class Popcorn {\n      private Popcorn() {}\n      public static int butter = 10;\n      public void startMovie() {\n         System.out.println(butter);\n      }\n  }\n  public static void main(String[] args) {\n     var movie = new Movie();\n     Movie.Popcorn in = new Movie().new Popcorn();\n     in.startMovie();\n  } }\n\nEnd of code block": [
+    "The output is 10."
+  ],
+  "Which lines of the following interface declarations do not compile?\n\n\nStart of code block\npublic interface Omnivore {\n   int amount = 10;\n   static boolean gather = true;\n   static void eatGrass() {}\n   int findMore() { return 2; }\n   default float rest() { return 2; }\n   protected int chew() { return 13; }\n   private static void eatLeaves() {}\n}\n\nEnd of code block": [
+    "Line 5",
+    "Line 7"
+  ],
+  "What types can be inserted in the blanks on the lines marked X and Z that allow the code to compile?\n\n\nStart of code block\ninterface Walk { private static List move() { return null; } }\ninterface Run extends Walk { public ArrayList move(); }\nclass Leopard implements Walk {\n   public ________ move() {  // X\n      return null;\n   }\n}\nclass Panther implements Run {\n   public ________ move() {  // Z\n      return null;\n   }\n}\n\nEnd of code block": [
+    "List on the line marked X",
+    "ArrayList on the line marked Z",
+    "Integer on the line marked X",
+    "ArrayList on the line marked X"
+  ],
+  "What is the output of the following program?\n\n\nStart of code block\ninterface Aquatic {\n   int getNumOfGills(int p);\n}\npublic class ClownFish implements Aquatic {\n   String getNumOfGills() { return \"14\"; }\n   int getNumOfGills(int input) { return 15; }\n   public static void main(String[] args) {\n      System.out.println(new ClownFish().getNumOfGills(-1));\n} }\n\nEnd of code block": [
+    "The code will not compile because of line 6."
+  ],
+  "Which of the following can be inserted in the rest() method?\n\n\nStart of code block\npublic class Lion {\n   class Cub {}\n   static class Den {}\n   static void rest() {\n       _______________________;\n   } }\n\nEnd of code block": [
+    "<No answer captured>"
+  ],
+  "What is the output of the following program?\n\n\nStart of code block\npublic sealed class ArmoredAnimal permits Armadillo {\n   public ArmoredAnimal(int size) {}\n   @Override public String toString() { return \"Strong\"; }\n   public static void main(String[] a) {\n      var c = new Armadillo(10, null);\n      System.out.println(c);\n   }\n}\nclass Armadillo extends ArmoredAnimal {\n   @Override public String toString() { return \"Cute\"; }\n   public Armadillo(int size, String name) {\n      super(size);\n   }\n}\n\nEnd of code block": [
+    "The program does not compile."
+  ],
+  "Which lines, when entered independently into the blank, allow the code to print Not scared at runtime?\n\n\nStart of code block\npublic class Ghost {\n   public static void boo() {\n      System.out.println(\"Not scared\");\n   }\n   protected final class Spirit {\n      public void boo() {\n         System.out.println(\"Booo!!!\");\n      }\n   }\n   public static void main(String… haunt) {\n      var g = new Ghost().new Spirit() {};\n      __________________________;\n   }\n}\n\nEnd of code block": [
+    "None of these"
+  ],
+  "Which lines of the following interface do not compile?\n\n\nStart of code block\npublic interface BigCat {\n   abstract String getName();\n   static int hunt() { getName(); return 5; }\n   default void climb() { rest(); }\n   private void roar() { getName();  climb(); hunt(); }\n   private static boolean sneak() { roar(); return true; }\n   private int rest() { return 2; };\n}\n\nEnd of code block": [
+    "Line 6",
+    "Line 3"
+  ],
+  "Which of the following are true about encapsulation?": [
+    "It allows setters.",
+    "It allows getters.",
+    "It requires private instance variables."
+  ],
+  "Which of the following statements can be inserted in the blank line so that the code will compile successfully?\n\n\nStart of code block\ninterface CanHop {}\npublic class Frog implements CanHop {\n   public static void main(String[] args) {\n       ___________ frog = new TurtleFrog();\n   }\n}\nclass BrazilianHornedFrog extends Frog {}\nclass TurtleFrog extends Frog {}\n\nEnd of code block": [
+    "var",
+    "CanHop",
+    "TurtleFrog",
+    "Frog"
+  ],
+  "Which statements about the following enum are true?\n\n\nStart of code block\npublic enum Animals {\n   MAMMAL(true), INVERTEBRATE(Boolean.FALSE), BIRD(false),\n   REPTILE(false), AMPHIBIAN(false), FISH(false) {\n      public int swim() { return 4; }\n   }\n   final boolean hasHair;\n   public Animals(boolean hasHair) {\n      this.hasHair = hasHair;\n   }\n  public boolean hasHair() { return hasHair; }\n  public int swim() { return 0; }\n}\n\nEnd of code block": [
+    "Compiler error on another line",
+    "Compiler error on line 7"
+  ],
+  "The following code appears in a file named Ostrich.java. What is the result of compiling the source file?\n\n\nStart of code block\npublic class Ostrich {\n   private int count;\n   static class OstrichWrangler {\n      public int stampede() {\n         return count;\n      } } }\n\nEnd of code block": [
+    "A compiler error occurs on line 5."
+  ],
+  "Given the following record declaration, which lines of code can fill in the blank and allow the code to compile?\n\n\nStart of code block\npublic record RabbitFood(int size, String brand, LocalDate expires) {\n   public static int MAX_STORAGE = 100;\n   public RabbitFood() {\n      _________________________;\n   }\n}\n\nEnd of code block": [
+    "None of these"
+  ],
+  "Assuming a record is defined with at least one field, which components does the compiler always insert, each of which may be overridden or redeclared?": [
+    "The hashCode() method",
+    "The equals() method",
+    "The toString() method",
+    "An accessor method for each field"
+  ],
+  "When inserted in order, which modifiers can fill in the blank to create a properly encapsulated class?\n\n\nStart of code block\npublic class Rabbits {\n    _______ int numRabbits = 0;\n    _______ void multiply() {\n      numRabbits *= 6;\n   }\n    _______ int getNumberOfRabbits() {\n      return numRabbits;\n   }\n}\n\nEnd of code block": [
+    "private, private, and protected",
+    "private, protected, and private",
+    "private, public, and public"
+  ],
+  "Which statements about sealed classes are correct?": [
+    "A sealed class can be extended by an abstract class.",
+    "A sealed interface restricts which subinterfaces may extend it.",
+    "A sealed interface restricts which subclasses may implement it."
+  ],
+  "Which statements about polymorphism and method inheritance are correct?": [
+    "The reference type of the variable determines which hidden method will be called at runtime.",
+    "Marking a method final prevents it from being overridden or hidden.",
+    "Given an arbitrary instance of a class, it cannot be determined until runtime which overridden method will be executed in a parent class."
+  ],
+  "Assuming the following classes are declared as top-level types in the same file, which classes contain compiler errors?\n\n\nStart of code block\nsealed class Bird {\n   public final class Flamingo extends Bird {}\n}\n\nsealed class Monkey {}\n\nclass EmperorTamarin extends Monkey {}\n\nnon-sealed class Mandrill extends Monkey {}\n\nsealed class Friendly extends Mandrill permits Silly {}\n\nfinal class Silly {}\n\n\nEnd of code block": [
+    "Friendly",
+    "EmperorTamarin"
+  ]
 };
