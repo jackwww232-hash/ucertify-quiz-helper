@@ -41,7 +41,7 @@ function parseCorrectLetters() {
       .replace(/and/gi, ",")
       .replace(/&/g, ",")
       .split(",")
-      .map(s => s.replace(/[^A-G]/gi, "").toUpperCase())
+      .map((s) => s.replace(/[^A-G]/gi, "").toUpperCase())
       .filter(Boolean);
   }
 
@@ -55,11 +55,21 @@ function collectCurrentQuestion() {
 
   const question = normalizeText(qEl.innerText);
   const letters = parseCorrectLetters();
-  const texts = letters ? letters.map(getOptionTextByLetter) : ["<No answer captured>"];
+  const texts = letters
+    ? letters.map(getOptionTextByLetter)
+    : ["<No answer captured>"];
 
   window.quizData[question] = texts;
 
-  console.log("✅ 已收集:", question, "→", texts, "(letters:", letters || "-", ")");
+  console.log(
+    "✅ 已收集:",
+    question,
+    "→",
+    texts,
+    "(letters:",
+    letters || "-",
+    ")",
+  );
   return { question, letters, texts };
 }
 
@@ -83,7 +93,7 @@ function debugOptions() {
 
 // 等待 Explanation 出现（保证答案已加载）
 function waitForExplanation(timeout = 5000) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const start = Date.now();
     function check() {
       const exp = document.querySelector(".explanation_content");
@@ -104,7 +114,9 @@ async function autoCollectAll(maxQuestions = 50, delayAfterNext = 500) {
     }
     collectCurrentQuestion();
 
-    const nextBtn = document.querySelector('button[aria-label="Next"], .intro-id-ite_next');
+    const nextBtn = document.querySelector(
+      'button[aria-label="Next"], .intro-id-ite_next',
+    );
     if (!nextBtn) {
       console.log("🚪 没找到 Next 按钮，可能已经是最后一题");
       break;
@@ -112,7 +124,7 @@ async function autoCollectAll(maxQuestions = 50, delayAfterNext = 500) {
 
     nextBtn.click(); // 翻页
     console.log(`➡️ 已完成第 ${i + 1} 题，进入下一题...`);
-    await new Promise(r => setTimeout(r, delayAfterNext)); // 等待切换
+    await new Promise((r) => setTimeout(r, delayAfterNext)); // 等待切换
   }
 
   console.log("🏁 自动收集完成，可以 exportDB() 导出 JSON");
