@@ -310,6 +310,9 @@ quiz = {
     "The code will not compile because of line 12.",
     "The code will not compile because of lines 9-11."
   ],
+  "Assume that the directory /animals exists and is empty. What is the result of executing the following code?\n\n\nStart of code block\nPath path = Path.of(\"/animals\");\ntry (var z = Files.walk(path)) {\n   boolean b = z\n      .filter((p,a) -> a.isDirectory() && !path.equals(p)) // x\n      .findFirst().isPresent();  // y\n   System.out.print(b ? \"No Sub\": \"Has Sub\");\n}\n\nEnd of code block": [
+    "The code will not compile because of line x."
+  ],
   "Assume you have a table ITEMS that includes a column STATUS. Which of the following statements is syntactically correct? (Choose all that apply.)": [
     "SELECT * FROM ITEMS FETCH NEXT 20 PERCENT ROWS ONLY;",
     "SELECT * FROM ITEMS FETCH NEXT 20 ROWS WITH TIES;",
@@ -708,6 +711,13 @@ quiz = {
   ],
   "Given the following record declaration, which lines of code can fill in the blank and allow the code to compile?\n\n\nStart of code block\npublic record RabbitFood(int size, String brand, LocalDate expires) {\n   public static int MAX_STORAGE = 100;\n   public RabbitFood() {\n      _________________________;\n   }\n}\n\nEnd of code block": [
     "None of these"
+  ],
+  "Given the four statements (L, M, N, O), select and order the ones that would complete the expression and cause the code to output 10 lines.\n\n\nStart of code block\nStream.generate(() -> \"1\")\n   L: .filter(x -> x.length()> 1)\n   M: .forEach(System.out::println)\n   N: .limit(10)\n   O: .peek(System.out::println)\n;\n\nEnd of code block": [
+    "N, M"
+  ],
+  "Given the generic type String, the partitioningBy() collector creates a Map<Boolean, List<String>> when passed to collect() by default. When a downstream collector is passed to partitioningBy(), which return types can be created?": [
+    "Map<Boolean, List<String>>",
+    "Map<Boolean, Set<String>>"
   ],
   "Global projects now require resources that did not meet the expectations of project managers years ago. They require more flexib": [
     "Caves and commons"
@@ -2177,6 +2187,9 @@ quiz = {
   "Video conferencing is a type of which communication method?": [
     "Interactive"
   ],
+  "We have a method that returns a sorted list without changing the original. Which of the following can replace the method implementation to do the same with streams?\n\n\nStart of code block\nprivate static List<String> sort(List list) {\n   var copy = new ArrayList<String>(list);\n   Collections.sort(copy, (a, b) -> b.compareTo(a));\n   return copy;\n}\n\nEnd of code block": [
+    "Start of code block\nreturn list.stream().sorted((a, b) -> b.compareTo(a)).collect(Collectors.toList());\nEnd of code block"
+  ],
   "Web analysis is used to find interesting usage patterns of Web sites. If any flaw in a Web site has been exploited, it can be inferred using Web analysis,": [
     "Web security"
   ],
@@ -2332,8 +2345,22 @@ quiz = {
     "Inconsistent and incomplete information",
     "Privacy and confidentiality"
   ],
+  "What changes need to be made together for this code to print the string 12345?\n\n\nStart of code block\nStream.iterate(1, x -> x++)\n   .limit(5).map(x -> x)\n   .collect(Collectors.joining());\n\nEnd of code block": [
+    "Change map(x -> x) to map(x -> \"\" + x).",
+    "Change x -> x++ to x -> ++x.",
+    "Wrap the entire line in a System.out.print statement."
+  ],
   "What code change is needed to make the method compile, assuming there is no class named T?\n\n\nStart of code block\npublic static T identity(T t) {\n   return t;\n}\n\nEnd of code block": [
     "Add <T> after the static keyword."
+  ],
+  "What could be the output of the following code snippet?\n\n\nStart of code block\nvar stream = Stream.iterate(\"\", (s) -> s + \"1\");\nSystem.out.println(stream.limit(2).map(x -> x + \"2\"));\n\nEnd of code block": [
+    "java.util.stream.ReferencePipeline$3@4517d9a3"
+  ],
+  "What could be the output of the following?\n\n\nStart of code block\nPredicate<String> predicate = s -> s.length()> 3;\nvar stream = Stream.iterate(\"-\",\n    s -> ! s.isEmpty(), (s) -> s + s);\nvar b1 = stream.noneMatch(predicate);\nvar b2 = stream.anyMatch(predicate);\nSystem.out.println(b1 + \" \" + b2);\n\nEnd of code block": [
+    "An exception is thrown."
+  ],
+  "What could be the output of the following?\n\n\nStart of code block\nPredicate<String> predicate = s -> s.startsWith(\"g\");\nvar stream1 = Stream.generate(() -> \"growl!\");\nvar stream2 = Stream.generate(() -> \"growl!\");\nvar b1 = stream1.anyMatch(predicate);\nvar b2 = stream2.allMatch(predicate);\nSystem.out.println(b1 + \" \" + b2);\n\nEnd of code block": [
+    "The code hangs."
   ],
   "What does the categorical data contain?": [
     "Nominal data"
@@ -2423,6 +2450,9 @@ quiz = {
   "What is the output of the following code snippet?\n\n\nStart of code block\nint moon = 9, star = 2 + 2 * 3;\nfloat sun = star>10 ? 1 : 3;\ndouble jupiter = (sun + moon) - 1.0f;\nint mars = --moon <= 8 ? 2 : 3;\nSystem.out.println(sun+\", \"+jupiter+\", \"+mars);\n\nEnd of code block": [
     "3.0, 11.0, 2"
   ],
+  "What is the output of the following code?\n\n\nStart of code block\nvar spliterator = Stream.generate(() -> \"x\")\n   .spliterator();\n\nspliterator.tryAdvance(System.out::print);\nvar split = spliterator.trySplit();\nsplit.tryAdvance(System.out::print);\n\nEnd of code block": [
+    "xx"
+  ],
   "What is the output of the following program?\n\n\nStart of code block\nclass Deer {\n   public Deer() {System.out.print(\"Deer\");}\n   public Deer(int age) {System.out.print(\"DeerAge\");}\n   protected boolean hasHorns() { return false; }\n}\npublic class Reindeer extends Deer {\n   public Reindeer(int age) {System.out.print(\"Reindeer\");}\n   public boolean hasHorns() { return true; }\n   public static void main(String[] args) {\n     Deer deer = new Reindeer(5);\n     System.out.println(\",\" + deer.hasHorns());\n} }\n\nEnd of code block": [
     "DeerReindeer,true"
   ],
@@ -2434,6 +2464,9 @@ quiz = {
   ],
   "What is the output of the following program?\n\n\nStart of code block\npublic sealed class ArmoredAnimal permits Armadillo {\n   public ArmoredAnimal(int size) {}\n   @Override public String toString() { return \"Strong\"; }\n   public static void main(String[] a) {\n      var c = new Armadillo(10, null);\n      System.out.println(c);\n   }\n}\nclass Armadillo extends ArmoredAnimal {\n   @Override public String toString() { return \"Cute\"; }\n   public Armadillo(int size, String name) {\n      super(size);\n   }\n}\n\nEnd of code block": [
     "The program does not compile."
+  ],
+  "What is the output of the following?\n\n\nStart of code block\npublic class Paging {\n   record Sesame(String name, boolean human)  {\n      @Override public String toString() {\n         return name();\n      }\n   }\n   record Page(List list, long count)  {}\n\n   public static void main(String[] args) {\n      var monsters = Stream.of(new Sesame(\"Elmo\", false));\n      var people = Stream.of(new Sesame(\"Abby\", true));\n      printPage(monsters, people);\n   }\n\n   private static void printPage(Stream monsters,\n         Stream people) {\n      Page page = Stream.concat(monsters, people)\n         .collect(Collectors.teeing(\n            Collectors.filtering(s -> s.name().startsWith(\"E\"),\n               Collectors.toList()),\n            Collectors.counting(),\n            (l, c) -> new Page(l, c)));\n      System.out.println(page);\n   } }\n\nEnd of code block": [
+    "Page[list=[Elmo], count=2]"
   ],
   "What is the output of this code?\n\n\nStart of code block\nPredicate<String> empty = String::isEmpty;\nPredicate<String> notEmpty = empty.negate();\n\nvar result = Stream.generate(() -> \"\")\n    .filter(notEmpty)\n    .collect(Collectors.groupingBy(k -> k))\n    .entrySet()\n    .stream()\n    .map(Entry::getValue)\n    .flatMap(Collection::stream)\n    .collect(Collectors.partitioningBy(notEmpty));\nSystem.out.println(result);\n\nEnd of code block": [
     "The code does not terminate."
@@ -2487,6 +2520,9 @@ quiz = {
   "What is the result of the following code?\n\n\nStart of code block\nvar map = new HashMap<Integer, Integer>();\nmap.put(1, 10);\nmap.put(2, 20);\nmap.put(3, null);\nmap.merge(1, 3, (a,b) -> a + b);\nmap.merge(3, 3, (a,b) -> a + b);\nSystem.out.println(map);\n\nEnd of code block": [
     "{1=13, 2=20, 3=3}"
   ],
+  "What is the result of the following code?\n\n\nStart of code block\nvar s = DoubleStream.of(1.2, 2.4);\ns.peek(System.out::println).filter(x -> x> 2).count();\n\nEnd of code block": [
+    "1.2 and 2.4"
+  ],
   "What is the result of the following code?\n\n\nStart of code block\nvar treeMap = new TreeMap<Character, Integer>();\ntreeMap.put('k', 1);\ntreeMap.put('k', 2);\ntreeMap.put('m', 3);\ntreeMap.put('M', 4);\ntreeMap.replaceAll((k, v) -> v + v);\ntreeMap.keySet()\n    .forEach(k -> System.out.print(treeMap.get(k)));\n\nEnd of code block": [
     "846"
   ],
@@ -2507,6 +2543,9 @@ quiz = {
   ],
   "What is the result of the following statements?\n\n\nStart of code block\nvar greetings = new ArrayDeque<String>();\ngreetings.offerLast(\"hello\");\ngreetings.offerLast(\"hi\");\ngreetings.offerFirst(\"ola\");\ngreetings.pop();\ngreetings.peek();\nwhile (greetings.peek() != null)\n  System.out.print(greetings.pop());\n\nEnd of code block": [
     "hellohi"
+  ],
+  "What is the simplest way of rewriting this code?\n\n\nStart of code block\nList<Integer> x = IntStream.range(1, 6)\n   .mapToObj(i -> i)\n   .collect(Collectors.toList());\nx.forEach(System.out::println);\n\nEnd of code block": [
+    "Start of code block\nIntStream.range(1, 6).forEach(System.out::println);\nEnd of code block"
   ],
   "What kinds of patterns can data mining discover?": [
     "Association",
@@ -2742,6 +2781,10 @@ quiz = {
     "Compromising",
     "Confronting/Problem-Solving"
   ],
+  "Which are true statements about terminal operations in a stream that runs successfully?": [
+    "At most one terminal operation can exist in a stream pipeline.",
+    "Terminal operations are a required part of the stream pipeline in order to get a result."
+  ],
   "Which aspect of object specifies how the object is constructed by using the type constructors?": [
     "Structure"
   ],
@@ -2829,6 +2872,9 @@ quiz = {
   "Which is true if the contents of path1 start with the text Howdy?\n\n\nStart of code block\nSystem.out.println(Files.mismatch(path1,path2));\n\nEnd of code block": [
     "If path2 doesn't exist, the code throws an exception.",
     "If the contents of path2 start with Hello, the code prints 1."
+  ],
+  "Which is true of the following code?\n\n\nStart of code block\nSet<String> birds = Set.of(\"oriole\", \"flamingo\");\nStream.concat(birds.stream(), birds.stream(), birds.stream())\n   .sorted()       // line X\n   .distinct()\n   .findAny()\n   .ifPresent(System.out::println);\n\nEnd of code block": [
+    "The code does not compile."
   ],
   "Which is true of the following code?\n\n\nStart of code block\nint length = 3;\n\nfor (int i = 0; i<3; i++) {\n   if (i%2 == 0) {\n      Supplier<Integer> supplier = () -> length; // A\n      System.out.println(supplier.get());        // B\n   } else {\n      int j = i;\n      Supplier<Integer> supplier = () -> j;      // C\n      System.out.println(supplier.get());        // D\n   }\n}\n\nEnd of code block": [
     "The code compiles successfully."
@@ -3100,9 +3146,17 @@ quiz = {
     "It allows setters.",
     "It requires private instance variables."
   ],
+  "Which of the following are true for the given declaration?\n\n\nStart of code block\nvar is = IntStream.empty();\n\nEnd of code block": [
+    "is.findAny() returns the type OptionalInt.",
+    "is.sum() returns the type int."
+  ],
   "Which of the following are true?\n\n\nCopy \nStart of code block\nList<?> q = List.of(\"mouse\", \"parrot\");\nvar v = List.of(\"mouse\", \"parrot\");\n\nq.removeIf(String::isEmpty);\nq.removeIf(s -> s.length() == 4);\nv.removeIf(String::isEmpty);\nv.removeIf(s -> s.length() == 4);\n\nEnd of code block": [
     "Exactly two of these lines contain a compiler error.",
     "If any lines with compiler errors are removed, this code throws an exception."
+  ],
+  "Which of the following are true?\n\n\nStart of code block\nStream<Integer> s = Stream.of(1);\nIntStream is = s.boxed();\nDoubleStream ds = s.mapToDouble(x -> x);\nStream<Integer> s2 = ds.mapToInt(x -> x);\ns2.forEach(System.out::print);\n\nEnd of code block": [
+    "Line 2 causes a compiler error.",
+    "Line 4 causes a compiler error."
   ],
   "Which of the following are true?\n\n\nStart of code block\nprivate static void magic(Stream s) {\n   Optional o = s\n      .filter(x -> x < 5)\n      .limit(3)\n      .max((x, y) -> x-y);\n   System.out.println(o.get());\n}\n\nEnd of code block": [
     "magic(Stream.empty()); throws an exception.",
@@ -3185,12 +3239,19 @@ quiz = {
     "DELETE",
     "UPDATE"
   ],
+  "Which of the following can fill in the blank so that the code prints out false?\n\n\nStart of code block\nvar s = Stream.generate(() -> \"meow\");\nvar match = s.______(String::isEmpty);\nSystem.out.println(match);\n\nEnd of code block": [
+    "allMatch"
+  ],
   "Which of the following can fill in the blank to print [7, 5, 3]?\n\n\nStart of code block\npublic record Platypus(String name, int beakLength) {\n   @Override public String toString() {return \"\" + beakLength;}\n\n  public static void main(String[] args) {\n     Platypus p1 = new Platypus(\"Paula\", 3);\n     Platypus p2 = new Platypus(\"Peter\", 5);\n     Platypus p3 = new Platypus(\"Peter\", 7);\n\n     List<Platypus> list = Arrays.asList(p1, p2, p3);\n\n     Collections.sort(list, Comparator.comparing______);\n\n     System.out.println(list);\n  }\n}\n\nEnd of code block": [
     "Start of code block\n(Platypus::beakLength).reversed()\nEnd of code block",
     "Start of code block\n(Platypus::name).thenComparingInt(Platypus::beakLength).reversed()\nEnd of code block"
   ],
   "Which of the following can fill in the blanks in order to make this code compile?\n\n\nStart of code block\n__________ a = __________.getConnection(\n   url, userName, password);\n__________ b = a.prepareStatement(sql);\n__________ c = b.executeQuery();\nif (c.next()) System.out.println(c.getString(1));\n\nEnd of code block": [
     "Connection, DataSource, PreparedStatement, ResultSet"
+  ],
+  "Which of the following can we add after line 3 for the code to run without error and not produce any output?\n\n\nStart of code block\nvar stream = LongStream.of(1, 2, 3);\nvar opt = stream.map(n -> n * 10)\n   .filter(n -> n < 5).findFirst();\n\nEnd of code block": [
+    "Start of code block\nif (opt.isPresent())   System.out.println(opt.getAsLong());\nEnd of code block",
+    "Start of code block\nopt.ifPresent(System.out::println);\nEnd of code block"
   ],
   "Which of the following classes and interfaces do not compile?\n\n\nStart of code block\npublic abstract class Camel { void travel(); }\n\npublic interface EatsGrass { private abstract int chew(); }\n\npublic abstract class Elephant {\n   abstract private class SleepsAlot {\n      abstract int sleep();\n   } }\n\npublic class Eagle { abstract soar(); }\n\npublic interface Spider { default void crawl() {} }\n\nEnd of code block": [
     "Camel",
@@ -3540,6 +3601,9 @@ quiz = {
     "The database must be in ARCHIVELOG mode to use the flashback database command.",
     "Use the alter database flashback on command to enable flashback database mode."
   ],
+  "Which of the following is true?\n\n\nStart of code block\nList<Integer> x1 = List.of(1, 2, 3);\nList<Integer> x2 = List.of(4, 5, 6);\nList<Integer> x3 = List.of();\nStream.of(x1, x2, x3).map(x -> x + 1)\n   .flatMap(x -> x.stream())\n   .forEach(System.out::print);\n\nEnd of code block": [
+    "The code does not compile."
+  ],
   "Which of the following is typically a simplified abstraction of the human brain and its complex biological networks of neurons?": [
     "Artificial neural network"
   ],
@@ -3730,6 +3794,10 @@ quiz = {
   "Which of the following sequences of tasks represents the text mining process?": [
     "Establish the corpus, preprocess the data, and extract the knowledge."
   ],
+  "Which of the following sets result to 8.0?": [
+    "Start of code block\ndouble result = LongStream.of(6L, 8L, 10L).mapToInt(x -> (int) x).boxed().collect(Collectors.groupingBy(x -> x)).keySet().stream().collect(Collectors.averagingInt(x -> x));\nEnd of code block",
+    "Start of code block\ndouble result = LongStream.of(6L, 8L, 10L).mapToInt(x -> (int) x).boxed().collect(Collectors.groupingBy(x -> x, Collectors.toSet())).keySet().stream().collect(Collectors.averagingInt(x -> x));\nEnd of code block"
+  ],
   "Which of the following specifies referential integrity?": [
     "FOREIGN KEY clause"
   ],
@@ -3742,6 +3810,10 @@ quiz = {
   "Which of the following statements are true about the risk management plan? (Choose two.)": [
     "It documents how risks will be managed and controlled for the project.",
     "It often contains sections describing the risk strategy, the risk categories to be used, and the definitions for risk probability and impact to be used."
+  ],
+  "Which of the following statements are true about this code?\n\n\nStart of code block\nPredicate<String> empty = String::isEmpty;\nPredicate<String> notEmpty = empty.negate();\n\nvar result = Stream.generate(() -> \"\")\n   .limit(10)\n   .filter(notEmpty)\n   .collect(Collectors.groupingBy(k -> k))\n   .entrySet()\n   .stream()\n   .map(Entry::getValue)\n   .flatMap(Collection::stream)\n   .collect(Collectors.partitioningBy(notEmpty));\nSystem.out.println(result);\n\nEnd of code block": [
+    "If we changed line 12 from partitioningBy(notEmpty) to groupingBy(n -> n), it would output {}.",
+    "It outputs {false=[], true=[]}."
   ],
   "Which of the following statements are true if the table is empty before the code execution?\n\n\nStart of code block\nvar sql = \"INSERT INTO people VALUES(?, ?, ?)\";\nconn.setAutoCommit(false);\n\ntry (var ps = conn.prepareStatement(sql,\n   ResultSet.TYPE_SCROLL_SENSITIVE,\n   ResultSet.CONCUR_UPDATABLE)) {\n\n   ps.setInt(1, 1);\n   ps.setString(2, \"Joslyn\");\n   ps.setString(3, \"NY\");\n   ps.executeUpdate();\n\n   Savepoint sp = conn.setSavepoint();\n\n   ps.setInt(1, 2);\n   ps.setString(2, \"Kara\");\n   ps.executeUpdate();\n\n   conn._________________;\n}\n\nEnd of code block": [
     "If the blank line contains rollback(), there are no rows in the table.",
@@ -3899,6 +3971,11 @@ quiz = {
   ],
   "Which of the following terms refers to knowledge discovery?": [
     "Data analytics"
+  ],
+  "Which of the following throw an exception when an Optional is empty?": [
+    "opt.get();",
+    "opt.orElseThrow();",
+    "opt.orElseThrow(RuntimeException::new);"
   ],
   "Which of the following tools can be used for requirements elicitation? (Choose two.)": [
     "Interviewing",
