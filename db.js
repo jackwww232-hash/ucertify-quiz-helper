@@ -4490,5 +4490,170 @@ quiz = {
   ],
   "which of the following notations indicates a specialization/generalization with the disjoint constraint?": [
     "Blank triangle"
+  ],
+  "Which of the following features are configurable in a for statement that are not configurable in a for-each statement?": [
+    "The test condition",
+    "The step statement"
+  ],
+  "Which of the following types can be inserted into the blank to allow the program to compile successfully?\n\n\nStart of code block\nimport java.util.*;\nfinal class Amphibian {}\nabstract class Tadpole extends Amphibian {}\npublic class FindAllTadpoles {\n    public static void main(String… args) {\n       var tadpoles = new ArrayList<Tadpole>();\n       for (var amphibian : tadpoles) {\n          ___________   tadpole = amphibian;\n} } }\n\nEnd of code block": [
+    "None of these"
+  ],
+  "Assume that birds.dat exists, is accessible, and contains data for a Bird object. What are the results of executing the following code?\n\n\nStart of code block\nimport java.io.*;\npublic class Bird {\n   private String name;\n   private transient Integer age;\n\n   // Getters/setters omitted\n\n   public static void main(String[] args) {\n      try(var is = new ObjectInputStream(\n           new BufferedInputStream(\n           new FileInputStream(\"birds.dat\")))) {\n        Bird b = is.readObject();\n        System.out.println(b.age);\n     } } }\n\nEnd of code block": [
+    "The code will not compile because of line 12.",
+    "The code will not compile because of lines 9-11."
+  ],
+  "Which of the following statements can be used to exit a loop early?": [
+    "return",
+    "continue",
+    "break"
+  ],
+  "The body of a for loop must run at least _____ times.": [
+    "Zero"
+  ],
+  "How many times is the word true printed?\n\n\nStart of code block\nvar s1 = \"Java\";\nvar s2 = \"Java\";\nvar s3 = s1.indent(1).strip();\nvar s4 = s3.intern();\nvar sb1 = new StringBuilder();\nsb1.append(\"Ja\").append(\"va\");\n\nSystem.out.println(s1 == s2);\nSystem.out.println(s1.equals(s2));\nSystem.out.println(s1 == s3);\nSystem.out.println(s1 == s4);\nSystem.out.println(sb1.toString() == s1);\nSystem.out.println(sb1.toString().equals(s1));\n\nEnd of code block": [
+    "Four times"
+  ],
+  "Which is true if the contents of path1 start with the text Howdy?\n\n\nStart of code block\nSystem.out.println(Files.mismatch(path1,path2));\n\nEnd of code block": [
+    "If path2 doesn't exist, the code throws an exception.",
+    "If the contents of path2 start with Hello, the code prints 1."
+  ],
+  "What is the result of the following program?\n\n\nStart of code block\npublic class MathFunctions {\n    public static void addToInt(int x, int amountToAdd) {\n       x = x + amountToAdd;\n    }\n    public static void main(String[] args) {\n       var a = 15;\n       var b = 10;\n       MathFunctions.addToInt(a, b);\n       System.out.println(a);   } }\n\nEnd of code block": [
+    "15"
+  ],
+  "What is the name of the class used to delete a directory?": [
+    "java.io.File"
+  ],
+  "Identify the correct statement.": [
+    "A do/while loop runs at least once."
+  ],
+  "Which of the following are true?\n\n\nStart of code block\nprivate static void magic(Stream s) {\n   Optional o = s\n      .filter(x -> x < 5)\n      .limit(3)\n      .max((x, y) -> x-y);\n   System.out.println(o.get());\n}\n\nEnd of code block": [
+    "magic(Stream.empty()); throws an exception.",
+    "magic(Stream.of(5, 10)); throws an exception."
+  ],
+  "Which java.io class would be best to use to write text data to a user?": [
+    "PrintWriter"
+  ],
+  "Which changes, when made independently, guarantee the following code snippet prints 100 at runtime?\n\n\nStart of code block\nList<Integer> data = new ArrayList<>();\nIntStream.range(0,100).parallel().forEach(s -> data.add(s));\nSystem.out.println(data.size());\n\nEnd of code block": [
+    "Wrap the lambda body with a synchronized block.",
+    "Change forEach() to forEachOrdered() in the stream operation.",
+    "Remove parallel() in the stream operation."
+  ],
+  "What is the result of executing the following code snippet?\n\n\nStart of code block\nfinal int score1 = 8, score2 = 3;\nchar myScore = 7;\nvar goal = switch (myScore) {\n    default -> {if(10>score1) yield \"unknown\";}\n    case score1 -> \"great\";\n    case 2, 4, 6 -> \"good\";\n    case score2, 0 -> {\"bad\";}\n};\nSystem.out.println(goal);\n\nEnd of code block": [
+    "Exactly two lines need to be changed for the code to compile."
+  ],
+  "Which of the following lines can fill in the blank to print true?\n\n\nStart of code block\npublic static void main(String[] args) {\n    System.out.println(test(____________________________));\n}\nprivate static boolean test(Function b) {\n    return b.apply(5);\n}\n\nEnd of code block": [
+    "(i) -> i == 5",
+    "(i) -> {return i == 5;}"
+  ],
+  "Which of the following is a valid instance member of a class?": [
+    "void var() {}"
+  ],
+  "Which functional interfaces complete the following code, presuming variable r exists?\n\n\nStart of code block\n______ x = r.negate();\n______ y = () -> System.out.println();\n______ z = (a, b) -> a - b;\n\nEnd of code block": [
+    "Predicate<Integer>",
+    "Runnable",
+    "Comparator<Integer>"
+  ],
+  "When printed, which String gives the same value as this text block?\n\n\nStart of code block\nvar pooh = \"\"\"\n   \"Oh, bother.\" -Pooh\n   \"\"\".indent(1);\nSystem.out.print(pooh);\n\nEnd of code block": [
+    "\" \\\"Oh, bother.\\\" -Pooh\\n\""
+  ],
+  "Which method can be used to create a task that repeats 10 seconds after the end of a previous task?": [
+    "scheduleWithFixedDelay()"
+  ],
+  "What is the result of executing the following application?\n\n\nStart of code block\nfinal var cb = new CyclicBarrier(3,\n   () -> System.out.println(\"Clean!\"));  // u1\nExecutorService service = Executors.newSingleThreadExecutor();\ntry {\n   IntStream.generate(() -> 1)\n      .limit(12)\n      .parallel()\n      .forEach(i -> service.submit(() -> cb.await()));  // u2\n} finally { service.shutdown(); }\n\nEnd of code block": [
+    "It compiles but waits forever at runtime."
+  ],
+  "What exception is thrown when there is an issue connecting to the database?": [
+    "SQLException"
+  ],
+  "In order for all loops (with no break/continue/return statements) to run at least once but always terminate, what must be true for the looping statement?": [
+    "The test condition must evaluate to false."
+  ],
+  "Suppose you have a module named com.vet. Where could you place the following module-info.java file to create a valid module?\n\n\nStart of code block\npublic module com.vet {\n   exports com.vet;\n}\n\nEnd of code block": [
+    "None of these"
+  ],
+  "What is the result of the following code?\n\n\nStart of code block\nvar treeMap = new TreeMap<Character, Integer>();\ntreeMap.put('k', 1);\ntreeMap.put('k', 2);\ntreeMap.put('m', 3);\ntreeMap.put('M', 4);\ntreeMap.replaceAll((k, v) -> v + v);\ntreeMap.keySet()\n    .forEach(k -> System.out.print(treeMap.get(k)));\n\nEnd of code block": [
+    "846"
+  ],
+  "When creating a Locale, the country code is in uppercase.": [
+    "True"
+  ],
+  "What is guaranteed to be printed by the following code?\n\n\nStart of code block\nint[] array = {6,9,8};\nSystem.out.println(\"B\" + Arrays.binarySearch(array,9));\nSystem.out.println(\"C\" + Arrays.compare(array,\n  new int[] {6, 9, 8}));\nSystem.out.println(\"M\" + Arrays.mismatch(array,\n  new int[] {6, 9, 8}));\n\nEnd of code block": [
+    "M-1",
+    "C0"
+  ],
+  "What is the output of the following code snippet?\n\n\nStart of code block\nint moon = 9, star = 2 + 2 * 3;\nfloat sun = star>10 ? 1 : 3;\ndouble jupiter = (sun + moon) - 1.0f;\nint mars = --moon <= 8 ? 2 : 3;\nSystem.out.println(sun+\", \"+jupiter+\", \"+mars);\n\nEnd of code block": [
+    "3.0, 11.0, 2"
+  ],
+  "Which of the following expressions compile without error?": [
+    "short thursday = (short)Integer.MAX_VALUE;",
+    "double tuesday = 5_6L;"
+  ],
+  "What interface is used to run SQL defined in the code with bind variables?": [
+    "PreparedStatement"
+  ],
+  "Which statement about the following method is true?\n\n\nStart of code block\npublic static void main(String… unused) {\n     System.out.print(\"a\");\n     try (StringBuilder reader = new StringBuilder()) {\n        System.out.print(\"b\");\n        throw new IllegalArgumentException();\n    } catch (Exception e || RuntimeException e) {\n       System.out.print(\"c\");\n       throw new FileNotFoundException();\n    } finally {\n       System.out.print(\"d\");\n} }\n\nEnd of code block": [
+    "Three lines contain a compiler error."
+  ],
+  "Which method must be called to properly terminate an OutputStream?": [
+    "close()"
+  ],
+  "Which of the following defines an infinite loop execution?": [
+    "for( ; ; ) {}",
+    "do {} while (true);"
+  ],
+  "Assuming the following declarations are top-level types declared in the same file, which of these will successfully compile?\n\n\nStart of code block\nrecord Music() {\n   final int score = 10;\n}\nrecord Song(String lyrics) {\n   Song {\n      this.lyrics = lyrics + \"Hello World\";\n   }\n}\nsealed class Dance {}\nrecord March() {\n   @Override String toString() { return null; }\n}\nclass Ballet extends Dance {}\n\nEnd of code block": [
+    "Dance"
+  ],
+  "What is the output of this code?\n\n\nStart of code block\nPredicate<String> empty = String::isEmpty;\nPredicate<String> notEmpty = empty.negate();\n\nvar result = Stream.generate(() -> \"\")\n    .filter(notEmpty)\n    .collect(Collectors.groupingBy(k -> k))\n    .entrySet()\n    .stream()\n    .map(Entry::getValue)\n    .flatMap(Collection::stream)\n    .collect(Collectors.partitioningBy(notEmpty));\nSystem.out.println(result);\n\nEnd of code block": [
+    "The code does not terminate."
+  ],
+  "A property file resource bundle can only contain String values.": [
+    "True"
+  ],
+  "Which lines in Tadpole.java give a compiler error?\n\n\nStart of code block\n// Frog.java\n  package animal;\n  public class Frog {\n     protected void ribbit() { }\n     void jump() { }\n  }\n\n// Tadpole.java\n  package other;\n  import animal.*;\n  public class Tadpole extends Frog {\n     public static void main(String[] args) {\n        Tadpole t = new Tadpole();\n        t.ribbit();\n        t.jump();\n        Frog f = new Tadpole();\n        f.ribbit();\n        f.jump();\n    } }\nEnd of code block": [
+    "Line 18",
+    "Line 17",
+    "Line 15"
+  ],
+  "If all four of these files exist, which would be chosen when asking for English US?": [
+    "File_en.java"
+  ],
+  "Which of the following statements can fill in the blank to make the code compile successfully?\n\n\nStart of code block\nSet<? extends RuntimeException> mySet = new _________ ();\n\nEnd of code block": [
+    "TreeSet<NullPointerException>",
+    "TreeSet<RuntimeException>"
+  ],
+  "A(n) _________________ module always contains a module-info.java file, while a(n) _________________ module always exports all its packages to other modules.": [
+    "named, automatic"
+  ],
+  "Which method defined in the Lock interface will return immediately if a lock cannot be obtained?": [
+    "tryLock()"
+  ],
+  "What is the output of the following program?\n\n\nStart of code block\ninterface HasTail { private int getTailLength(); }\nabstract class Puma implements HasTail {\n   String getTailLength() { return \"4\"; }\n}\npublic class Cougar implements HasTail {\n   public static void main(String[] args) {\n      var puma = new Puma() {};\n      System.out.println(puma.getTailLength());\n   }\n  public int getTailLength(int length) { return 2; }\n}\n\nEnd of code block": [
+    "The code will not compile because of line 1."
+  ],
+  "What interface is used to call a stored procedure?": [
+    "CallableStatement"
+  ],
+  "What is the result of compiling and executing the following program?\n\n\nStart of code block\npublic class FeedingSchedule {\n   public static void main(String[] args) {\n      var x = 5;\n      var j = 0;\n      OUTER: for (var i = 0; i < 3;)\n         INNER: do {\n            i++;\n            x++;\n            if (x> 10) break INNER;\n           x += 4;\n           j++;\n        } while (j <= 2);\n     System.out.println(x);\n} }\n\nEnd of code block": [
+    "12"
+  ],
+  "Which of the following statements are true if the table is empty before the code execution?\n\n\nStart of code block\nvar sql = \"INSERT INTO people VALUES(?, ?, ?)\";\nconn.setAutoCommit(false);\n\ntry (var ps = conn.prepareStatement(sql,\n   ResultSet.TYPE_SCROLL_SENSITIVE,\n   ResultSet.CONCUR_UPDATABLE)) {\n\n   ps.setInt(1, 1);\n   ps.setString(2, \"Joslyn\");\n   ps.setString(3, \"NY\");\n   ps.executeUpdate();\n\n   Savepoint sp = conn.setSavepoint();\n\n   ps.setInt(1, 2);\n   ps.setString(2, \"Kara\");\n   ps.executeUpdate();\n\n   conn._________________;\n}\n\nEnd of code block": [
+    "If the blank line contains rollback(sp), there is one row in the table.",
+    "If the blank line contains rollback(), there are no rows in the table."
+  ],
+  "What is the output of the following program?\n\n\nStart of code block\nclass Deer {\n   public Deer() {System.out.print(\"Deer\");}\n   public Deer(int age) {System.out.print(\"DeerAge\");}\n   protected boolean hasHorns() { return false; }\n}\npublic class Reindeer extends Deer {\n   public Reindeer(int age) {System.out.print(\"Reindeer\");}\n   public boolean hasHorns() { return true; }\n   public static void main(String[] args) {\n     Deer deer = new Reindeer(5);\n     System.out.println(\",\" + deer.hasHorns());\n} }\n\nEnd of code block": [
+    "DeerReindeer,true"
+  ],
+  "When creating a Locale, the country comes before the language.": [
+    "False"
+  ],
+  "Which NIO.2 Path method allows you to join one Path to another Path?": [
+    "resolve()"
+  ],
+  "Which of the following can fill in the blanks in order to make this code compile?\n\n\nStart of code block\n__________ a = __________.getConnection(\n   url, userName, password);\n__________ b = a.prepareStatement(sql);\n__________ c = b.executeQuery();\nif (c.next()) System.out.println(c.getString(1));\n\nEnd of code block": [
+    "Connection, DataSource, PreparedStatement, ResultSet"
+  ],
+  "Which is not a SQL keyword?": [
+    "REMOVE"
   ]
 };
