@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ucertify-quiz-helper
-// @version      2.0.1
+// @version      2.0.2
 // @description  ucertify-quiz-helper
 // @author       0guanhua0@gmail.com
 // @include      *ucertify*
@@ -110,7 +110,7 @@
     }
 
     const currentQuestion = normalizeText(questionElement.innerText.trim());
-    console.log(currentQuestion);
+    console.log(JSON.stringify(currentQuestion));
 
     lastProcessedQuestion = currentQuestion;
 
@@ -123,7 +123,7 @@
       normalizeText(el.innerText.trim()),
     );
 
-    console.log(options);
+    console.log(JSON.stringify(options));
 
     const matchingKey = matchKey(currentQuestion, quiz);
 
