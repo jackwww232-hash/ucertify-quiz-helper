@@ -1,5 +1,4 @@
 # ucertify-quiz-helper
-
 ![demo](./pic/demo.png)
 
 ## run
@@ -13,10 +12,6 @@
 ![edit](./pic/edit.png)
 ![key](./pic/key.png)
 
-[rate limit](https://ai.google.dev/gemini-api/docs/rate-limits#current-rate-limits)
-
-for free tier, gemini-2.5-flash 10 requests per minute
-
 - check browser console
 
 ![console](./pic/console.png)
@@ -27,3 +22,7 @@ turn on developer mode
 go to [chrome://extensions/](chrome://extensions/)
 
 ![chrome](./pic/chrome.png)
+
+### contribute
+![contribute-0](./pic/contribute-0.png)
+![contribute-1](./pic/contribute-1.png)
