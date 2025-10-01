@@ -104,6 +104,8 @@ quiz = {
     ["True"],
   "A(n) _____________ is a collection of neurons that takes inputs from the previous layer and converts those inputs into outputs for further processing.":
     ["hidden layer"],
+  "A(n) _______________ module is on the classpath while a(n) ____________ module is on the module path.":
+    ["unnamed, automatic", "unnamed, named"],
   "AI (artificial intelligence) has the capability to find hidden patterns in a variety of data sources to identify problems and provide potential solutions.":
     ["True"],
   "Actual cost is the measurement of work completed based on the plan value.": [
@@ -161,6 +163,12 @@ quiz = {
     "The ORDER BY clause of a SELECT statement",
     "The select list of a SELECT statement",
   ],
+  "An automatic module name is generated if one is not supplied. Which of the following JAR filenames and generated automatic module name pairs are correct?":
+    [
+      "emily-1.0.0-SNAPSHOT.jar and emily",
+      "emily-1.0.0.jar and emily",
+      "emily.$.jar and emily",
+    ],
   "An inline view is a form of a subquery.": ["True"],
   "An inner join queries from two tables (looking at values in columns and optionally using expressions that reference columns) and compares the resulting values in one set of rows with the resulting values in another set of rows, looking for:":
     ["Values that match"],
@@ -321,6 +329,8 @@ quiz = {
     ["Face-to-face meetings"],
   "Communication is more than just delivery. Which of the following is not a component to active listening merits?":
     ["Preparing to respond as soon as the individual finishes speaking"],
+  "Complete the given code such that the following command, which is used to run the program, is correct:\n\n\nStart of code block\njava\n_______ zoo.animal.talks/zoo/animal/talks/Peacocks\n_______ modules\n\nEnd of code block":
+    ["None of these"],
   "Conditions that affect a project but are not within their control due to industry, market, or":
     ["False"],
   "Configuration management may be used for controlling product iterations, product specifications, project documents, standards, a":
@@ -526,6 +536,8 @@ quiz = {
     ["False"],
   "Firms have used analytics to enhance which of the following business activities?":
     ["All of these"],
+  "For a top-down migration, all modules other than named modules are _____________ modules and are on the ____________.":
+    ["automatic, module path"],
   "For the first time, you have been asked to select a supplier, but before doing so are interested in noting the source selection":
     ["Team location"],
   "For the last week, the team has been assessing what it would take to design the product inside the group but also has received b":
@@ -1289,6 +1301,28 @@ quiz = {
     ["Newer/established"],
   "Structured data is usually organized into records with simple data values that include __________, __________, and __________ variables.":
     ["categorical", "continuous", "ordinal"],
+  "Suppose module puppy depends on module dog and module dog depends on module animal. Fill in the blank so that code in module dog can access the animal.behavior package in module animal.\n\n\nStart of code block\nmodule animal {\n    ________ animal.behavior;\n}\n\nEnd of code block":
+    ["exports"],
+  "Suppose module puppy depends on module dog and module dog depends on module animal. Which lines allow module puppy to access the animal.behavior package in module animal?\n\n\nStart of code block\nmodule animal {\n   exports animal.behavior;\n}\nmodule dog {\n   _______  animal;  // line S\n}\nmodule puppy {\n   _______ dog;      // line T\n}\n\nEnd of code block":
+    [
+      "requires on line T",
+      "requires transitive on line S",
+      "requires transitive on line T",
+    ],
+  "Suppose we have a JAR file named cat-1.2.3-RC1.jar, and Automatic-Module-Name in the MANIFEST.MF is set to dog. What should an unnamed module referencing this automatic module include in module-info.java?":
+    ["None of these"],
+  'Suppose you are creating a service provider that contains the following class. Which line of code needs to be in your module-info.java?\n\n\nStart of code block\npackage dragon;\nimport magic.*;\n public class Dragon implements Magic {\n   public String getPower() {\n     return "breathe fire";\n   }\n}\n\nEnd of code block':
+    ["provides magic.Magic with dragon.Dragon;"],
+  "Suppose you have separate modules for a service provider interface, service provider, service locator, and consumer. If you add a second service provider module, how many of these modules do you need to recompile?":
+    ["Zero"],
+  "Suppose you have separate modules for a service provider interface, service provider, service locator, and consumer. Which module(s) need to specify a requires directive on the service provider?":
+    ["None of these"],
+  "Suppose you have separate modules for a service provider interface, service provider, service locator, and consumer. Which statements are true about the directives you need to specify?":
+    [
+      "The consumer must use the requires directive.",
+      "The service locator must use the requires directive.",
+      "The service locator must use the uses directive.",
+    ],
   "TRUNCATE TABLE:": [
     "Is a valid set of keywords to be used within a DDL statement",
   ],
@@ -2062,6 +2096,16 @@ quiz = {
     ["A query that displays rows from the table with no joins"],
   "Which approaches for conflict management as described in the Thomas-Kilmann model are most common for conflicts within a high-pe":
     ["Collaborating", "Compromising", "Confronting/Problem-Solving"],
+  "Which are true statements about a package in a JAR on the classpath containing a module-info.java file?":
+    [
+      "It is possible to make the package available to all other modules on the classpath.",
+    ],
+  "Which are true statements about the following module?\n\n\nStart of code block\nclass dragon {\n   exports com.dragon.fire;\n   exports com.dragon.scales to castle;\n}\n\nEnd of code block":
+    ["None of these."],
+  "Which are true statements?": [
+    "An automatic module exports all packages to named modules.",
+    "An unnamed module exports no packages to named modules.",
+  ],
   "Which aspect of object specifies how the object is constructed by using the type constructors?":
     ["Structure"],
   "Which aspect of object specifies whether an object is a persistent object or transient object?":
@@ -2076,6 +2120,8 @@ quiz = {
     ["group by clause"],
   "Which clustering method is based on the basic idea that nearby objects are more related to each other than are those that are farther away from each other?":
     ["Hierarchical"],
+  "Which commands are used to create a smaller Java image and work with native code, respectively?":
+    ["jlink and jmod"],
   "Which component of the YARN architecture performs the given functions?": [
     "ResourceManager",
   ],
@@ -2109,6 +2155,8 @@ quiz = {
   "Which is the best way to meet stakeholders' expectations?": [
     "Keep stakeholders regularly informed throughout the project.",
   ],
+  "Which is the first line to contain a compiler error?\n\n\nStart of code block\nmodule snake {\n   exports com.snake.tail;\n   exports com.snake.fangs to bird;\n   requires skin;\n   requires transitive skin;\n}\n\nEnd of code block":
+    ["Line 5"],
   "Which is the process of classifying a class of objects into more specialized subclasses?":
     ["Specialization"],
   "Which list best describes an agile development approach?": [
@@ -2232,6 +2280,8 @@ quiz = {
     "Contingency reserves",
     "Work package cost estimate",
   ],
+  "Which of the following are legal commands to run a modular program where n is the module name and c is the fully qualified class name?":
+    ["java --module-path x-x -m n/c"],
   "Which of the following are models of spatial information?": [
     "Field",
     "Object",
@@ -2350,6 +2400,10 @@ quiz = {
   ],
   "Which of the following clauses or functions can limit the rows returned by a query? (Choose two.)":
     ["Fetch next rows", "rownum"],
+  "Which of the following code compiles and is equivalent to this loop?\n\n\nCopy \nStart of code block\nList<Unicorn> all  = new ArrayList<>();\nfor (Unicorn current : ServiceLoader.load(Unicorn.class))\n   all.add(current);\n\nEnd of code block":
+    [
+      "Copy \nStart of code block\nList<Unicorn> all = ServiceLoader.load(Unicorn.class).stream().map(Provider::get).collect(Collectors.toList());\nEnd of code block",
+    ],
   "Which of the following columns would be least useful to the project team on a stakeholder register?":
     ["The work packages for which the stakeholder would take responsibility"],
   "Which of the following combines architectures, databases, analytical tools, applications, and methodologies?":
@@ -2617,6 +2671,12 @@ quiz = {
     ["Close()"],
   "Which of the following metrics shows that the project is on budget and on schedule?":
     ["CPI is 1 and SPI is 1."],
+  "Which of the following modules are provided by the JDK?": [
+    "java.base",
+    "java.desktop",
+    "java.logging",
+    "jdk.compiler",
+  ],
   "Which of the following multiset operations do not eliminate duplicates?": [
     "EXCEPT ALL",
     "INTERSECT ALL",
@@ -2663,6 +2723,9 @@ quiz = {
     ],
   "Which of the following options works for any constraints on the specialization, i.e., disjoint or overlapping, total or partial?":
     ["Option 1"],
+  "Which of the following pairs make up a service?": [
+    "Service locator and service provider interface",
+  ],
   "Which of the following phases is the final phase of data preprocessing?": [
     "Data reduction",
   ],
@@ -2720,11 +2783,20 @@ quiz = {
     ["Definitive stakeholders"],
   "Which of the following statements about set operators is true? Choose the best answer.":
     ["You can connect two SELECT statements with one set operator."],
+  "Which of the following statements are true about a module containing a file named module-info.java? The content of the file is:\n\n\nStart of code block\nmodule com.food.supplier {}\n\nEnd of code block":
+    [
+      "A main method inside the module can be run.",
+      "No packages inside the module are automatically exported.",
+    ],
   "Which of the following statements are true about the risk management plan? (Choose two.)":
     [
       "It documents how risks will be managed and controlled for the project.",
       "It often contains sections describing the risk strategy, the risk categories to be used, and the definitions for risk probability and impact to be used.",
     ],
+  "Which of the following statements are true in a module-info.java file?": [
+    "The opens directive allows the use of reflection.",
+    "The uses directive declares that an API is called.",
+  ],
   "Which of the following statements are true of DKNF (domain-key normal form)?":
     [
       "It takes into account all possible types of dependencies and constraints.",
@@ -2755,6 +2827,10 @@ quiz = {
       "A multitable insert statement can conditionally insert data into multiple tables.",
       "A multitable insert statement can replace and perform better than PL/SQL routines.",
     ],
+  "Which of the following statements are true?": [
+    "A cyclic dependency always involves at least two requires statements.",
+    "Modules with cyclic dependencies will not compile.",
+  ],
   "Which of the following statements are true? (Choose two.)": [
     "A correlated subquery can also be a single-row subquery.",
     "A single-row subquery can also be a multiple-column subquery.",
@@ -2969,6 +3045,10 @@ quiz = {
   ],
   "Which statement in the SQL standard can be used to invoke a stored procedure—either from an interactive interface or from embedded SQL or SQLJ?":
     ["CALL"],
+  "Which statement is true of the following module?\n\n\nStart of code block\n|---zoo\n   |-- staff\n      |-- Vet.java\n\nEnd of code block":
+    [
+      "The directory structure would be a valid module if module-info.java were added directly underneath zoo.",
+    ],
   "Which statement is used to sort the rows returned by a SQL statement?": [
     "order by",
   ],
@@ -3009,6 +3089,9 @@ quiz = {
     ["Atomic"],
   "Which type of ordered single-level index is specified on nonordering fields as additional access structures to improve performance of queries and":
     ["Secondary"],
+  "Which would you expect to see when describing any module?": [
+    "requires java.base mandated",
+  ],
   "While you are working on a long-term construction project, certain paths and activities are not crucial to start at the earliest":
     ["True"],
   "Who are considered some of the stakeholders on a project?": [
