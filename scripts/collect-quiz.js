@@ -11,6 +11,8 @@ function normalizeText(text) {
     .replace(/–/g, "-")
     .replace(/“|”/g, '"')
     .replace(/‘|’/g, "'")
+    .replace(/Start of code block/gi, "") // 去掉 Start
+    .replace(/End of code block/gi, "")   // 去掉 End
     .trim();
 }
 
