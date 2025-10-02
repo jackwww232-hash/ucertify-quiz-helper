@@ -76,4 +76,4 @@ quiz = {
   "Which is true of the following code?\n\n\n\nSet<String> birds = Set.of(\"oriole\", \"flamingo\");\nStream.concat(birds.stream(), birds.stream(), birds.stream())\n   .sorted()       // line X\n   .distinct()\n   .findAny()\n   .ifPresent(System.out::println);": [
     "The code does not compile."
   ]
-}
+};
