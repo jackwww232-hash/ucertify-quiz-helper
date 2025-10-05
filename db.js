@@ -538,6 +538,11 @@ quiz = {
     ["Spike"],
   "From the following table, which stakeholder will be the project manager's highest priority stakeholder to reach out to?":
     ["Stakeholder A"],
+  "Given the following code snippet and blank lines on p1 and p2, which values guarantee that 1 is printed at runtime?\n\n\nStart of code block\nvar data = List.of(List.of(1,2),\n   List.of(3,4),\n   List.of(5,6));\ndata.___________    // p1\n   .flatMap(s -> s.stream())\n   .____________    // p2\n   .ifPresent(System.out::print);\n\nEnd of code block":
+    [
+      "parallelStream() on line p1, findFirst() on line p2",
+      "stream() on line p1, findFirst() on line p2",
+    ],
   "Global projects now require resources that did not meet the expectations of project managers years ago. They require more flexib":
     ["Caves and commons"],
   "Governance of a project needs to be kept as private as possible to avoid information escaping the organization.":
@@ -2111,6 +2116,8 @@ quiz = {
   ],
   "Which is the process of classifying a class of objects into more specialized subclasses?":
     ["Specialization"],
+  'Which lines need to be changed to make the code compile?\n\n\nStart of code block\nExecutorService service =   // w1\n   Executors.newSingleThreadScheduledExecutor();\nservice.scheduleWithFixedDelay(() -> {\n   System.out.println("Open Zoo");\n   return null;   // w2\n}, 0, 1, TimeUnit.MINUTES);\nvar result = service.submit(() ->   // w3\n   System.out.println("Wake Staff"));\nSystem.out.println(result.get());   // w4\n\nEnd of code block':
+    ["Line w1", "Line w2"],
   "Which list best describes an agile development approach?": [
     "Collaboration, expects change, deliver working product frequently, self-organizing teams",
   ],
@@ -2306,6 +2313,11 @@ quiz = {
     'CREATE TABLE "Boat Inventory"\n(ID NUMBER,\nNAME VARCHAR2(30));',
     "CREATE TABLE CUSTOMER_HISTORY\n(ID NUMBER,\nNAME VARCHAR2(30));",
     "CREATE TABLE workSchedule\n(ID NUMBER,\nNAME VARCHAR2(30));",
+  ],
+  "Which of the following are valid Callable expressions?": [
+    '() -> "The" + "Zoo"',
+    "() -> 5",
+    '() -> {System.out.println("Giraffe"); return 10;}',
   ],
   "Which of the following are valid types of constraints that can be defined when creating a table? (select all that apply)":
     ["Primary key", "Unique"],
