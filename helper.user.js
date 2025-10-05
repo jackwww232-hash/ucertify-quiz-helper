@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ucertify-quiz-helper
-// @version      3.0.0
+// @version      3.1.0
 // @description  ucertify-quiz-helper
 // @author       guanhua
 // @include      *ucertify*
@@ -12,7 +12,7 @@
 
   // https://aistudio.google.com/app/apikey
   // update MY_API_KEY
-  const GEMINI_API_KEY = "MY_API_KEY";
+  let GEMINI_API_KEY = "MY_API_KEY";
 
   let lastProcessedQuestion = null;
 
@@ -54,9 +54,9 @@
       return [];
     }
 
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+    let API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
-    const prompt = `
+    let prompt = `
       Respond exact text of the correct option(s).
       If multiple options, list each one on a new line.
 
@@ -68,7 +68,7 @@
     `;
 
     try {
-      const response = await fetch(API_URL, {
+      let response = await fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -82,13 +82,13 @@
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
+        let errorData = await response.json();
         console.error(errorData.error.message);
         return [];
       }
 
-      const data = await response.json();
-      const aiResponseText = data.candidates[0].content.parts[0].text;
+      let data = await response.json();
+      let aiResponseText = data.candidates[0].content.parts[0].text;
 
       return aiResponseText
         .trim()
@@ -102,39 +102,30 @@
   }
 
   async function runHelper() {
-    const questionElement = document.querySelector(
-      '[data-itemtype="question"]',
-    );
+    let questionElement = document.querySelector('[data-itemtype="question"]');
     if (!questionElement) {
-      console.log("no question");
       return;
     }
 
-    const currentQuestion = normalizeText(questionElement.innerText.trim());
+    let currentQuestion = normalizeText(questionElement.innerText.trim());
     console.log(JSON.stringify(currentQuestion));
 
     lastProcessedQuestion = currentQuestion;
 
-    const optionElements = document.querySelectorAll("#item_answer seq");
-    if (optionElements.length === 0) {
-      console.log("no answer");
-      return;
-    }
-    const options = Array.from(optionElements).map((el) =>
+    let optionElements = document.querySelectorAll("#item_answer seq");
+    let options = Array.from(optionElements).map((el) =>
       normalizeText(el.innerText.trim()),
     );
 
     console.log(JSON.stringify(options));
 
-    const matchingKey = matchKey(currentQuestion, quiz);
+    let matchingKey = matchKey(currentQuestion, quiz);
 
     if (matchingKey) {
-      console.log("Found match in local DB.");
-      const dbAnswers = quiz[matchingKey];
-      highlightAnswers(dbAnswers, optionElements);
+      highlightAnswers(quiz[matchingKey], optionElements);
     } else {
       console.log("No match in DB, ask gemini-2.5-flash...");
-      const aiAnswers = await askGemini(currentQuestion, options);
+      let aiAnswers = await askGemini(currentQuestion, options);
 
       if (aiAnswers.length > 0) {
         console.log("Gemini AI suggests:", aiAnswers);
@@ -145,11 +136,9 @@
     }
   }
 
-  const observer = new MutationObserver((mutations) => {
-    const questionElement = document.querySelector(
-      '[data-itemtype="question"]',
-    );
-    const currentQuestionTextOnPage = questionElement
+  let observer = new MutationObserver((mutations) => {
+    let questionElement = document.querySelector('[data-itemtype="question"]');
+    let currentQuestionTextOnPage = questionElement
       ? normalizeText(questionElement.innerText.trim())
       : null;
 
@@ -177,12 +166,8 @@
 
   let patch = {};
 
-  function getExp() {
-    const exp =
-      document.querySelector(".explanation_content") ||
-      document.querySelector("#item_explanation .explanation_content");
-
-    const txt = exp.innerText;
+  function getAnsLetter() {
+    let txt = document.querySelector(".explanation_content").innerText;
 
     let single = txt.match(/Answer\s+([A-Z])\s+is\s+correct/i);
     if (single) return [single[1].toUpperCase()];
@@ -197,13 +182,14 @@
   }
 
   function getCurr() {
-    let qEl = document.querySelector(".test-question .ebook_item_text");
-    let question = normalizeText(qEl.innerText);
-    let letters = getExp();
+    let question = normalizeText(
+      document.querySelector(".ebook_item_text").innerText,
+    ).replace("Copy \nStart of code", "Start of code");
+    let letter = getAnsLetter();
 
     let allAns = [...document.querySelectorAll(".answer")];
-    let ans = letters.map((letter) => {
-      let idx = letter.charCodeAt(0) - "A".charCodeAt(0);
+    let ans = letter.map((l) => {
+      let idx = l.charCodeAt(0) - "A".charCodeAt(0);
       return normalizeText(allAns[idx].innerText);
     });
     return { question, ans };
@@ -217,10 +203,7 @@
         patch[current.question] = current.ans;
       }
 
-      const nextBtn = document.querySelector(
-        'button[aria-label="Next"], .intro-id-ite_next',
-      );
-      nextBtn.click();
+      document.querySelector("#next").click();
       await new Promise((resolve) => setTimeout(resolve, 1000));
     }
   }
