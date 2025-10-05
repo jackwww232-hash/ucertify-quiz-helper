@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ucertify-quiz-helper
-// @version      2.0.2
+// @version      3.0.0
 // @description  ucertify-quiz-helper
-// @author       0guanhua0@gmail.com
+// @author       guanhua
 // @include      *ucertify*
 // @require      https://raw.githubusercontent.com/0guanhua0/ucertify-quiz-helper/refs/heads/main/db.js
 // ==/UserScript==
@@ -21,9 +21,10 @@
       .replace(/ /g, " ")
       .replace(/–/g, "-")
       .replace(/−/g, "-")
-      .replace(/’/g, "'")
-      .replace(/“/g, '"')
-      .replace(/”/g, '"');
+      .replace(/\u00A0/g, " ")
+      .replace(/“|”/g, '"')
+      .replace(/‘|’/g, "'")
+      .trim();
   }
 
   function matchKey(question, quiz) {
@@ -173,4 +174,58 @@
     console.log("Page loaded, running quiz logic");
     setTimeout(runHelper, 100);
   });
+
+  let patch = {};
+
+  function getExp() {
+    const exp =
+      document.querySelector(".explanation_content") ||
+      document.querySelector("#item_explanation .explanation_content");
+
+    const txt = exp.innerText;
+
+    let single = txt.match(/Answer\s+([A-Z])\s+is\s+correct/i);
+    if (single) return [single[1].toUpperCase()];
+
+    let multi = txt.match(/Answers?\s+([A-Z,\sand&]+)\s+are\s+correct/i);
+    return multi[1]
+      .replace(/and/gi, ",")
+      .replace(/&/g, ",")
+      .split(",")
+      .map((s) => s.replace(/[^A-Z]/gi, "").toUpperCase())
+      .filter(Boolean);
+  }
+
+  function getCurr() {
+    let qEl = document.querySelector(".test-question .ebook_item_text");
+    let question = normalizeText(qEl.innerText);
+    let letters = getExp();
+
+    let allAns = [...document.querySelectorAll(".answer")];
+    let ans = letters.map((letter) => {
+      let idx = letter.charCodeAt(0) - "A".charCodeAt(0);
+      return normalizeText(allAns[idx].innerText);
+    });
+    return { question, ans };
+  }
+
+  async function getIncorrect() {
+    while (true) {
+      let current = getCurr();
+      let status = document.querySelector("#ans-text").innerText;
+      if (status === "Incorrect") {
+        patch[current.question] = current.ans;
+      }
+
+      const nextBtn = document.querySelector(
+        'button[aria-label="Next"], .intro-id-ite_next',
+      );
+      nextBtn.click();
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+    }
+  }
+
+  unsafeWindow.patch = patch;
+  unsafeWindow.getCurr = getCurr;
+  unsafeWindow.getIncorrect = getIncorrect;
 })();

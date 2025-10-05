@@ -24,5 +24,15 @@ go to [chrome://extensions/](chrome://extensions/)
 ![chrome](./pic/chrome.png)
 
 ### contribute
+thx jackwww232-hash for db patch pipeline
+
+to help patch db, in result
+```
+getIncorrect()
+```
 ![contribute-0](./pic/contribute-0.png)
+
+```
+console.log(JSON.stringify(patch, null, 2))
+```
 ![contribute-1](./pic/contribute-1.png)
