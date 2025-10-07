@@ -27,6 +27,8 @@ quiz = {
     [
       "Explain to the key stakeholder that the junior PM is correct not to include activities.",
     ],
+  'A minimum of how many lines need to be corrected before the following method will compile?\n\n\nStart of code block\nvoid findZookeeper(Long id) {\n   System.out.print(switch(id) {\n      case 10 -> {"Jane"}\n      case 20 -> {yield "Lisa";};\n      case 30 -> "Kelly";\n      case 30 -> "Sarah";\n      default -> "Unassigned";\n   });\n}\n\nEnd of code block':
+    ["Four"],
   "A model with low variance is the one that captures both noise and generalized patterns in the data and therefore produces an overfit model.":
     ["False"],
   "A multitable INSERT statement:": ["Can use conditional logic"],
@@ -246,6 +248,8 @@ quiz = {
     ],
   "Assume you issue the following command:\n\n\ndelete from payroll where payroll_date>sysdate-1;\n\nWhat command would reverse the results of this delete?":
     ["rollback;"],
+  "Assuming weather is a well-formed nonempty array, which code snippet, when inserted independently into the blank in the following code, prints all of the elements of weather?\n\n\nStart of code block\nprivate void print(int[] weather) {\n    for(__________________) {\n       System.out.println(weather[i]);\n    }\n}\n\nEnd of code block":
+    ["int i=0; i<=weather.length-1; ++i", "int i=weather.length-1; i>=0; i--"],
   "Assuring that you are working within a high-performance team is part of the project manager's role.":
     ["Directing the team's daily activities through clear instructions"],
   "At the beginning of a project, the sponsor/owner and project manager frequently get together with the team to identify stakehold":
@@ -540,6 +544,14 @@ quiz = {
     ["Spike"],
   "From the following table, which stakeholder will be the project manager's highest priority stakeholder to reach out to?":
     ["Stakeholder A"],
+  "Given the following array, which code snippets print the elements in reverse order from how they are declared?\n\n\nStart of code block\nchar[] wolf = {'W', 'e', 'b', 'b', 'y'};\n\nEnd of code block":
+    [
+      "Start of code block\n for(int m=wolf.length-1; m>=0; --m)    System.out.print(wolf[m]);\nEnd of code block",
+      "Start of code block\n int q = wolf.length;for( ; ; ) {    System.out.print(wolf[--q]);    if(q==0) break;}\nEnd of code block",
+      "Start of code block\n int x = wolf.length-1;for(int j=0; x>=0 && j==0; x--)    System.out.print(wolf[x]);\nEnd of code block",
+    ],
+  "Given the following method, how many lines contain compilation errors?\n\n\nStart of code block\nprivate DayOfWeek getWeekDay(int day, final int thursday) {\n    int otherDay = day;\n    int Sunday = 0;\n    switch(otherDay) {\n       default:\n       case 1: continue;\n       case thursday: return DayOfWeek.THURSDAY;\n       case 2,10: break;\n       case Sunday: return DayOfWeek.SUNDAY;\n       case DayOfWeek.MONDAY: return DayOfWeek.MONDAY;\n    }\n    return DayOfWeek.FRIDAY;\n}\n\nEnd of code block":
+    ["4"],
   'Given the four statements (L, M, N, O), select and order the ones that would complete the expression and cause the code to output 10 lines.\n\n\nStart of code block\nStream.generate(() -> "1")\n   L: .filter(x -> x.length()> 1)\n   M: .forEach(System.out::println)\n   N: .limit(10)\n   O: .peek(System.out::println)\n;\n\nEnd of code block':
     ["N, M"],
   "Given the generic type String, the partitioningBy() collector creates a Map<Boolean, List<String>> when passed to collect() by default. When a downstream collector is passed to partitioningBy(), which return types can be created?":
@@ -1859,6 +1871,8 @@ quiz = {
     ["An exception is thrown."],
   'What could be the output of the following?\n\n\nStart of code block\nPredicate<String> predicate = s -> s.startsWith("g");\nvar stream1 = Stream.generate(() -> "growl!");\nvar stream2 = Stream.generate(() -> "growl!");\nvar b1 = stream1.anyMatch(predicate);\nvar b2 = stream2.allMatch(predicate);\nSystem.out.println(b1 + " " + b2);\n\nEnd of code block':
     ["The code hangs."],
+  "What distinct numbers are printed when the following method is executed?\n\n\nStart of code block\nprivate void countAttendees() {\n    int participants = 4, animals = 2, performers = -1;\n\n    while((participants = participants+1) < 10) {}\n    do {} while (animals++ <= 1);\n    for( ; performers<2; performers+=2) {}\n\n    System.out.println(participants);\n    System.out.println(animals);\n    System.out.println(performers);\n}\n\nEnd of code block":
+    ["10", "3"],
   "What does the categorical data contain?": ["Nominal data"],
   "What is a System for Value Delivery?": [
     "A collection of strategic business activities aimed at building, sustaining, and/or advancing an organization",
@@ -1878,6 +1892,8 @@ quiz = {
   "What is one of the purposes of DDL? (Choose the best answer.)": [
     "Issue privileges to users",
   ],
+  'What is printed by the following code snippet?\n\n\nStart of code block\nbyte amphibian = 1;\nString name = "Frog";\nString color = switch(amphibian) {\n   case 1 -> { yield "Red"; }\n   case 2 -> { if(name.equals("Frog")) yield "Green"; }\n   case 3 -> { yield "Purple"; }\n   default -> throw new RuntimeException();\n};\nSystem.out.print(color);\n\nEnd of code block':
+    ["The code does not compile."],
   "What is project management per PMI?": [
     "The application of knowledge, skills, tools, and techniques to project activities to meet project requirements",
   ],
@@ -1917,6 +1933,30 @@ quiz = {
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
+  'What is the output of calling getFish("goldie")?\n\n\nStart of code block\nvoid getFish(Object fish) {\n   if (!(fish instanceof String guppy))\n      System.out.print("Eat!");\n   else if (!(fish instanceof String guppy)) {\n      throw new RuntimeException();\n   }\n   System.out.print("Swim!");\n}\n\nEnd of code block':
+    ["None of these"],
+  "What is the output of calling printLocation(Animal.MAMMAL)?\n\n\nStart of code block\nclass Zoo {\n   enum Animal {BIRD, FISH, MAMMAL}\n   void printLocation(Animal a) {\n      long type = switch(a) {\n         case BIRD -> 1;\n         case FISH -> 2;\n         case MAMMAL -> 3;\n         default -> 4;\n      };\n      System.out.print(type);\n   } }\n\nEnd of code block":
+    ["3"],
+  'What is the output of calling printReptile(6)?\n\n\nStart of code block\nvoid printReptile(int category) {\n  var type = switch(category) {\n      case 1,2 -> "Snake";\n      case 3,4 -> "Lizard";\n      case 5,6 -> "Turtle";\n      case 7,8 -> "Alligator";\n   };\n   System.out.print(type);\n}\n\nEnd of code block':
+    ["None of these"],
+  'What is the output of calling printType(11)?\n\n\nStart of code block\nvoid printType(Object o) {\n   if(o instanceof Integer bat) {\n      System.out.print("int");\n   } else if(o instanceof Integer bat && bat < 10) {\n      System.out.print("small int");\n   } else if(o instanceof Long bat || bat <= 20) {\n      System.out.print("long");\n   } default {\n      System.out.print("unknown");\n   }\n}\n\nEnd of code block':
+    ["The code contains two lines that do not compile."],
+  'What is the output of the following code snippet?\n\n\nCopy \nStart of code block\nint temperature = 4;\nlong humidity = -temperature + temperature * 3;\nif (temperature>=4)\nif (humidity < 6) System.out.println("Too Low");\nelse System.out.println("Just Right");\nelse System.out.println("Too High");\n\nEnd of code block':
+    ["Just Right"],
+  'What is the output of the following code snippet?\n\n\nStart of code block\n List<Integer> myFavoriteNumbers = new ArrayList<>();\nmyFavoriteNumbers.add(10);\nmyFavoriteNumbers.add(14);\nfor (var a : myFavoriteNumbers) {\n    System.out.print(a + ", ");\n    break;\n}\n\nfor (int b : myFavoriteNumbers) {\n    continue;\n    System.out.print(b + ", ");\n}\n\nfor (Object c : myFavoriteNumbers)\n    System.out.print(c + ", ");\n\nEnd of code block':
+    ["Exactly one line of code does not compile."],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nString instrument = "violin";\nfinal String CELLO = "cello";\nString viola = "viola";\nint p = -1;\nswitch(instrument) {\n  case "bass" : break;\n  case CELLO : p++;\n  default: p++;\n  case "VIOLIN": p++;\n  case "viola" : ++p; break;\n}\nSystem.out.print(p);\n\nEnd of code block':
+    ["2"],
+  "What is the output of the following code snippet?\n\n\nStart of code block\nboolean keepGoing = true;\nint result = 15, meters = 10;\ndo {\n   meters--;\n   if(meters==8) keepGoing = false;\n   result -= 2;\n} while keepGoing;\nSystem.out.println(result);\n\nEnd of code block":
+    ["The code does not compile for a different reason."],
+  'What is the output of the following code snippet?\n\n\nStart of code block\ndouble iguana = 0;\ndo {\n   int snake = 1;\n   System.out.print(snake++ + " ");\n   iguana--;\n} while (snake <= 5);\nSystem.out.println(iguana);\n\n\nEnd of code block':
+    ["The code does not compile."],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nint penguin = 50, turtle = 75;\nboolean older = penguin>= turtle;\nif (older = true) System.out.println("Success");\nelse System.out.println("Failure");\nelse if(penguin != 50) System.out.println("Other");\nEnd of code block':
+    ["None of these"],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nint w = 0, r = 1;\nString name = "";\nwhile(w < 2) {\n  name += "A";\n  do {\n     name += "B";\n     if(name.length()>0) name += "C";\n     else break;\n  } while (r <=1);\n  r++; w++; }\nSystem.out.println(name);\n\nEnd of code block':
+    ["The code compiles but never terminates at runtime."],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nvar tailFeathers = 3;\nfinal var one = 1;\nswitch (tailFeathers) {\n   case one: System.out.print(3 + " ");\n   default: case 3: System.out.print(5 + " ");\n}\nwhile (tailFeathers> 1) {\n   System.out.print(--tailFeathers + " "); }\n\nEnd of code block':
+    ["5 2 1"],
   'What is the output of the following code?\n\n\nStart of code block\nvar spliterator = Stream.generate(() -> "x")\n   .spliterator();\n\nspliterator.tryAdvance(System.out::print);\nvar split = spliterator.trySplit();\nsplit.tryAdvance(System.out::print);\n\nEnd of code block':
     ["xx"],
   'What is the output of the following?\n\n\nStart of code block\npublic class Paging {\n   record Sesame(String name, boolean human)  {\n      @Override public String toString() {\n         return name();\n      }\n   }\n   record Page(List<Sesame> list, long count)  {}\n\n   public static void main(String[] args) {\n      var monsters = Stream.of(new Sesame("Elmo", false));\n      var people = Stream.of(new Sesame("Abby", true));\n      printPage(monsters, people);\n   }\n\n   private static void printPage(Stream<Sesame> monsters,\n         Stream<Sesame> people) {\n      Page page = Stream.concat(monsters, people)\n         .collect(Collectors.teeing(\n            Collectors.filtering(s -> s.name().startsWith("E"),\n               Collectors.toList()),\n            Collectors.counting(),\n            (l, c) -> new Page(l, c)));\n      System.out.println(page);\n   } }\n\nEnd of code block':
@@ -1933,6 +1973,12 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  "What is the result of the following code snippet?\n\n\nStart of code block\n final char a = 'A', e = 'E';\nchar grade = 'B';\nswitch (grade) {\n    default:\n    case a:\n    case 'B': 'C': System.out.print(\"great \");\n    case 'D': System.out.print(\"good \"); break;\n    case e:\n    case 'F': System.out.print(\"not good \");\n}\n\nEnd of code block":
+    ["None of these"],
+  "What is the result of the following code snippet?\n\n\nStart of code block\nint sing = 8, squawk = 2, notes = 0;\nwhile(sing> squawk) {\n   sing--;\n   squawk += 2;\n   notes += sing + squawk;\n}\nSystem.out.println(notes);\n\nEnd of code block":
+    ["23"],
+  'What is the result of the following code?\n\n\nStart of code block\npublic class PrintIntegers {\n   public static void main(String[] args) {\n      int y = -2;\n      do System.out.print(++y + " ");\n      while(y <= 5);\n} }\n\nEnd of code block':
+    ["-1 0 1 2 3 4 5 6"],
   "What is the result of the following code?\n\n\nStart of code block\nvar s = DoubleStream.of(1.2, 2.4);\ns.peek(System.out::println).filter(x -> x> 2).count();\n\nEnd of code block":
     ["1.2 and 2.4"],
   "What is the simplest way of rewriting this code?\n\n\nStart of code block\nList<Integer> x = IntStream.range(1, 6)\n   .mapToObj(i -> i)\n   .collect(Collectors.toList());\nx.forEach(System.out::println);\n\nEnd of code block":
@@ -2291,6 +2337,8 @@ quiz = {
     "Requirements",
     "Tasks",
   ],
+  "Which of the following are possible data types for friends that would allow the code to compile?\n\n\nStart of code block\n for(var friend in friends) {\n    System.out.println(friend);\n}\n\nEnd of code block":
+    ["None of these"],
   "Which of the following are schema objects? (Choose all that apply.)": [
     "INDEX",
     "SEQUENCE",
@@ -2445,6 +2493,16 @@ quiz = {
     ["USER_TABLES"],
   "Which of the following data models is meant for computer specialists, not for end users?":
     ["Physical"],
+  "Which of the following data types are permitted on the right side of a for-each expression?":
+    ["Double[][]", "List", "Set", "char[]"],
+  "Which of the following data types can be used in a switch expression?": [
+    "Byte",
+    "String",
+    "char",
+    "enum",
+    "int",
+    "var",
+  ],
   "Which of the following define(s) data?": [
     "Facts, measurements, and statistics",
   ],
@@ -3043,6 +3101,21 @@ quiz = {
   ],
   "Which statement would limit the rowset of a sql statement to no more than 5 rows?":
     ["where rownum < 6"],
+  "Which statements about decision structures are true?": [
+    "A switch expression that takes a String and assigns the result to a variable requires a default branch.",
+    "The body of a do/while loop is guaranteed to be executed at least once.",
+    "The conditional expression of a for loop is evaluated before the first execution of the loop body.",
+  ],
+  "Which statements about pattern matching and flow scoping are correct?": [
+    "Flow scoping means a pattern variable is only accessible if the compiler can discern its type.",
+    "Pattern matching with an if statement is implemented using the instanceof operator.",
+  ],
+  "Which statements about the following code snippet are correct?\n\n\nStart of code block\nfor(var penguin : new int[2])\n    System.out.println(penguin);\n\nvar ostrich = new Character[3];\nfor(var emu : ostrich)\n    System.out.println(emu);\n\nList<Integer> parrots = new ArrayList<Integer>();\nfor(var macaw  : parrots)\n    System.out.println(macaw);\n\nEnd of code block":
+    [
+      "The data type of emu is Character.",
+      "The data type of macaw is Integer.",
+      "The data type of penguin is int.",
+    ],
   "Which statements reflect a servant leadership mindset? (Choose all that apply.)":
     [
       "Emphasizes a coaching approach to managing people",
@@ -3050,6 +3123,13 @@ quiz = {
       "Exhibits a strong integrity principle",
       "Seeks growth and improvement in all team members",
       "Takes the perspective of others and maintains the best interest of others",
+    ],
+  "Which statements, when inserted independently into the following blank, will cause the code to print 2 at runtime?\n\n\nStart of code block\nint count = 0;\nBUNNY: for(int row = 1; row <=3; row++)\n    RABBIT: for(int col = 0; col <3 ; col++) {\n       if((col + row) % 2 == 0)\n          ___________________;\n       count++;\n    }\nSystem.out.println(count);\n\n\nEnd of code block":
+    ["break", "break RABBIT", "continue BUNNY"],
+  "Which statements, when inserted into the following blanks, allow the code to compile and run without entering an infinite loop?\n\n\nStart of code block\nint height = 1;\nL1: while(height++ <10) {\n   long humidity = 12;\n   L2: do {\n      if(humidity-- % 12 == 0) ________________;\n      int temperature = 30;\n     L3: for( ; ; ) {\n        temperature++;\n        if(temperature>50) ________________;\n     }\n  } while (humidity > 4);\n}\n\nEnd of code block":
+    [
+      "break L2 on line 8; continue L2 on line 12",
+      "continue L2 on line 8; continue L2 on line 12",
     ],
   "Which statistical model provides a framework in which term weighting, ranking of retrieved documents, and determining the relevance of feedback are":
     ["Vector space"],
