@@ -236,6 +236,23 @@ quiz = {
     ],
   "Assume all table name and column name references in the SQL statement that follows are valid. That being said, what is wrong with the syntax of the following SQL statement?\n\n\nSELECT SHIP_ID\nFROM SHIPS\nWHERE ((2*LIFEBOATS)+57) - CAPACITY IN (LIFEBOATS*20, LIFEBOATS+LENGTH);":
     ["There is nothing wrong with the syntax."],
+  'Assume that /kang exists as a symbolic link to the directory /mammal/kangaroo within the file system. Which of the following statements are correct about this code snippet?\n\n\nCopy \nStart of code block\nvar path = Paths.get("/kang");\nif(Files.isDirectory(path) && Files.isSymbolicLink(path))\n   Files.createDirectory(path.resolve("joey"));\n\nEnd of code block':
+    [
+      "A new directory may be created.",
+      "If the code creates a directory, it will be reachable at /kang/joey.",
+    ],
+  'Assume that /monkeys exists as a directory containing multiple files, symbolic links, and subdirectories. Which statement about the following code is correct?\n\n\nStart of code block\nvar f = Path.of("/monkeys");\ntry (var m =\n   Files.find(f, 0, (p,a) -> a.isSymbolicLink())) { // y1\n      m.map(s -> s.toString())\n         .collect(Collectors.toList())\n         .stream()\n         .filter(s -> s.toString().endsWith(".txt")) // y2\n         .forEach(System.out::println);\n}\n\nEnd of code block':
+    ["It will print nothing."],
+  'Assume that monkey.txt is a file that exists in the current working directory. Which statement about the following code snippet is correct?\n\n\nStart of code block\nFiles.move(Path.of("monkey.txt"), Paths.get("/animals"),\n   StandardCopyOption.ATOMIC_MOVE,\n   LinkOption.NOFOLLOW_LINKS);\n\nEnd of code block':
+    [
+      "If the move is successful and another process is monitoring the file system, it will not see an incomplete file at runtime.",
+    ],
+  "Assume that reader is a valid stream whose next characters are PEACOCKS. What is true about the output of the following code snippet?\n\n\nStart of code block\nvar sb = new StringBuilder();\nsb.append((char)reader.read());\nreader.mark(10);\nfor(int i=0; i<2; i++) {\n   sb.append((char)reader.read());\n   reader.skip(2);\n}\nreader.reset();\nreader.skip(0);\nsb.append((char)reader.read());\nSystem.out.println(sb.toString());\n\nEnd of code block":
+    ["The code may print PEOE."],
+  'Assume that the source instance passed to the following method represents a file that exists. Also assume that /flip/sounds.txt exists as a file prior to executing this method. When this method is executed, which statement correctly copies the file to the path specified by /flip/sounds.txt?\n\n\nStart of code block\nvoid copyIntoFlipDirectory(Path source) throws IOException {\n   var dolphinDir = Path.of("/flip");\n   dolphinDir = Files.createDirectories(dolphinDir);\n   var n = Paths.get("sounds.txt");\n   ________________________;\n}\n\nEnd of code block':
+    [
+      "Files.copy(source, dolphinDir.resolve(n), StandardCopyOption.REPLACE_EXISTING)",
+    ],
   "Assume you have a table ITEMS that includes a column STATUS. Which of the following statements is syntactically correct? (Choose all that apply.)":
     [
       "SELECT * FROM ITEMS FETCH NEXT 20 PERCENT ROWS ONLY;",
@@ -244,6 +261,20 @@ quiz = {
     ],
   "Assume you issue the following command:\n\n\ndelete from payroll where payroll_date>sysdate-1;\n\nWhat command would reverse the results of this delete?":
     ["rollback;"],
+  "Assuming that / is the root directory within the file system, which of the following are true statements?":
+    [
+      "/home/parrot is an absolute path.",
+      "A Reader offers character encoding, making it more useful when working with String data than an InputStream.",
+    ],
+  'Assuming that the /fox/food-schedule.csv file exists with the specified contents, what is the expected output of calling printData() on it?\n\n\nStart of code block\n/fox/food-schedule.csv\n6am,Breakfast\n9am,SecondBreakfast\n12pm,Lunch\n6pm,Dinner\n\nvoid printData(Path path) throws IOException {\n   Files.readAllLines(path) // r1\n      .flatMap(p -> Stream.of(p.split(","))) // r2\n      .map(q -> q.toUpperCase())  // r3\n      .forEach(System.out::println);\n}\n\nEnd of code block':
+    ["The code will not compile because of line r2."],
+  'Assuming that the directories and files referenced exist and are not symbolic links, what is the result of executing the following code snippet?\n\n\nStart of code block\nvar p1 = Path.of("/lizard",".").resolve(Path.of("walking.txt"));\nvar p2 = new File("/lizard/././actions/../walking.txt").toPath();\nSystem.out.print(Files.isSameFile(p1,p2));\nSystem.out.print(" ");\nSystem.out.print(p1.equals(p2));\nSystem.out.print(" ");\nSystem.out.print(Files.mismatch(p1,p2));\n\nEnd of code block':
+    ["true false -1"],
+  'Assuming zoo-data.txt exists and is not empty, what statements about the following method are correct?\n\n\nStart of code block\nprivate void echo() throws IOException {\n   var o = new FileWriter("new-zoo.txt");\n   try (var f = new FileReader("zoo-data.txt");\n      var b = new BufferedReader(f); o) {\n\n      o.write(b.readLine());\n   }\n   o.write("");\n}\n\nEnd of code block':
+    [
+      "The method compiles but will produce an exception at runtime.",
+      "When run, the method creates a new file with one line of text in it.",
+    ],
   "Assuring that you are working within a high-performance team is part of the project manager's role.":
     ["Directing the team's daily activities through clear instructions"],
   "At the beginning of a project, the sponsor/owner and project manager frequently get together with the team to identify stakehold":
@@ -534,6 +565,8 @@ quiz = {
     ["True"],
   "For which of the following checkpoint actions does the fuzzy checkpointing technique come into use to overcome from the action?":
     ["Suspend execution of transactions temporarily."],
+  'For which values of path sent to this method would it be possible for the following code to output Success?\n\n\nStart of code block\npublic void removeBadFile(Path path) {\n   if(Files.isDirectory(path))\n     System.out.println(Files.deleteIfExists(path)\n        ? "Success": "Try Again");\n}\n\nEnd of code block':
+    ["The code does not compile."],
   "From iteration to iteration, a team will face challenges. The project leader will focus on helping the team members to overcome":
     ["Spike"],
   "From the following table, which stakeholder will be the project manager's highest priority stakeholder to reach out to?":
@@ -542,6 +575,12 @@ quiz = {
     [
       "parallelStream() on line p1, findFirst() on line p2",
       "stream() on line p1, findFirst() on line p2",
+    ],
+  "Given the following method, which statements are correct?\n\n\nStart of code block\npublic void copyFile(File file1, File file2) throws Exception {\n   var reader = new InputStreamReader(new FileInputStream(file1));\n   try (var writer = new FileWriter(file2)) {\n      char[] buffer = new char[10];\n      while(reader.read(buffer) != -1) {\n          writer.write(buffer);\n          // n1\n      }\n   }\n}\n\nEnd of code block":
+    [
+      "If we check file2 on line n1 within the file system after five iterations of the while loop, it may be empty.",
+      "The code compiles and correctly copies the data between some files.",
+      "This method contains a resource leak.",
     ],
   "Global projects now require resources that did not meet the expectations of project managers years ago. They require more flexib":
     ["Caves and commons"],
@@ -1294,6 +1333,14 @@ quiz = {
     ["Newer/established"],
   "Structured data is usually organized into records with simple data values that include __________, __________, and __________ variables.":
     ["categorical", "continuous", "ordinal"],
+  "Suppose that the working directory is /weather and the absolute path /weather/winter/snow.dat represents a file that exists within the file system. Which of the following lines of code create an object that represents the file?":
+    [
+      'Path.of("/weather/winer/snow.dat").toFile();',
+      'new File("/weather/winter/snow.dat")',
+      'new File(new File("/weather/winter"), "snow.dat")',
+    ],
+  "Suppose that you need to read text data from a file and want the data to be performant on large files. Which of the following java.io stream classes can be chained together to best achieve this result?":
+    ["BufferedReader", "FileReader"],
   "TRUNCATE TABLE:": [
     "Is a valid set of keywords to be used within a DDL statement",
   ],
@@ -1707,6 +1754,11 @@ quiz = {
       "The project sponsor influencing organizational politics and providing commitment to the project plan",
       "The technical leaders providing input on the direction and plan for the project",
     ],
+  'What are possible results of executing the following code?\n\n\nStart of code block\npublic static void main(String[] args) throws IOException {\n   String line;\n   var c = System.console();\n   Writer w = c.writer();\n   try (w) {\n      if ((line = c.readLine("Enter your name: ")) != null)\n         w.append(line);\n         w.flush();\n   }\n}\n\nEnd of code block':
+    [
+      "A NullPointerException may be thrown.",
+      "The code prints what was entered by the user.",
+    ],
   "What are some actions that the project manager can take to maximize productivity of the team? (Choose two.)":
     [
       "Ensure work assignments are clear and understood.",
@@ -1733,6 +1785,11 @@ quiz = {
     ["Methodologies, templates, document libraries, policies, and procedures"],
   "What are some other factors besides probability and impact that should be evaluated before assigning a final priority level to a":
     ["Urgency, proximity, and propinquity"],
+  'What are some possible results of executing the following code?\n\n\nStart of code block\nvar x = Path.of("/animals/fluffy/..");\nFiles.walk(x.toRealPath().getParent())      // u1\n   .map(p -> p.toAbsolutePath().toString()) // u2\n   .filter(s -> s.endsWith(".java"))\n   .forEach(System.out::println);\n\nEnd of code block':
+    [
+      "Another exception is thrown at runtime.",
+      "It prints some files in the root directory.",
+    ],
   "What are some ways a project manager can earn the respect of the project team and other project stakeholders? (Choose all that a":
     [
       "Actively listen to each person you interact with.",
@@ -1900,6 +1957,8 @@ quiz = {
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
+  'What is the output of the following code?\n\n\nStart of code block\nvar p1 = Path.of("/zoo/./bear","../food.txt");\np1.normalize().relativize(Path.of("/lion"));\nSystem.out.println(p1);\n\nvar p2 = Paths.get("/zoo/animals/bear/koala/food.txt");\nSystem.out.println(p2.subpath(1,3).getName(1));\n\nvar p3 = Path.of("/pets/../cat.txt");\nvar p4 = Paths.get("./dog.txt");\nSystem.out.println(p4.resolve(p3));\n\nEnd of code block':
+    ["/pets/../cat.txt", "/zoo/./bear/../food.txt", "bear"],
   "What is the primary difference between statistics and data mining?": [
     "Statistics starts with a well-defined proposition and hypothesis, whereas data mining starts with a loosely defined discovery statement.",
   ],
@@ -1912,6 +1971,11 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  'What is the result of executing the following code?\n\n\nStart of code block\nvar p = Paths.get("sloth.schedule");\nvar a = Files.readAttributes(p, BasicFileAttributes.class);\nFiles.mkdir(p.resolve(".backup"));\nif(a.size()>0 && a.isDirectory()) {\n   a.setTimes(null,null,null);\n}\n\nEnd of code block':
+    [
+      "The code will not compile because of line 6.",
+      "The code will not compile because of line 8.",
+    ],
   "What kinds of patterns can data mining discover?": [
     "Association",
     "Classification",
@@ -1944,6 +2008,8 @@ quiz = {
     ["Read-only"],
   "What will be the next step after importing the JDBC class library when writing a Java application program with database access through JDBC function calls?":
     ["Load the JDBC driver."],
+  'What would be the value of name if the instance of Eagle created in the main() method were serialized and then deserialized?\n\n\nStart of code block\nimport java.io.Serializable;\nclass Bird {\n   protected transient String name;\n   public void setName(String name) { this.name = name; }\n   public String getName() { return name; }\n   public Bird() {\n      this.name = "Matt";\n   }\n}\npublic class Eagle extends Bird implements Serializable {\n   { this.name = "Olivia"; }\n   public Eagle() {\n      this.name = "Bridget";\n   }\n   public static void main(String[] args) {\n      var e = new Eagle();\n      e.name = "Adeline";\n   }\n}\n\nEnd of code block':
+    ["Matt"],
   "When a member of an organization decides to delay deciding on an urgent issue":
     ["True"],
   "When calculating the cost performance index of the project at any point during the life of the project, which formula would you":
@@ -2073,6 +2139,10 @@ quiz = {
     ["Lifetime"],
   "Which autonomy implies that component DBS has the ability to decide whether and how much to share its functionality and resources with other":
     ["Association"],
+  "Which class would be best to use to read a binary file into a Java object?":
+    ["ObjectInputStream"],
+  'Which classes will allow the following code snippet to compile?\n\n\nStart of code block\nvar is = new BufferedInputStream(new FileInputStream("z.txt"));\nInputStream wrapper = new ______________ (is);\ntry (wrapper) {}\n\nEnd of code block':
+    ["BufferedInputStream", "ObjectInputStream"],
   "Which classification approach use(s) historical samples to identify commonalities in order to assign a new sample to the most similar category?":
     ["Case-based reasoning"],
   "Which classification method use(s) conditional probabilities to build classification models?":
@@ -2300,6 +2370,10 @@ quiz = {
   "Which of the following are the most commonly used normalization methods?": [
     "Log, binary, and inverse document frequencies",
   ],
+  "Which of the following are true statements about serialization in Java?": [
+    "All non-null instance members of the class must be serializable or marked transient.",
+    "The class must implement the Serializable interface.",
+  ],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
   "Which of the following are types of subqueries? (select all that apply)": [
@@ -2398,6 +2472,11 @@ quiz = {
     ["Entity integrity"],
   "Which of the following control measures is handled by creating user accounts and passwords to control the login process by the DBMS?":
     ["Access control"],
+  "Which of the following correctly create Path instances?": [
+    'FileSystems.getDefault().getPath("puma.txt")',
+    'Path.of(Path.of(".").toUri())',
+    'new java.io.File("tiger.txt").toPath()',
+  ],
   "Which of the following data dictionary views contains information about grants on tables that have been made by other users to your user account, as well as grants on tables that have been made by your user account to other user accounts?":
     ["USER_TAB_PRIVS"],
   "Which of the following data dictionary views does not have an OWNER column?":
@@ -2421,6 +2500,8 @@ quiz = {
     ["$_SERVER['REMOTE_HOST']"],
   "Which of the following factors refers to a model's ability to make reasonably accurate predictions, given noisy data or data with missing and erroneous values?":
     ["Robustness"],
+  'Which of the following fields will be null after an instance of the class created on line 17 is serialized and then deserialized using ObjectOutputStream and ObjectInputStream?\n\n\nStart of code block\nimport java.io.Serializable;\nimport java.util.List;\npublic class Zebra implements Serializable {\n   private transient String name = "George";\n   private static String birthPlace = "Africa";\n   private transient Integer age;\n   List<Zebra> friends = new java.util.ArrayList<>();\n   private Object stripes = new Object();\n   { age = 10;}\n  public Zebra() {\n     this.name = "Sophia";\n  }\n  static Zebra writeAndRead(Zebra z) {\n     // Implementation omitted\n  }\n  public static void main(String[] args) {\n     var zebra = new Zebra();\n     zebra = writeAndRead(zebra);\n  }\n\nEnd of code block':
+    ["The code compiles but throws an exception at runtime."],
   "Which of the following file allocation techniques allocates file blocks to consecutive disk blocks?":
     ["Contiguous"],
   "Which of the following files keeps the records ordered by the value of a particular field?":
@@ -2767,6 +2848,11 @@ quiz = {
       "A multitable insert statement can conditionally insert data into multiple tables.",
       "A multitable insert statement can replace and perform better than PL/SQL routines.",
     ],
+  "Which of the following statements are true?": [
+    "Files.readAttributes() is often more performant since it reads multiple attributes rather than accessing individual attributes.",
+    "NIO.2 includes a method to traverse a directory tree.",
+    "NIO.2 includes methods that are aware of symbolic links.",
+  ],
   "Which of the following statements are true? (Choose two.)": [
     "A correlated subquery can also be a single-row subquery.",
     "A single-row subquery can also be a multiple-column subquery.",
