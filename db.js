@@ -3,6 +3,8 @@ quiz = {
   "A Pareto chart is used for ranking causes of problems from greatest to smallest with a cumulative curve above it but does not de":
     ["True"],
   "A SEQUENCE is": ["None of these."],
+  "A class that implements _________________ may be in a try-with-resources statement.":
+    ["AutoCloseable", "Closeable"],
   "A colleague advised you that, as a new project manager, you will be expected to provide leadership support to your team. Which o":
     [
       "Encourage the team to support project value delivery.",
@@ -236,6 +238,8 @@ quiz = {
     ],
   "Assume all table name and column name references in the SQL statement that follows are valid. That being said, what is wrong with the syntax of the following SQL statement?\n\n\nSELECT SHIP_ID\nFROM SHIPS\nWHERE ((2*LIFEBOATS)+57) - CAPACITY IN (LIFEBOATS*20, LIFEBOATS+LENGTH);":
     ["There is nothing wrong with the syntax."],
+  'Assume that all of the files mentioned in the answer choices exist and define the same keys. Which one will be used to find the key in line 8?\n\n\nStart of code block\nLocale.setDefault(new Locale("en", "US"));\nvar b = ResourceBundle.getBundle("Dolphins");\nSystem.out.println(b.getString("name"));\n\nEnd of code block':
+    ["Dolphins_en.properties"],
   "Assume you have a table ITEMS that includes a column STATUS. Which of the following statements is syntactically correct? (Choose all that apply.)":
     [
       "SELECT * FROM ITEMS FETCH NEXT 20 PERCENT ROWS ONLY;",
@@ -244,6 +248,12 @@ quiz = {
     ],
   "Assume you issue the following command:\n\n\ndelete from payroll where payroll_date>sysdate-1;\n\nWhat command would reverse the results of this delete?":
     ["rollback;"],
+  'Assuming -g:vars is used when the code is compiled to include debug information, what is the output of the following code snippet?\n\n\nStart of code block\nvar huey = (String)null;\nInteger dewey = null;\nObject louie = null;\nif(louie == huey.substring(dewey.intValue())) {\n   System.out.println("Quack!");\n}\n\nEnd of code block':
+    ["A NullPointerException naming dewey in the stack trace"],
+  'Assuming U.S. currency is in dollars ($) and German currency is in euros (€), what is the output of the following program?\n\n\nStart of code block\nimport java.text.NumberFormat;\nimport java.util.Locale;\nimport java.util.Locale.Category;\npublic record Wallet(double money) {\n   private String openWallet() {\n      Locale.setDefault(Category.DISPLAY,\n         new Locale.Builder().setRegion("us").build());\n      Locale.setDefault(Category.FORMAT,\n         new Locale.Builder().setLanguage("en").build());\n      return NumberFormat.getCurrencyInstance(Locale.GERMANY)\n         .format(money);\n   }\n   public void printBalance() {\n      System.out.println(openWallet());\n   }\n   public static void main(String… unused) {\n      new Wallet(2.4).printBalance();\n   } }\n\nEnd of code block':
+    ["2,40 €"],
+  "Assuming the current locale uses dollars ($) and the following method is called with a double value of 100_102.2, which of the following values are printed?\n\n\nStart of code block\npublic void print(double t) {\n   System.out.print(NumberFormat.getCompactNumberInstance().format(t));\n\n   System.out.print(\n      NumberFormat.getCompactNumberInstance(\n         Locale.getDefault(), Style.SHORT).format(t));\n\n   System.out.print(NumberFormat.getCurrencyInstance().format(t));\n}\n\nEnd of code block":
+    ["$100,102.20", "100K"],
   "Assuring that you are working within a high-performance team is part of the project manager's role.":
     ["Directing the team's daily activities through clear instructions"],
   "At the beginning of a project, the sponsor/owner and project manager frequently get together with the team to identify stakehold":
@@ -532,6 +542,8 @@ quiz = {
     ["Make-or-buy analysis"],
   "For the past many months, the team has worked with little direction from the project manager. The team gets together and determi":
     ["True"],
+  'For what value of pattern will the following code snippet print <005.21> <008.49> <1,234.0>?\n\n\nStart of code block\nString pattern = "_________________";\nvar message = DoubleStream.of(5.21, 8.49, 1234)\n   .mapToObj(v -> new DecimalFormat(pattern).format(v))\n   .collect(Collectors.joining("> <"));\nSystem.out.println("<"+message+">");\n\nEnd of code block':
+    ["#,###,000.0#"],
   "For which of the following checkpoint actions does the fuzzy checkpointing technique come into use to overcome from the action?":
     ["Suspend execution of transactions temporarily."],
   "From iteration to iteration, a team will face challenges. The project leader will focus on helping the team members to overcome":
@@ -1294,6 +1306,8 @@ quiz = {
     ["Newer/established"],
   "Structured data is usually organized into records with simple data values that include __________, __________, and __________ variables.":
     ["categorical", "continuous", "ordinal"],
+  'Suppose that we have the following three properties files and code. Which bundles are used on lines 15 and 16, respectively?\n\n\nStart of code block\nDolphins.properties\nname=The Dolphin\nage=0\n\nDolphins_en.properties\nname=Dolly\nage=4\n\nDolphins_fr.properties\nname=Dolly\n\nvar fr = new Locale("fr");\nLocale.setDefault(new Locale("en", "US"));\nvar b = ResourceBundle.getBundle("Dolphins", fr);\nb.getString("name");\nb.getString("age");\nEnd of code block':
+    ["Dolphins_fr.properties and Dolphins.properties"],
   "TRUNCATE TABLE:": [
     "Is a valid set of keywords to be used within a DDL statement",
   ],
@@ -1843,6 +1857,8 @@ quiz = {
       "Privacy and confidentiality",
     ],
   "What does the categorical data contain?": ["Nominal data"],
+  'What does the following method print?\n\n\nStart of code block\npublic void tryAgain(String s) {\n   try (FileReader r = null, p = new FileReader("")) {\n      System.out.print("X");\n      throw new IllegalArgumentException();\n   } catch (Exception s) {\n      System.out.print("A");\n      throw new FileNotFoundException();\n   } finally {\n      System.out.print("O");\n   }\n}\n\nEnd of code block':
+    ["Three or more lines of this method contain compiler errors."],
   "What is a System for Value Delivery?": [
     "A collection of strategic business activities aimed at building, sustaining, and/or advancing an organization",
   ],
@@ -1861,6 +1877,8 @@ quiz = {
   "What is one of the purposes of DDL? (Choose the best answer.)": [
     "Issue privileges to users",
   ],
+  'What is printed by the following program?\n\n\nStart of code block\npublic class DriveBus {\n   public void go() {\n      System.out.print("A");\n      try {\n         stop();\n      } catch (ArithmeticException e) {\n         System.out.print("B");\n      } finally {\n         System.out.print("C");\n     }\n     System.out.print("D");\n  }\n  public void stop() {\n     System.out.print("E");\n     Object x = null;\n     x.toString();\n     System.out.print("F");\n  }\n  public static void main(String n[]) {\n     new DriveBus().go();\n  } }\n\nEnd of code block':
+    ["AEC followed by a stack trace"],
   "What is project management per PMI?": [
     "The application of knowledge, skills, tools, and techniques to project activities to meet project requirements",
   ],
@@ -1900,6 +1918,16 @@ quiz = {
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
+  'What is the output of the following code?\n\n\nStart of code block\nLocalDate date = LocalDate.parse("2022-04-30",\n   DateTimeFormatter.ISO_LOCAL_DATE_TIME);\nSystem.out.println(date.getYear() + " "\n   + date.getMonth() + " "+ date.getDayOfMonth());\n\nEnd of code block':
+    ["A runtime exception is thrown."],
+  'What is the output of the following code?\n\n\nStart of code block\nimport java.io.*;\npublic class FamilyCar {\n   static class Door implements AutoCloseable {\n      public void close() {\n         System.out.print("D");\n   } }\n   static class Window implements Closeable {\n      public void close() {\n         System.out.print("W");\n         throw new RuntimeException();\n   } }\n   public static void main(String[] args) {\n      var d = new Door();\n      try (d; var w = new Window()) {\n         System.out.print("T");\n      } catch (Exception e) {\n         System.out.print("E");\n      } finally {\n         System.out.print("F");\n      } } }\n\nEnd of code block':
+    ["TWDEF"],
+  'What is the output of the following code?\n\n\nStart of code block\ntry {\n   LocalDateTime course = LocalDateTime.of(2022, 4, 5, 12, 30, 20);\n   System.out.print(book.format(DateTimeFormatter.ofPattern("m")));\n   System.out.print(book.format(DateTimeFormatter.ofPattern("z")));\n   System.out.print(DateTimeFormatter.ofPattern("y").format(book));\n} catch (Throwable e) {}\n\nEnd of code block':
+    ["30"],
+  'What is the output of the following program?\n\n\nStart of code block\npublic class SnowStorm {\n   static class WalkToSchool implements AutoCloseable {\n      public void close() {\n         throw new RuntimeException("flurry");\n      } }\n   public static void main(String[] args) {\n      WalkToSchool walk1 = new WalkToSchool();\n      try (walk1; WalkToSchool walk2 = new WalkToSchool()) {\n         throw new RuntimeException("blizzard");\n      } catch(Exception e) {\n         System.out.println(e.getMessage()\n            + " " + e.getSuppressed().length);\n      }\n      walk1 = null;\n   } }\n\nEnd of code block':
+    ["None of these"],
+  'What is the output of the following snippet, assuming a and b are both 0?\n\n\nStart of code block\ntry {\nSystem.out.print(a / b);\n} catch (RuntimeException e) {\nSystem.out.print(-1);\n} catch (ArithmeticException e) {\nSystem.out.print(0);\n} finally {\nSystem.out.print("done");\n}\n\nEnd of code block':
+    ["The code does not compile."],
   "What is the primary difference between statistics and data mining?": [
     "Statistics starts with a well-defined proposition and hypothesis, whereas data mining starts with a loosely defined discovery statement.",
   ],
@@ -2073,6 +2101,8 @@ quiz = {
     ["Lifetime"],
   "Which autonomy implies that component DBS has the ability to decide whether and how much to share its functionality and resources with other":
     ["Association"],
+  "Which changes, when made independently, allow the following program to compile?\n\n\nStart of code block\npublic class AhChoo {\n   static class SneezeException extends Exception {}\n   static class SniffleException extends SneezeException {}\n   public static void main(String[] args) {\n      try {\n         throw new SneezeException();\n      } catch (SneezeException | SniffleException e) {\n      } finally {}\n   } }\n\nEnd of code block":
+    ["Change line 7 to } catch (SneezeException e) {."],
   "Which classification approach use(s) historical samples to identify commonalities in order to assign a new sample to the most similar category?":
     ["Case-based reasoning"],
   "Which classification method use(s) conditional probabilities to build classification models?":
@@ -2116,6 +2146,8 @@ quiz = {
   ],
   "Which is the process of classifying a class of objects into more specialized subclasses?":
     ["Specialization"],
+  "Which lines can fill in the blank to make the following code compile?\n\n\nStart of code block\nvoid rollOut() throws ClassCastException {}\n\npublic void transform(String c) {\n   try {\n      rollOut();\n   } catch (IllegalArgumentException |  __________________) {\n   }\n}\n\nEnd of code block":
+    ["ClassCastException f", "Error b"],
   'Which lines need to be changed to make the code compile?\n\n\nStart of code block\nExecutorService service =   // w1\n   Executors.newSingleThreadScheduledExecutor();\nservice.scheduleWithFixedDelay(() -> {\n   System.out.println("Open Zoo");\n   return null;   // w2\n}, 0, 1, TimeUnit.MINUTES);\nvar result = service.submit(() ->   // w3\n   System.out.println("Wake Staff"));\nSystem.out.println(result.get());   // w4\n\nEnd of code block':
     ["Line w1", "Line w2"],
   "Which list best describes an agile development approach?": [
@@ -2218,6 +2250,11 @@ quiz = {
     "Planned hours versus actual hours",
     "SPI",
   ],
+  "Which of the following are common types to localize?": [
+    "Currency",
+    "Dates",
+    "Numbers",
+  ],
   "Which of the following are components of the scope baseline?": [
     "WBS dictionary, WBS, scope statement",
   ],
@@ -2300,6 +2337,11 @@ quiz = {
   "Which of the following are the most commonly used normalization methods?": [
     "Log, binary, and inverse document frequencies",
   ],
+  "Which of the following are true statements about exception handling in Java?":
+    [
+      "A traditional try statement without a catch block requires a finally block.",
+      "A traditional try statement without a finally block requires a catch block.",
+    ],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
   "Which of the following are types of subqueries? (select all that apply)": [
@@ -2344,11 +2386,25 @@ quiz = {
       "An INSERT statement's SELECT",
       "An inline view",
     ],
+  'Which of the following can be inserted into the blank to allow the code to compile and run without throwing an exception?\n\n\nStart of code block\nvar f = DateTimeFormatter.ofPattern("hh o\'clock");\nSystem.out.println(f.format(_________________.now()));\n\nEnd of code block':
+    ["None of these"],
+  "Which of the following can be inserted on line 2 to make this code compile?\n\n\nStart of code block\npublic void whatHappensNext() throws IOException {\n   // INSERT CODE HERE\n}\n\nEnd of code block":
+    [
+      'System.out.println("it\'s ok");',
+      "throw new IllegalArgumentException();",
+      "throw new RuntimeException();",
+      "throw new java.io.IOException();",
+    ],
   "Which of the following can be said of the CASE statement?": [
     "It uses the keyword THEN.",
   ],
   "Which of the following can be used to remove data from a table? (Choose two.)":
     ["DELETE", "UPDATE"],
+  'Which of the following changes, when made independently, would make this code compile?\n\n\nStart of code block\nimport java.io.*;\npublic class StuckTurkeyCage implements AutoCloseable {\n   public void close() throws IOException {\n      throw new FileNotFoundException("Cage not closed");\n   }\n   public static void main(String[] args) {\n      try (StuckTurkeyCage t = new StuckTurkeyCage()) {\n         System.out.println("put turkeys in");\n      }\n  } }\n\nEnd of code block':
+    [
+      "Add throws Exception to the declaration on line 6.",
+      "Change line 9 to } catch (Exception e) {}.",
+    ],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
     ["Abstract"],
   "Which of the following classification methods use(s) the analogy of natural evolution to build directed-search-based mechanisms to classify data samples?":
@@ -2419,6 +2475,8 @@ quiz = {
   ],
   "Which of the following entries is the Web site name (URL) of the client user computer?":
     ["$_SERVER['REMOTE_HOST']"],
+  "Which of the following exceptions must be handled or declared in the method in which they are thrown?\n\n\nStart of code block\nclass Apple extends RuntimeException {}\nclass Orange extends Exception {}\nclass Banana extends Error {}\nclass Pear extends Apple {}\nclass Tomato extends Orange {}\nclass Peach extends Throwable {}\n\nEnd of code block":
+    ["Orange", "Peach", "Tomato"],
   "Which of the following factors refers to a model's ability to make reasonably accurate predictions, given noisy data or data with missing and erroneous values?":
     ["Robustness"],
   "Which of the following file allocation techniques allocates file blocks to consecutive disk blocks?":
@@ -2730,6 +2788,10 @@ quiz = {
   ],
   "Which of the following stakeholders is the highest priority for the project manager?":
     ["Definitive stakeholders"],
+  "Which of the following statements about resource bundles are correct?": [
+    "Changing the default locale lasts for only a single run of the program.",
+    "It is possible to use a resource bundle for a locale without specifying a default locale.",
+  ],
   "Which of the following statements about set operators is true? Choose the best answer.":
     ["You can connect two SELECT statements with one set operator."],
   "Which of the following statements are true about the risk management plan? (Choose two.)":
@@ -2823,6 +2885,8 @@ quiz = {
     ["create index ix_emp on employee(hiredate) tablespace users invisible;"],
   "Which of the following statements will grant the role OMBUDSMAN to user JOSHUA in such a way that JOSHUA may grant the role to another user?":
     ["GRANT OMBUDSMAN TO JOSHUA WITH ADMIN OPTION;"],
+  'Which of the following statements, when inserted independently in the blank, use locale parameters that are properly formatted?\n\n\nStart of code block\nimport java.util.Locale;\npublic class ReadMap implements AutoCloseable {\n   private Locale locale;\n   private boolean closed = false;\n   @Override public void close() {\n      System.out.println("Folding map");\n      locale = null;\n      closed = true;\n   }\n   public void open() {\n      this.locale = _________________;\n   }\n   public void use() {\n      // Implementation omitted\n   }\n}\n\nEnd of code block':
+    ['new Locale("qw")', 'new Locale("wp", "VW")'],
   "Which of the following steps of the CRISP-DM process identifies the goals, purpose, and requirements of the customers?":
     ["Business understanding"],
   "Which of the following steps of the CRISP-DM process identifies the relevant data from different sources?":
@@ -2936,6 +3000,12 @@ quiz = {
   ],
   "Which of these is the process of extracting novel patterns and knowledge structures from continuous, rapid data records?":
     ["Data stream mining"],
+  "Which of these statements can fill in the blank so that the Helper class compiles successfully?\n\n\nCopy \nStart of code block\npublic class Helper {\n   public static <U extends Exception>\n      void printException(U u) {\n\n      System.out.println(u.getMessage());\n   }\n   public static void main(String[] args) {\n      Helper.____________________________________;\n  } }\n\nEnd of code block":
+    [
+      '<NullPointerException>printException(new NullPointerException ("D"))',
+      'printException(new Exception("B"))',
+      'printException(new FileNotFoundException("A"))',
+    ],
   "Which one of the following is a DML statement?": ["UPDATE"],
   "Which operation is used for inserting new data or new versions of existing data items?":
     ["Put"],
@@ -2970,6 +3040,9 @@ quiz = {
     [
       "They are used by all the risk management processes throughout the project.",
     ],
+  "Which scenario is the best use of an exception?": [
+    "An unexpected parameter is passed into a method.",
+  ],
   "Which search applies to any file, but all the other methods depend on having the appropriate access path on the attribute used in the selection condition?":
     ["Linear"],
   "Which search is suitable for retrievals where an attribute must match an enumerated set of values?":
@@ -2979,6 +3052,8 @@ quiz = {
   "Which stage of a distributed database query is performed locally?": [
     "Local query optimization",
   ],
+  "Which statement about the following class is correct?\n\n\nStart of code block\nclass Problem extends Exception {\n   public Problem() {}\n}\nclass YesProblem extends Problem {}\npublic class MyDatabase {\n   public static void connectToDatabase() throw Problem {\n      throws new YesProblem();\n   }\n   public static void main(String[] c) throw Exception {\n     connectToDatabase();\n  }\n}\n\nEnd of code block":
+    ["None of these"],
   "Which statement in the SQL standard can be used to invoke a stored procedure—either from an interactive interface or from embedded SQL or SQLJ?":
     ["CALL"],
   "Which statement is used to sort the rows returned by a SQL statement?": [
