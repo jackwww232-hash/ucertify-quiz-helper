@@ -543,6 +543,8 @@ quiz = {
       "parallelStream() on line p1, findFirst() on line p2",
       "stream() on line p1, findFirst() on line p2",
     ],
+  "Given the following, which can correctly fill in the blank?\n\n\nStart of code block\nvar date = LocalDate.now();\nvar time = LocalTime.now();\nvar dateTime = LocalDateTime.now();\nvar zoneId = ZoneId.systemDefault();\nvar zonedDateTime = ZonedDateTime.of(dateTime, zoneId);\nInstant instant = ______________________________;\n\nEnd of code block":
+    ["Instant.now()", "zonedDateTime.toInstant()"],
   "Global projects now require resources that did not meet the expectations of project managers years ago. They require more flexib":
     ["Caves and commons"],
   "Governance of a project needs to be kept as private as possible to avoid information escaping the organization.":
@@ -569,6 +571,10 @@ quiz = {
     [
       "The project manager is focused on the overall project performance. The Scrum master is focused on guiding the core team through the Scrum process. The product owner is focused on the product being delivered.",
     ],
+  "How many of these lines contain a compiler error?\n\n\nCopy \nStart of code block\nint one = Math.min(5, 3);\nlong two = Math.round(5.5);\ndouble three = Math.floor(6.6);\nvar doubles = new double[] {one, two, three};\n\nEnd of code block":
+    ["0"],
+  "How many of these lines contain a compiler error?\n\n\nStart of code block\ndouble one = Math.pow(1, 2);\nint two = Math.round(1.0);\nfloat three = Math.random();\nvar doubles = new double[] {one, two, three};\n\nEnd of code block":
+    ["2"],
   "How many sequential steps exist in the CRISP-DM methodology?": ["Six"],
   "How many tables can be joined in a query?": ["One, two, three, or more"],
   "How would you best classify the cost of raw materials on a project?": [
@@ -818,6 +824,14 @@ quiz = {
     ["True"],
   "Multilayer perceptron type deep networks are also known as feedforward networks because the flow of information that goes through them is always forwarding, and no feedback connections are allowed.":
     ["True"],
+  'Note that March 13, 2022 is the weekend that clocks spring ahead for daylight saving time. What is the output of the following?\n\n\nStart of code block\nvar date = LocalDate.of(2022, Month.MARCH, 13);\nvar time = LocalTime.of(1, 30);\nvar zone = ZoneId.of("US/Eastern");\nvar dateTime1 = ZonedDateTime.of(date, time, zone);\nvar dateTime2 = dateTime1.plus(1, ChronoUnit.HOURS);\n\nlong diff = ChronoUnit.HOURS.between(dateTime1, dateTime2);\nint hour = dateTime2.getHour();\nboolean offset = dateTime1.getOffset()\n   == dateTime2.getOffset();\nSystem.out.println("diff = " + diff);\nSystem.out.println("hour = " + hour);\nSystem.out.println("offset = " + offset);\n\nEnd of code block':
+    ["diff = 1", "hour = 3"],
+  'Note that March 13, 2022 is the weekend when we spring forward, and November 6, 2022 is when we fall back for daylight saving time. Which of the following can fill in the blank without the code throwing an exception?\n\n\nStart of code block\nvar zone = ZoneId.of("US/Eastern");\nvar date = _______________________________;\nvar time = LocalTime.of(2, 15);\nvar z = ZonedDateTime.of(date, time, zone);\n\nEnd of code block':
+    [
+      "LocalDate.of(2022, 11, 6)",
+      "LocalDate.of(2022, 11, 7)",
+      "LocalDate.of(2022, 3, 13)",
+    ],
   "Novel is a key term in the definition of data mining, which means that the patterns are known by the user within the context of the system being analyzed.":
     ["False"],
   "Now you have changed the purpose of the PIER column in the MARINA table and want to remove the comment you just created in the previous question. Which of the following statements will remove the comment?":
@@ -1855,6 +1869,8 @@ quiz = {
     ],
   "What is a rough order of magnitude (ROM) range on an estimate of $200,000?":
     ["$150,000-$350,000"],
+  'What is included in the output of the following code?\n\n\nStart of code block\nvar base = "ewe\nsheep\\\\t";\nint length = base.length();\nint indent = base.indent(2).length();\nint translate = base.translateEscapes().length();\n\nvar formatted = "%s %s %s".formatted(length, indent, translate);\nSystem.out.format(formatted);\n\nEnd of code block':
+    ["10", "11", "16"],
   "What is meant by delivery cadence?": [
     "The timing and frequency of project deliverables.",
   ],
@@ -1900,6 +1916,18 @@ quiz = {
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
+  'What is the output of the following code?\n\n\nStart of code block\npublic class Fish {\n   public static void main(String[] args) {\n      int numFish = 4;\n      String fishType = "tuna";\n      String anotherFish = numFish + 1;\n      System.out.println(anotherFish + " " + fishType);\n      System.out.println(numFish + " " + 1);\n} }\n\nEnd of code block':
+    ["The code does not compile."],
+  'What is the output of the following code?\n\n\nStart of code block\nvar date = LocalDate.of(2022, 4, 3);\ndate.plusDays(2);\ndate.plusHours(3);\nSystem.out.println(date.getYear() + " " + date.getMonth()\n    + " " + date.getDayOfMonth());\n\nEnd of code block':
+    ["The code does not compile."],
+  'What is the output of the following code?\n\n\nStart of code block\nvar date = LocalDate.of(2022, Month.APRIL, 30);\ndate.plusDays(2);\ndate.plusYears(3);\nSystem.out.println(date.getYear() + " " + date.getMonth()\n   + " " + date.getDayOfMonth());\n\nEnd of code block':
+    ["2022 APRIL 30"],
+  'What is the output of the following code?\n\n\nStart of code block\nvar numbers = "012345678".indent(1);\nnumbers = numbers.stripLeading();\nSystem.out.println(numbers.substring(1, 3));\nSystem.out.println(numbers.substring(7, 7));\nSystem.out.print(numbers.substring(7));\n\nEnd of code block':
+    ["12", "78", "A blank line"],
+  'What is the output of the following code?\n\n\nStart of code block\nvar s = "Hello";\nvar t = new String(s);\nif ("Hello".equals(s)) System.out.println("one");\nif (t == s) System.out.println("two");\nif (t.intern() == s) System.out.println("three");\nif ("Hello" == s) System.out.println("four");\nif ("Hello".intern() == t) System.out.println("five");\n\nEnd of code block':
+    ["four", "one", "three"],
+  'What is the output of the following?\n\n\nStart of code block\nvar arr = new String[] { "PIG", "pig", "123"};\nArrays.sort(arr);\nSystem.out.println(Arrays.toString(arr));\nSystem.out.println(Arrays.binarySearch(arr, "Pippa"));\n\nEnd of code block':
+    ["-3", "[123, PIG, pig]"],
   "What is the primary difference between statistics and data mining?": [
     "Statistics starts with a well-defined proposition and hypothesis, whereas data mining starts with a loosely defined discovery statement.",
   ],
@@ -1912,6 +1940,12 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  'What is the result of the following code?\n\n\nStart of code block\nString s1 = """\n   purr""";\nString s2 = "";\n\ns1.toUpperCase();\ns1.trim();\ns1.substring(1, 3);\ns1 += "two";\n\ns2 += 2;\ns2 += \'c\';\ns2 += false;\n\nif ( s2 == "2cfalse") System.out.println("==");\nif ( s2.equals("2cfalse")) System.out.println("equals");\nSystem.out.println(s1.length());\n\nEnd of code block':
+    ["7", "equals"],
+  'What is the result of the following code?\n\n\nStart of code block\npublic class Lion {\n   public void roar(String roar1, StringBuilder roar2) {\n      roar1.concat("!!!");\n      roar2.append("!!!");\n   }\n   public static void main(String[] args) {\n      var roar1 = "roar";\n      var roar2 = new StringBuilder("roar");\n      new Lion().roar(roar1, roar2);\n      System.out.println(roar1 + " " + roar2);\n} }\n\nEnd of code block':
+    ["roar roar!!!"],
+  'What is the result of the following code?\n\n\nStart of code block\nvar sb = new StringBuilder();\nsb.append("aaa").insert(1, "bb").insert(4, "ccc");\nSystem.out.println(sb);\n\nEnd of code block':
+    ["abbaccca"],
   "What kinds of patterns can data mining discover?": [
     "Association",
     "Classification",
@@ -2300,6 +2334,11 @@ quiz = {
   "Which of the following are the most commonly used normalization methods?": [
     "Log, binary, and inverse document frequencies",
   ],
+  "Which of the following are true about arrays?": [
+    "Arrays are fixed size.",
+    "Calling equals() on two different arrays containing the same primitive values always returns false.",
+    "The first element is index 0.",
+  ],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
   "Which of the following are types of subqueries? (select all that apply)": [
@@ -2349,6 +2388,11 @@ quiz = {
   ],
   "Which of the following can be used to remove data from a table? (Choose two.)":
     ["DELETE", "UPDATE"],
+  'Which of the following can fill in the blank to print avaJ?\n\n\nStart of code block\nvar puzzle = new StringBuilder("Java");\npuzzle.________________________;\nSystem.out.println(puzzle);\n\nEnd of code block':
+    [
+      'append("vaJ$").delete(0, 3).deleteCharAt(puzzle.length() - 1)',
+      "reverse()",
+    ],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
     ["Abstract"],
   "Which of the following classification methods use(s) the analogy of natural evolution to build directed-search-based mechanisms to classify data samples?":
@@ -2425,6 +2469,8 @@ quiz = {
     ["Contiguous"],
   "Which of the following files keeps the records ordered by the value of a particular field?":
     ["Sorted"],
+  'Which of the following fill in the blank to print a positive integer?\n\n\nStart of code block\nString[] s1 = { "Camel", "Peacock", "Llama"};\nString[] s2 = { "Camel", "Llama", "Peacock"};\nString[] s3 = { "Camel"};\nString[] s4 = { "Camel", null};\nSystem.out.println(Arrays.______________________);\n\nEnd of code block':
+    ["compare(s1, s2)", "mismatch(s1, s2)", "mismatch(s3, s4)"],
   "Which of the following forms of subquery never returns more than one row?": [
     "Scalar",
   ],
@@ -2710,6 +2756,12 @@ quiz = {
     ["WHERE"],
   "Which of the following reserved words is/are optional in a complete DELETE statement? (Choose all that apply)":
     ["FROM", "WHERE"],
+  'Which of the following return 5 when run independently?\n\n\nStart of code block\nvar string = "12345";\nvar builder = new StringBuilder("12345");\n\nEnd of code block':
+    [
+      "builder.charAt(4)",
+      'builder.replace(2, 4, "6").charAt(3)',
+      'string.replace("123", "1").charAt(2)',
+    ],
   "Which of the following rules must be enforced when the shared/exclusive locking scheme is used?":
     [
       "A transaction must issue the operation read_lock(X) or write_lock(X) before any read_item(X) operation is performed in the transaction.",
@@ -2931,11 +2983,23 @@ quiz = {
     ["Ishikawa diagram", "Pareto chart"],
   "Which of the following would you not find on an information radiator for an agile team?":
     ["Gantt chart"],
+  "Which of these array declarations are not legal?": [
+    "String beans[] = new beans[6];",
+    "int[][] java = new int[][];",
+    "int[][] types = new int[];",
+  ],
   "Which of these is an example of a user story?": [
     "As a call center analyst, I want to input customers' first and last names and postal codes so that I can pull up their accounts quickly.",
   ],
   "Which of these is the process of extracting novel patterns and knowledge structures from continuous, rapid data records?":
     ["Data stream mining"],
+  "Which of these statements are true for the two values?\n\n\nStart of code block\n2022-08-28T05:00 GMT-04:00\n2022-08-28T09:00 GMT-06:00\n\nEnd of code block":
+    ["The date/times are six hours apart.", "The first date/time is earlier."],
+  'Which of these statements are true?\n\n\nStart of code block\nvar letters = new StringBuilder("abcdefg");\n\nEnd of code block':
+    [
+      "letters.substring(1, 2) returns a single-character String.",
+      "letters.substring(6, 5) throws an exception.",
+    ],
   "Which one of the following is a DML statement?": ["UPDATE"],
   "Which operation is used for inserting new data or new versions of existing data items?":
     ["Put"],
