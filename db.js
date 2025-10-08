@@ -1294,6 +1294,8 @@ quiz = {
     ["Newer/established"],
   "Structured data is usually organized into records with simple data values that include __________, __________, and __________ variables.":
     ["categorical", "continuous", "ordinal"],
+  "Suppose you need to display a collection of products for sale, which may contain duplicates. Additionally, you have a collection of sales that you need to track, sorted by the natural order of the sale ID, and you need to retrieve the text of each. Which of the following from the java.util package best suit your needs for this scenario?":
+    ["ArrayList", "TreeMap"],
   "TRUNCATE TABLE:": [
     "Is a valid set of keywords to be used within a DDL statement",
   ],
@@ -1842,6 +1844,8 @@ quiz = {
       "Inconsistent and incomplete information",
       "Privacy and confidentiality",
     ],
+  "What code change is needed to make the method compile, assuming there is no class named T?\n\n\nStart of code block\npublic static T identity(T t) {\n   return t;\n}\n\nEnd of code block":
+    ["Add <T> after the static keyword."],
   "What does the categorical data contain?": ["Nominal data"],
   "What is a System for Value Delivery?": [
     "A collection of strategic business activities aimed at building, sustaining, and/or advancing an organization",
@@ -1912,6 +1916,27 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  'What is the result of the following code?\n\n\nCopy \nStart of code block\npublic record Hello<T>(T t) {\n   public Hello(T t) { this.t = t; }\n   private <T> void println(T message) {\n      System.out.print(t + "-" + message);\n   }\n   public static void main(String[] args) {\n      new Hello<String>("hi").println(1);\n      new Hello("hola").println(true);\n\n\n } }\n\nEnd of code block':
+    ["hi-1hola-true"],
+  "What is the result of the following code?\n\n\nStart of code block\nComparator<Integer> c1 = (o1, o2) -> o2 - o1;\nComparator<Integer> c2 = Comparator.naturalOrder();\nComparator<Integer> c3 = Comparator.reverseOrder();\n\nvar list = Arrays.asList(5, 4, 7, 2);\nCollections.sort(list,_________);\nCollections.reverse(list);\nCollections.reverse(list);\nSystem.out.println(Collections.binarySearch(list, 2));\n\nEnd of code block":
+    [
+      "One or more of the comparators can fill in the blank so that the code prints 0.",
+    ],
+  'What is the result of the following code?\n\n\nStart of code block\nMap m = new HashMap();\nm.put(123, "456");\nm.put("abc", "def");\nSystem.out.println(m.contains("123"));\n\nEnd of code block':
+    ["Compiler error on line 4"],
+  "What is the result of the following code?\n\n\nStart of code block\nvar map = Map.of(1,2, 3, 6);\nvar list = List.copyOf(map.entrySet());\n\nList<Integer> one = List.of(8, 16, 2);\nvar copy = List.copyOf(one);\nvar copyOfCopy = List.copyOf(copy);\nvar thirdCopy = new ArrayList<>(copyOfCopy);\n\nlist.replaceAll(x -> x * 2);\none.replaceAll(x -> x * 2);\nthirdCopy.replaceAll(x -> x * 2);\n\nSystem.out.println(thirdCopy);\n\nEnd of code block":
+    [
+      "If any lines with compiler errors are removed, the code throws an exception at runtime.",
+      "One line fails to compile.",
+    ],
+  "What is the result of the following code?\n\n\nStart of code block\nvar map = new HashMap<Integer, Integer>();\nmap.put(1, 10);\nmap.put(2, 20);\nmap.put(3, null);\nmap.merge(1, 3, (a,b) -> a + b);\nmap.merge(3, 3, (a,b) -> a + b);\nSystem.out.println(map);\n\nEnd of code block":
+    ["{1=13, 2=20, 3=3}"],
+  'What is the result of the following program?\n\n\nStart of code block\npublic class MyComparator implements Comparator<String> {\n   public int compare(String a, String b) {\n      return b.toLowerCase().compareTo(a.toLowerCase());\n   }\n   public static void main(String[] args) {\n      String[] values = { "123", "Abb", "aab" };\n      Arrays.sort(values, new MyComparator());\n     for (var s: values)\n        System.out.print(s + " ");\n  }\n}\n\nEnd of code block':
+    ["Abb aab 123"],
+  'What is the result of the following program?\n\n\nStart of code block\npublic record Sorted(int num, String text)\n   implements Comparable<Sorted>, Comparator<Sorted> {\n\n   public String toString() { return "" + num; }\n   public int compareTo(Sorted s) {\n      return text.compareTo(s.text);\n   }\n  public int compare(Sorted s1, Sorted s2) {\n     return s1.num - s2.num;\n  }\n  public static void main(String[] args) {\n     var s1 = new Sorted(88, "a");\n     var s2 = new Sorted(55, "b");\n     var t1 = new TreeSet<Sorted>();\n     t1.add(s1); t1.add(s2);\n     var t2 = new TreeSet<Sorted>(s1);\n     t2.add(s1); t2.add(s2);\n     System.out.println(t1 + " " + t2);\n  } }\n\nEnd of code block':
+    ["[88, 55] [55, 88]"],
+  'What is the result of the following statements?\n\n\nStart of code block\nvar greetings = new ArrayDeque<String>();\ngreetings.offerLast("hello");\ngreetings.offerLast("hi");\ngreetings.offerFirst("ola");\ngreetings.pop();\ngreetings.peek();\nwhile (greetings.peek() != null)\n  System.out.print(greetings.pop());\n\nEnd of code block':
+    ["hellohi"],
   "What kinds of patterns can data mining discover?": [
     "Association",
     "Classification",
@@ -2300,6 +2325,11 @@ quiz = {
   "Which of the following are the most commonly used normalization methods?": [
     "Log, binary, and inverse document frequencies",
   ],
+  'Which of the following are true?\n\n\nStart of code block\nList<?> q = List.of("mouse", "parrot");\nvar v = List.of("mouse", "parrot");\n\nq.removeIf(String::isEmpty);\nq.removeIf(s -> s.length() == 4);\nv.removeIf(String::isEmpty);\nv.removeIf(s -> s.length() == 4);\n\nEnd of code block':
+    [
+      "Exactly two of these lines contain a compiler error.",
+      "If any lines with compiler errors are removed, this code throws an exception.",
+    ],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
   "Which of the following are types of subqueries? (select all that apply)": [
@@ -2349,6 +2379,11 @@ quiz = {
   ],
   "Which of the following can be used to remove data from a table? (Choose two.)":
     ["DELETE", "UPDATE"],
+  'Which of the following can fill in the blank to print [7, 5, 3]?\n\n\nStart of code block\npublic record Platypus(String name, int beakLength) {\n   @Override public String toString() {return "" + beakLength;}\n\n  public static void main(String[] args) {\n     Platypus p1 = new Platypus("Paula", 3);\n     Platypus p2 = new Platypus("Peter", 5);\n     Platypus p3 = new Platypus("Peter", 7);\n\n     List<Platypus> list = Arrays.asList(p1, p2, p3);\n\n     Collections.sort(list, Comparator.comparing______);\n\n     System.out.println(list);\n  }\n}\n\nEnd of code block':
+    [
+      "Start of code block\n(Platypus::beakLength).reversed()\nEnd of code block",
+      "Start of code block\n(Platypus::name).thenComparingInt(Platypus::beakLength).reversed()\nEnd of code block",
+    ],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
     ["Abstract"],
   "Which of the following classification methods use(s) the analogy of natural evolution to build directed-search-based mechanisms to classify data samples?":
@@ -2615,11 +2650,18 @@ quiz = {
   "Which of the following languages is a platform-independent and programming language-independent protocol for messaging and remote procedure calls?":
     ["SOAP"],
   "Which of the following languages specifies the internal schema?": ["SDL"],
+  "Which of the following lines can be inserted to make the code compile?\n\n\nStart of code block\nclass W {}\nclass X extends W {}\nclass Y extends X {}\nclass Z<Y> {\n   // INSERT CODE HERE\n}\n\nEnd of code block":
+    ["W w1 = new W();", "W w2 = new X();"],
   "Which of the following locks is too restrictive for database concurrency control purposes?":
     ["Binary"],
   "Which of the following locks is used to lock the entire database?": [
     "Global",
   ],
+  "Which of the following method signatures are valid overrides of the hairy() method in the Alpaca class?\n\n\nStart of code block\nimport java.util.*;\n\npublic class Alpaca {\n   public List<String> hairy(List<String> list) { return null; }\n}\n\nEnd of code block":
+    [
+      "Start of code block\npublic ArrayList<String> hairy(List<String> list) { return null; }\nEnd of code block",
+      "Start of code block\npublic List<String> hairy(ArrayList<String> list) { return null; }\nEnd of code block",
+    ],
   "Which of the following methods are used for collision resolution?": [
     "Chaining",
     "Multiple hashing",
@@ -2767,6 +2809,11 @@ quiz = {
       "A multitable insert statement can conditionally insert data into multiple tables.",
       "A multitable insert statement can replace and perform better than PL/SQL routines.",
     ],
+  "Which of the following statements are true?": [
+    "Comparator is in the java.util package.",
+    "compare() is in the Comparator interface.",
+    "compare() takes two method parameters.",
+  ],
   "Which of the following statements are true? (Choose two.)": [
     "A correlated subquery can also be a single-row subquery.",
     "A single-row subquery can also be a multiple-column subquery.",
@@ -2891,6 +2938,8 @@ quiz = {
   ],
   "Which of the following violations will occur when a transaction may read a set of rows from a table, based on some condition specified in the SQL WHERE-clause?":
     ["Phantom"],
+  "Which of the following will compile when filling in the blank?\n\n\nStart of code block\nvar list = List.of(1, 2, 3);\nvar set = Set.of(1, 2, 3);\nvar map = Map.of(1, 2, 3, 4);\n\n_______.forEach(System.out::println);\n\nEnd of code block":
+    ["list", "map.keySet()", "map.values()", "set"],
   "Which of the following will correctly format the output of the data column HIRE_DATE column to look like the following in the output: 01/01/2017 14:00:00?":
     ["select to_char(hire_date, 'mm/dd/yyyy hh24:mi:ss') from emp;"],
   "Which of the following will insert rows in the employee table into the employee_history table with a term_date less than or equal to today's date minus 365 days?":
@@ -2936,6 +2985,15 @@ quiz = {
   ],
   "Which of these is the process of extracting novel patterns and knowledge structures from continuous, rapid data records?":
     ["Data stream mining"],
+  "Which of these statements can fill in the blank so that the Wildcard class compiles successfully?\n\n\nStart of code block\npublic class Wildcard {\n   public void showSize(List<?> list) {\n      System.out.println(list.size());\n   }\n   public static void main(String[] args) {\n      Wildcard card = new Wildcard();\n      ____________________________________;\n     card.showSize(list);\n  } }\n\nEnd of code block":
+    [
+      "ArrayList <? extends Number> list = new ArrayList <Integer>()",
+      "ArrayList<? super Date> list = new ArrayList<Date>()",
+    ],
+  "Which of these statements compile?": [
+    "HashSet<? super ClassCastException> set = new HashSet<Exception>();",
+    "Map<String, ? extends Number> hm = new HashMap<String, Integer>();",
+  ],
   "Which one of the following is a DML statement?": ["UPDATE"],
   "Which operation is used for inserting new data or new versions of existing data items?":
     ["Put"],
@@ -2952,6 +3010,11 @@ quiz = {
   "Which option contains valid deliverable variables that should be considered when selecting a development approach?":
     [
       "Requirements certainty, ease of change, safety and regulatory requirements",
+    ],
+  "Which options are true of the following code?\n\n\nStart of code block\n______________  q = new LinkedList<>();\nq.add(10);\nq.add(12);\nq.remove(1);\nSystem.out.print(q);\n\nEnd of code block":
+    [
+      "If we fill in the blank with List<Integer>, the output is [10].",
+      "If we fill in the blank with var, the output is [10].",
     ],
   "Which partitioning corresponds to distributing the tuples across disks based on some partitioning method?":
     ["Horizontal"],
