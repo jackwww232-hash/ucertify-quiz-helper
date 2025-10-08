@@ -569,6 +569,8 @@ quiz = {
     [
       "The project manager is focused on the overall project performance. The Scrum master is focused on guiding the core team through the Scrum process. The product owner is focused on the product being delivered.",
     ],
+  'How many lines of the following program contain a compilation error?\n\n\nStart of code block\npublic class Rodent {\n   public Rodent(Integer x) {}\n   protected static Integer chew() throws Exception {\n      System.out.println("Rodent is chewing");\n      return 1;\n   }\n}\nclass Beaver extends Rodent {\n   public Number chew() throws RuntimeException {\n     System.out.println("Beaver is chewing on wood");\n     return 2;\n  } }\n\nEnd of code block':
+    ["2"],
   "How many sequential steps exist in the CRISP-DM methodology?": ["Six"],
   "How many tables can be joined in a query?": ["One, two, three, or more"],
   "How would you best classify the cost of raw materials on a project?": [
@@ -1843,6 +1845,8 @@ quiz = {
       "Privacy and confidentiality",
     ],
   "What does the categorical data contain?": ["Nominal data"],
+  'What does the following program print?\n\n\nStart of code block\nclass Person {\n   static String name;\n   void setName(String q) { name = q; } }\npublic class Child extends Person {\n   static String name;\n   void setName(String w) { name = w; }\n   public static void main(String[] p) {\n      final Child m = new Child();\n      final Person t = m;\n     m.name = "Elysia";\n     t.name = "Sophia";\n     m.setName("Webby");\n     t.setName("Olivia");\n     System.out.println(m.name + " " + t.name);\n  } }\n\nEnd of code block':
+    ["Olivia Sophia"],
   "What is a System for Value Delivery?": [
     "A collection of strategic business activities aimed at building, sustaining, and/or advancing an organization",
   ],
@@ -1861,6 +1865,8 @@ quiz = {
   "What is one of the purposes of DDL? (Choose the best answer.)": [
     "Issue privileges to users",
   ],
+  'What is printed by the following program?\n\n\nStart of code block\nclass Antelope {\n   public Antelope(int p) {\n      System.out.print("4");\n   }\n   { System.out.print("2"); }\n   static { System.out.print("1"); }\n}\npublic class Gazelle extends Antelope {\n   public Gazelle(int p) {\n     super(6);\n     System.out.print("3");\n  }\n  public static void main(String hopping[]) {\n     new Gazelle(0);\n  }\n  static { System.out.print("8"); }\n  { System.out.print("9"); }\n}\n\nEnd of code block':
+    ["182493"],
   "What is project management per PMI?": [
     "The application of knowledge, skills, tools, and techniques to project activities to meet project requirements",
   ],
@@ -1900,6 +1906,16 @@ quiz = {
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
+  'What is the output of the following code?\n\n\nCopy \nStart of code block\nclass Reptile {\n{System.out.print("A");}\npublic Reptile(int hatch) {}\nvoid layEggs() {\n    System.out.print("Reptile");\n} }\npublic class Lizard extends Reptile {\nstatic {System.out.print("B");}\npublic Lizard(int hatch) {}\npublic final void layEggs() {\n   System.out.print("Lizard");\n}\npublic static void main(String[] args) {\n   var reptile = new Lizard(1);\n   reptile.layEggs();\n} }\n\nEnd of code block':
+    ["None of these"],
+  'What is the output of the following code?\n\n\nStart of code block\nclass Arthropod {\n   protected void printName(long input) {\n      System.out.print("Arthropod");\n   }\n   void printName(int input) {\n      System.out.print("Spooky");\n   } }\npublic class Spider extends Arthropod {\n   protected void printName(int input) {\n     System.out.print("Spider");\n  }\n  public static void main(String[] args) {\n     Arthropod a = new Spider();\n     a.printName((short)4);\n     a.printName(4);\n     a.printName(5L);\n  } }\n\nEnd of code block':
+    ["SpiderSpiderArthropod"],
+  'What is the output of the following code?\n\n\nStart of code block\npublic abstract class Whale {\n   public abstract void dive();\n   public static void main(String[] args) {\n      Whale whale = new Orca();\n      whale.dive(3);\n   }\n}\nclass Orca extends Whale {\n  static public int MAX = 3;\n  public void dive() {\n     System.out.println("Orca diving");\n  }\n  public void dive(int… depth) {\n     System.out.println("Orca diving deeper "+MAX);\n} }\n\nEnd of code block':
+    ["The code will not compile because of line 8."],
+  'What is the output of the following program?\n\n\nStart of code block\nclass Canine {\n   public Canine(boolean t) { logger.append("a"); }\n   public Canine() { logger.append("q"); }\n\n   private StringBuilder logger = new StringBuilder();\n   protected void print(String v) { logger.append(v); }\n   protected String view() { return logger.toString(); }\n}\n\nclass Fox extends Canine {\n  public Fox(long x) { print("p"); }\n  public Fox(String name) {\n     this(2);\n     print("z");\n  }\n}\n\npublic class Fennec extends Fox {\n  public Fennec(int e) {\n     super("tails");\n     print("j");\n  }\n  public Fennec(short f) {\n     super("eevee");\n     print("m");\n  }\n\n  public static void main(String… unused) {\n     System.out.println(new Fennec(1).view());\n  } }\n\nEnd of code block':
+    ["qpzj"],
+  'What is the output of the following program?\n\n\nStart of code block\nclass Mammal {\n   private void sneeze() {}\n   public Mammal(int age) {\n      System.out.print("Mammal");\n   } }\npublic class Platypus extends Mammal {\n   int sneeze() { return 1; }\n   public Platypus() {\n      System.out.print("Platypus");\n  }\n  public static void main(String[] args) {\n     new Mammal(5);\n  } }\n\nEnd of code block':
+    ["The code will compile if line 9 is changed."],
   "What is the primary difference between statistics and data mining?": [
     "Statistics starts with a well-defined proposition and hypothesis, whereas data mining starts with a loosely defined discovery statement.",
   ],
@@ -1912,6 +1928,12 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  'What is the result of the following code?\n\n\nStart of code block\nabstract class Bird {\n   private final void fly() { System.out.println("Bird"); }\n   protected Bird() { System.out.print("Wow-"); }\n}\npublic class Pelican extends Bird {\n   public Pelican() { System.out.print("Oh-"); }\n   protected void fly() { System.out.println("Pelican"); }\n   public static void main(String[] args) {\n      var chirp = new Pelican();\n     chirp.fly();\n} }\n\nEnd of code block':
+    ["Wow-Oh-Pelican"],
+  'What is the result of the following code?\n\n\nStart of code block\npublic class PolarBear {\n   StringBuilder value = new StringBuilder("t");\n   { value.append("a"); }\n   { value.append("c"); }\n   private PolarBear() {\n      value.append("b");\n   }\n   public PolarBear(String s) {\n      this();\n     value.append(s);\n  }\n  public PolarBear(CharSequence p) {\n     value.append(p);\n  }\n  public static void main(String[] args) {\n     Object bear = new PolarBear();\n     bear = new PolarBear("f");\n     System.out.println(((PolarBear)bear).value);\n  } }\n\nEnd of code block':
+    ["tacbf"],
+  'What is the result of the following?\n\n\nStart of code block\nclass Arachnid {\n   static StringBuilder sb = new StringBuilder();\n   { sb.append("c"); }\n   static\n   { sb.append("u"); }\n   { sb.append("r"); }\n}\npublic class Scorpion extends Arachnid {\n   static\n  { sb.append("q"); }\n  { sb.append("m"); }\n  public static void main(String[] args) {\n     System.out.print(Scorpion.sb + " ");\n     System.out.print(Scorpion.sb + " ");\n     new Arachnid();\n     new Scorpion();\n     System.out.print(Scorpion.sb);\n  } }\n\nEnd of code block':
+    ["uq uq uqcrcrm"],
   "What kinds of patterns can data mining discover?": [
     "Association",
     "Classification",
@@ -2081,6 +2103,8 @@ quiz = {
     ["group by clause"],
   "Which clustering method is based on the basic idea that nearby objects are more related to each other than are those that are farther away from each other?":
     ["Hierarchical"],
+  "Which code can be inserted to have the code print 2?\n\n\nStart of code block\npublic class BirdSeed {\n   private int numberBags;\n   boolean call;\n\n   public BirdSeed() {\n      // LINE 1\n      call = false;\n      // LINE 2\n   }\n\n   public BirdSeed(int numberBags) {\n      this.numberBags = numberBags;\n   }\n\n   public static void main(String[] args) {\n      var seed = new BirdSeed();\n      System.out.print(seed.numberBags);\n   } }\n\nEnd of code block":
+    ["Replace line 1 with this(2);."],
   "Which component of the YARN architecture performs the given functions?": [
     "ResourceManager",
   ],
@@ -2126,6 +2150,11 @@ quiz = {
   "Which model is also known as the CODASYL DBTG model?": ["Network model"],
   "Which model represents data as record types and also represents a limited type of 1:N relationship, called a set type?":
     ["Network model"],
+  "Which modifier pairs can be used together in a method declaration?": [
+    "private and final",
+    "private and static",
+    "static and final",
+  ],
   "Which normal form is based on the concepts of multivalued dependencies?": [
     "4NF",
   ],
@@ -2259,6 +2288,10 @@ quiz = {
     "Requirements",
     "Tasks",
   ],
+  "Which of the following are properties of immutable classes?": [
+    "The class must not be able to be extended outside the class declaration.",
+    "The data for mutable instance variables may be read, provided they cannot be modified by the caller.",
+  ],
   "Which of the following are schema objects? (Choose all that apply.)": [
     "INDEX",
     "SEQUENCE",
@@ -2299,6 +2332,14 @@ quiz = {
     ["Neutral", "Unaware"],
   "Which of the following are the most commonly used normalization methods?": [
     "Log, binary, and inverse document frequencies",
+  ],
+  "Which of the following are true about a concrete class?": [
+    "A concrete class can be marked as final.",
+    "A concrete class must implement all inherited abstract methods.",
+  ],
+  "Which of the following are true?": [
+    "You can access a private constructor with the main() method in the same class.",
+    "this.variableName can be called from any instance method in the class.",
   ],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
@@ -2372,6 +2413,8 @@ quiz = {
     [">= ALL", "IN"],
   "Which of the following comparison operators does SQL use to compare an attribute value to NULL?":
     ["IS", "IS NOT"],
+  "Which of the following complete the constructor so that this code prints out 50?\n\n\nStart of code block\nclass Speedster {\n   int numSpots;\n}\npublic class Cheetah extends Speedster {\n   int numSpots;\n\n   public Cheetah(int numSpots) {\n      // INSERT CODE HERE\n   }\n\n   public static void main(String[] args) {\n      Speedster s = new Cheetah(50);\n      System.out.print(s.numSpots);\n   }\n}\n\nEnd of code block":
+    ["super.numSpots = numSpots;"],
   "Which of the following components is a sequence of SQL statements, but it could also be a database transaction or an external program that will be automatically":
     ["Action"],
   "Which of the following concepts prevents ARIES from repeating the completed undo operations if a failure occurs during recovery, which causes a restart of the recovery process?":
@@ -2404,6 +2447,8 @@ quiz = {
     ["USER_TABLES"],
   "Which of the following data models is meant for computer specialists, not for end users?":
     ["Physical"],
+  "Which of the following declare immutable classes?\n\n\nStart of code block\npublic final class Moose {\n   private final int antlers;\n}\n\npublic class Caribou {\n   private int antlers = 10;\n}\n\npublic class Reindeer {\n   private final int antlers = 5;\n}\n\npublic final class Elk {}\n\npublic final class Deer {\n   private final Object o = new Object();\n}\n\nEnd of code block":
+    ["Deer", "Elk"],
   "Which of the following define(s) data?": [
     "Facts, measurements, and statistics",
   ],
@@ -2675,6 +2720,11 @@ quiz = {
     ],
   "Which of the following options works for any constraints on the specialization, i.e., disjoint or overlapping, total or partial?":
     ["Option 1"],
+  "Which of the following pairs, when inserted into the blanks, allow the code to compile?\n\n\nStart of code block\npublic class Howler {\n   public Howler(long shadow) {\n      ____________;\n   }\n   private Howler(int moon) {\n      super();\n   }\n}\nclass Wolf extends Howler {\n  protected Wolf(String stars) {\n     super(2L);\n  }\n  public Wolf() {\n     ____________;\n  }\n}\n\nEnd of code block":
+    [
+      "this((short)1) at line 3,this(null) at line 14",
+      'this(3) at line 3,this("") at line 14',
+    ],
   "Which of the following phases is the final phase of data preprocessing?": [
     "Data reduction",
   ],
@@ -2730,6 +2780,19 @@ quiz = {
   ],
   "Which of the following stakeholders is the highest priority for the project manager?":
     ["Definitive stakeholders"],
+  "Which of the following statements about inheritance are correct?": [
+    "A class can implement any number of interfaces.",
+    "If class C implements interface D, then C is a subtype of D.",
+    "Multiple inheritance is the property of a class to have multiple direct superclasses.",
+  ],
+  "Which of the following statements about methods are true?": [
+    "Hidden methods must have the same signature.",
+    "Overridden methods must have the same signature.",
+  ],
+  "Which of the following statements about overridden methods are true?": [
+    "An overridden method may declare a new exception, provided it is not checked.",
+    "If an inherited method returns void, then the overridden version of the method must return void.",
+  ],
   "Which of the following statements about set operators is true? Choose the best answer.":
     ["You can connect two SELECT statements with one set operator."],
   "Which of the following statements are true about the risk management plan? (Choose two.)":
@@ -2779,6 +2842,8 @@ quiz = {
     ],
   "Which of the following statements best describes the relationship between project life cycle phases and project management proce":
     ["Project management processes can repeat within a project life cycle."],
+  "Which of the following statements can be inserted in the blank so that the code will compile successfully?\n\n\nStart of code block\nabstract class Snake {}\nclass Cobra extends Snake {}\nclass GardenSnake extends Cobra {}\npublic class SnakeHandler {\n   private Snake snakey;\n   public void setSnake(Snake mySnake) { this.snakey = mySnake; }\n   public static void main(String[] args) {\n      new SnakeHandler().setSnake(_________________);\n   }\n}\n\nEnd of code block":
+    ["new Cobra()", "new GardenSnake()", "null"],
   "Which of the following statements completes a transaction?": ["commit"],
   "Which of the following statements defines the possible use cases of a subquery? Select all that apply.":
     [
@@ -2931,6 +2996,11 @@ quiz = {
     ["Ishikawa diagram", "Pareto chart"],
   "Which of the following would you not find on an information radiator for an agile team?":
     ["Gantt chart"],
+  "Which of these classes compile and will include a default constructor created by the compiler?":
+    [
+      "Start of code block\npublic class Bird {   public Bird bird() { return null; }}\nEnd of code block",
+      "Start of code block\npublic class Bird {}\nEnd of code block",
+    ],
   "Which of these is an example of a user story?": [
     "As a call center analyst, I want to input customers' first and last names and postal codes so that I can pull up their accounts quickly.",
   ],
@@ -2979,6 +3049,10 @@ quiz = {
   "Which stage of a distributed database query is performed locally?": [
     "Local query optimization",
   ],
+  "Which statement about the following program is correct?\n\n\nStart of code block\nabstract class Nocturnal {\n   boolean isBlind();\n}\npublic class Owl extends Nocturnal {\n   public boolean isBlind() { return false; }\n   public static void main(String[] args) {\n      var nocturnal = (Nocturnal)new Owl();\n      System.out.println(nocturnal.isBlind());\n} }\n\nEnd of code block":
+    ["The code will not compile because of line 2."],
+  "Which statement about the following program is correct?\n\n\nStart of code block\nclass Bird {\n   int feathers = 0;\n   Bird(int x) { this.feathers = x; }\n   Bird fly() {\n      return new Bird(1);\n   } }\nclass Parrot extends Bird {\n   protected Parrot(int y) { super(y); }\n   protected Parrot fly() {\n     return new Parrot(2);\n  } }\npublic class Macaw extends Parrot {\n  public Macaw(int z) { super(z); }\n  public Macaw fly() {\n     return new Macaw(3);\n  }\n  public static void main(String... sing) {\n     Bird p = new Macaw(4);\n     System.out.print(((Parrot)p.fly()).feathers);\n  } }\n\nEnd of code block":
+    ["The program compiles and prints 3."],
   "Which statement in the SQL standard can be used to invoke a stored procedure—either from an interactive interface or from embedded SQL or SQLJ?":
     ["CALL"],
   "Which statement is used to sort the rows returned by a SQL statement?": [
@@ -2986,6 +3060,11 @@ quiz = {
   ],
   "Which statement would limit the rowset of a sql statement to no more than 5 rows?":
     ["where rownum < 6"],
+  "Which statements about the following classes are correct?\n\n\nStart of code block\npublic class Mammal {\nprivate void eat() {}\nprotected static void drink() {}\npublic Integer dance(String p) { return null; }\n}\nclass Primate extends Mammal {\npublic void eat(String p) {}\n}\nclass Monkey extends Primate {\npublic static void drink() throws RuntimeException {}\npublic Number dance(CharSequence p) { return null; }\npublic int eat(String p) {}\n}\n\nEnd of code block":
+    [
+      "The dance() method in Mammal is correctly overloaded on line 11.",
+      "The drink() method in Mammal is correctly hidden on line 10.",
+    ],
   "Which statements reflect a servant leadership mindset? (Choose all that apply.)":
     [
       "Emphasizes a coaching approach to managing people",
