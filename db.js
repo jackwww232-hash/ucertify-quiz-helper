@@ -1294,6 +1294,31 @@ quiz = {
     ["Newer/established"],
   "Structured data is usually organized into records with simple data values that include __________, __________, and __________ variables.":
     ["categorical", "continuous", "ordinal"],
+  "Suppose conn is a valid connection object and the exhibits table is empty. Which are true?\n\n\nStart of code block\ntry (conn) {\n   conn.setAutoCommit(false);\n\n  String sql = \"INSERT INTO exhibits VALUES(3, 'Test', 2)\";\n   try (PreparedStatement ps = conn.prepareStatement(sql)) {\n      ps.executeUpdate();\n  }\n\n   conn.setAutoCommit(true);   // line W\n}\n\nEnd of code block":
+    [
+      "As written, the table will contain one row after this code.",
+      "When line W is commented out, the table will remain empty after this code.",
+    ],
+  'Suppose learn() is a stored procedure that takes one IN parameter and one OUT parameter. What is wrong with the following code?\n\n\nStart of code block\nvar sql = "{?= call learn(?)}";\ntry (var cs = conn.prepareCall(sql)) {\n   cs.setInt(1, 8);\n   cs.execute();\n   System.out.println(cs.getInt(1));\n}\n\nEnd of code block':
+    ["The parameter is not registered for output."],
+  'Suppose learn() is a stored procedure that takes one IN parameter. What is wrong with the following code?\n\n\nStart of code block\nvar sql = "call learn()";\ntry (var cs = conn.prepareCall(sql)) {\n   cs.setString(1, "java");\n   try (var rs = cs.executeQuery()) {\n      while (rs.next())\n         System.out.println(rs.getString(3));\n   }\n}\n\nEnd of code block':
+    ["Line 1 is missing a ?.", "Line 1 is missing braces."],
+  'Suppose that the table counts has five rows with the numbers 1 to 5. How many lines does this code print?\n\n\nStart of code block\nvar sql = "SELECT num FROM counts WHERE num> ?";\ntry (var ps = conn.prepareStatement(sql)) {\n   ps.setInt(1, 3);\n\n   try (var rs = ps.executeQuery()) {\n      while (rs.next())\n         System.out.println(rs.getObject(1));\n   }\n   try (var rs = ps.executeQuery()) {\n      while (rs.next())\n         System.out.println(rs.getObject(1));\n   }\n}\n\nEnd of code block':
+    ["4"],
+  'Suppose that the table counts has five rows with the numbers 1 to 5. How many lines does this code print?\n\n\nStart of code block\nvar sql = "SELECT num FROM counts WHERE num> ?";\ntry (var ps = conn.prepareStatement(sql,\n   ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)) {\n   ps.setInt(1, 3);\n\n   try (var rs = ps.executeQuery()) {\n   while (rs.next())\n      System.out.println(rs.getObject(1));\n   }\n\n   ps.setInt(1, 100);\n\n    try (var rs = ps.executeQuery()) {\n     while (rs.next())\n        System.out.println(rs.getObject(1));\n     }\n}\n\nEnd of code block':
+    ["2"],
+  'Suppose that the table enrichment has three rows with the animals bat, rat, and snake. How many lines does this code print?\n\n\nStart of code block\nvar sql = "SELECT toy FROM enrichment WHERE animal = ?";\ntry (var ps = conn.prepareStatement(sql)) {\n     try (var rs = ps.executeQuery()) {\n       while (rs.next())\n          System.out.println(rs.getString(1));\n     }\n}\n\nEnd of code block':
+    ["An SQLException is thrown."],
+  'Suppose that the table food has five rows, and this SQL statement updates all of them. What is the result of this code?\n\n\nStart of code block\npublic static void main(String[] args) {\n   var sql = "UPDATE food SET amount = amount + 1";\n   try (var conn = DriverManager.getConnection("jdbc:hsqldb:file:zoo");\n      var ps = conn.prepareStatement(sql)) {\n\n      var result = ps.executeUpdate();\n      System.out.println(result);\n   }\n}\n\nEnd of code block':
+    ["The code does not compile."],
+  'Suppose that the table names has five rows and the following SQL statement updates all of them. What is the result of this code?\n\n\nStart of code block\npublic static void main(String[] args) throws SQLException {\n   var sql = "UPDATE names SET name = \'Animal\'";\n   try (var conn = DriverManager.getConnection("jdbc:hsqldb:file:zoo");\n      var ps = conn.prepareStatement(sql)) {\n\n      var result = ps.executeUpdate();\n      System.out.println(result);\n   }\n}\n\nEnd of code block':
+    ["5"],
+  'Suppose that you have a table named animal with two rows. What is the result of the following code?\n\n\nStart of code block\nvar conn = new Connection(url, userName, password);\nvar ps = conn.prepareStatement(\n   "SELECT  count(*) FROM animal");\nvar rs = ps.executeQuery();\nif (rs.next()) System.out.println(rs.getInt(1));\n\nEnd of code block':
+    ["There is a compiler error on line 6."],
+  'Suppose there are two rows in the table before this code is run, and executeUpdate() runs without error. How many rows are in the table after the code completes?\n\n\nStart of code block\nconn.setAutoCommit(true);\n\nString sql = "INSERT INTO games VALUES(3, Jenga);";\n\ntry (PreparedStatement ps = conn.prepareStatement(sql,\n   ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)) {\n   ps.executeUpdate();\n}\nconn.rollback();\n\nEnd of code block':
+    ["Three"],
+  "Suppose we have a JDBC program that calls a stored procedure, which returns a set of results. Which is the correct order in which to close database resources for this call?":
+    ["ResultSet, CallableStatement, Connection"],
   "TRUNCATE TABLE:": [
     "Is a valid set of keywords to be used within a DDL statement",
   ],
@@ -1620,6 +1645,8 @@ quiz = {
   "The use of a product backlog would be an agile artifact.": ["True"],
   "The use of shared task boards, videoconferencing, lessons learned repositories, and chat functions all increase collaboration.":
     ["True"],
+  'There are currently 100 rows in the table species before inserting a new row. What is the output of the following code?\n\n\nStart of code block\nString insert = "INSERT INTO species VALUES (3, \'Ant\', .05)";\nString select = "SELECT count(*) FROM species";\ntry (var ps = conn.prepareStatement(insert)) {\n   ps.executeUpdate();\n}\ntry (var ps = conn.prepareStatement(select)) {\n   var rs = ps.executeQuery();\n   System.out.println(rs.getInt(1));\n}\n\nEnd of code block':
+    ["A SQLException is thrown."],
   "There are different factors causing a particular issue, and you want to find the root cause. You look at a chart that lists all":
     ["Statistical sampling"],
   "There are many potential places for risk to pop up. The team needs to be mindful throughout the entire project that new risks ma":
@@ -2073,6 +2100,8 @@ quiz = {
     ["Lifetime"],
   "Which autonomy implies that component DBS has the ability to decide whether and how much to share its functionality and resources with other":
     ["Association"],
+  "Which can fill in the blank and have the code run without error?\n\n\nStart of code block\nconn.setAutoCommit(false);\n\nvar larry = conn.setSavepoint();\nvar curly = conn.setSavepoint();\nvar moe = conn.setSavepoint();\nvar shemp = conn.setSavepoint();\n\n_______________________________;\n\nconn.rollback(curly);\n\nEnd of code block":
+    ["conn.rollback(moe)", "conn.rollback(shemp)"],
   "Which classification approach use(s) historical samples to identify commonalities in order to assign a new sample to the most similar category?":
     ["Case-based reasoning"],
   "Which classification method use(s) conditional probabilities to build classification models?":
@@ -2111,9 +2140,15 @@ quiz = {
     ["Code injection"],
   "Which intention lock indicates that one or more exclusive locks will be requested on some descendant nodes?":
     ["IX"],
+  "Which interfaces or classes are in a database-specific JAR file?": [
+    "Driver's implementation",
+    "PreparedStatement implementation",
+  ],
   "Which is the best way to meet stakeholders' expectations?": [
     "Keep stakeholders regularly informed throughout the project.",
   ],
+  'Which is the first line containing a compiler error?\n\n\nStart of code block\nString url = "jdbc:hsqldb:file:zoo";\ntry (var conn = DriverManager.getConnection(url);\n   var ps = conn.prepareStatement();\n   var rs = ps.executeQuery("SELECT * FROM swings")) {\n   while (rs.next()) {\n      System.out.println(rs.getInteger(1));\n   }\n}\n\nEnd of code block':
+    ["Line 3"],
   "Which is the process of classifying a class of objects into more specialized subclasses?":
     ["Specialization"],
   'Which lines need to be changed to make the code compile?\n\n\nStart of code block\nExecutorService service =   // w1\n   Executors.newSingleThreadScheduledExecutor();\nservice.scheduleWithFixedDelay(() -> {\n   System.out.println("Open Zoo");\n   return null;   // w2\n}, 0, 1, TimeUnit.MINUTES);\nvar result = service.submit(() ->   // w3\n   System.out.println("Wake Staff"));\nSystem.out.println(result.get());   // w4\n\nEnd of code block':
@@ -2349,6 +2384,10 @@ quiz = {
   ],
   "Which of the following can be used to remove data from a table? (Choose two.)":
     ["DELETE", "UPDATE"],
+  "Which of the following can fill in the blank correctly?\n\n\nStart of code block\nvar rs = ps.executeQuery();\nif (rs.next())\n   _________________________________;\n\nEnd of code block":
+    ["Object s = rs.getObject(1)", "String s = rs.getString(1)"],
+  'Which of the following can fill in the blank?\n\n\nCopy \nStart of code block\nvar sql = "______________________";\ntry (var ps = conn.prepareStatement(sql)) {\n   ps.setObject(3, "red");\n   ps.setInt(2, 8);\n   ps.setString(1, "ball");\n   ps.executeUpdate();\n}\n\nEnd of code block':
+    ["INSERT INTO toys VALUES (?, ?, ?)"],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
     ["Abstract"],
   "Which of the following classification methods use(s) the analogy of natural evolution to build directed-search-based mechanisms to classify data samples?":
@@ -2475,6 +2514,9 @@ quiz = {
   ],
   "Which of the following is a type of linear least squares method for estimating the unknown parameters in a linear regression model?":
     ["OLS"],
+  "Which of the following is a valid JDBC URL?": [
+    "jdbc:sybase:localhost:1234/db",
+  ],
   "Which of the following is a valid create table command?": [
     "Create table my_table(table_number number);",
   ],
@@ -2663,6 +2705,8 @@ quiz = {
     ],
   "Which of the following options can be used with the reserved word CREATE to form the beginning of a complete SQL statement? (Choose three.)":
     ["SEQUENCE", "TABLE", "VIEW"],
+  'Which of the following options can fill in the blank to make the code compile and run without error?\n\n\nStart of code block\nvar sql = "UPDATE habitat WHERE environment = ?";\ntry (var ps = conn.prepareCall(sql)) {\n\n   ___________\n\n   ps.executeUpdate();\n}\n\nEnd of code block':
+    ["The code throws an exception at runtime."],
   "Which of the following options describe a project life cycle? (Choose two.)":
     [
       "Define, iteration 1, iteration 2, iteration 3, iteration N, deployment, close",
@@ -2931,6 +2975,11 @@ quiz = {
     ["Ishikawa diagram", "Pareto chart"],
   "Which of the following would you not find on an information radiator for an agile team?":
     ["Gantt chart"],
+  'Which of the options can fill in the blank to make the code compile and run without error?\n\n\nStart of code block\nvar sql = """\n   UPDATE habitat SET environment = null\n   WHERE environment = ? """;\ntry (var ps = conn.prepareStatement(sql)) {\n\n   ______________\n\n   ps.executeUpdate();\n}\n\nEnd of code block':
+    [
+      'ps.setString(1, "snow");',
+      'ps.setString(1, "snow"); ps.setString(1, "snow");',
+    ],
   "Which of these is an example of a user story?": [
     "As a call center analyst, I want to input customers' first and last names and postal codes so that I can pull up their accounts quickly.",
   ],
@@ -2949,6 +2998,8 @@ quiz = {
     [
       "Iterative and incremental development approaches, constant feedback loops, changes are expected",
     ],
+  "Which option can fill in the blanks to make the code compile?\n\n\nStart of code block\nboolean bool = ps._________________();\nint num = ps._________________();\nResultSet rs = ps._________________();\n\nEnd of code block":
+    ["execute, executeUpdate, executeQuery"],
   "Which option contains valid deliverable variables that should be considered when selecting a development approach?":
     [
       "Requirements certainty, ease of change, safety and regulatory requirements",
