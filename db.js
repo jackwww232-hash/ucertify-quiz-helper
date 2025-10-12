@@ -538,11 +538,15 @@ quiz = {
     ["Spike"],
   "From the following table, which stakeholder will be the project manager's highest priority stakeholder to reach out to?":
     ["Stakeholder A"],
+  'Given the following class definitions, which lines in the main() method generate a compiler error?\n\n\nStart of code block\n// Classroom.java\npackage my.school;\npublic class Classroom {\n   private int roomNumber;\n   protected static String teacherName;\n   static int globalKey = 54321;\n   public static int floor = 3;\n   Classroom(int r, String t) {\n      roomNumber = r;\n      teacherName = t; } }\n\n// School.java\npackage my.city;\nimport my.school.*;\npublic class School {\n    public static void main(String[] args) {\n       System.out.println(Classroom.globalKey);\n       Classroom room = new Classroom(101, "Mrs. Anderson");\n       System.out.println(room.roomNumber);\n       System.out.println(Classroom.floor);\n       System.out.println(Classroom.teacherName); } }\n\nEnd of code block':
+    ["Line 5", "Line 6", "Line 7", "Line 8"],
   "Given the following code snippet and blank lines on p1 and p2, which values guarantee that 1 is printed at runtime?\n\n\nStart of code block\nvar data = List.of(List.of(1,2),\n   List.of(3,4),\n   List.of(5,6));\ndata.___________    // p1\n   .flatMap(s -> s.stream())\n   .____________    // p2\n   .ifPresent(System.out::print);\n\nEnd of code block":
     [
       "parallelStream() on line p1, findFirst() on line p2",
       "stream() on line p1, findFirst() on line p2",
     ],
+  "Given the following method, which of the method calls returns 2?\n\n\nStart of code block\npublic int juggle(boolean b, boolean… b2) {\n   return b2.length;\n}\n\nEnd of code block":
+    ["juggle(true, new boolean[2]);", "juggle(true, true, true);"],
   "Global projects now require resources that did not meet the expectations of project managers years ago. They require more flexib":
     ["Caves and commons"],
   "Governance of a project needs to be kept as private as possible to avoid information escaping the organization.":
@@ -569,8 +573,12 @@ quiz = {
     [
       "The project manager is focused on the overall project performance. The Scrum master is focused on guiding the core team through the Scrum process. The product owner is focused on the product being delivered.",
     ],
+  'How many lines in the following code have compiler errors?\n\n\nCopy \nStart of code block\npublic class RopeSwing {\n     private static final String leftRope;\n     private static final String rightRope;\n     private static final String bench;\n     private static final String name = "name";\n     static {\n        leftRope = "left";\n        rightRope = "right";\n     }\n    static {\n       name = "name";\n       rightRope = "right";\n    }\n    public static void main(String[] args) {\n       bench = "bench";\n    }\n}\n\nEnd of code block':
+    ["4"],
   "How many sequential steps exist in the CRISP-DM methodology?": ["Six"],
   "How many tables can be joined in a query?": ["One, two, three, or more"],
+  'How many variables in the following method are effectively final?\n\n\nStart of code block\npublic void feed() {\n   int monkey = 0;\n   if(monkey > 0) {\n      var giraffe = monkey++;\n      String name;\n      name = "geoffrey";\n   }\n   String name = "milly";\n   var food = 10;\n   while(monkey <= 10) {\n      food = 0;\n   }\n   name = null;\n}\n\nEnd of code block':
+    ["2"],
   "How would you best classify the cost of raw materials on a project?": [
     "Direct",
   ],
@@ -1900,6 +1908,10 @@ quiz = {
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
+  'What is the output of executing the Chimp program?\n\n\nStart of code block\n// Rope.java\npackage rope;\npublic class Rope {\n    public static int LENGTH = 5;\n    static {\n       LENGTH = 10;\n    }\n    public static void swing() {\n       System.out.print("swing ");\n    } }\n\n// Chimp.java\nimport rope.*;\nimport static rope.Rope.*;\npublic class Chimp {\n    public static void main(String[] args) {\n       Rope.swing();\n       new Rope().swing();\n       System.out.println(LENGTH);\n    } }\nEnd of code block':
+    ["swing swing 10"],
+  "What is the output of the following code?\n\n\nStart of code block\n// RopeSwing.java\nimport rope.*;\nimport static rope.Rope.*;\npublic class RopeSwing {\n   private static Rope rope1 = new Rope();\n   private static Rope rope2 = new Rope();\n   {\n      System.out.println(rope1.length);\n   }\n   public static void main(String[] args) {\n      rope1.length = 2;\n      rope2.length = 8;\n      System.out.println(rope1.length);\n   }\n}\n// Rope.java\npackage rope;\npublic class Rope {\n   public static int length = 0;\n}\n\nEnd of code block":
+    ["8"],
   "What is the primary difference between statistics and data mining?": [
     "Statistics starts with a well-defined proposition and hypothesis, whereas data mining starts with a loosely defined discovery statement.",
   ],
@@ -1912,6 +1924,10 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  "What is the result of the following program?\n\n\nStart of code block\npublic class Squares {\n   public static long square(int x) {\n      var y = x * (long) x;\n      x = -1;\n      return y;\n   }\n   public static void main(String[] args) {\n      var value = 9;\n      var result = square(value);\n     System.out.println(value);\n  } }\n\nEnd of code block":
+    ["9"],
+  'What is the result of the following statements?\n\n\nStart of code block\npublic class Test {\n     public void print(byte x) {\n        System.out.print("byte-");\n     }\n     public void print(int x) {\n        System.out.print("int-");\n     }\n     public void print(float x) {\n        System.out.print("float-");\n    }\n    public void print(Object x) {\n       System.out.print("Object-");\n    }\n    public static void main(String[] args) {\n       Test t = new Test();\n       short s = 123;\n       t.print(s);\n       t.print(true);\n       t.print(6.789);\n    }\n}\n\nEnd of code block':
+    ["int-Object-Object-"],
   "What kinds of patterns can data mining discover?": [
     "Association",
     "Classification",
@@ -2121,6 +2137,8 @@ quiz = {
   "Which list best describes an agile development approach?": [
     "Collaboration, expects change, deliver working product frequently, self-organizing teams",
   ],
+  "Which method signatures are valid overloads of the following method signature?\n\n\nStart of code block\npublic void moo(int m, int… n)\n\nEnd of code block":
+    ["private void moo(int… x)", "public int moo(char ch)"],
   "Which method takes into account the partial membership of class labels to predefined categories while building models for classification problems?":
     ["Rough sets"],
   "Which model is also known as the CODASYL DBTG model?": ["Network model"],
@@ -2259,6 +2277,8 @@ quiz = {
     "Requirements",
     "Tasks",
   ],
+  'Which of the following are output(s) of the following code?\n\n\nStart of code block\npublic class StringBuilders {\n   public static StringBuilder work(StringBuilder a,\n      StringBuilder b) {\n      a = new StringBuilder("a");\n      b.append("b");\n      return a;\n   }\n   public static void main(String[] args) {\n      var s1 = new StringBuilder("s1");\n      var s2 = new StringBuilder("s2");\n      var s3 = work(s1, s2);\n      System.out.println("s1 = " + s1);\n      System.out.println("s2 = " + s2);\n      System.out.println("s3 = " + s3);\n   }\n}\n\nEnd of code block':
+    ["s1 = s1", "s2 = s2b", "s3 = a"],
   "Which of the following are schema objects? (Choose all that apply.)": [
     "INDEX",
     "SEQUENCE",
@@ -2300,6 +2320,11 @@ quiz = {
   "Which of the following are the most commonly used normalization methods?": [
     "Log, binary, and inverse document frequencies",
   ],
+  'Which of the following are true about the following code?\n\n\nStart of code block\npublic class Run {\n   static void execute() {\n      System.out.print("1-");\n   }\n   static void execute(int num) {\n      System.out.print("2-");\n   }\n   static void execute(Integer num) {\n      System.out.print("3-");\n   }\n   static void execute(Object num) {\n      System.out.print("4-");\n   }\n   static void execute(int… nums) {\n      System.out.print("5-");\n   }\n   public static void main(String[] args) {\n      Run.execute(100);\n      Run.execute(100L);\n   }\n}\n\nEnd of code block':
+    [
+      "The code prints 3-4- if you remove the method static void execute(int num).",
+      "The code prints out 2-4-.",
+    ],
   "Which of the following are types of key performance indicators (KPIs)? (Choose two.)":
     ["Lagging indicators", "Leading indicators"],
   "Which of the following are types of subqueries? (select all that apply)": [
@@ -2349,6 +2374,12 @@ quiz = {
   ],
   "Which of the following can be used to remove data from a table? (Choose two.)":
     ["DELETE", "UPDATE"],
+  "Which of the following can fill in the blank and allow the code to compile?\n\n\nStart of code block\nfinal _______ song = 6;\n\nEnd of code block":
+    ["Integer", "double", "int", "long"],
+  "Which of the following can fill in the blank in this code to make it compile?\n\n\nStart of code block\npublic class Ant {\n  _______ void method() {}\n}\n\nEnd of code block":
+    ["final", "private"],
+  "Which of the following can replace line 2 to make this code compile?\n\n\nStart of code block\nimport java.util.*;\n// INSERT CODE HERE\npublic class Imports {\n   public void method(ArrayList<String> list) {\n      sort(list);\n   }\n}\n\nEnd of code block":
+    ["import static java.util.Collections.*;"],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
     ["Abstract"],
   "Which of the following classification methods use(s) the analogy of natural evolution to build directed-search-based mechanisms to classify data samples?":
@@ -2625,6 +2656,11 @@ quiz = {
     "Multiple hashing",
     "Open addressing",
   ],
+  "Which of the following methods compile?": [
+    "public void oboe(String[] values, int[] nums) {}",
+    "public void viola(String values, int… nums) {}",
+    "public void violin(int… nums) {}",
+  ],
   "Which of the following methods ends the iteration after all tuples that can be generated have been generated?":
     ["Close()"],
   "Which of the following metrics shows that the project is on budget and on schedule?":
@@ -2787,6 +2823,9 @@ quiz = {
     ],
   "Which of the following statements is a DML statement? (select all that apply)":
     ["delete from emp where em_id=5;", "insert into emp values (1,'Freeman');"],
+  "Which of the following statements is correct?": [
+    "You can use access modifiers to allow access to all methods and not any instance variables.",
+  ],
   "Which of the following statements is false?": [
     "It is possible to merge into two or more tables.",
   ],
@@ -2891,6 +2930,12 @@ quiz = {
   ],
   "Which of the following violations will occur when a transaction may read a set of rows from a table, based on some condition specified in the SQL WHERE-clause?":
     ["Phantom"],
+  'Which of the following will compile when independently inserted in the following code?\n\n\nStart of code block\npublic class Order3 {\n   final String value1 = "red";\n   static String value2 = "blue";\n   String value3 = "yellow";\n   {\n      // CODE SNIPPET 1\n   }\n   static {\n      // CODE SNIPPET 2\n  } }\n\nEnd of code block':
+    [
+      'Insert at line 6: value2 = "purple";',
+      'Insert at line 6: value3 = "orange";',
+      'Insert at line 9: value2 = "cyan";',
+    ],
   "Which of the following will correctly format the output of the data column HIRE_DATE column to look like the following in the output: 01/01/2017 14:00:00?":
     ["select to_char(hire_date, 'mm/dd/yyyy hh24:mi:ss') from emp;"],
   "Which of the following will insert rows in the employee table into the employee_history table with a term_date less than or equal to today's date minus 365 days?":
@@ -2986,6 +3031,15 @@ quiz = {
   ],
   "Which statement would limit the rowset of a sql statement to no more than 5 rows?":
     ["where rownum < 6"],
+  "Which statements about the final modifier are correct?": [
+    "A primitive that is marked final cannot be modified.",
+    "Instance and static variables can be marked final.",
+  ],
+  'Which statements are true of the following code?\n\n\nStart of code block\npublic class Rope {\n     public static void swing() {\n        System.out.print("swing");\n     }\n     public void climb() {\n        System.out.println("climb");\n     }\n     public static void play() {\n       swing();\n       climb();\n    }\n    public static void main(String[] args) {\n       Rope rope = new Rope();\n       rope.play();\n       Rope rope2 = null;\n       System.out.print("-");\n       rope2.play();\n    } }\n\nEnd of code block':
+    [
+      "If the line(s) with compiler errors are removed, the output is swing-swing.",
+      "There is exactly one compiler error in the code.",
+    ],
   "Which statements reflect a servant leadership mindset? (Choose all that apply.)":
     [
       "Emphasizes a coaching approach to managing people",
