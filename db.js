@@ -543,6 +543,8 @@ quiz = {
       "parallelStream() on line p1, findFirst() on line p2",
       "stream() on line p1, findFirst() on line p2",
     ],
+  "Given the following code snippet, what are the values of the variables after it is executed?\n\n\nStart of code block\nint ticketsTaken = 1;\nint ticketsSold = 3;\nticketsSold += 1 + ticketsTaken++;\nticketsTaken *= 2;\nticketsSold += (long)1;\nEnd of code block":
+    ["ticketsSold is 6.", "ticketsTaken is 4."],
   "Global projects now require resources that did not meet the expectations of project managers years ago. They require more flexib":
     ["Caves and commons"],
   "Governance of a project needs to be kept as private as possible to avoid information escaping the organization.":
@@ -569,6 +571,8 @@ quiz = {
     [
       "The project manager is focused on the overall project performance. The Scrum master is focused on guiding the core team through the Scrum process. The product owner is focused on the product being delivered.",
     ],
+  "How many lines of the following code contain compiler errors?\n\n\nCopy \nStart of code block\nint note = 1 * 2 + (long)3;\nshort melody = (byte)(double)(note *= 2);\ndouble song = melody;\nfloat symphony = (float)((song == 1_000f) ? song * 2L : song);\n\nEnd of code block":
+    ["1"],
   "How many sequential steps exist in the CRISP-DM methodology?": ["Six"],
   "How many tables can be joined in a query?": ["One, two, three, or more"],
   "How would you best classify the cost of raw materials on a project?": [
@@ -1348,6 +1352,8 @@ quiz = {
       "The name of the subquery can be joined to other tables in the SELECT statement following the WITH clause.",
       "The name of the subquery can be used in the SELECT statement following the WITH clause.",
     ],
+  "The _________ operator increases a value and returns the original value, while the _______ operator decreases a value and returns the new value.":
+    ["post-increment, pre-decrement"],
   "The agile team and product owner are in a meeting discussing a feature, but there is much confusion between team members about t":
     ["Implement an adequate configuration management system."],
   "The agile team leader you have recently been assigned works differently than anyone you've worked with before. This leader expla":
@@ -1804,6 +1810,8 @@ quiz = {
     [
       "Produces a unique product, service, or result and is a temporary endeavor",
     ],
+  "What are the unique outputs of the following code snippet?\n\n\nStart of code block\nint a = 2, b = 4, c = 2;\nSystem.out.println(a> 2 ? --c : b++);\nSystem.out.println(b = (a!=c ? a : b++));\nSystem.out.println(a> b ? b < c ? b : 2 : 1);\nEnd of code block":
+    ["1", "4", "5"],
   "What are three different types of PMOs?": [
     "Supportive, controlling, directive",
   ],
@@ -1841,6 +1849,13 @@ quiz = {
       "Heterogeneity of information",
       "Inconsistent and incomplete information",
       "Privacy and confidentiality",
+    ],
+  "What change, when applied independently, would allow the following code snippet to compile?\n\n\nStart of code block\nlong ear = 10;\nint hearing = 2 * ear;\nEnd of code block":
+    [
+      "Cast 2 * ear on line 2 to int.",
+      "Cast ear on line 2 to int.",
+      "Change the data type of ear on line 1 to short.",
+      "Change the data type of hearing on line 2 to long.",
     ],
   "What does the categorical data contain?": ["Nominal data"],
   "What is a System for Value Delivery?": [
@@ -1900,6 +1915,18 @@ quiz = {
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nboolean canine = true, wolf = true;\nint teeth = 20;\ncanine = (teeth != 10) ^ (wolf=false);\nSystem.out.println(canine+", "+teeth+", "+wolf);\n\nEnd of code block':
+    ["true, 20, false"],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nboolean sunny = true, raining = false, sunday = true;\nboolean goingToTheStore = sunny & raining ^ sunday;\nboolean goingToTheZoo = sunday && !raining;\nboolean stayingHome = !(goingToTheStore && goingToTheZoo);\nSystem.out.println(goingToTheStore + "-" + goingToTheZoo\n   + "-" +stayingHome);\n\nEnd of code block':
+    ["true-true-false"],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nint ph = 7, vis = 2;\nboolean clear = vis> 1 & (vis < 9 || ph < 2);\nboolean safe = (vis> 2) && (ph++> 1);\nboolean tasty = 7 <= --ph;\nSystem.out.println(clear + "-" + safe + "-" + tasty);\n\nEnd of code block':
+    ["true-false-false"],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nint pig = (short)4;\npig = pig++;\nlong goat = (int)2;\ngoat -= 1.0;\nSystem.out.print(pig + " - " + goat);\n\nEnd of code block':
+    ["4 - 1"],
+  'What is the output of the following code?\n\n\nStart of code block\nint sample1 = (2 * 4) % 3;\nint sample2 = 3 * 2 % 3;\nint sample3 = 5 * (1 % 2);\nSystem.out.println(sample1 + ", " + sample2 + ", " + sample3);\nEnd of code block':
+    ["2, 0, 5"],
+  'What is the output of the following program?\n\n\nStart of code block\npublic class CandyCounter {\n    static long addCandy(double fruit, float vegetables) {\n       return (int)fruit+vegetables;\n    }\n   \n    public static void main(String[] args) {\n       System.out.print(addCandy(1.4, 2.4f) + ", ");\n       System.out.print(addCandy(1.9, (float)4) + ", ");\n       System.out.print(addCandy((long)(int)(short)2, (float)4)); } }\n\nEnd of code block':
+    ["None of these."],
   "What is the primary difference between statistics and data mining?": [
     "Statistics starts with a well-defined proposition and hypothesis, whereas data mining starts with a loosely defined discovery statement.",
   ],
@@ -1912,6 +1939,12 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  'What is the result of executing the following code snippet?\n\n\nStart of code block\nint myFavoriteNumber = 8;\nint bird = ~myFavoriteNumber;\nint plane = -myFavoriteNumber;\nvar superman = bird == plane ? 5 : 10;\nSystem.out.println(bird + "," + plane + "," + --superman);\n\nEnd of code block':
+    ["-9,-8,9"],
+  "What is the result of executing the following code snippet?\n\n\nStart of code block\nint start = 7;\nint end = 4;\nend += ++start;\nstart = (byte)(Byte.MAX_VALUE + 1);\nEnd of code block":
+    ["end is 12.", "start is -128."],
+  "What is the unique output of the following code snippet?\n\n\nStart of code block\nshort height = 1, weight = 3;\nshort zebra = (byte) weight * (byte) height;\ndouble ox = 1 + height * 2 + weight;\nlong giraffe = 1 + 9 % height + 1;\nSystem.out.println(zebra);\nSystem.out.println(ox);\nSystem.out.println(giraffe);\n\nEnd of code block":
+    ["The code does not compile."],
   "What kinds of patterns can data mining discover?": [
     "Association",
     "Classification",
@@ -2133,6 +2166,11 @@ quiz = {
     ["Constructing"],
   "Which of the following DML operations are available when using a merge command (choose all that apply)?":
     ["Delete", "Insert", "Update"],
+  "Which of the following Java operators can be used with boolean variables?": [
+    "!",
+    "==",
+    "Cast with (boolean)",
+  ],
   "Which of the following Java technologies exists on the Web server machine and manages interactions with the client?":
     ["Java Servlet"],
   "Which of the following Java technologies for database Web programming are Java objects that can reside on the Web server machine and manage interactions with the client?":
@@ -2347,6 +2385,8 @@ quiz = {
   "Which of the following can be said of the CASE statement?": [
     "It uses the keyword THEN.",
   ],
+  "Which of the following can be used to change the order of operation in an expression?":
+    ["( )"],
   "Which of the following can be used to remove data from a table? (Choose two.)":
     ["DELETE", "UPDATE"],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
@@ -2651,6 +2691,8 @@ quiz = {
     ["THETA JOIN"],
   "Which of the following operations takes the results of two queries and returns only those rows that appear in both result sets without eliminating duplicates?":
     ["INTERSECT ALL"],
+  "Which of the following operators are ranked in increasing or the same order of precedence? Assume the + operator is binary addition, not the unary form.":
+    ["+, *, %, --", "=, ==, !"],
   "Which of the following operators is indicitive of an equijoin?": ["="],
   "Which of the following options are considered interpersonal and team skills? (Choose two.)":
     ["Motivation", "Transparency"],
@@ -2732,6 +2774,16 @@ quiz = {
     ["Definitive stakeholders"],
   "Which of the following statements about set operators is true? Choose the best answer.":
     ["You can connect two SELECT statements with one set operator."],
+  "Which of the following statements about unary operators are true?": [
+    "The logical complement operator (!) cannot be used on numeric values.",
+    "The post-decrement operator (--) returns the value of the variable before the decrement is applied.",
+    "Unary operators are always executed before any surrounding numeric binary or ternary operators.",
+  ],
+  "Which of the following statements are correct?": [
+    "The inequality operator (!=) can be used to compare objects.",
+    "The logical complement operator (!) cannot be used to flip numeric values.",
+    "The return value of an assignment operation expression is the value of the newly assigned variable.",
+  ],
   "Which of the following statements are true about the risk management plan? (Choose two.)":
     [
       "It documents how risks will be managed and controlled for the project.",
@@ -2939,6 +2991,7 @@ quiz = {
   "Which one of the following is a DML statement?": ["UPDATE"],
   "Which operation is used for inserting new data or new versions of existing data items?":
     ["Put"],
+  "Which operator takes three operands or values?": ["? :"],
   "Which option best describes the factors that need to be considered when determining the development approach for a project?":
     ["All pertinent deliverable, project, and organizational variables"],
   "Which option best describes the typical relationship between project deliverables, delivery cadence, development approach, and p":
