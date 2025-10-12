@@ -236,6 +236,8 @@ quiz = {
     ],
   "Assume all table name and column name references in the SQL statement that follows are valid. That being said, what is wrong with the syntax of the following SQL statement?\n\n\nSELECT SHIP_ID\nFROM SHIPS\nWHERE ((2*LIFEBOATS)+57) - CAPACITY IN (LIFEBOATS*20, LIFEBOATS+LENGTH);":
     ["There is nothing wrong with the syntax."],
+  'Assume the file system is accessible, /flower/rose.txt exists, and the other two directories /garden and /nursery do not exist. What is the expected result after executing the following code snippet?\n\n\nStart of code block\nFiles.createDirectories(Path.of("/garden"));\nFiles.createDirectory(Path.of("/nursery"));\n\nFiles.move(Path.of("/flower/rose.txt"),\n   Paths.get("/garden"), StandardCopyOption.REPLACE_EXISTING);\nFiles.move(new File("/garden/rose.txt").toPath(),\n   Paths.get("/nursery"), StandardCopyOption.ATOMIC_MOVE);\n\nEnd of code block':
+    ["The second move() statement throws an exception."],
   "Assume you have a table ITEMS that includes a column STATUS. Which of the following statements is syntactically correct? (Choose all that apply.)":
     [
       "SELECT * FROM ITEMS FETCH NEXT 20 PERCENT ROWS ONLY;",
@@ -244,6 +246,10 @@ quiz = {
     ],
   "Assume you issue the following command:\n\n\ndelete from payroll where payroll_date>sysdate-1;\n\nWhat command would reverse the results of this delete?":
     ["rollback;"],
+  'Assuming -g:vars is used when the code is compiled to include debug information, what is the output of the following code snippet?\n\n\nStart of code block\nDouble tea = null;\nObject coffee = (Integer)null;\nString juice = "";\nif(coffee instanceof Integer x) {\n   System.out.println(x.intValue());\n} else if (tea < juice.length()) {\n   System.out.println(tea);\n}\n\nEnd of code block':
+    ["A NullPointerException naming tea in the stack trace"],
+  'Assuming the heart.txt and romance.txt files are accessible within the file system with the contents shown, what is the output of the code snippet?\n\n\nStart of code block\n// heart.txt\nhappy\n\n// romance.txt\nHapless\n\n var x = Path.of("heart.txt");\n var y = Paths.get("romance.txt");\n var v = Files.mismatch(x, y);\n System.out.println(v);\n\nEnd of code block':
+    ["0"],
   "Assuring that you are working within a high-performance team is part of the project manager's role.":
     ["Directing the team's daily activities through clear instructions"],
   "At the beginning of a project, the sponsor/owner and project manager frequently get together with the team to identify stakehold":
@@ -538,10 +544,31 @@ quiz = {
     ["Spike"],
   "From the following table, which stakeholder will be the project manager's highest priority stakeholder to reach out to?":
     ["Stakeholder A"],
+  "Given the following class structure, what are valid ways to create a Spinner instance inside the bake() method?\n\n\nStart of code block\npublic class Kitchen {\n   class Mixer {\n      class Spinner {}\n   }\n   public void bake() {\n      // INSERT CODE HERE\n   } }\n\nEnd of code block":
+    [
+      "Kitchen.Mixer.Spinner e = new Kitchen().new Mixer().new Spinner();",
+      "var a = new Kitchen().new Mixer().new Spinner();",
+      "var d = new Mixer().new Spinner();",
+    ],
+  "Given the following class, how many lines contain compilation errors?\n\n\nStart of code block\nimport java.io.*;\nclass StungException extends Exception {}\nclass Suit implements Closeable {\n   public void close() throws IOException {}\n}\npublic class BeeCatcher {\n   public static void main(String[] b) throws IOException {\n      var s = new Suit();\n      var t = new Suit();\n     try (s; t) {\n        throw new StungException();\n     } catch (StungException | Exception e) {\n        s = null;\n     } finally {\n     } } }\n\nEnd of code block":
+    ["Two"],
+  'Given the following classes, what is the output of the Watch program?\n\n\nStart of code block\nclass SmartWatch extends Watch {\n   private String getType() { return "smart watch"; }\n   public String getName() {\n      return getType() + ",";\n   }\n}\npublic class Watch {\n   private String getType() { return "watch"; }\n   public String getName(String suffix) {\n     return getType() + suffix;\n  }\n  public static void main(String[] args) {\n     Watch watch = new Watch();\n     Watch smartWatch = new SmartWatch();\n     System.out.print(watch.getName(","));\n     System.out.print(smartWatch.getName(""));\n  } }\n\nEnd of code block':
+    ["watch,watch"],
   "Given the following code snippet and blank lines on p1 and p2, which values guarantee that 1 is printed at runtime?\n\n\nStart of code block\nvar data = List.of(List.of(1,2),\n   List.of(3,4),\n   List.of(5,6));\ndata.___________    // p1\n   .flatMap(s -> s.stream())\n   .____________    // p2\n   .ifPresent(System.out::print);\n\nEnd of code block":
     [
       "parallelStream() on line p1, findFirst() on line p2",
       "stream() on line p1, findFirst() on line p2",
+    ],
+  "Given the following three class declarations, which sets of access modifiers can be inserted, in order, into the following blank lines that would allow all of the classes to compile? (Choose three.)\n\n\nStart of code block\n // Alarm.java\npackage wake;\npublic class Alarm {\n   _______________ static int clock;\n   _______________ long getTime() {return clock;}\n}\n\n// Coffee.java\npackage wake;\npublic class Coffee {\n   private boolean bringCoffee() {\n      return new Alarm().clock<10;\n   }\n}\n\n// Snooze.java\npackage sleep;\npublic class Snooze extends wake.Alarm {\n   private boolean checkTime() { return getTime()>10;}\n}\n\nEnd of code block":
+    [
+      "package (blank) and protected",
+      "protected and protected",
+      "public and public",
+    ],
+  "Given the following, what can we infer about the subtypes of First, called Chicken and Egg?\n\n\nStart of code block\npublic sealed interface First permits Chicken, Egg { }\n\nEnd of code block":
+    [
+      "Chicken and Egg can be classes or interfaces.",
+      "Chicken and Egg may be located in the same file or a different file as First.",
     ],
   "Global projects now require resources that did not meet the expectations of project managers years ago. They require more flexib":
     ["Caves and commons"],
@@ -569,8 +596,18 @@ quiz = {
     [
       "The project manager is focused on the overall project performance. The Scrum master is focused on guiding the core team through the Scrum process. The product owner is focused on the product being delivered.",
     ],
+  "How many lines fail to compile?\n\n\nStart of code block\nclass Roller<E extends Wheel> {\n   public void roll(E e) { }\n}\nclass Wheel { }\nclass CartWheel extends Wheel { }\n\npublic class RollingContest {\n   Roller<CartWheel> wheel1 = new Roller<CartWheel>();\n   Roller<Wheel> wheel2 = new Roller<CartWheel>();\n   Roller<? extends Wheel> wheel3 = new Roller<CartWheel>();\n   Roller<? extends Wheel> wheel4 = new Roller<Wheel>();\n   Roller<? super Wheel> wheel5 = new Roller<CartWheel>();\n   Roller<? super Wheel> wheel6 = new Roller<Wheel>();\n}\n\nEnd of code block":
+    ["Two"],
+  "How many lines of the following code contains compilation errors?\n\n\nStart of code block\npackage percussion;\n\ninterface MakesNoise {}\nabstract class Instrument implements MakesNoise {\n   public Instrument(int beats) {}\n   public void play() {}\n}\npublic class Drum extends Instrument {\n   public void play(int count) {}\n  public void concert() {\n     super.play(5);\n  }\n  public static void main(String[] beats) {\n     MakesNoise mn = new Drum();\n     mn.concert();\n  } }\n\nEnd of code block":
+    ["Three"],
+  'How many lines of the following interface do not compile?\n\n\nStart of code block\npublic interface Piano {\n   String type = "Grand";\n   void play();\n   public static int getNumberOfKeys() {\n      return type.equals("Grand") ? 88 : 61;\n   }\n   private static void printPianoInfo() {\n      play();\n      System.out.println("Key Count: "+getNumberOfKeys());\n   }\n   default void tune() {\n      play();\n      printPianoInfo();\n   } }\n\nEnd of code block':
+    ["One"],
+  "How many of these module declarations are valid?\n\n\nStart of code block\nmodule com.apple { exports com.apple; }\nmodule com.4apple { requires com.apple;}\nmodule com.apple4 { declares com.apple; }\nmodule com.apple-four { }\nmodule com.apple$ {}\n\nEnd of code block":
+    ["Two"],
   "How many sequential steps exist in the CRISP-DM methodology?": ["Six"],
   "How many tables can be joined in a query?": ["One, two, three, or more"],
+  "How many times does this code print [2, 7, 8]?\n\n\nStart of code block\nimport java.util.*;\nimport java.util.stream.*;\n\npublic class RemoveMe<T> {\n   private List<T> values;\n   public RemoveMe(T… values) {\n      this.values = Arrays.stream(values)\n         .collect(Collectors.toList());\n   }\n  public void remove(T value) {\n     values.remove(value);\n  }\n  public static void main(String[] args) {\n     var integer = new RemoveMe<Integer>(2, 7, 1, 8);\n     var longs = new RemoveMe<Long>(2L, 7L, 1L, 8L);\n     integer.remove(1);\n     longs.remove(1L);\n\n     System.out.println(integer.values);\n     System.out.println(longs.values);\n\n     var values = new ArrayList<Integer>();\n     values.add(2);\n     values.add(7);\n     values.add(1);\n     values.add(8);\n     values.remove(1);\n     System.out.println(values);\n  } }\n\nEnd of code block":
+    ["Two"],
   "How would you best classify the cost of raw materials on a project?": [
     "Direct",
   ],
@@ -652,6 +689,8 @@ quiz = {
     ["additive function or equation."],
   "In marketing applications, text mining can be used to assess and help predict a customer's propensity to attrite.":
     ["True"],
+  'In most of the United States, daylight saving time ends on November 6, 2022 at 00 and we repeat that hour. What is the output of the following?\n\n\nStart of code block\nvar localDate = LocalDate.of(2022, 10, 6);\nvar localTime = LocalTime.of(1, 0);\nvar zone = ZoneId.of("America/New_York");\nvar z = ZonedDateTime.of(localDate, localTime, zone);\nvar offset = z.getOffset();\n\nfor (int i = 0; i < 6; i++)\n   z = z.plusHours(1);\n\nSystem.out.println(z.getHour() + " "\n   + offset.equals(z.getOffset()));\n\nEnd of code block':
+    ["7 true"],
   "In most relational DBMSs, there is no specific language that performs the role of":
     ["SDL"],
   "In prediction analytics, variance refers to the error, and bias refers to the consistency in the predictive accuracy of models applied to other data sets.":
@@ -1292,8 +1331,14 @@ quiz = {
     ["False"],
   "Stakeholders not only need to be identified but also need to be classified. Of the following":
     ["Newer/established"],
+  "Starting with DoubleBinaryOperator and going downward, fill in the values for the table. The method signature refers to the abstract method associated with each functional interface.\nFunctional Interface\t# Parameters in Method Signature\nDoubleBinaryOperator\t\nLongToIntFunction\t\nToLongBiFunction\t\nIntSupplier\t\nObjLongConsumer":
+    ["2, 1, 2, 0, 2"],
   "Structured data is usually organized into records with simple data values that include __________, __________, and __________ variables.":
     ["categorical", "continuous", "ordinal"],
+  'Suppose cats is an empty table. How many rows are in this table when the code has completed?\n\n\nStart of code block\ntry (var conn = DriverManager.getConnection(url)) {\n   conn.setAutoCommit(false);\n   String insert = "INSERT INTO cats VALUES (? ,?)";\n\n   var sp1 = conn.setSavepoint();\n   try (var stmt = conn.prepareStatement(insert)) {\n      stmt.setInt(1, 1);\n      stmt.setString(2, "Kitty");\n      stmt.executeUpdate();\n   }\n   var sp2 = conn.setSavepoint();\n   conn.rollback(sp1);\n   try (var stmt = conn.prepareStatement(insert)) {\n      stmt.setInt(1, 2);\n      stmt.setString(2, "Beverly");\n      stmt.executeUpdate();\n   }\n   conn.rollback(sp2);\n   conn.commit();\n}\n\nEnd of code block':
+    ["The code throws an exception."],
+  'Suppose the pandas table has one row with the name Mei Xiang and the location DC. What does the following code output?\n\n\nStart of code block\nvar url = "jdbc:hsqldb:file:mammals";\nvar sql = "SELECT name FROM pandas WHERE location = ?";\ntry (var conn = DriverManager.getConnection(url);\n   var stmt = conn.prepareStatement(sql);          // s1\n   stmt.setString(1, "DC");\n   var rs = stmt.executeQuery()) {\n\n   if (rs.next())\n      System.out.println(rs.getString("name"));   // s2\n   else\n      System.out.println("No match");\n}\n\nEnd of code block':
+    ["The code does not compile due to another line."],
   "TRUNCATE TABLE:": [
     "Is a valid set of keywords to be used within a DDL statement",
   ],
@@ -1842,7 +1887,14 @@ quiz = {
       "Inconsistent and incomplete information",
       "Privacy and confidentiality",
     ],
+  "What does ServiceLocator.load(ChocolateLab.class) return?": [
+    "None of these",
+  ],
   "What does the categorical data contain?": ["Nominal data"],
+  "What does the following code do?\n\n\nStart of code block\npublic class Player {\n   interface Basket {\n      boolean needToAim(double angle);\n   }\n   static void prepare(double angle, Basket t) {\n      boolean ready = t.needToAim(angle);  // k1\n      System.out.println(ready);\n   }\n   public static void main(String[] args) {\n      prepare(45, d => d> 5 || d < -5);   // k2\n   } }\n\nEnd of code block":
+    ["It doesn't compile due to line k2."],
+  'What does the following code print?\n\n\nStart of code block\n// Hare.java\npackage com.animal;\npublic class Hare {\n   void init() {\n      System.out.print("init-");\n   }\n   protected void race() {\n      System.out.print("hare-");\n   } }\n\n// Tortoise.java\npackage com.animal;\npublic class Tortoise {\n   protected void race(Hare hare) {\n      hare.init();    // x1\n      hare.race();    // x2\n      System.out.print("tortoise-");\n    }\n    public static void main(String[] args) {\n       var tortoise = new Tortoise();\n       var hare = new Hare();\n       tortoise.race(hare);\n   } }\n\nEnd of code block':
+    ["init-hare-tortoise"],
   "What is a System for Value Delivery?": [
     "A collection of strategic business activities aimed at building, sustaining, and/or advancing an organization",
   ],
@@ -1894,12 +1946,32 @@ quiz = {
   ],
   "What is the main source for all accuracy estimation metrics in classification problems?":
     ["Contingency table"],
+  "What is the minimum number of requires directives that need to be removed to break the cyclic dependency?\n\n\nStart of code block\nmodule com.animal {\n   exports com.animal;\n   requires com.plant;\n}\nmodule com.plant {\n   exports com.plant;\n   requires com.animal;\n}\nmodule com.worm {\n   exports com.worm;\n   requires com.animal;\n   requires com.plant;\n}\nmodule com.hedgehog {\n   exports com.hedgehog;\n   requires com.animal;\n   requires com.plant;\n}\n\nEnd of code block":
+    ["1"],
   "What is the name of the first and the earliest data mining process?": [
     "KDD methodology",
   ],
   "What is the objective of qualitative risk analysis?": [
     "To prioritize and rank the identified risks so the project can focus on the high-priority risks",
   ],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nString chicken = "hen";\n\nint numEggs = switch (chicken) {\n   "hen" -> 3;\n   default -> 0;\n};\n\nSystem.out.println(numEggs);\n\nEnd of code block':
+    ["The code does not compile."],
+  'What is the output of the following code snippet?\n\n\nStart of code block\nvar listing = new String[][] { { "Book", "34.99" },\n   { "Game", "29.99" }, { "Pen", ".99" } };\nSystem.out.println(listing.length + " " + listing[0].length);\n\nEnd of code block':
+    ["3 2"],
+  'What is the output of the following code?\n\n\nStart of code block\npackage homework;\nimport java.util.*;\nimport java.util.stream.*;\npublic class QuickSolution {\n   public static int findFast(Stream<Integer> s) {\n      return s.findAny().get();\n   }\n   public static int findSlow(Stream<Integer> s) {\n      return s.parallel().findFirst().get();\n   }\n\n   public static void main(String[] pencil) {\n      var s1 = List.of(1,2,3,4,5).stream();\n      var s2 = List.of(1,2,3,4,5).stream();\n      int val1 = findFast(s1);\n      int val2 = findSlow(s2);\n      System.out.print(val1 + " " + val2);\n   } }\n\nEnd of code block':
+    ["The answer cannot be determined until runtime."],
+  'What is the output of the following code?\n\n\nStart of code block\npackage rope;\nimport java.util.concurrent.*;\npublic class Jump {\n   private static void await(CyclicBarrier b) {\n      try { b.await(); } catch (Exception e) {}\n   }\n   public static void main(String[] chalk) {\n      ExecutorService s = Executors.newFixedThreadPool(4);\n      final var b = new CyclicBarrier(4,\n         () -> System.out.print("Jump!"));\n      for(int i=0; i<10; i++)\n         s.execute(() -> await(b));\n      s.shutdown();\n   } }\n\nEnd of code block':
+    ["A deadlock is produced at runtime."],
+  'What is the output of the following code?\n\n\nStart of code block\npackage woods;\ninterface Plant {\n   default String grow() { return "Grow!"; }\n}\ninterface Living {\n   public default String grow() { return "Super Growing!"; }\n}\npublic class Tree implements Plant, Living {  // m1\n   public String grow() { return super.Plant.grow(); }\n   public static void main(String[] leaves) {\n      Plant p = new Tree();                   // m2\n      System.out.print(((Living)p).grow());   // m3\n   } }\n\nEnd of code block':
+    ["None of these."],
+  "What is the output of the following code?\n\n\nStart of code block\nvar sum = 0.0;\nsum = sum + Math.round(11.2);\nsum = sum + Math.ceil(8.1);\nsum = sum + Math.abs(sum);\n\nSystem.out.println(sum);\n\nEnd of code block":
+    ["40.0"],
+  'What is the output of the following program?\n\n\nStart of code block\npublic class Ghost {\n   private final String name;\n   public Ghost() {\n      this(null);\n      this.name = "Casper";\n   }\n   public Ghost(String n) {\n      name = "Boo";\n   }\n   public static void main(String[] sound) {\n      var d = new Ghost("Space");\n      System.out.println(d.name);\n   } }\n\nEnd of code block':
+    ["The code does not compile."],
+  "What is the output of the following program?\n\n\nStart of code block\nvar bed = List.of((short)2,(short)5);\nvar pillow = bed.parallelStream().reduce(0,\n   (a,b) -> b.doubleValue() + a.doubleValue(),\n   (c,d) -> d.doubleValue() + c.doubleValue());\nSystem.out.println(pillow);\n\nEnd of code block":
+    ["The code does not compile."],
+  "What is the output of the following when run as java EchoFirst.java seed flower plant?\n\n\nStart of code block\nimport java.util.*;\n\npublic class EchoFirst {\n   public static void main(String[] args) {\n      var result = Arrays.binarySearch(args, args[0]);\n      System.out.println(result);\n   } }\n\nEnd of code block":
+    ["The output is not guaranteed."],
   "What is the primary difference between statistics and data mining?": [
     "Statistics starts with a well-defined proposition and hypothesis, whereas data mining starts with a loosely defined discovery statement.",
   ],
@@ -1912,6 +1984,18 @@ quiz = {
   "What is the relationship between a project, a program, and a portfolio?": [
     "A portfolio can consist of programs and projects; a program is a group of related projects.",
   ],
+  "What is the result of calling the following method?\n\n\nStart of code block\npublic static void printLength() {\n   record Earthworm(int length) {\n      Earthworm {\n         length = 4;\n      }\n   }\n   var worm = new Earthworm(6);\n   System.out.println(worm.length());\n}\n\nEnd of code block":
+    ["4"],
+  'What is the result of executing the Clownfish program?\n\n\nStart of code block\npackage ocean;\nclass BubbleException extends Exception {}\nabstract class Fish {\n   Fish getFish() {\n      throw new RuntimeException("fish!");\n   } }\npublic final class Clownfish extends Fish {\n   public final Clownfish getFish() throws BubbleException {\n      throw new RuntimeException("clown!");\n   }\n   public static void main(String[] bubbles) throws Exception {\n      final var v = (Fish)new Clownfish();\n      Clownfish f = v;\n      f.getFish();\n      System.out.println("swim!");\n   } }\n\nEnd of code block':
+    ["Two lines of the program do not compile."],
+  'What is the result of executing the following code snippet?\n\n\nStart of code block\nvar name = "Desiree";\nint _number = 694;\nboolean profit$$$;\nSystem.out.println(name + " won. "\n   + _number + " profit? " + profit$$$);\n\nEnd of code block':
+    ["The println() statement does not compile."],
+  "What is the result of the following code?\n\n\nCopy \nStart of code block\nimport java.time.*;\nimport java.time.format.*;\npublic class PiDay {\n   public static void main(String[] args) {\n      LocalDateTime pi = LocalDateTime.of(2022, 3, 14, 1, 59);\n      DateTimeFormatter formatter = DateTimeFormatter\n         .ofPattern(\"m.ddhh'MM'\");\n      System.out.print(formatter.format(pi));\n   } }\n\nEnd of code block":
+    ["59.1401MM"],
+  'What is the result of the following code?\n\n\nStart of code block\n// Hopper.java\npackage com.animals;\npublic class Hopper {\n   protected void hop() {\n      System.out.println("hop");\n   }\n}\n\n// Grasshopper.java\npackage com.insect;\nimport com.animals.Hopper;\npublic class Grasshopper extends Hopper {\n   public void move() {\n      hop();  // p1\n   }\n}\n\n// HopCounter.java\npackage com.animals;\nimport com.insect.Grasshopper;\npublic class HopCounter {\n   public static void main(String[] args) {\n      var hopper = new Grasshopper();\n      hopper.move();  // p2\n      hopper.hop();   // p3\n   } }\n\nEnd of code block':
+    ["The code prints hop twice."],
+  "What is the result of the following code?\n\n\nStart of code block\nimport java.util.stream.*;\npublic class StreamOfStreams {\n   public static void main(String[] args) {\n     var result =\n        Stream.of(getNums(9, 8), getNums(22, 33))  // c1\n           .flatMap(x -> x)                        // c2\n           .map((a, b) -> a - b)                   // c3\n           .filter(x -> !x.isEmpty())              // c4\n           .get();      \n     System.out.println(result);\n   }\n   private static Stream<Integer> getNums(int num1, int num2) {\n      return Stream.of(num1, num2);\n   } }\n\nEnd of code block":
+    ["The first compiler error is on line c3."],
   "What kinds of patterns can data mining discover?": [
     "Association",
     "Classification",
@@ -2067,6 +2151,11 @@ quiz = {
     ["A query that displays rows from the table with no joins"],
   "Which approaches for conflict management as described in the Thomas-Kilmann model are most common for conflicts within a high-pe":
     ["Collaborating", "Compromising", "Confronting/Problem-Solving"],
+  'Which are true of the following?\n\n\nStart of code block\npublic class Hippo {\n   private static void hippo(short num1, short num2) {\n      System.out.println("shorts");\n   }\n   private static void hippo(int… nums) {\n      System.out.println("varargs");\n   }\n   private static void hippo(Integer num1, Integer num2) {\n      System.out.println("Integers");\n   }\n   private static void hippo(long num1, long num2) {\n      System.out.println("longs");\n   }\n   public static void main(String... args) {\n      hippo(1, 5);\n   } }\n\nEnd of code block':
+    [
+      "If the method originally called by hippo() were commented out, the code would output Integers.",
+      "It outputs longs.",
+    ],
   "Which aspect of object specifies how the object is constructed by using the type constructors?":
     ["Structure"],
   "Which aspect of object specifies whether an object is a persistent object or transient object?":
@@ -2111,6 +2200,9 @@ quiz = {
     ["Code injection"],
   "Which intention lock indicates that one or more exclusive locks will be requested on some descendant nodes?":
     ["IX"],
+  "Which is part of the module service and has a requires directive?": [
+    "Service locator",
+  ],
   "Which is the best way to meet stakeholders' expectations?": [
     "Keep stakeholders regularly informed throughout the project.",
   ],
@@ -2121,6 +2213,8 @@ quiz = {
   "Which list best describes an agile development approach?": [
     "Collaboration, expects change, deliver working product frequently, self-organizing teams",
   ],
+  'Which method can fill in the blank that would cause the program to consistently print Tie! 10 times?\n\n\nStart of code block\n import java.util.concurrent.*;\nimport java.util.concurrent.locks.*;\npublic class TieShoes {\n   private volatile Lock shoes = new ReentrantLock();\n   public void tie() {\n      try {\n         if (shoes.__________________) {\n            System.out.println("Tie!");\n            shoes.unlock();\n         }\n      } catch (Exception e) {}\n   }\n   public static void main(String… unused) {\n      var gate = new TieShoes();\n      for (int i = 0; i < 10; i++) {\n         var t = new Thread(() -> gate.tie());\n         t.start();\n         t.interrupt();\n      } } }\n\nEnd of code block':
+    ["None of these"],
   "Which method takes into account the partial membership of class labels to predefined categories while building models for classification problems?":
     ["Rough sets"],
   "Which model is also known as the CODASYL DBTG model?": ["Network model"],
@@ -2319,6 +2413,11 @@ quiz = {
     "() -> 5",
     '() -> {System.out.println("Giraffe"); return 10;}',
   ],
+  "Which of the following are valid code comments in Java?": [
+    "/*** TODO: Call grandma ***/",
+    "/****** Find the kitty cat */",
+    "// Is this a bug?",
+  ],
   "Which of the following are valid types of constraints that can be defined when creating a table? (select all that apply)":
     ["Primary key", "Unique"],
   "Which of the following associations is represented as a line connecting the participating classes, and may optionally have a name?":
@@ -2349,6 +2448,10 @@ quiz = {
   ],
   "Which of the following can be used to remove data from a table? (Choose two.)":
     ["DELETE", "UPDATE"],
+  "Which of the following can fill in the blank to print out just the number 161?\n\n\nStart of code block\n import java.util.*;\nimport java.util.stream.*;\nrecord Runner(int numberMinutes) { }\npublic class Marathon {\n   public static void main(String[] args) {\n      var match = Optional.ofNullable(161);  // line z\n      var runners = Stream.of(new Runner(183),\n         new Runner(161), new Runner(201));\n      var opt = runners.map(Runner::numberMinutes)\n        ___________________________ ;\n   } }\n\nEnd of code block":
+    [
+      "Start of code block\n .filter(m -> match.get().equals(m)).peek(System.out::println).count()\nEnd of code block",
+    ],
   "Which of the following classes defines attributes and operations but does not have objects corresponding to those classes?":
     ["Abstract"],
   "Which of the following classification methods use(s) the analogy of natural evolution to build directed-search-based mechanisms to classify data samples?":
@@ -2589,6 +2692,8 @@ quiz = {
   "Which of the following is true of functions?": [
     "They always return a value.",
   ],
+  "Which of the following is true of this module declaration?\n\n\nStart of code block\nmodule com.mammal {\n    exports com.mammal.cat;\n    exports com.mammal.mouse to com.mice;\n    uses com.animal;\n }\n\nEnd of code block":
+    ["The code compiles."],
   "Which of the following is true with respect to using the flashback database command?":
     [
       "The database must be in ARCHIVELOG mode to use the flashback database command.",
@@ -2612,6 +2717,18 @@ quiz = {
     ["Inner"],
   "Which of the following keywords cannot be used with the CREATE SEQUENCE statement?":
     ["JOIN"],
+  "Which of the following lambda expressions can be inserted into both blanks while still allowing the application to compile?\n\n\nStart of code block\npackage spooky;\nimport java.util.function.*;\nabstract class Phantom {\n   public void bustLater(DoubleConsumer buster, double value) {\n        buster.accept(value);\n   }\n}\npublic class Ghost extends Phantom {\n   public void bustNow(Consumer<Double> buster, double value) {\n      buster.accept(value);\n   }\n   void call() {\n      var value = 10.0;\n      bustNow(_________________, value);\n      bustLater(_________________, value);\n   } }\n\nEnd of code block":
+    [
+      "System.out::print",
+      "g -> {System.out.println();}",
+      "v -> System.out.print(v)",
+    ],
+  "Which of the following lambda expressions can be passed to a method that takes IntUnaryOperator as an argument?":
+    [
+      "(int j) -> (int) 30L",
+      'v -> {System.out.print("Hello!"); return 2%1;}',
+      "z -> z",
+    ],
   "Which of the following languages is a platform-independent and programming language-independent protocol for messaging and remote procedure calls?":
     ["SOAP"],
   "Which of the following languages specifies the internal schema?": ["SDL"],
@@ -2931,6 +3048,7 @@ quiz = {
     ["Ishikawa diagram", "Pareto chart"],
   "Which of the following would you not find on an information radiator for an agile team?":
     ["Gantt chart"],
+  "Which of these are valid method names in Java?": ["$Hum2", "_____"],
   "Which of these is an example of a user story?": [
     "As a call center analyst, I want to input customers' first and last names and postal codes so that I can pull up their accounts quickly.",
   ],
@@ -2974,6 +3092,8 @@ quiz = {
     ["Linear"],
   "Which search is suitable for retrievals where an attribute must match an enumerated set of values?":
     ["Bitmap index"],
+  'Which sets of lines can be removed without stopping the code from compiling and while printing the same output? (Choose three.)\n\n\nStart of code block\nString race = "";\nouter:\ndo {\ninner:\n   do\n   {\n      race += "x";\n   }\n   while (race.length() <= 4);\n} while (race.length() < 4);\nSystem.out.println(race);\n\nEnd of code block':
+    ["Line 17", "Lines 15 and 17", "Lines 16 and 23"],
   "Which spatial operator provides a more specific description of the object's geometry and measures some global properties of single objects?":
     ["Metric"],
   "Which stage of a distributed database query is performed locally?": [
@@ -2986,6 +3106,26 @@ quiz = {
   ],
   "Which statement would limit the rowset of a sql statement to no more than 5 rows?":
     ["where rownum < 6"],
+  'Which statements about the following class are correct?\n\n\nStart of code block\npackage knowledge;\nclass InformationException extends Exception {}\npublic class LackOfInformationException\n      extends InformationException {\n  public LackOfInformationException() {             // t1\n      super("");\n   }\n   public LackOfInformationException(String s) {     // t2\n      this(new Exception(s));\n   }\n   public LackOfInformationException(Exception c) {  // t3\n      super();\n   }\n   public String getMessage() throws ArithmeticException {\n      return "lackOf";\n   } }\n\nEnd of code block':
+    [
+      "LackOfInformationException is a checked exception.",
+      "The constructor declared at line t1 does not compile.",
+    ],
+  "Which statements about try-with-resources are true?": [
+    "If more than one resource is used, then the order in which they are closed is the reverse of the order in which they were created.",
+    "Neither a catch nor a finally block is required.",
+  ],
+  'Which statements are correct about the following text block?\n\n\nStart of code block\nvar cute = """\n   otter\\\n   pup \\s\n   play\n   "toy"\n   """;\n\nEnd of code block':
+    [
+      "Adding escape characters to the quotes around toy does not change the value of the text block.",
+      "There are exactly three whitespace characters between pup and play.",
+      "There are no whitespace characters between otter and pup.",
+    ],
+  'Which statements best describe the result of executing this code?\n\n\nStart of code block\npackage nyc;\npublic class TouristBus {\n   public static void main(String… args) {\n      var tour = new String[] {\n         "Downtown", "Uptown", "Brooklyn" };\n      var times = new String[] { "Day", "Night" };\n\n      for (int i = 0, j = 0; i < tour.length; i++, j++)\n         System.out.println(tour[i] + " " + times[j]);\n   } }\n\nEnd of code block':
+    [
+      "The code throws an exception at runtime.",
+      "The println() causes two lines of output.",
+    ],
   "Which statements reflect a servant leadership mindset? (Choose all that apply.)":
     [
       "Emphasizes a coaching approach to managing people",
